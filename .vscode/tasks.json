@@ -1,0 +1,71 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Pi Server Debug",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-DDEBUG",
+                "-I${workspaceFolder}",
+                "-I${workspaceFolder}/AV/PiServer",  
+                "-g", 
+                "-Wall",
+                "${workspaceFolder}/AV/PiServer/*.cpp",
+                "${workspaceFolder}/AV/PiServer/**/*.cpp",
+                "-o",
+                "${workspaceFolder}/AV/build/PiServer/debug/PiServer",
+                "-L/usr/lib",
+                "-lpigpiod_if2"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Build the PiServer project for debugging"
+        },
+        {
+            "label": "Build PiServer Release",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-O2",
+                "-Wall",
+                "${workspaceFolder}/AV/PiServer/*.cpp",
+                "-o",
+                "${workspaceFolder}/AV/build/PiServer/release"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Build the entire project with optimizations"
+        },
+        {
+            "label": "Build TCP Client Debug",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-DDEBUG",
+                "${workspaceFolder}/TCPClient/TCPClient/*.cpp",
+                "-I${workspaceFolder}",            
+                "-o", 
+                "${workspaceFolder}/TCPClient/build/TCPClient.exe",
+                "-static",               // Fully static linking
+                "-static-libgcc",        // Static link libgcc
+                "-static-libstdc++",     // Static link libstdc++
+                "-lWs2_32",   // Link the Winsock library
+                "-ldinput8",  // Link the DirectInput library
+                "-ldxguid"    // Link the DirectX GUID library
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Generated task to build TCP Client"
+        }
+    ]
+}
