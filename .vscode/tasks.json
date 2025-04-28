@@ -6,15 +6,16 @@
             "type": "shell",
             "command": "g++",
             "args": [
+                "-std=c++17",
                 "-DDEBUG",
                 "-I${workspaceFolder}",
-                "-I${workspaceFolder}/AV/PiServer",  
+                "-I${workspaceFolder}/PiServer/src",  
                 "-g", 
                 "-Wall",
-                "${workspaceFolder}/AV/PiServer/*.cpp",
-                "${workspaceFolder}/AV/PiServer/**/*.cpp",
+                "${workspaceFolder}/PiServer/src/*.cpp",
+                "${workspaceFolder}/PiServer/src/**/*.cpp",
                 "-o",
-                "${workspaceFolder}/AV/build/PiServer/debug/PiServer",
+                "${workspaceFolder}/PiServer/build/debug/PiServer",
                 "-L/usr/lib",
                 "-lpigpiod_if2"
             ],
@@ -49,10 +50,13 @@
             "command": "g++",
             "args": [
                 "-DDEBUG",
-                "${workspaceFolder}/TCPClient/TCPClient/*.cpp",
-                "-I${workspaceFolder}",            
+                "-std=c++17",
+                "${workspaceFolder}/TCPClient/src/*.cpp",
+                "${workspaceFolder}/TCPClient/src/Communication/*.cpp",
+                "-I${workspaceFolder}",
+                "-I${workspaceFolder}/TCPClient/src",              
                 "-o", 
-                "${workspaceFolder}/TCPClient/build/TCPClient.exe",
+                "${workspaceFolder}/TCPClient/build/debug/TCPClient.exe",
                 "-static",               // Fully static linking
                 "-static-libgcc",        // Static link libgcc
                 "-static-libstdc++",     // Static link libstdc++

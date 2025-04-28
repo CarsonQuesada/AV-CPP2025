@@ -4,7 +4,7 @@
             "name": "RaspberryPi-Debug",
             "includePath": [
                 "${workspaceFolder}",
-                "${workspaceFolder}/AV/PiServer"
+                "${workspaceFolder}/PiServer/src"
             ],
             "defines": [
                 "DEBUG"
@@ -35,8 +35,7 @@
             "compilerPath": "C:/mingw64/bin/gcc.exe",
             "includePath": [
                 "${workspaceFolder}",
-                "${workspaceFolder}/AV/PiServer",
-                "${workspaceFolder}/TCPClient/TCPClient",
+                "${workspaceFolder}/TCPClient",
                 "C:/mingw64/include",
                 "C:/mingw64/x86_64-w64-mingw32/include",
                 "C:/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include"
