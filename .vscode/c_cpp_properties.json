@@ -17,9 +17,8 @@
         {
             "name": "RaspberryPi-Release",
             "includePath": [
-                "${workspaceFolder}/src",
-                "/usr/include",
-                "/usr/local/include"
+                "${workspaceFolder}",
+                "${workspaceFolder}/PiServer/src"
             ],
             "defines": [
                 "RELEASE"

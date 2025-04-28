@@ -31,5 +31,5 @@
 *.out
 *.app
 
-# Open VPN
-*.ovpn
+# IP address and listening port
+Shared/TCP.h
