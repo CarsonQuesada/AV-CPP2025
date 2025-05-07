@@ -3,9 +3,9 @@
 void Lighting::setBrakeLights(bool en)
 {
     if (en)
-        i2c_write_byte(piHandle, lightingHandle, static_cast<int>(LightingCommand::BrakeLightsOn));
+        i2c_write_byte(piHandle, lightingHandle, static_cast<uint8_t>(LightingCommand::BrakeLightsOn));
     else
-        i2c_write_byte(piHandle, lightingHandle, static_cast<int>(LightingCommand::BrakeLightsOff));
+        i2c_write_byte(piHandle, lightingHandle, static_cast<uint8_t>(LightingCommand::BrakeLightsOff));
 
     brakeLightsEnabled.store(en);
 }
@@ -28,13 +28,13 @@ void Lighting::setRightSig(bool en)
 {
     // If right turn signal toggle off
     if (en) {
-        i2c_write_byte(piHandle, lightingHandle, static_cast<int>(LightingCommand::RightSigOff));
+        i2c_write_byte(piHandle, lightingHandle, static_cast<uint8_t>(LightingCommand::RightSigOff));
         if (leftSigEnabled.load()) {
-            i2c_write_byte(piHandle, lightingHandle, static_cast<int>(LightingCommand::LeftSigOff));
+            i2c_write_byte(piHandle, lightingHandle, static_cast<uint8_t>(LightingCommand::LeftSigOff));
             leftSigEnabled.store(false);
         }
     } else {
-        i2c_write_byte(piHandle, lightingHandle, static_cast<int>(LightingCommand::RightSigOn));
+        i2c_write_byte(piHandle, lightingHandle, static_cast<uint8_t>(LightingCommand::RightSigOn));
     }
 
     rightSigEnabled.store(en);
@@ -43,13 +43,13 @@ void Lighting::setRightSig(bool en)
 void Lighting::setLeftSig(bool en)
 {
     if (en) {
-        i2c_write_byte(piHandle, lightingHandle, static_cast<int>(LightingCommand::LeftSigOff));
+        i2c_write_byte(piHandle, lightingHandle, static_cast<uint8_t>(LightingCommand::LeftSigOff));
         if (rightSigEnabled.load()) {
-            i2c_write_byte(piHandle, lightingHandle, static_cast<int>(LightingCommand::RightSigOff));
+            i2c_write_byte(piHandle, lightingHandle, static_cast<uint8_t>(LightingCommand::RightSigOff));
             rightSigEnabled.store(false);
         }
     } else {
-        i2c_write_byte(piHandle, lightingHandle, static_cast<int>(LightingCommand::LeftSigOn));
+        i2c_write_byte(piHandle, lightingHandle, static_cast<uint8_t>(LightingCommand::LeftSigOn));
     }
 
     leftSigEnabled.store(en);
@@ -59,9 +59,9 @@ void Lighting::setHeadlights(bool en)
 {
     // Send command
     if (en)
-        i2c_write_byte(piHandle, lightingHandle, static_cast<int>(LightingCommand::HeadlightsOff));
+        i2c_write_byte(piHandle, lightingHandle, static_cast<uint8_t>(LightingCommand::HeadlightsOff));
     else
-        i2c_write_byte(piHandle, lightingHandle, static_cast<int>(LightingCommand::HeadlightsOn));
+        i2c_write_byte(piHandle, lightingHandle, static_cast<uint8_t>(LightingCommand::HeadlightsOn));
 
     headlightsEnabled.store(en);
 }
@@ -72,16 +72,16 @@ void Lighting::setConnectLED(ConnectionStatus status)
     switch (status)
     {
         case ConnectionStatus::Disabled:
-            i2c_write_byte(piHandle, lightingHandle, static_cast<int>(LightingCommand::StopConnecting));
+            i2c_write_byte(piHandle, lightingHandle, static_cast<uint8_t>(LightingCommand::StopConnecting));
             break;
         case ConnectionStatus::Connected:
-            i2c_write_byte(piHandle, lightingHandle, static_cast<int>(LightingCommand::Connected));
+            i2c_write_byte(piHandle, lightingHandle, static_cast<uint8_t>(LightingCommand::Connected));
             break;
         case ConnectionStatus::Reconnecting:
-            i2c_write_byte(piHandle, lightingHandle, static_cast<int>(LightingCommand::Reconnecting));
+            i2c_write_byte(piHandle, lightingHandle, static_cast<uint8_t>(LightingCommand::Reconnecting));
             break;
         default:
-            std::cout << "Setting ConnectLED to unknown status. Status: " << static_cast<int>(status) << std::endl;
+            std::cout << "Setting ConnectLED to unknown status. Status: " << static_cast<uint8_t>(status) << std::endl;
             break;
     }
 
@@ -95,7 +95,7 @@ bool Lighting::initialize()
         lightingHandle = i2c_open(piHandle, 1, lightingAddr, 0);
 
         if (lightingHandle < 0) {
-            printf("[!] Failed to init lidar!\n");
+            printf("[!] Failed to init Lighting!\n");
         } else {
             printf("> lighting subsystem \t\tINIT OK\n");
             setBrakeLights(false);

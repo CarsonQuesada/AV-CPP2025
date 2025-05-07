@@ -5,6 +5,7 @@
 void Drive::enableSteering(bool en)
 {
 	gpio_write(piHandle, steering_EN, en);
+	steerEnabled.store(en);
 }
 
 void Drive::enableMotors(bool en)
@@ -16,6 +17,8 @@ void Drive::enableMotors(bool en)
 	// Enable steering motor
 	// Set steering motor enable pin to LOW to cut power to the steering mechanism
 	gpio_write(piHandle, steering_EN, en);
+
+	motorsEnabled.store(en);
 }
 
 void Drive::brake()
@@ -36,9 +39,7 @@ void Drive::brake(int brakeVal)
 			set_PWM_dutycycle(piHandle, drive_RPWM, 0);				// Set reverse PWM to 0
 		}
 		set_servo_pulsewidth(piHandle, brakeServoPin, map(brakeVal, 0, 100, relaxedBrakeVal, fullBrakeVal));  // Control braking
-	} 
-	else 
-	{
+	} else {
 		braking.store(false);
 		relaxBrakes();  // Control braking
 	}
@@ -63,11 +64,13 @@ void Drive::accelerate(int accelValue, GearID gear)
 	// --- Calculate Acceleration ---
 	// map acceleration to acceptable PWM value
 	accelValue = map(accelValue, 0, 100, 0, 255);
+	std::cout << "Made it" << std::endl;
 
 	// --- Handle Drive Motor States ---
 	switch (gear)
 	{
 		case GearID::Coast:	// Acceleration is inactive (coasting mode)
+			std::cout << "Coast set" << std::endl;
 			activeGear.store(GearID::Coast);
 			gpio_write(piHandle, drive_FEN, 0); 					// Disable forward
 			gpio_write(piHandle, drive_REN, 0); 					// Disable reverse
@@ -75,18 +78,20 @@ void Drive::accelerate(int accelValue, GearID gear)
 			set_PWM_dutycycle(piHandle, drive_RPWM, 0);				// Set reverse PWM to 0
 			break;
 		case GearID::Forward:	// Forward gear
+			std::cout << "Forward set" << std::endl;
 			activeGear.store(GearID::Forward);
 			gpio_write(piHandle, drive_FEN, 1); 					// Enable forward
-			gpio_write(piHandle, drive_REN, 0); 					// Disable reverse
+			gpio_write(piHandle, drive_REN, 1); 					// Disable reverse
 			set_PWM_dutycycle(piHandle, drive_FPWM, accelValue);	// Set forward PWM to match acceleration
 			set_PWM_dutycycle(piHandle, drive_RPWM, 0);				// Set reverse PWM to 0
 			break;
 		case GearID::Reverse:	// Reverse gear
+			std::cout << "Reverse set" << std::endl;
 			activeGear.store(GearID::Reverse);
 			gpio_write(piHandle, drive_FEN, 1); 					// Enable forward
-			gpio_write(piHandle, drive_REN, 0); 					// Disable reverse
-			set_PWM_dutycycle(piHandle, drive_FPWM, accelValue);	// Set forward PWM to match acceleration
-			set_PWM_dutycycle(piHandle, drive_RPWM, 0);				// Set reverse PWM to 0
+			gpio_write(piHandle, drive_REN, 1); 					// Disable reverse
+			set_PWM_dutycycle(piHandle, drive_FPWM, 0);	// Set forward PWM to match acceleration
+			set_PWM_dutycycle(piHandle, drive_RPWM, accelValue);				// Set reverse PWM to 0
 			break;
 		default:
 			activeGear.store(GearID::Coast);
@@ -94,6 +99,7 @@ void Drive::accelerate(int accelValue, GearID gear)
 			gpio_write(piHandle, drive_REN, 0); 					// Disable reverse
 			set_PWM_dutycycle(piHandle, drive_FPWM, 0);				// Set forward PWM to 0
 			set_PWM_dutycycle(piHandle, drive_RPWM, 0);				// Set reverse PWM to 0
+			std::cout << "Invalid Gear given" << std::endl;
 			break;
 	}
 }
@@ -114,7 +120,7 @@ void Drive::steer(int targetPos, int currPos)
 		printf("Steering: CENTERED\n");
 		set_PWM_dutycycle(piHandle, steering_RPWM, 0); 
 		set_PWM_dutycycle(piHandle, steering_LPWM, 0);
-    	}
+    }
 	// Check if the current position is to the right of the target (needs left turn)
 	else if (currPos > targetPos + deadband) {
 		printf("Steering: TURNING RIGHT\n");
@@ -137,7 +143,8 @@ void Drive::initialize()
 		set_mode(piHandle, steering_EN, PI_OUTPUT);
 		gpio_write(piHandle, steering_EN, 1);
 
-		enableMotors(false);
+		enableMotors(true);
+		enableSteering(true);
 		relaxBrakes();
 	}
 }

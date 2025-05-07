@@ -26,19 +26,19 @@ int main()
 	
 
 	// Initialize vehicle system's IO devices
-	if (vehicle.initIO()) {
+	if (!vehicle.initIO()) {
 		std::cout << "Failed to initialize one or more IO devices. Exiting program." << std::endl;
 		return -1;
 	}
 
 	// Initialize autopilot's IO devices
-	if (autopilot.initIO()) {
+	if (!autopilot.initIO()) {
 		std::cout << "Failed to initialize one or more IO devices. Exiting program." << std::endl;
 		return -1;
 	}
 
 	// Begin connection with TCP client
-	if (server.begin()) {
+	if (!server.begin()) {
 		std::cout << "Failed to establish connection with a client. Exiting program." << std::endl;
 		return -1;
 	}

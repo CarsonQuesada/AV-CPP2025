@@ -39,10 +39,22 @@ void VehicleSys::handleDriveInput(DriveVCommand command)
     int currPos = adc.getSteeringFeedback();
     printf("Actual steering position: %d\n", currPos);
 
-    adc.getSteeringFeedback();
     drive.accelerate(command.speed, command.gear);
     drive.brake(command.brake);
     drive.steer(command.steer, currPos);
+    std::cout << "Set speed to: " << static_cast<int>(command.speed) << std::endl;
+    std::cout << "Set gear to: " << static_cast<int>(command.gear) << std::endl;
+    std::cout << "Set steer to: " << static_cast<int>(command.steer) << std::endl;
+
+    if (drive.isMotorsEnabled())
+        std::cout << "Motors Enabled" << std::endl;
+    else
+        std::cout << "Motors NOT Enabled" << std::endl;
+
+    if (drive.isBraking())
+        std::cout << "Braking" << std::endl;
+    else
+        std::cout << "NOT Braking" << std::endl;
 
     if (command.brake > brakeLightThresh)
         lighting.setBrakeLights(true);

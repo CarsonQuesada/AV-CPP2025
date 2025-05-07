@@ -4,8 +4,8 @@ bool ADC::initialize()
 {
     if(!initialized) {
         piHandle = Pigpio::getInstance().getHandle();
-        adcHandle = i2c_open(piHandle, 1, adcAddr, 0);
-
+        adcHandle = spi_open(piHandle, 0, adcAddr, 0);
+        
         if (adcHandle < 0) {
             printf("[!] Failed to init ADC!\n");
         } else {
@@ -13,8 +13,9 @@ bool ADC::initialize()
             initialized = true;
         }
     } else {
-        printf("GPS already initialized\n");
+        printf("ADC already initialized\n");
     }
+
     return initialized;
 }
 

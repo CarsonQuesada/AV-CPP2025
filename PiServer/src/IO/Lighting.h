@@ -10,7 +10,7 @@ constexpr int lightingAddr   = 6;                  // I2C address for lighting s
 
 // This enum is also used in lighting subsystem
 // Any change to this one should be made to the other and vice versa
-enum class LightingCommand
+enum class LightingCommand : uint8_t
 {
   Unkown = 0, 
   HeadlightsOn,   HeadlightsOff, 

@@ -42,6 +42,8 @@ public:
 
     inline GearID getGear() const { return activeGear.load(); }
     inline bool isBraking() const { return braking.load(); }
+    inline bool isMotorsEnabled() const { return motorsEnabled.load(); }
+    inline bool isSteerEnabled() const { return steerEnabled.load(); }
 
     void initialize();
     void cleanup();
@@ -52,6 +54,8 @@ private:
     bool initialized = false;
     int piHandle;
 
-    std::atomic<GearID> activeGear;
-    std::atomic<bool> braking;
+    std::atomic<GearID> activeGear{GearID::Coast};
+    std::atomic<bool> braking{false};
+    std::atomic<bool> motorsEnabled{false};
+    std::atomic<bool> steerEnabled{false};
 };
