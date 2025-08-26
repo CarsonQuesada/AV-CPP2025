@@ -4,11 +4,18 @@
 #include <atomic>
 #include <thread>
 
-#include "IO/GPS.h"
+#include "IO/Telemetry.h"
 #include "IO/LidarSP.h"
-#include "Shared/AutopilotFeedback.h"
-#include "Shared/AutopilotCommand.h"
+#include "Shared/Message.h"
 #include "ThreadSafeQueue.h"
+
+// Notes:
+// Currently does not receive telemetry info from pi server
+
+struct GPSPoint
+{
+    float lon, lat, heading;
+};
 
 constexpr int minStopDist = 50;
 constexpr float accelPropConst = 1.0 / 4.5;
@@ -24,11 +31,11 @@ public:
     void runTransmit(); // Unimplemented
 
     void begin();
-    inline std::optional<AutopilotFeedback> tryRecvCmd() { return feedbackQueue.tryPop(); }
-    inline AutopilotFeedback waitRecvCmd() { return feedbackQueue.waitAndPop(); }
-    void forwardCommand(AutopilotVCommand cmd);
+    inline std::optional<Message> tryRecvMsg() { return receiveQueue.tryPop(); }
+    inline Message waitRecvMsg() { return receiveQueue.waitAndPop(); }
+    inline void sendMsg(Message msg) { sendQueue.push(msg); }
     void signalStop();
-    void end(); // TEMPORARY: Should be stop but 
+    void end(); // TEMPORARY: Should be stop
 
     bool initIO();
     void shutdown();
@@ -36,15 +43,16 @@ public:
     Autopilot() {}
     ~Autopilot() {}
 private:
-    ThreadSafeQueue<AutopilotFeedback> feedbackQueue;
-    ThreadSafeQueue<AutopilotCommand> commandQueue;
+    GPSPoint currPos;
+
+    ThreadSafeQueue<Message> receiveQueue;
+    ThreadSafeQueue<Message> sendQueue;
     std::queue<GPSPoint> destinations;
 
     std::atomic<bool> stopFlag{false};
     std::atomic<bool> run{false};
 
     // IO instances
-    GPS gps;
     LidarSP lidar;
 
     void start();

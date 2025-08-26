@@ -1,31 +1,66 @@
 #pragma once
 #include <atomic>
+#include <thread>
 
 #include "TCPClient.h"
-#include "Shared/VehicleCommand.h"
-#include "Shared/VehicleFeedback.h"
+#include "Shared/Message.h"
 #include "ThreadSafeQueue.h"
+
+enum class ClientConnectionState {
+    Disconnected,
+    Connecting,
+    Connected,
+    Reconnecting
+};
+
+enum class ConnectionType { None, Local, Remote };
 
 class VehicleClient
 {
 public:
-    VehicleClient() {}
-    ~VehicleClient() {}
+    VehicleClient();
+    ~VehicleClient();
 
-    bool begin();
-    inline std::optional<VehicleFeedback> tryRecvFb() { return feedbackQueue.tryPop(); }
-    inline VehicleFeedback waitRecvFb() { return feedbackQueue.waitAndPop(); }
-    inline void sendCmd(VehicleCommand fb) { commandQueue.push(fb); }
+    bool connectLocally();
+    bool connectRemotely();
+    bool reconnect(); // Only use if there was a previous connection
+    void disconnect();
+
+    inline ClientConnectionState getConnectionState() { return connectionState; }
+    inline void cancelConnectAttempt() {
+        if (connectionState == ClientConnectionState::Connecting || connectionState == ClientConnectionState::Reconnecting)
+        cancelConnect.store(true); 
+    }
+
+    inline std::optional<Message> tryRecvMsg() { return receiveQueue.tryPop(); }
+    inline Message waitRecvMsg() { return receiveQueue.waitAndPop(); }
+    inline void sendMsg(Message msg) { sendQueue.push(msg); }
+
+private:
+    void start();
     void stop();
-
-    // Threads to run in main
+    bool connect(const std::string& ipAddr);
+    void startWorkerThreads();
+    void stopWorkerThreads();
+    void runSupervisor();
     void runReceive();
     void runTransmit();
     void runRegularUpdate();
-private:
-    TCPClient client;
-    ThreadSafeQueue<VehicleCommand> commandQueue;
-	ThreadSafeQueue<VehicleFeedback> feedbackQueue;
 
-    std::atomic<bool> stopFlag;
+    TCPClient client;
+    ThreadSafeQueue<Message> sendQueue;
+	ThreadSafeQueue<Message> receiveQueue;
+    std::mutex threadStartMutex;
+    std::thread supervisorThread;
+    std::thread receiveThread;
+    std::thread transmitThread;
+    std::thread updateThread;
+
+    std::atomic<bool> reconnectRequested = false;
+    std::atomic<bool> stopFlag = true;
+    std::atomic<ClientConnectionState> connectionState = ClientConnectionState::Disconnected;
+    std::atomic<bool> cancelConnect = false;
+
+    std::atomic<ConnectionType> lastConnectionType = ConnectionType::None;
+    std::thread connectionThread;
 };

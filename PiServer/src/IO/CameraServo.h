@@ -1,9 +1,8 @@
 #pragma once
 #include <iostream>
+#include <pigpiod_if2.h>
 
-//#include <pigpiod_if2.h>
-
-#include "Shared/VehicleCommand.h"
+#include "Shared/Message.h"
 #include "Pigpio.h"
 
 constexpr int cameraServoPin = 18;                // Camera servo GPIO pin

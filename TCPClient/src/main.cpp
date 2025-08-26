@@ -9,9 +9,13 @@
 #include <iostream>
 #include <iomanip>
 #include <thread>
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
+#include "VehicleState.h"
+#include "VehicleController.h"
 #include "Communication/VehicleClient.h"
-#include "VehicleControl.h"
+#include "UI/UI.h"
 
 /*
 Arrow left = left
@@ -33,65 +37,99 @@ V = toggle autopilot
 
 const int accelVal = 100;
 
+// Error callback for GLFW
+void glfw_error_callback(int error, const char* description) {
+    std::cerr << "GLFW Error " << error << ": " << description << std::endl;
+}
+
 int main() {
-	VehicleClient client;
-	VehicleControl controller;
+	// Set GLFW error callback
+    glfwSetErrorCallback(glfw_error_callback);
 
-	std::optional<VehicleFeedback> feedback;
-	std::optional<VehicleCommand> command;
+	// Initialize GLFW
+    if (!glfwInit()) {
+        return -1;
+    }
 
-	if (!client.begin()) {
-		std::cout << "[!!] FAILED TCP SETUP\n";
-		return -1;
-	}
+	// Setup OpenGL context version
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	std::thread recvThread(&VehicleClient::runReceive, &client);
-	std::thread sendThread(&VehicleClient::runTransmit, &client);
+	// Create GLFW window
+    GLFWwindow* window = glfwCreateWindow(1280, 720, "ImGui + OpenGL + GLFW", nullptr, nullptr);
+    if (!window) {
+        glfwTerminate();
+        return -1;
+    }
 
-	while (true) {
-		command = controller.genDriveCommand();
-		if (command)
-			client.sendCmd(*command);
-			
-		command = controller.genCameraCommand();
-		if (command)
-			client.sendCmd(*command);
+	glfwMakeContextCurrent(window);
+    glfwSwapInterval(1); // Enable vsync
 
-		command = controller.genLightsCommand();
-		if (command)
-			client.sendCmd(*command);
+	// Load OpenGL functions using GLAD
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+        std::cerr << "Failed to initialize GLAD\n";
+        return -1;
+    }
 
-		command = controller.genAutopilotCommand();
-		if (command)
-			client.sendCmd(*command);
+	// Scope for lifetime control
+	{
+		VehicleClient client;
+		VehicleController controller(window);
+		UI ui(window, client, controller);
 
-		if (controller.isDown(setMaxSpeedKey)) {
-			command = controller.genStopCommand();
-			if (command)
-				client.sendCmd(*command);
-			command = controller.genMaxSpeedCommand();
-			if (command)
-				client.sendCmd(*command);
-		}
+		std::optional<Message> received;
 
-		while(feedback = client.tryRecvFb()) {
-			switch ((*feedback).feedbackID)
-			{
-				case VehicleFeedbackID::BatteryInfo:
-					break;
-				case VehicleFeedbackID::VehicleStatus:
-					
-					break;
-				case VehicleFeedbackID::Ping:
-					break;
-				case VehicleFeedbackID::Invalid:
-					break;
-				case VehicleFeedbackID::Disconnected:
-					// Wait until connected again
-					break;
+		// Main Loop
+		while (!glfwWindowShouldClose(window)) {
+			// Updates that should be done first
+			glfwPollEvents();
+			ui.onUpdate();
+
+			// User Input
+			controller.pollKeyboardInput();
+			std::vector<Message> msgs = controller.generateCommands(
+				client.getConnectionState() == ClientConnectionState::Connected, 
+				VehicleState::getInstance().autopilotActive
+			);
+
+			for (const auto& msg : msgs) {
+					client.sendMsg(msg);
+			}
+
+			// Render UI
+			int display_w, display_h;
+			glfwGetFramebufferSize(window, &display_w, &display_h);
+			glViewport(0, 0, display_w, display_h);
+			glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+			glClear(GL_COLOR_BUFFER_BIT);
+			ui.render();
+
+			glfwSwapBuffers(window);
+
+			// Handle Feedback
+			while(received = client.tryRecvMsg()) {
+				Message recievedMsg = *received;
+				switch (recievedMsg.messageID)
+				{
+					case MessageID::BatteryStatus:
+						break;
+					case MessageID::LightStatus:
+						break;
+					case MessageID::Ping:
+						break;
+					case MessageID::Invalid:
+						break;
+					case MessageID::Disconnected:
+						break;
+				}
 			}
 		}
-
-		Sleep(50);
 	}
+
+	std::cout << "Pause 1" << std::endl;
+	glfwDestroyWindow(window);
+    glfwTerminate();
+	std::cout << "Pause 2" << std::endl;
+	return 0;
 }

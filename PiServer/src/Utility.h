@@ -1,3 +1,5 @@
+#pragma once
+
 #include <algorithm>
 
 #define PI 3.1415923

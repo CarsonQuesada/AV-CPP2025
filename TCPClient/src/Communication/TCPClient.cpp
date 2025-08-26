@@ -5,8 +5,7 @@
 #include <mutex>
 #include <cassert>
 
-#include "Shared/TCP.h"
-#include "Shared/TCPCommunication.h"
+#include "Shared/TCPKeys.h"
 
 TCPClient::TCPClient()
 {
@@ -22,71 +21,86 @@ TCPClient::~TCPClient()
     WSACleanup();
 }
 
-bool TCPClient::tryConnect()
+bool TCPClient::tryConnect(const char* ipAddr, int port, std::atomic<bool>& cancelFlag, int timeoutMs)
 {
-    const int retryDelayMs = 1000;
-
-    while (!connected.load())
-    {
-        if (tryConnect(IP, PORT)) {
-            std::cout << "Connected locally to IP address: " << IP << std::endl;
-            connected.store(true);
-            return true;
-        }
-
-        connected.store(false);
-        std::this_thread::sleep_for(std::chrono::milliseconds(retryDelayMs));
-        std::cout << "Reconnecting\n";
-    }
-
-    return true;
-}
-
-bool TCPClient::tryConnect(const char *ipAddr, int port)
-{
-    int status;
-
-    // Start WinSock /////////////////////////////////////////////////////////////
-    // NOTE: This only applies to Windows, there is nothing like this for linux //
     WSADATA data;
-	WORD version = MAKEWORD(2, 2);
-	status = WSAStartup(version, &data);
-	if (status != 0)
-	{
-		printf("Can't Start WinSock %d", status);
-		return false;
-	}
-    //////////////////////////////////////////////////////////////////////////////
+    WORD version = MAKEWORD(2, 2);
+    // if (WSAStartup(version, &data) != 0) {
+    //     std::cerr << "Can't Start WinSock\n";
+    //     return false;
+    // }
 
-    // Create socket /////////////////////////////////////////////////////////////
     std::unique_lock<std::shared_mutex> lock(sockMut);
     sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if (sock < 0) {
         std::cerr << "Socket creation error\n";
         return false;
     }
-    //////////////////////////////////////////////////////////////////////////////
 
-    // Create Hint Structure for Socket //////////////////////////////////////////
+    // Set to non-blocking
+    u_long nonBlocking = 1;
+    ioctlsocket(sock, FIONBIO, &nonBlocking);
+
     sockaddr_in server;
-	server.sin_family = AF_INET;
-	server.sin_port = htons(port);
-	status = inet_pton(AF_INET, ipAddr, &server.sin_addr);
-    if (status <= 0) {
-        std::cout << "Invalid address: " << ipAddr << std::endl;
+    server.sin_family = AF_INET;
+    server.sin_port = htons(port);
+    if (inet_pton(AF_INET, ipAddr, &server.sin_addr) <= 0) {
+        std::cerr << "Invalid IP address\n";
+        closesocket(sock);
         return false;
     }
-    //////////////////////////////////////////////////////////////////////////////
 
-    // Connect to server /////////////////////////////////////////////////////////
-    status = connect(sock, (struct sockaddr *)&server, sizeof(server));
-    if (status < 0) {
-        std::cerr << "Connection failed\n";
+    int status = connect(sock, (sockaddr*)&server, sizeof(server));
+    if (status == 0) {
+        // Connected immediately
+        return true;
+    }
+
+    if (WSAGetLastError() != WSAEWOULDBLOCK) {
+        std::cerr << "Immediate connect() failed\n";
+        closesocket(sock);
         return false;
     }
-    //////////////////////////////////////////////////////////////////////////////
 
-    return true;
+    // Use select() to wait for socket to be writable (indicates success)
+    fd_set writeSet;
+    FD_ZERO(&writeSet);
+    FD_SET(sock, &writeSet);
+
+    timeval timeout;
+    timeout.tv_sec = timeoutMs / 1000;
+    timeout.tv_usec = (timeoutMs % 1000) * 1000;
+
+    const int interval = 100; // check every 100ms
+    int waited = 0;
+
+    while (waited < timeoutMs && !cancelFlag.load()) {
+        timeval checkTime = { 0, interval * 1000 };
+
+        fd_set checkWriteSet = writeSet;
+        int sel = select(0, nullptr, &checkWriteSet, nullptr, &checkTime);
+        if (sel > 0 && FD_ISSET(sock, &checkWriteSet)) {
+            // Check for socket errors
+            int optVal;
+            socklen_t optLen = sizeof(optVal);
+            getsockopt(sock, SOL_SOCKET, SO_ERROR, (char*)&optVal, &optLen);
+            if (optVal == 0) {
+                // Connected successfully
+                nonBlocking = 0;
+                ioctlsocket(sock, FIONBIO, &nonBlocking); // restore blocking
+                return true;
+            } else {
+                std::cerr << "Connection failed: socket error\n";
+                break;
+            }
+        }
+
+        waited += interval;
+    }
+
+    std::cerr << "Connection attempt timed out or cancelled\n";
+    closesocket(sock);
+    return false;
 }
 
 void TCPClient::disconnect()
@@ -99,52 +113,58 @@ void TCPClient::disconnect()
     }
 }
 
-void TCPClient::handleReconnect()
-{
-    std::cout << "Disconnect occurred. Trying to Reconnect..." << std::endl;
+// void TCPClient::handleReconnect()
+// {
+//     std::cout << "Disconnect occurred. Trying to Reconnect..." << std::endl;
 
-    if (!reconnecting.exchange(true)) {
-        // Handle reconnect in this thread
-        disconnect();
-        std::cout << "[TCPClient] Reconnecting..." << std::endl;
-        tryConnect();
-        std::cout << "[TCPClient] Reconnected successfully.\n";
-        reconnecting.store(false);
-    } else {
-        // Reconnect already being handled in another thread. Wait until connected
-        while (reconnecting.load())
-            std::this_thread::sleep_for(std::chrono::milliseconds(1));
-    }
-}
+//     if (!reconnecting.exchange(true)) {
+//         // Handle reconnect in this thread
+//         disconnect();
+//         std::cout << "[TCPClient] Reconnecting..." << std::endl;
+//         tryConnect();
+//         std::cout << "[TCPClient] Reconnected successfully.\n";
+//         reconnecting.store(false);
+//     } else {
+//         // Reconnect already being handled in another thread. Wait until connected
+//         while (reconnecting.load())
+//             std::this_thread::sleep_for(std::chrono::milliseconds(1));
+//     }
+// }
 
-int TCPClient::receiveAll(void *buffer, int maxByteRead)
-{
-    bool success;
-    tcpHeader messageSize;
+// int TCPClient::receiveAll(void *buffer)
+// {
+//     if (!connected)
+//         return -2; // signal no connection to server
 
-    success = receive(&messageSize, sizeof(tcpHeader));
-    if (!success) {
-        return -1;  // signal disconnect
-    }
+//     bool success;
+//     tcpHeader messageSize;
 
-    messageSize = ntohs(messageSize);
-    if (messageSize > maxByteRead) {
-        printf("Message exceeds maximum read specification. Max read: %i, Message size %i\n", maxByteRead, messageSize);
-        assert(false);
+//     success = receive(&messageSize, sizeof(tcpHeader));
+//     if (!success) {
+//         return -1;  // signal disconnect
+//     }
+
+//     messageSize = ntohs(messageSize);
+//     // if (messageSize > maxByteRead) {
+//     //     printf("Message exceeds maximum read specification. Max read: %i, Message size %i\n", maxByteRead, messageSize);
+//     //     assert(false);
         
-        char* removeBuff = new char[messageSize];
-        success = receive(removeBuff, messageSize, 1);   // clear TCP buffer of invalid message
-        delete[] removeBuff;
+//     //     char* removeBuff = new char[messageSize];
+//     //     success = receive(removeBuff, messageSize, 1);   // clear TCP buffer of invalid message
+//     //     delete[] removeBuff;
 
-        return success ? 0 : -1;
-    }
+//     //     return success ? 0 : -1;
+//     // }
 
-    success = receive(buffer, messageSize);
-    return success ? 1 : -1;
-}
+//     success = receive(buffer, messageSize);
+//     return success ? 1 : -1;
+// }
 
-bool TCPClient::receive(void* buffer, int length, int maxWait)
+int TCPClient::receiveAll(void* buffer, int length, int maxWait)
 {
+    if (!connected)
+        return -2; // signal no connection to server
+
     int bytesRead = 0;
     fd_set readfds;
     timeval timeout;
@@ -164,11 +184,11 @@ bool TCPClient::receive(void* buffer, int length, int maxWait)
 
             if (activity == SOCKET_ERROR) {
                 std::cout << "Error in select(): " << WSAGetLastError() << std::endl;
-                return false;
+                return -1;
             } else if (activity == 0) {
                 // Timeout reached, no data received
                 std::cout << "Timeout reached while waiting for data" << std::endl;
-                return false;
+                return -1;
             } else if (FD_ISSET(sock, &readfds)) {
                 // Begin receiving the message
                 int bytesRecovered = recv(sock, (char*)buffer + bytesRead, length - bytesRead, 0);
@@ -177,40 +197,46 @@ bool TCPClient::receive(void* buffer, int length, int maxWait)
                     bytesRead += bytesRecovered;
                 } else if (bytesRecovered == 0) {
                     std::cout << "Connection closed gracefully by user" << std::endl;
-                    return false; // Connection closed by user gracefully
+                    return -1; // Connection closed by user gracefully
                 } else if (bytesRecovered < 0) {
                     int err = WSAGetLastError();
                     if (err == WSAEWOULDBLOCK) {
                         std::cout << "Received no data\n" << std::endl;
                     } else {
                         std::cout << "TCP disconnected incorrectly\n" << std::endl;
-                        return false; // TCP disconnected incorrectly
+                        return -1; // TCP disconnected incorrectly
                     }
                 }
             }
         }
     } else {
-        return false; // Not connected
+        return -1; // Not connected
     }
 
-    return true;
+    return 0;
 }
 
-bool TCPClient::transmitAll(const void *data, int length)
-{
-    tcpHeader header = htons(length);
+// int TCPClient::transmitAll(const void *data, int length)
+// {
+//     if (!connected)
+//         return -2; // signal no connection to server
 
-    if (!transmit((const char*)&header, sizeof(tcpHeader)))
-        return false;
+//     // tcpHeader header = htons(length);
+
+//     // // if (!transmit((const char*)&header, sizeof(tcpHeader)))
+//     // //     return -1; // singal lost connection
     
-    if (!transmit((const char*)data, length))
-        return false;
+//     if (!transmit((const char*)data, length))
+//         return -1; // singal lost connection
 
-    return true;
-}
+//     return 0; // signal success
+// }
 
-bool TCPClient::transmit(const char *data, int length)
+int TCPClient::transmitAll(const void *data, int length)
 {
+    if (!connected)
+        return -2; // signal no connection to server
+
     int totalSent = 0;
     const int timeoutSeconds = 1;
 
@@ -229,30 +255,30 @@ bool TCPClient::transmit(const char *data, int length)
             int ready = select(0, nullptr, &writefds, nullptr, &timeout);
             if (ready < 0) {
                 std::cerr << "select() error: " << WSAGetLastError() << std::endl;
-                return false;
+                return -1;
             } else if (ready == 0) {
                 std::cerr << "sendAll() timeout while waiting to send.\n";
-                return false;
+                return -1;
             }
 
             // Write to socket
-            int bytesSent = send(sock, data + totalSent, length - totalSent, 0);
+            int bytesSent = send(sock, (const char*)data + totalSent, length - totalSent, 0);
             if (bytesSent < 0) {
                 int err = WSAGetLastError();
                 if (err == WSAEWOULDBLOCK) {
                     continue; // Try again
                 } else {
                     std::cerr << "send() error: " << err << "\n";
-                    return false;
+                    return -1;
                 }
             } else if (bytesSent == 0) {
                 std::cerr << "Connection closed by peer.\n";
-                return false;
+                return -1;
             }
 
             totalSent += bytesSent;
         }
     }
 
-    return true;
+    return 0;
 }

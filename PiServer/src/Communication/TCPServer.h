@@ -6,20 +6,17 @@
 #include <atomic>
 #include <thread>
 
-#include "../VehicleSys.h"
-
 class TCPServer
 {
 public:
-    bool waitForConnection();
-    void disconnect();
-    void handleReconnect();
-
-    int receiveAll(void* buffer, int maxByteRead);  // returns error code: 1 success, 0 maxByteRead exceeded, -1 disconnect
-    bool transmitAll(const void* data, int length);
-
     TCPServer() {}
     ~TCPServer();
+
+    bool waitForConnection(std::atomic<bool>& cancelConnectFlag, int port, const char* ipAddr = nullptr);
+    void disconnect();
+
+    bool receiveAll(void* buffer, int len, int maxWait = 5);  // returns error code: 1 success, 0 maxByteRead exceeded, -1 disconnect
+    bool transmitAll(const void* data, int length);
 private:
     int clientSock;
     std::atomic<bool> connected{false};
@@ -27,11 +24,5 @@ private:
     std::shared_mutex sockMut;
 
     // Helper function for connection to client
-    int createListeningSock(const char* ipAddr);
-
-    // Helper function for recieving from client
-    bool receive(void* buffer, int len, int maxWait = 5);
-
-    // Helper function for sending to client
-    bool transmit(const char* data, int length);
+    int createListeningSock(int port, const char* ipAddr = nullptr);
 };

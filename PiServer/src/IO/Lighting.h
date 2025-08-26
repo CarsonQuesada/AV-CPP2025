@@ -3,7 +3,8 @@
 #include <pigpiod_if2.h>
 #include <atomic>
 
-#include "Shared/TCPCommunication.h"
+#include "Shared/Message.h"
+#include "Communication/VehicleServer.h"
 #include "Pigpio.h"
 
 constexpr int lightingAddr   = 6;                  // I2C address for lighting subsystem
@@ -15,7 +16,8 @@ enum class LightingCommand : uint8_t
   Unkown = 0, 
   HeadlightsOn,   HeadlightsOff, 
   LeftSigOn,      LeftSigOff,
-  RightSigOn,     RightSigOff,    
+  RightSigOn,     RightSigOff,
+  HazardsOn,      HazardsOff,
   BrakeLightsOn,  BrakeLightsOff, 
   StopConnecting, Connected,      Reconnecting
 };
@@ -28,13 +30,14 @@ public:
     void setRightSig(bool en);
     void setLeftSig(bool en);
     void setHeadlights(bool en);
-    void setConnectLED(ConnectionStatus status);
+    void setConnectLED(ServerConnectionState state);
 
     inline bool isBrakeLightsOn() const { return brakeLightsEnabled.load(); }
     inline bool isReverseLightsOn() const { return reverseLightsEnabled.load(); }
     inline bool isRightSigOn() const { return rightSigEnabled.load(); }
     inline bool isLeftSigOn() const { return leftSigEnabled.load(); }
     inline bool isHeadlightsOn() const { return headlightsEnabled.load(); }
+    inline bool isHazardsOn() const { return hazardsEnabled.load(); }
 
     bool initialize();
     void cleanup();
@@ -50,7 +53,8 @@ private:
     std::atomic<bool> rightSigEnabled{false};
     std::atomic<bool> leftSigEnabled{false};
     std::atomic<bool> headlightsEnabled{false};
-    std::atomic<ConnectionStatus> connectLEDStatus{ConnectionStatus::Reconnecting};
+    std::atomic<bool> hazardsEnabled{false};
+    std::atomic<ServerConnectionState> connectLEDStatus{ServerConnectionState::Disconnected};
 
     int piHandle;
     int lightingAddress;

@@ -27,17 +27,18 @@ bool blinkLeftSignal = false;
 bool blinkRightSignal = false;
 bool activateHazards = false;
 bool connected = false;
-bool connecting = true;
-bool stoppedConnecting = false;
+bool connecting = false;
+bool stoppedConnecting = true;
 
 unsigned long lastBlinkTime = 0;
-unsigned long blinkInterval = 0;
+unsigned long blinkInterval = 750;  // in millisec
 bool connectLEDState = false; // Off
 bool hazardState = false; // Off
 bool leftState = false;
 bool rightState = false;
 
 void setup() {
+  Serial.begin(9600);
   Wire.begin(I2C_SLAVE_ADDRESS);
   Wire.onReceive(receiveEvent);
 
@@ -63,14 +64,14 @@ void loop() {
       digitalWrite(leftTurnSignalPin, hazardState);
       digitalWrite(rightTurnSignalPin, hazardState);
     } else {
-      if (blinkLeftSignal) {
+      if (blinkLeftSignal) { // blinkLeftSignal
         leftState = !leftState;
         digitalWrite(leftTurnSignalPin, leftState);
       } else {
         digitalWrite(leftTurnSignalPin, LOW);
       }
 
-      if (blinkRightSignal) {
+      if (blinkRightSignal) { // blinkRightSignal
         rightState = !rightState;
         digitalWrite(rightTurnSignalPin, rightState);
       } else {
@@ -97,6 +98,8 @@ void receiveEvent(int byteCount) {
       receivedAction = static_cast<LightingCommand>(receivedValue);
     }
 
+    Serial.print("Recieved: ");
+    Serial.println(receivedValue);
     // Process the received action
     switch (receivedAction) {
       case LightingCommand::HeadlightsOn:  // Turn on headlights
@@ -110,18 +113,22 @@ void receiveEvent(int byteCount) {
         break;
       case LightingCommand::LeftSigOff:  // Turn left turn signal on
         blinkLeftSignal = false;
+        digitalWrite(leftTurnSignalPin, LOW);
         break;
       case LightingCommand::RightSigOn:  // toggle right turn signal
         blinkRightSignal = true;
         break;
       case LightingCommand::RightSigOff:  // toggle right turn signal
         blinkRightSignal = false;
+        digitalWrite(rightTurnSignalPin, LOW);
         break;
       case LightingCommand::HazardsOn:  // Toggle hazard lights
         activateHazards = true;
         break;
       case LightingCommand::HazardsOff:  // Toggle hazard lights
         activateHazards = false;
+        digitalWrite(leftTurnSignalPin, LOW);
+        digitalWrite(rightTurnSignalPin, LOW);
         break;
       case LightingCommand::BrakeLightsOn:  // Apply brake lights
         digitalWrite(brakeLightsPin, HIGH);

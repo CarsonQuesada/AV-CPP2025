@@ -1,0 +1,84 @@
+#include "VehiclePanel.h"
+
+#include <stdio.h>
+
+#include "backends/imgui_impl_glfw.h"
+#include "backends/imgui_impl_opengl3.h"
+#include "imgui.h"
+#include "VehicleState.h"
+
+void VehiclePanel::onUpdate()
+{
+    static bool headlightWasDown = false;
+    static bool leftSigWasDown = false;
+    static bool rightSigWasDown = false;
+
+    ImGuiIO& io = ImGui::GetIO();
+    ImGui::Begin("Vehicle Control");
+
+    ImGui::Text("Vehicle State");
+    ImGui::Separator();
+
+    if (ImGui::BeginTable("LightsTable", 3, ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_NoBordersInBody | ImGuiTableFlags_NoHostExtendX | ImGuiTableFlags_SizingFixedSame))
+    {
+        // Set up fixed-width columns (you can tune widths as needed)
+        ImGui::TableSetupColumn(nullptr, ImGuiTableColumnFlags_WidthFixed, 120); // Label
+        ImGui::TableSetupColumn(nullptr, ImGuiTableColumnFlags_WidthFixed, 50); // Status
+        ImGui::TableSetupColumn(nullptr, ImGuiTableColumnFlags_WidthFixed, 100); // Toggle
+
+        addLightRow("Headlights", "H", VehicleState::getInstance().headlightsOn);
+        addLightRow("Left Turn", "Q", VehicleState::getInstance().leftSigOn);
+        addLightRow("Right Turn", "E", VehicleState::getInstance().rightSigOn);
+        addLightRow("Brake Lights", "", VehicleState::getInstance().brakeLightsOn);
+
+        ImGui::EndTable();
+    }
+
+    ImGui::Separator();
+
+    ImGui::Text("Direction:");
+    const char* directionStr = 
+        VehicleState::getInstance().gear == GearID::Forward ? "Forward" :
+        VehicleState::getInstance().gear == GearID::Reverse ? "Backward" :
+        VehicleState::getInstance().braking ? "Braking" : "Neutral";
+    ImGui::TextColored(ImVec4(0.7f, 0.7f, 1.0f, 1.0f), "%s", directionStr);
+
+    ImGui::Separator();
+
+    ImGui::Text("Max Speed Control");
+
+    // Set fixed width for the slider
+    ImGui::PushItemWidth(200); // Width in pixels (adjust as needed)
+    ImGui::SliderInt("Speed (%)", &maxSpeed, 0, 100);
+    ImGui::PopItemWidth();
+
+    ImGui::SameLine();
+
+    // Set fixed width for the input box
+    ImGui::PushItemWidth(85);  // Enough for 3 digits
+    if (ImGui::InputInt("##SpeedInput", &maxSpeed)) {
+        if (maxSpeed < 0) maxSpeed = 0;
+        if (maxSpeed > 100) maxSpeed = 100;
+        uiContext.controller->updateUISliderInt(SliderID::MaxSpeed, maxSpeed);
+    }
+    ImGui::PopItemWidth();
+
+    ImGui::End();
+}
+
+void VehiclePanel::addLightRow(const char *label, const char *keyHint, bool state)
+{
+    ImGui::TableNextRow();
+
+    // Column 0: Label + key hint if provided
+    ImGui::TableSetColumnIndex(0);
+    if (keyHint && keyHint[0] != '\0')
+        ImGui::Text("%s [%s]", label, keyHint);
+    else
+        ImGui::Text("%s", label);
+
+    // Column 1: Colored ON/OFF
+    ImGui::TableSetColumnIndex(1);
+    ImVec4 color = state ? ImVec4(0, 1, 0, 1) : ImVec4(1, 0, 0, 1);
+    ImGui::TextColored(color, state ? "ON" : "OFF");
+}

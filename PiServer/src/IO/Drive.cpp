@@ -64,13 +64,11 @@ void Drive::accelerate(int accelValue, GearID gear)
 	// --- Calculate Acceleration ---
 	// map acceleration to acceptable PWM value
 	accelValue = map(accelValue, 0, 100, 0, 255);
-	std::cout << "Made it" << std::endl;
 
 	// --- Handle Drive Motor States ---
 	switch (gear)
 	{
 		case GearID::Coast:	// Acceleration is inactive (coasting mode)
-			std::cout << "Coast set" << std::endl;
 			activeGear.store(GearID::Coast);
 			gpio_write(piHandle, drive_FEN, 0); 					// Disable forward
 			gpio_write(piHandle, drive_REN, 0); 					// Disable reverse
@@ -78,7 +76,6 @@ void Drive::accelerate(int accelValue, GearID gear)
 			set_PWM_dutycycle(piHandle, drive_RPWM, 0);				// Set reverse PWM to 0
 			break;
 		case GearID::Forward:	// Forward gear
-			std::cout << "Forward set" << std::endl;
 			activeGear.store(GearID::Forward);
 			gpio_write(piHandle, drive_FEN, 1); 					// Enable forward
 			gpio_write(piHandle, drive_REN, 1); 					// Disable reverse
@@ -86,7 +83,6 @@ void Drive::accelerate(int accelValue, GearID gear)
 			set_PWM_dutycycle(piHandle, drive_RPWM, 0);				// Set reverse PWM to 0
 			break;
 		case GearID::Reverse:	// Reverse gear
-			std::cout << "Reverse set" << std::endl;
 			activeGear.store(GearID::Reverse);
 			gpio_write(piHandle, drive_FEN, 1); 					// Enable forward
 			gpio_write(piHandle, drive_REN, 1); 					// Disable reverse
@@ -117,19 +113,16 @@ void Drive::steer(int targetPos, int currPos)
 	// Check if the current position is within the acceptable deadband around the target
 	if ((currPos <= targetPos + deadband) && (currPos >= targetPos - deadband)) {
 		// Centered position: No adjustments required
-		printf("Steering: CENTERED\n");
 		set_PWM_dutycycle(piHandle, steering_RPWM, 0); 
 		set_PWM_dutycycle(piHandle, steering_LPWM, 0);
     }
 	// Check if the current position is to the right of the target (needs left turn)
 	else if (currPos > targetPos + deadband) {
-		printf("Steering: TURNING RIGHT\n");
 		set_PWM_dutycycle(piHandle, steering_RPWM, steeringDutyCycle);	// Engage right-turn motor
 		set_PWM_dutycycle(piHandle, steering_LPWM, 0); 			// Disable left-turn motor
 	}
 	// Check if the current position is to the left of the target (needs right turn)
 	else if (currPos < targetPos - deadband) {
-		printf("Steering: TURNING LEFT\n");
 		set_PWM_dutycycle(piHandle, steering_RPWM, 0);			// Disable right-turn motor
 		set_PWM_dutycycle(piHandle, steering_LPWM, steeringDutyCycle);	// Engage left-turn motor
 	}

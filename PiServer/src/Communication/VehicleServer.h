@@ -3,30 +3,48 @@
 #include <thread>
 
 #include "TCPServer.h"
-#include "Shared/VehicleCommand.h"
-#include "Shared/VehicleFeedback.h"
+#include "Shared/Message.h"
 #include "ThreadSafeQueue.h"
+
+enum class ServerConnectionState {
+    Disconnected,
+    Listening,
+    Connected
+};
 
 class VehicleServer
 {
 public:
-    VehicleServer() {}
-    ~VehicleServer() {}
+    VehicleServer();
+    ~VehicleServer();
 
-    bool begin();
-    inline std::optional<VehicleCommand> tryRecvCmd() { return commandQueue.tryPop(); }
-    inline VehicleCommand waitRecvCmd() { return commandQueue.waitAndPop(); }
-    inline void sendFb(VehicleFeedback fb) { feedbackQueue.push(fb); }
-    void stop();
+    bool start();
+    bool start(std::atomic_bool& cancelConnectFlag);
+    void disconnect();
 
-    // Threads to run in main
+    inline std::optional<Message> tryRecvMsg() { return receiveQueue.tryPop(); }
+    inline Message waitRecvMsg() { return receiveQueue.waitAndPop(); }
+    inline void sendMsg(Message msg) { sendQueue.push(msg); }
+    inline ServerConnectionState getConnectionState() { return connectionState.load(); }
+
+private:
     void runReceive();
     void runTransmit();
     void runRegularUpdate();
-private:
-    TCPServer server;
-    ThreadSafeQueue<VehicleCommand> commandQueue;
-	ThreadSafeQueue<VehicleFeedback> feedbackQueue;
+    void runSupervisor();
+    void startWorkerThreads();
+    void stopWorkerThreads();
+    bool performHandshake();
+    void signalDisconnect();
 
-    std::atomic<bool> stopFlag{false};
+    std::thread receiveThread, transmitThread, updateThread, supervisorThread;
+
+    std::atomic<bool> stopFlag{true};
+    std::atomic<bool> shutdownFlag{false};
+    std::atomic<bool> reconnectRequested{false};
+    std::atomic<ServerConnectionState> connectionState{ServerConnectionState::Disconnected};
+
+    TCPServer server;
+    ThreadSafeQueue<Message> receiveQueue;
+	ThreadSafeQueue<Message> sendQueue;
 };

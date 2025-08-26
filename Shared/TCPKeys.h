@@ -1,0 +1,3 @@
+#define PORT 5000
+#define LOCAL_PI_IP "192.168.8.132"
+#define TAILSCALE_PI_IP "100.79.231.121"

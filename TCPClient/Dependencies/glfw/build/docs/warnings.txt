@@ -1,0 +1,6 @@
+C:/ECE/Senior_Project/UI/Dependencies/glfw/include/GLFW/glfw3.h:925: warning: unable to resolve reference to 'GLFW_TITLEBAR_hint' for \ref command
+C:/ECE/Senior_Project/UI/Dependencies/glfw/include/GLFW/glfw3.h:926: warning: unable to resolve reference to 'GLFW_TITLEBAR_attrib' for \ref command
+C:/ECE/Senior_Project/UI/Dependencies/glfw/include/GLFW/glfw3.h:1557: warning: argument 'window' of command @param is not found in the argument list of GLFWtitlebarhittestfun(GLFWwindow *, int, int, int *)
+C:/ECE/Senior_Project/UI/Dependencies/glfw/include/GLFW/glfw3.h:1557: warning: argument 'xpos' of command @param is not found in the argument list of GLFWtitlebarhittestfun(GLFWwindow *, int, int, int *)
+C:/ECE/Senior_Project/UI/Dependencies/glfw/include/GLFW/glfw3.h:1557: warning: argument 'ypos' of command @param is not found in the argument list of GLFWtitlebarhittestfun(GLFWwindow *, int, int, int *)
+C:/ECE/Senior_Project/UI/Dependencies/glfw/include/GLFW/glfw3.h:1557: warning: argument 'hit' of command @param is not found in the argument list of GLFWtitlebarhittestfun(GLFWwindow *, int, int, int *)

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Shared/VehicleCommand.h"
+#include "Shared/Message.h"
 
 class VehicleState
 {

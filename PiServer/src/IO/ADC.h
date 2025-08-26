@@ -13,7 +13,6 @@ public:
     {
         // Sample ADC data for steering feedback
         spi_xfer(piHandle, adcHandle, spi_tx, spi_rx, 3);
-        printf("SPI RX: [%02X %02X %02X]\n", spi_rx[0], spi_rx[1], spi_rx[2]);
         int value = ((spi_rx[1] & 0x03) << 8) | spi_rx[2];
 
         return value;

@@ -9,13 +9,16 @@
                 "-std=c++17",
                 "-DDEBUG",
                 "-I${workspaceFolder}",
-                "-I${workspaceFolder}/PiServer/src",  
-                "-g", 
+                "-I${workspaceFolder}/PiServer/src",
+                "-g",
                 "-Wall",
+                "-fsanitize=address",         // AddressSanitizer
+                "-fno-omit-frame-pointer",    // needed for better stack traces
                 "${workspaceFolder}/PiServer/src/*.cpp",
                 "${workspaceFolder}/PiServer/src/**/*.cpp",
                 "-o",
                 "${workspaceFolder}/PiServer/build/debug/PiServer",
+                "-static-libasan", 
                 "-L/usr/lib",
                 "-lpigpiod_if2"
             ],
@@ -45,31 +48,80 @@
             "detail": "Build the entire project with optimizations"
         },
         {
-            "label": "Build TCP Client Debug",
+            "label": "Build TCPClient",
             "type": "shell",
             "command": "g++",
             "args": [
-                "-DDEBUG",
                 "-std=c++17",
+                "-DDEBUG",
+                "-DIMGUI_IMPL_OPENGL_LOADER_CUSTOM",
+                "-DGLFW_STATIC",
+                "-DCURL_STATICLIB",
+                "-DDEBUG",
+                "-Wno-missing-field-initializers",
+
                 "${workspaceFolder}/TCPClient/src/*.cpp",
                 "${workspaceFolder}/TCPClient/src/Communication/*.cpp",
-                "-I${workspaceFolder}",
-                "-I${workspaceFolder}/TCPClient/src",              
-                "-o", 
-                "${workspaceFolder}/TCPClient/build/debug/TCPClient.exe",
-                "-static",               // Fully static linking
-                "-static-libgcc",        // Static link libgcc
-                "-static-libstdc++",     // Static link libstdc++
-                "-lWs2_32",   // Link the Winsock library
-                "-ldinput8",  // Link the DirectInput library
-                "-ldxguid"    // Link the DirectX GUID library
+                "${workspaceFolder}/TCPClient/src/UI/*.cpp",
+                "${workspaceFolder}/TCPClient/src/UI/Panels/*.cpp",
+                "${workspaceFolder}/TCPClient/Dependencies/glad/src/glad.c",
+                "${workspaceFolder}/TCPClient/Dependencies/imgui/imgui.cpp",
+                "${workspaceFolder}/TCPClient/Dependencies/imgui/imgui_draw.cpp",
+                "${workspaceFolder}/TCPClient/Dependencies/imgui/imgui_tables.cpp",
+                "${workspaceFolder}/TCPClient/Dependencies/imgui/imgui_widgets.cpp",
+                "${workspaceFolder}/TCPClient/Dependencies/imgui/backends/imgui_impl_glfw.cpp",
+                "${workspaceFolder}/TCPClient/Dependencies/imgui/backends/imgui_impl_opengl3.cpp",
+                "${workspaceFolder}/TCPClient/Dependencies/stb_image/stb_image.cpp",
+
+                "-I${workspaceFolder}", 
+                "-I${workspaceFolder}/TCPClient/src", 
+                "-I${workspaceFolder}/TCPClient/Dependencies/imgui",    
+                "-I${workspaceFolder}/TCPClient/Dependencies/imgui/backends",  
+                "-I${workspaceFolder}/TCPClient/Dependencies/glfw/include",
+                "-I${workspaceFolder}/TCPClient/Dependencies/glad/include",
+                "-I${workspaceFolder}/TCPClient/Dependencies/stb_image",
+                "-I${workspaceFolder}/TCPClient/Dependencies/curl/include",
+
+                "-L${workspaceFolder}/TCPClient/Dependencies/glfw/lib-mingw",
+                "-L${workspaceFolder}/TCPClient/Dependencies/curl/lib",
+                "-lcurl",
+                "-lws2_32",
+                "-lcrypt32",
+                "-lbcrypt",
+                
+                "-lglfw3",
+                "-lopengl32",
+                "-lgdi32",
+
+                "-o",
+                "${workspaceFolder}/TCPClient/build/TCPClient.exe",
+                "-static",
+                "-static-libgcc",
+                "-static-libstdc++",
+                "-lWs2_32",
+                "-ldinput8",
+                "-ldxguid"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "problemMatcher": ["$gcc"],
-            "detail": "Generated task to build TCP Client"
+            "detail": "Builds the ImGui UI with OpenGL and GLFW",
+            "dependsOn": ["copy-assets"]
+        },
+        {
+            "label": "copy-assets",
+            "type": "shell",
+            "command": "xcopy",
+            "args": [
+                "TCPClient\\assets",
+                "TCPClient\\build\\assets",
+                "/E", 
+                "/I", 
+                "/Y"
+            ],
+            "problemMatcher": []
         }
     ]
 }

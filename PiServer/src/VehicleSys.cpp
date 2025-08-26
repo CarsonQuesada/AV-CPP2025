@@ -16,7 +16,7 @@ void VehicleSys::disableVehicle()
 
     // Disable motors and engage brakes for safety
 	drive.enableMotors(false);
-	drive.brake();
+	brake();
 }
 
 void VehicleSys::enableVehicle()
@@ -25,7 +25,7 @@ void VehicleSys::enableVehicle()
 
     // Disable motors and engage brakes for safety
 	drive.enableMotors(true);
-	drive.relaxBrakes();
+	relaxBrakes();
 }
 
 void VehicleSys::handleDisconnect()
@@ -34,56 +34,22 @@ void VehicleSys::handleDisconnect()
     disableVehicle();
 }
 
-void VehicleSys::handleDriveInput(DriveVCommand command)
+void VehicleSys::handleDriveInput(DriveCommand command)
 {
     int currPos = adc.getSteeringFeedback();
-    printf("Actual steering position: %d\n", currPos);
 
     drive.accelerate(command.speed, command.gear);
-    drive.brake(command.brake);
     drive.steer(command.steer, currPos);
-    std::cout << "Set speed to: " << static_cast<int>(command.speed) << std::endl;
-    std::cout << "Set gear to: " << static_cast<int>(command.gear) << std::endl;
-    std::cout << "Set steer to: " << static_cast<int>(command.steer) << std::endl;
-
-    if (drive.isMotorsEnabled())
-        std::cout << "Motors Enabled" << std::endl;
-    else
-        std::cout << "Motors NOT Enabled" << std::endl;
-
-    if (drive.isBraking())
-        std::cout << "Braking" << std::endl;
-    else
-        std::cout << "NOT Braking" << std::endl;
-
-    if (command.brake > brakeLightThresh)
-        lighting.setBrakeLights(true);
-    else
-        lighting.setBrakeLights(false);
+    brake(command.brake);
 }
 
-void VehicleSys::handleDriveInput(DriveAFeedback command)
+void VehicleSys::setMaxSpeed(SetMaxSpeedCommand command)
 {
-    int currPos = adc.getSteeringFeedback();
-    printf("Actual steering position: %d\n", currPos);
-
-    adc.getSteeringFeedback();
-    drive.accelerate(command.drive.speed, command.drive.gear);
-    drive.brake(command.drive.brake);
-    drive.steer(command.drive.steer, currPos);
-
-    if (command.drive.brake > brakeLightThresh)
-        lighting.setBrakeLights(true);
-    else
-        lighting.setBrakeLights(false);
-}
-
-void VehicleSys::setMaxSpeed(SetMaxSpeedVCommand command)
-{
+    std::scoped_lock lock(dataMutex);
     accelScalar = (float)command.maxSpeed / 100.0;
 }
 
-void VehicleSys::handleCameraInput(CameraVCommand command)
+void VehicleSys::handleCameraInput(CameraCommand command)
 {
     switch (command.cameraMove)
     {
@@ -101,8 +67,9 @@ void VehicleSys::handleCameraInput(CameraVCommand command)
     }
 }
 
-void VehicleSys::handleLightsInput(LightsVCommand command)
+void VehicleSys::handleLightsInput(LightsCommand command)
 {
+    std::scoped_lock lock(lightsMutex);
     switch (command.lightID)
     {
         case LightID::Headlights:
@@ -120,12 +87,62 @@ void VehicleSys::handleLightsInput(LightsVCommand command)
         case LightID::NoInput:
             break;  // Should never happen
     }
+    lightsStatusDirty.store(true);
 }
 
-void VehicleSys::setConnectionStatus(ConnectionStatus status)
+void VehicleSys::setConnectStatusLED(ServerConnectionState state)
 {
-    connectionStatus.store(status);
-    lighting.setConnectLED(status);
+    std::scoped_lock lock(lightsMutex);
+    lighting.setConnectLED(state);
+}
+
+LightsStatus VehicleSys::getLightsStatus()
+{
+    std::scoped_lock lock(lightsMutex);
+    return {
+        lighting.isBrakeLightsOn(),
+        lighting.isReverseLightsOn(),
+        lighting.isRightSigOn(),
+        lighting.isLeftSigOn(),
+        lighting.isHeadlightsOn(),
+        lighting.isHazardsOn()
+    };
+}
+
+GeneralStatus VehicleSys::getGeneralStatus()
+{
+    std::scoped_lock lock(dataMutex);
+    uint32_t speedRaw;
+    memcpy(&speedRaw, &telemetryData.speed, sizeof(float));
+    uint32_t batteryRaw;
+    memcpy(&batteryRaw, &batteryPercent, sizeof(float));
+    return {
+        speedRaw,
+        batteryRaw,
+        telemetryData.gpsOnline
+    };
+}
+
+DriveStatus VehicleSys::getDriveStatus()
+{
+    return {
+        drive.getGear(),
+        drive.isBraking()
+    };
+}
+
+void VehicleSys::statusUpdate()
+{
+    std::scoped_lock lock(dataMutex);
+    telemetryData = telemetry.getData();
+    std::cout << "Telemetry Data:" << std::endl;
+    std::cout << "GPS status: " << telemetryData.gpsOnline << std::endl;
+    std::cout << "Latidude:   " << telemetryData.lat << std::endl;
+    std::cout << "Longitude:  " << telemetryData.lon << std::endl;
+    std::cout << "Heading:    " << telemetryData.heading << std::endl;
+    std::cout << "Speed:      " << telemetryData.speed << std::endl;
+    std::cout << "Distance:   " << telemetryData.distanceDelta << std::endl;
+    // In the future: battery percent, 
 }
 
 bool VehicleSys::initIO()
@@ -134,15 +151,19 @@ bool VehicleSys::initIO()
 	
 	// Initialize pigpio daemon. MUST BE DONE FIRST
 	if (!Pigpio::getInstance().initialize())
-                status = false;
+        status = false;
 
 	// Initialize I²C for the lighting subsystem
 	if (!lighting.initialize())
-                status = false;
+        status = false;
 
 	// Initialize SPI for the ADC (Analog-to-Digital Converter)
 	if (!adc.initialize())
-                status = false;
+        status = false;
+
+    // Initialize I²C for the telemetry subsystem
+	if (!telemetry.initialize())
+        status = false;   
 
 	// Notify the user if any subsystem initialization failed
 	if (status == false) {
@@ -164,7 +185,46 @@ void VehicleSys::shutdown()
     drive.cleanup();
     adc.cleanup();
     lighting.cleanup();
+    telemetry.cleanup();
     Pigpio::getInstance().cleanup();    // MUST BE DONE LAST
+}
+
+void VehicleSys::relaxBrakes()
+{
+    std::scoped_lock lightsLock(lightsMutex);
+    drive.relaxBrakes();
+    lighting.setBrakeLights(false);
+}
+
+void VehicleSys::brake()
+{
+    std::scoped_lock lightsLock(lightsMutex);
+    // Applies full brakes
+    drive.brake();
+    if (!lighting.isBrakeLightsOn()){
+        // If brake lights are not on
+        lighting.setBrakeLights(true);
+        lightsStatusDirty.store(true);
+    }
+}
+
+void VehicleSys::brake(int brakeVal)
+{
+    std::scoped_lock lightsLock(lightsMutex);
+    drive.brake(brakeVal);
+    if (brakeVal > brakeLightThresh) {
+        if (!lighting.isBrakeLightsOn()) {
+            // If brake lights are not on
+            lighting.setBrakeLights(true);
+            lightsStatusDirty.store(true);
+        }
+    } else {
+        if (lighting.isBrakeLightsOn()) {
+            // If brake lights are on
+            lighting.setBrakeLights(false);
+            lightsStatusDirty.store(true);
+        }
+    }
 }
 
 VehicleSys::~VehicleSys()

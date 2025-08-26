@@ -2,8 +2,9 @@
 #include <iostream>
 #include <pigpiod_if2.h>
 #include <atomic>
+#include <mutex>
 
-#include "Shared/VehicleCommand.h"
+#include "Shared/Message.h"
 #include "Pigpio.h"
 
 // --- Drive Motor Pin Assignments ---

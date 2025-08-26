@@ -29,18 +29,23 @@
             "intelliSenseMode": "linux-gcc-arm"
         },
         {
-            "name": "Win32-Debug",
+            "name": "TCPClient",
             "intelliSenseMode": "windows-gcc-x64",
             "compilerPath": "C:/mingw64/bin/gcc.exe",
             "includePath": [
                 "${workspaceFolder}",
-                "${workspaceFolder}/TCPClient",
-                "C:/mingw64/include",
-                "C:/mingw64/x86_64-w64-mingw32/include",
-                "C:/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include"
+                "${workspaceFolder}/TCPClient/src",
+                "${workspaceFolder}/TCPClient/Dependencies/imgui",
+                "${workspaceFolder}/TCPClient/Dependencies/imgui/backends",
+                "${workspaceFolder}/TCPClient/Dependencies/glfw/include",
+                "${workspaceFolder}/TCPClient/Dependencies/glad/include",
+                "${workspaceFolder}/TCPClient/Dependencies/stb_image",
+                "${workspaceFolder}/TCPClient/Dependencies/curl/include"
             ],
             "defines": [
-                "DEBUG"
+                "DEBUG",
+                "UNICODE",
+                "IMGUI_IMPL_OPENGL_LOADER_CUSTOM"
             ],
             "cppStandard": "c++20",
             "cStandard": "c17"

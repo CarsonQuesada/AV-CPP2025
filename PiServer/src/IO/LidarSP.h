@@ -1,6 +1,6 @@
 #pragma once
-#include <iostream>
 
+#include <iostream>
 #include <pigpiod_if2.h>
 
 #include "Pigpio.h"

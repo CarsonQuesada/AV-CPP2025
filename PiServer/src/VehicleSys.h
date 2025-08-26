@@ -1,14 +1,13 @@
 #pragma once
 #include <atomic>
 
-#include "Shared/VehicleCommand.h"
-#include "Shared/AutopilotFeedback.h"
-#include "Shared/TCPCommunication.h"
+#include "Shared/Message.h"
 
 #include "IO/ADC.h"
 #include "IO/Drive.h"
 #include "IO/Lighting.h"
 #include "IO/CameraServo.h"
+#include "IO/Telemetry.h"
 
 constexpr int brakeLightThresh = 10;
 
@@ -24,39 +23,49 @@ public:
     void disableVehicle();
     void enableVehicle();
     void handleDisconnect();
-    void handleDriveInput(DriveVCommand command);
-    void handleDriveInput(DriveAFeedback command);
-    void handleCameraInput(CameraVCommand command);
-    void setMaxSpeed(SetMaxSpeedVCommand command);
-    void handleLightsInput(LightsVCommand command);
-    void setConnectionStatus(ConnectionStatus status);
-    inline void setAutopilotActive(bool acitve) { autopilotAcitve.store(acitve); }
+    void handleDriveInput(DriveCommand command);
+    void handleCameraInput(CameraCommand command);
+    void setMaxSpeed(SetMaxSpeedCommand command);
+    void handleLightsInput(LightsCommand command);
+    void setConnectStatusLED(ServerConnectionState state);
+    inline void setAutopilotActive(bool acitve) { autopilotActive.store(acitve); }
 
     // Vehicle state information
-    inline GearID getGear() { return drive.getGear(); }
-    inline bool isAutopilotActive() const { return autopilotAcitve.load(); }
-    inline bool isBrakeLightsOn() { return lighting.isBrakeLightsOn(); }
-    inline bool isReverseLightsOn() { return lighting.isReverseLightsOn(); }
-    inline bool isRightSigOn() { return lighting.isRightSigOn(); }
-    inline bool isLeftSigOn() { return lighting.isLeftSigOn(); }
-    inline bool isHeadlightsOn() { return lighting.isHeadlightsOn(); }
-    inline bool isBraking() { return drive.isBraking(); }
+    inline bool isAutopilotActive() const { return autopilotActive.load(); }
+    LightsStatus getLightsStatus();
+    GeneralStatus getGeneralStatus();
+    DriveStatus getDriveStatus();
+    inline TelemetryData getTelemetryData() { return telemetryData; }
+    inline AutopilotStatus getAutopilotStatus() { return autopilotStatus; }
+    inline bool consumeLightsStatusDirty() { return lightsStatusDirty.exchange(false); }
 
+    void statusUpdate();
     bool initIO();
     void shutdown();
 
 private:
+    std::chrono::_V2::steady_clock::time_point lastStatusTime;
+    mutable std::mutex dataMutex;
+    mutable std::mutex lightsMutex;
     float accelScalar = 0.0;
 
     // Vehicle State information
-    std::atomic<bool> autopilotAcitve;
-    std::atomic<ConnectionStatus> connectionStatus;
+    std::atomic<bool> autopilotActive = false;
+    std::atomic<bool> lightsStatusDirty = false; // Set true when a light's state changes (except connect status LED)
+    float batteryPercent = 0.0;
+    TelemetryData telemetryData;
+    AutopilotStatus autopilotStatus;
 
     // IO Devices
     Lighting lighting;
     ADC adc;
     Drive drive;
     CameraServo cameraServo;
+    Telemetry telemetry;
+
+    void relaxBrakes();
+    void brake();
+    void brake(int brakeVal);
 
     VehicleSys() {}                                   // private constructor to prevent more than one instance
     VehicleSys(const VehicleSys&) = delete;               // Prevent copy construction

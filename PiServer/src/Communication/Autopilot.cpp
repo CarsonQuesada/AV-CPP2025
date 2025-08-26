@@ -18,8 +18,8 @@ void Autopilot::runAutopilot()
 {
 	// recieve drive stuff from serial comm
 	// place in buffer
-	AutopilotFeedback feedback;
-	feedback.drive.drive.gear = GearID::Forward;	// TEMPORARY: Always forward gear
+	DriveCommand drive;
+	drive.gear = GearID::Forward;	// TEMPORARY: Always forward gear
 
 	while (!stopFlag.load())
 	{
@@ -29,12 +29,11 @@ void Autopilot::runAutopilot()
 				return;
 			}
 
-			GPSPoint currPos = gps.getLocation();
 			GPSPoint dest = destinations.front();
 			int lidarDist = lidar.runLidar();
 			int accelVal = 0;
 			int brakeVal = 0;
-			int steerVal = 0;
+			int steerVal = 50;
 
 			///////////////////////////////////////////////////////////////////////////////
 			// --- Destination Reached Check ---
@@ -55,15 +54,13 @@ void Autopilot::runAutopilot()
 			// The speed decreases non-linearly as the vehicle gets closer to the object
 			accelVal = int(accelPropConst * float(lidarDist - minStopDist));
 			accelVal = std::clamp(accelVal, 0, 100);
-			feedback.drive.drive.speed = accelVal;
-			//drive.accelerate(accelVal, Gear::Forward);
+			drive.speed = accelVal;
 
 			///////////////////////////////////////////////////////////////////////////////
 			// Determine if braking is required based on Lidar distance
 			brakeVal = std::max(0, int(brakePropConst * float(minStopDist - lidarDist)));
 			brakeVal = std::clamp(brakeVal, 0, 100);
-			feedback.drive.drive.brake = brakeVal;
-			//drive.brake(brakeVal);
+			drive.brake = brakeVal;
 
 			///////////////////////////////////////////////////////////////////////////////////
 			// Adjust steering based on GPS waypoints
@@ -102,8 +99,7 @@ void Autopilot::runAutopilot()
 
 			// Map bearing_diff from [-180, 180] to [0, 100] for control
 			steerVal = map((bearing_diff), -180.0, 180.0, 0.0, 100.0);
-			feedback.drive.drive.steer = steerVal;
-			//drive.steer(steerVal, adc.get_steering_feedback());
+			drive.steer = steerVal;
 
 			// Debugging Information: Outputs the current GPS data, destination, and calculated values
 			printf("GPS INFO:    Latitude: %.8f, Longitude: %.8f, Course: %.2f\n", currPos.lat, currPos.lon, currPos.heading);
@@ -113,7 +109,7 @@ void Autopilot::runAutopilot()
 			std::cout << "Bearing Difference: " << bearing_diff << "\n";
 			std::cout << "Mapped Steering Value: " << steerVal << "\n";
 
-			feedbackQueue.push(feedback);
+			sendQueue.push(makeMessageFrom(drive));
 			std::this_thread::sleep_for(std::chrono::milliseconds(50));
 		} else {
 			std::this_thread::sleep_for(std::chrono::milliseconds(50));
@@ -123,24 +119,20 @@ void Autopilot::runAutopilot()
 
 void Autopilot::runProcessCommand()
 {
-	AutopilotCommand cmd;
-
 	while (!stopFlag.load())
 	{
-		cmd = commandQueue.waitAndPop();
+		Message msg;
+		msg = receiveQueue.waitAndPop();
 
-		switch (cmd.commandID)
+		switch (msg.messageID)
 		{
-			case AutopilotCommandID::Start:
+			case MessageID::StartAutopilot:
 				start();
 				break;
-			case AutopilotCommandID::Stop:
+			case MessageID::StopAutopilot:
 				stop();
 				break;
-			case AutopilotCommandID::Update:
-				// Vehicle speed update when time comes
-				break;
-			case AutopilotCommandID::Invalid:
+			case MessageID::Invalid:
 				break;
 			default:
 				std::cout << "Unknown autopilot command. skipping" << std::endl;
@@ -150,24 +142,17 @@ void Autopilot::runProcessCommand()
 
 void Autopilot::runReceive()
 {
-
+	// For when we have serial communciation
 }
 
 void Autopilot::runTransmit()
 {
+	// For when we have serial communciation
 }
 
 void Autopilot::begin()
 {
 	stopFlag.store(false);
-}
-
-void Autopilot::forwardCommand(AutopilotVCommand cmd)
-{
-	AutopilotCommand autoCmd;
-	autoCmd.commandID = cmd.autopilotCmd;
-
-	commandQueue.push(autoCmd);
 }
 
 void Autopilot::end()
@@ -182,14 +167,10 @@ void Autopilot::signalStop()
 
 bool Autopilot::initIO()
 {
-	bool status;
+	bool status = true;
 
     // Initialize I²C for the lidar subsystem
 	if (!lidar.initialize())
-		status = false;
-
-	// Initialize I²C for the GPS subsystem
-	if (!gps.initialize())
 		status = false;
 
 	// Notify the user if any subsystem initialization failed
@@ -203,21 +184,20 @@ bool Autopilot::initIO()
 
 void Autopilot::shutdown()
 {
-	gps.cleanup();
 	lidar.cleanup();
 }
 
 void Autopilot::start()
 {
 	run.store(true);
-	commandQueue.clear();
+	sendQueue.clear();
 	findDestinations();
 }
 
 void Autopilot::stop()
 {
 	run.store(false);
-	commandQueue.clear();
+	sendQueue.clear();
 	clearDestinations();
 }
 

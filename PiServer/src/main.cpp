@@ -3,9 +3,9 @@
 #include <string>
 #include <string.h>
 #include <sstream>
-
 #include <cstdlib>
 #include <signal.h>
+#include <atomic>
 
 #include "Communication/VehicleServer.h"
 #include "Communication/Autopilot.h"
@@ -13,6 +13,7 @@
 
 // Signal handler for clean shutdown
 void signal_callback_handler(int signum);
+std::atomic_bool shutdownRequested(false);
 
 int main() 
 {
@@ -23,72 +24,70 @@ int main()
 	Autopilot autopilot;
 	VehicleSys& vehicle = VehicleSys::getInstance();
 
-	
-
 	// Initialize vehicle system's IO devices
 	if (!vehicle.initIO()) {
 		std::cout << "Failed to initialize one or more IO devices. Exiting program." << std::endl;
 		return -1;
 	}
+	vehicle.statusUpdate();
+	auto lastStatusTime = std::chrono::steady_clock::now();
 
 	// Initialize autopilot's IO devices
 	if (!autopilot.initIO()) {
 		std::cout << "Failed to initialize one or more IO devices. Exiting program." << std::endl;
 		return -1;
 	}
-
+	
 	// Begin connection with TCP client
-	if (!server.begin()) {
+	if (!server.start(shutdownRequested)) {
 		std::cout << "Failed to establish connection with a client. Exiting program." << std::endl;
 		return -1;
 	}
 
-	std::thread recvThread(&VehicleServer::runReceive, &server);
-	std::thread sendThread(&VehicleServer::runTransmit, &server);
-	std::thread clientUpdateThread(&VehicleServer::runRegularUpdate, &server);
-	
 	std::thread sendAutoThread(&Autopilot::runProcessCommand, &autopilot);
 	std::thread recvAutoThread(&Autopilot::runAutopilot, &autopilot);
 
-
+	vehicle.enableVehicle();
 	// Main control loop
-	while (true) {
+	while (!shutdownRequested) {
 		// Receive and process a command from user
-		auto command = server.tryRecvCmd();
-		if (command) {
-			switch ((*command).commandID)
+		auto msg = server.tryRecvMsg();
+		if (msg) {
+			Message message = msg.value();
+			switch (message.messageID)
 			{
-				case VehicleCommandID::Disconnected:
+				case MessageID::Disconnected:
 					vehicle.handleDisconnect();
 					if (vehicle.isAutopilotActive()) {
 						autopilot.signalStop();
 						vehicle.setAutopilotActive(false);
 					}
 					break;
-				case VehicleCommandID::Drive:
-					vehicle.handleDriveInput((*command).drive);
+				case MessageID::Drive:
+					vehicle.handleDriveInput(extractPayload<DriveCommand>(message));
 					break;
-				case VehicleCommandID::MoveCamera:
-					vehicle.handleCameraInput((*command).camera);
+				case MessageID::MoveCamera:
+					vehicle.handleCameraInput(extractPayload<CameraCommand>(message));
 					break;
-				case VehicleCommandID::SetMaxSpeed:
-					vehicle.setMaxSpeed((*command).setMaxSpeed);
+				case MessageID::SetMaxSpeed:
+					vehicle.setMaxSpeed(extractPayload<SetMaxSpeedCommand>(message));
 					break;
-				case VehicleCommandID::ToggleLights:
-					vehicle.handleLightsInput((*command).lights);
+				case MessageID::ToggleLights:
+					vehicle.handleLightsInput(extractPayload<LightsCommand>(message));
 					break;
-				case VehicleCommandID::Autopilot:
+				case MessageID::StartAutopilot:
 					// Forward command to 
-					autopilot.forwardCommand((*command).autopilot);
-					// Check if setting autopilot active state and set accordingly
-					if ((*command).autopilot.autopilotCmd == AutopilotCommandID::Start)
-						vehicle.setAutopilotActive(true);
-					else if ((*command).autopilot.autopilotCmd == AutopilotCommandID::Stop)
-						vehicle.setAutopilotActive(false);
-					
-				case VehicleCommandID::Ping:
+					autopilot.sendMsg(message);
+					vehicle.setAutopilotActive(true);	// Temporary
 					break;
-				case VehicleCommandID::Invalid:
+				case MessageID::StopAutopilot:
+					autopilot.sendMsg(message);
+					vehicle.setAutopilotActive(false);	// Temporary
+					break;
+				case MessageID::Ping:
+					// Should send ping back
+					break;
+				case MessageID::Invalid:
 					break;	// Should never happen
 				default:
 					std::cout << "Unknown command received" << std::endl;
@@ -97,29 +96,34 @@ int main()
 
 		if (vehicle.isAutopilotActive()) {
 			// Right now autopilot only produces drive commands
-			auto feedback = autopilot.tryRecvCmd();
-			if (feedback) {
-				if ((*feedback).feedbackID == AutopilotFeedbackID::Drive)
-					vehicle.handleDriveInput((*feedback).drive);
+			auto msg = autopilot.tryRecvMsg();
+			if (msg) {
+				Message message = msg.value();
+				if (message.messageID == MessageID::Drive)
+					vehicle.handleDriveInput(extractPayload<DriveCommand>(message));
 				else
 					std::cout << "Only handling drive commands for autopilot" << std::endl;
 			}
 		}
-		
+
+		// Run status update every 1000 ms
+		auto now = std::chrono::steady_clock::now();
+		if (now - lastStatusTime >= std::chrono::milliseconds(1000)) {
+			vehicle.statusUpdate();
+			lastStatusTime = now;
+		}
+
 		// Loop delay to prevent CPU overload
 		printf("\n");
-		usleep(10*1000);	// Delay for 50ms
+		usleep(50*1000);	// Delay for 50ms
     }
 
-
-
+	server.disconnect();
     return 0;
 }
 
 // Signal handler for clean shutdown
 void signal_callback_handler(int signum) {
 	std::cout << "CTRL+C caught! Terminating..." << signum << std::endl;
-
-	// Exit the program gracefully with the signal code
-	exit(signum);
+	shutdownRequested.store(true);
 }

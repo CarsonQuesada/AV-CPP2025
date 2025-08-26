@@ -13,56 +13,65 @@
 #include <mutex>
 #include <chrono>
 
-#include "Debug/Logger.h"
-#include "Shared/TCP.h"
-
-bool TCPServer::waitForConnection()
+bool TCPServer::waitForConnection(std::atomic<bool>& cancelConnectFlag, int port, const char* ipAddr)
 {
-    VehicleSys::getInstance().setConnectionStatus(ConnectionStatus::Reconnecting);
-
-    while (true) {
-        int serverSock = createListeningSock(IP);
+    while (!cancelConnectFlag.load()) {
+        int serverSock;
+        if (ipAddr == nullptr || std::string(ipAddr) == "0.0.0.0")
+            serverSock = createListeningSock(port);
+        else
+            serverSock = createListeningSock(port, ipAddr);
 
         if (serverSock < 0) {
             std::cerr << "No valid socket to listen on. Retrying in 5s...\n";
-            sleep(5);
+            for (int i = 0; i < 5 && !cancelConnectFlag.load(); i++) sleep(1);
             continue;
         }
 
         std::cout << "Waiting for a connection...\n";
-        int clientSockFd = accept(serverSock, nullptr, nullptr);
-        close(serverSock); // Done listening after one connection
 
-        if (clientSockFd < 0) {
-            perror("accept");
-            continue;
+        fd_set fds;
+        struct timeval tv;
+        while (!cancelConnectFlag.load()) {
+            FD_ZERO(&fds);
+            FD_SET(serverSock, &fds);
+            tv.tv_sec = 1;
+            tv.tv_usec = 0;
+
+            int ret = select(serverSock + 1, &fds, nullptr, nullptr, &tv);
+            if (ret > 0 && FD_ISSET(serverSock, &fds)) {
+                int clientSockFd = accept(serverSock, nullptr, nullptr);
+                close(serverSock);
+
+                if (clientSockFd < 0) {
+                    perror("accept");
+                    break; // back to outer loop
+                }
+
+                std::cout << "Accepted connection! clientSock = " << clientSockFd << std::endl;
+
+                // set non-blocking
+                int flags = fcntl(clientSockFd, F_GETFL, 0);
+                fcntl(clientSockFd, F_SETFL, flags | O_NONBLOCK);
+
+                std::unique_lock<std::shared_mutex> lock(sockMut);
+                clientSock = clientSockFd;
+                connected.store(true);
+                return true;
+            }
         }
 
-        std::cout << "Accepted connection\n";
-
-        // Set to non-blocking
-        int flags = fcntl(clientSockFd, F_GETFL, 0);
-        if (flags == -1 || fcntl(clientSockFd, F_SETFL, flags | O_NONBLOCK) == -1) {
-            perror("fcntl O_NONBLOCK");
-            close(clientSockFd);
-            continue;
-        }
-
-        std::unique_lock<std::shared_mutex> lock(sockMut);
-        clientSock = clientSockFd;
-        connected.store(true);
-        VehicleSys::getInstance().setConnectionStatus(ConnectionStatus::Connected);
-        return true;
+        close(serverSock);
     }
+    return false; // cancelled
 }
 
 TCPServer::~TCPServer()
 {
     disconnect();
-    VehicleSys::getInstance().setConnectionStatus(ConnectionStatus::Disabled);
 }
 
-int TCPServer::createListeningSock(const char *ipAddr)
+int TCPServer::createListeningSock(int port, const char *ipAddr)
 {
     int status;
     // Create socket /////////////////////////////////////////////////////////////
@@ -79,17 +88,23 @@ int TCPServer::createListeningSock(const char *ipAddr)
     // Create Hint Structure for Socket //////////////////////////////////////////
     sockaddr_in addr{};
     addr.sin_family = AF_INET;
-    addr.sin_port = htons(PORT);
-    status = inet_pton(AF_INET, ipAddr, &addr.sin_addr);
-    if (status <= 0) {
-        std::cout << "Invalid address: " << ipAddr << std::endl;
-        return status;
+    addr.sin_port = htons(port);
+    if (ipAddr == nullptr || std::string(ipAddr) == "0.0.0.0") {
+        addr.sin_addr.s_addr = INADDR_ANY;
+    } else {
+        status = inet_pton(AF_INET, ipAddr, &addr.sin_addr);
+        if (status <= 0) {
+            std::cout << "Invalid address: " << ipAddr << std::endl;
+            close(sock);
+            return status;
+        }
     }
 
     // bind the listening socket /////////////////////////////////////////////////
     status = bind(sock, (sockaddr*)&addr, sizeof(addr));
     if (status < 0) {
-        perror(("bind failed on " + std::string(ipAddr)).c_str());
+        std::string ipStr = (ipAddr != nullptr) ? ipAddr : "0.0.0.0";
+        perror(("bind failed on " + ipStr).c_str());
         close(sock);
         return status;
     }
@@ -102,7 +117,8 @@ int TCPServer::createListeningSock(const char *ipAddr)
         return status;
     }
 
-    std::cout << "Listening on " << ipAddr << ":" << PORT << std::endl;
+    const char* ipToPrint = ipAddr ? ipAddr : "0.0.0.0";
+    std::cout << "Listening on " << ipToPrint << ":" << port << std::endl;
     return sock;
 }
 
@@ -116,55 +132,7 @@ void TCPServer::disconnect()
     }
 }
 
-void TCPServer::handleReconnect()
-{
-    if (!reconnecting.exchange(true)) {
-        VehicleSys::getInstance().setConnectionStatus(ConnectionStatus::Reconnecting);
-        disconnect();
-
-        std::cout << "[TCPClient] Reconnecting..." << std::endl;
-        while (!waitForConnection())
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-
-        std::cout << "[TCPClient] Reconnected successfully.\n";
-        reconnecting.store(false);
-    } else {
-        while (reconnecting.load()) 
-            std::this_thread::sleep_for(std::chrono::milliseconds(1));
-    }
-}
-
-int TCPServer::receiveAll(void *buffer, int maxByteRead)
-{
-    bool success;
-    tcpHeader messageSize;
-    success = receive(&messageSize, sizeof(tcpHeader));
-    if (!success) { 
-        return -1;  // signal disconnect
-    }
-
-    messageSize = ntohs(messageSize);
-    if (messageSize > maxByteRead) {
-        ASSERT(true, "Message exceeds maximum read specification. Max read: %i, Message size %i", maxByteRead, messageSize);
-        
-        char* removeBuff = new char[messageSize];
-        success = receive(removeBuff, messageSize, 1);   // clear TCP buffer of invalid message
-        delete[] removeBuff;
-        if (!success)
-            return -1;  // signal disconnect
-        else
-            return 0;   // signal max byte read exceeded for message
-    }
-
-    success = receive(buffer, messageSize);
-    if (!success) {
-        return -1;  // signal disconnect
-    }
-
-    return 1;   // Signal success
-}
-
-bool TCPServer::receive(void *buffer, int length, int maxWait)
+bool TCPServer::receiveAll(void *buffer, int length, int maxWait)
 {
     int bytesRead = 0;
 
@@ -182,26 +150,26 @@ bool TCPServer::receive(void *buffer, int length, int maxWait)
             int activity = select(clientSock + 1, &readfds, nullptr, nullptr, &timeout);    // Wait for the socket to be ready for reading, with timeout
     
             if (activity < 0) {
-                LOG(LogLevel::WARNING, "Error in select(): %s\n", strerror(errno));
+                std::cout << "Error in select(): " << strerror(errno) << std::endl;
                 return false;
             } else if (activity == 0) {
                 // Timeout reached, no data received
-                LOG(LogLevel::INFO, "Timeout reached while waiting for data.\n");
+                std::cout << "Timeout reached while waiting for data." << std::endl;
                 return false;
             } else if (FD_ISSET(clientSock, &readfds)) {
                 // Begin recieving message
-                int bytesRecovered = recv(clientSock, (char*)buffer + bytesRead, length - bytesRead, MSG_DONTWAIT);
+                int bytesRecovered = recv(clientSock, (char*)buffer + bytesRead, length - bytesRead, 0);
     
                 if (bytesRecovered > 0) {
                     bytesRead += bytesRecovered;
                 } else if (bytesRecovered == 0) {
-                    LOG(LogLevel::INFO, "Connection closed gracefully by user\n");
+                    std::cout << "Connection closed gracefully by user" << std::endl;
                     return false; 	// Connection closed by user gracefully
                 } else if (bytesRecovered < 0) {
                     if (errno == EWOULDBLOCK || errno == EAGAIN) {
-                        LOG(LogLevel::INFO, "Recieved no data\n");
+                        std::cout << "Recieved no data" << std::endl;
                     } else {
-                        LOG(LogLevel::WARNING, "TCP disconnected incorrectly\n");
+                        std::cout << "TCP disconnected incorrectly" << std::endl;
                         return false;   // TCP disconnected incorrectly
                     }
                 }
@@ -216,59 +184,45 @@ bool TCPServer::receive(void *buffer, int length, int maxWait)
 
 bool TCPServer::transmitAll(const void *data, int length)
 {
-    tcpHeader header = htons(length);
-
-    if (!transmit((const char*)&header, sizeof(tcpHeader)))
-        return false;
-    
-    if (!transmit((const char*)data, length))
-        return false;
-
-    return true;
-}
-
-bool TCPServer::transmit(const char *data, int length)
-{
     int totalSent = 0;
     const int timeoutSeconds = 1;
 
     std::shared_lock<std::shared_mutex> lock(sockMut); // shared with receive()
-    if (connected.load()) {
-        while (totalSent < length) {
-            // Wait for the socket to be writable
-            fd_set writefds;
-            FD_ZERO(&writefds);
-            FD_SET(clientSock, &writefds);
 
-            struct timeval timeout;
-            timeout.tv_sec = timeoutSeconds;
-            timeout.tv_usec = 0;
+    while (totalSent < length) {
+        // Wait for the socket to be writable
+        fd_set writefds;
+        FD_ZERO(&writefds);
+        FD_SET(clientSock, &writefds);
 
-            int ready = select(clientSock + 1, nullptr, &writefds, nullptr, &timeout);
-            if (ready < 0) {
-                std::cerr << "select() error: " << strerror(errno) << "\n";
-                return false;
-            } else if (ready == 0) {
-                std::cerr << "sendAll() timeout while waiting to send.\n";
-                return false;
-            }
+        struct timeval timeout;
+        timeout.tv_sec = timeoutSeconds;
+        timeout.tv_usec = 0;
 
-            // Write to socket
-            int bytesSent = send(clientSock, data + totalSent, length - totalSent, 0);
-            if (bytesSent < 0) {
-                if (errno == EAGAIN || errno == EWOULDBLOCK) {
-                    continue; // Try again
-                } else {
-                    std::cerr << "send() error: " << strerror(errno) << "\n";
-                    return false;
-                }
-            } else if (bytesSent == 0) {
-                std::cerr << "Connection closed by peer.\n";
-                return false;
-            }
-
-            totalSent += bytesSent;
+        int ready = select(clientSock + 1, nullptr, &writefds, nullptr, &timeout);
+        if (ready < 0) {
+            std::cerr << "select() error: " << strerror(errno) << "\n";
+            return false;
+        } else if (ready == 0) {
+            std::cerr << "sendAll() timeout while waiting to send.\n";
+            return false;
         }
+
+        // Write to socket
+        int bytesSent = send(clientSock, (const char*)data + totalSent, length - totalSent, 0);
+        if (bytesSent < 0) {
+            if (errno == EAGAIN || errno == EWOULDBLOCK) {
+                continue; // Try again
+            } else {
+                std::cerr << "send() error: " << strerror(errno) << "\n";
+                return false;
+            }
+        } else if (bytesSent == 0) {
+            std::cerr << "Connection closed by peer.\n";
+            return false;
+        }
+
+        totalSent += bytesSent;
     }
 
     return true;
