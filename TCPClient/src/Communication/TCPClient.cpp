@@ -5,8 +5,6 @@
 #include <mutex>
 #include <cassert>
 
-#include "Shared/TCPKeys.h"
-
 TCPClient::TCPClient()
 {
     WSADATA wsaData;

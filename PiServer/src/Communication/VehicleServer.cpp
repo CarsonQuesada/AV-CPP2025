@@ -3,7 +3,7 @@
 #include <chrono>
 
 #include "../VehicleSys.h"
-#include "Shared/TCPKeys.h"
+#include "Shared/Keys.h"
 
 
 VehicleServer::VehicleServer() {
@@ -19,10 +19,11 @@ VehicleServer::~VehicleServer() {
 
 bool VehicleServer::start() {
     std::atomic_bool cancelFlag(false);
-    start(cancelFlag);
+    return start(cancelFlag);
 }
 
 bool VehicleServer::start(std::atomic_bool& cancelFlag) {
+    bool success = false;
     if (connectionState.exchange(ServerConnectionState::Listening) == ServerConnectionState::Disconnected) {
         std::cout << "Begin connecting" << std::endl;
         VehicleSys::getInstance().setConnectStatusLED(connectionState.load());
@@ -33,16 +34,15 @@ bool VehicleServer::start(std::atomic_bool& cancelFlag) {
             if (!performHandshake()) {
                 std::cout << "Failed handshake, closing connection." << std::endl;
                 disconnect();
-                return false;
+            } else {
+                startWorkerThreads();
+                success = true;
             }
-            std::cout << "STARTING WORKER THREADS" << std::endl;
-            startWorkerThreads();
         } else {
             connectionState.store(ServerConnectionState::Disconnected);
         }
-        return true;
     }
-    return false;
+    return success;
 }
 
 void VehicleServer::disconnect() {
@@ -137,6 +137,7 @@ void VehicleServer::runReceive() {
                         receiveQueue.push(std::move(message));
                     }
                 } else {
+                    std::cout << "Recieved: " << static_cast<int>(message.messageID) << std::endl;
                     receiveQueue.push(std::move(message));
                 }
             }
@@ -226,7 +227,7 @@ void VehicleServer::runRegularUpdate() {
             sendMsg(makeMessageFrom(VehicleSys::getInstance().getLightsStatus()));
         }
 
-        // --- Drive Status (periodic and reactive) ---
+        // --- Drive Status (periodic) ---
         if (now - lastDriveStatusTime >= driveStatusInterval) {
             DriveStatus driveStatus = VehicleSys::getInstance().getDriveStatus();
             sendMsg(makeMessageFrom(driveStatus));

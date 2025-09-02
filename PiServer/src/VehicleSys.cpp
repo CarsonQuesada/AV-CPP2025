@@ -51,6 +51,7 @@ void VehicleSys::setMaxSpeed(SetMaxSpeedCommand command)
 
 void VehicleSys::handleCameraInput(CameraCommand command)
 {
+    std::cout << "Recieved camera input: " << static_cast<int>(command.cameraMove) << std::endl;
     switch (command.cameraMove)
     {
         case CameraCmdID::CenterCamera:
@@ -63,7 +64,7 @@ void VehicleSys::handleCameraInput(CameraCommand command)
             cameraServo.panCameraRight();
             break;
         case CameraCmdID::NoInput:
-            break;  // Should never happen
+            break;
     }
 }
 
@@ -85,7 +86,7 @@ void VehicleSys::handleLightsInput(LightsCommand command)
             lighting.setRightSig(!lighting.isRightSigOn());
             break;
         case LightID::NoInput:
-            break;  // Should never happen
+            break;
     }
     lightsStatusDirty.store(true);
 }
@@ -135,13 +136,6 @@ void VehicleSys::statusUpdate()
 {
     std::scoped_lock lock(dataMutex);
     telemetryData = telemetry.getData();
-    std::cout << "Telemetry Data:" << std::endl;
-    std::cout << "GPS status: " << telemetryData.gpsOnline << std::endl;
-    std::cout << "Latidude:   " << telemetryData.lat << std::endl;
-    std::cout << "Longitude:  " << telemetryData.lon << std::endl;
-    std::cout << "Heading:    " << telemetryData.heading << std::endl;
-    std::cout << "Speed:      " << telemetryData.speed << std::endl;
-    std::cout << "Distance:   " << telemetryData.distanceDelta << std::endl;
     // In the future: battery percent, 
 }
 
