@@ -33,3 +33,7 @@
 
 # IP address and listening port
 Shared/TCP.h
+
+# Ignores for libraries used with ui
+!TCPClient/Dependencies/curl/lib/*.a
+!TCPClient/Dependencies/glfw/lib-mingw/*.a
