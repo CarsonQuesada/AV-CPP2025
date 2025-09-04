@@ -138,7 +138,7 @@ struct StopAutopilotCommand {
 };
 
 struct TelemetryData {
-    uint8_t gpsOnline;      // 1 = true, 0 = false
+    uint8_t gpsOnline;         // 1 = true, 0 = false
     float lat;              // degrees
     float lon;              // degrees
     float heading;          // degrees
