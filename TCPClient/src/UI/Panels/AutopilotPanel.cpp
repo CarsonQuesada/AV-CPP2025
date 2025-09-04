@@ -26,8 +26,8 @@ void AutopilotPanel::onUpdate()
         ImGui::Text("Enabled [1]");
 
         ImGui::TableNextColumn();
-        ImVec4 color = VehicleState::getInstance().autopilotActive ? ImVec4(0, 1, 0, 1) : ImVec4(1, 0, 0, 1);
-        ImGui::TextColored(color, VehicleState::getInstance().autopilotActive ? "YES" : "NO");
+        ImVec4 color = VehicleState::getInstance().autoStatus.autopilotActive ? ImVec4(0, 1, 0, 1) : ImVec4(1, 0, 0, 1);
+        ImGui::TextColored(color, VehicleState::getInstance().autoStatus.autopilotActive ? "YES" : "NO");
 
         ImGui::TableNextColumn();
         if (ImGui::Button("Toggle##Autopilot", ImVec2(100, 0))) {

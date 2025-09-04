@@ -26,10 +26,10 @@ void VehiclePanel::onUpdate()
         ImGui::TableSetupColumn(nullptr, ImGuiTableColumnFlags_WidthFixed, 50); // Status
         ImGui::TableSetupColumn(nullptr, ImGuiTableColumnFlags_WidthFixed, 100); // Toggle
 
-        addLightRow("Headlights", "H", VehicleState::getInstance().headlightsOn);
-        addLightRow("Left Turn", "Q", VehicleState::getInstance().leftSigOn);
-        addLightRow("Right Turn", "E", VehicleState::getInstance().rightSigOn);
-        addLightRow("Brake Lights", "", VehicleState::getInstance().brakeLightsOn);
+        addLightRow("Headlights", "H", VehicleState::getInstance().lightStatus.Headlights);
+        addLightRow("Left Turn", "Q", VehicleState::getInstance().lightStatus.leftSig);
+        addLightRow("Right Turn", "E", VehicleState::getInstance().lightStatus.rightSig);
+        addLightRow("Brake Lights", "", VehicleState::getInstance().lightStatus.brakeLights);
 
         ImGui::EndTable();
     }
@@ -38,9 +38,9 @@ void VehiclePanel::onUpdate()
 
     ImGui::Text("Direction:");
     const char* directionStr = 
-        VehicleState::getInstance().gear == GearID::Forward ? "Forward" :
-        VehicleState::getInstance().gear == GearID::Reverse ? "Backward" :
-        VehicleState::getInstance().braking ? "Braking" : "Neutral";
+        VehicleState::getInstance().driveStatus.gear == GearID::Forward ? "Forward" :
+        VehicleState::getInstance().driveStatus.gear == GearID::Reverse ? "Backward" :
+        VehicleState::getInstance().driveStatus.braking ? "Braking" : "Neutral";
     ImGui::TextColored(ImVec4(0.7f, 0.7f, 1.0f, 1.0f), "%s", directionStr);
 
     ImGui::Separator();

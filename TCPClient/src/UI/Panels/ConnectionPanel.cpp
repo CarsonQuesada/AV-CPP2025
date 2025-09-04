@@ -88,6 +88,7 @@ void ConnectionPanel::connectedDisplay() {
     ImGui::Separator();
     ImGui::Dummy(ImVec2(0.0f, 10.0f));
 
+    lastPingMs = uiContext.client->getConnectionSpeed();
     if (lastPingMs >= 0.0f) {
         ImGui::Text("Ping: %.2f ms", lastPingMs);
     } else {

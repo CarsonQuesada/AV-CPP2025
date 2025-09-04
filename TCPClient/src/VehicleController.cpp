@@ -44,43 +44,48 @@ std::vector<Message> VehicleController::generateCommands(bool connected, bool au
     std::vector<Message> msgs;
     Message msg;
 
-    // DRIVE COMMAND
-    if (connected) {
-        DriveCommand drive;
-        // Steer
-        if (button(ButtonID::Left).pressed)
-            drive.steer = 100;		// left
-        else if (button(ButtonID::Right).pressed)
-            drive.steer = 0;		// right
-        else
-            drive.steer = 50;		// center
+    auto now = std::chrono::steady_clock::now();
+    bool shouldSendDriveCommand = (now - lastSendTime >= std::chrono::milliseconds(100));
+    if (shouldSendDriveCommand) {
+        // DRIVE COMMAND
+        if (connected) {
+            DriveCommand drive;
+            // Steer
+            if (button(ButtonID::Left).pressed)
+                drive.steer = 100;		// left
+            else if (button(ButtonID::Right).pressed)
+                drive.steer = 0;		// right
+            else
+                drive.steer = 50;		// center
 
-        //	Throttle
-        if (button(ButtonID::Forward).pressed) {
-            drive.gear = GearID::Forward;
-            drive.speed = 100;
-        } else if (button(ButtonID::Reverse).pressed) {
-            drive.gear = GearID::Reverse;
-            drive.speed = 100;
-        } else {
-            drive.gear = GearID::Coast;
-            drive.speed = 0;
+            //	Throttle
+            if (button(ButtonID::Forward).pressed) {
+                drive.gear = GearID::Forward;
+                drive.speed = 100;
+            } else if (button(ButtonID::Reverse).pressed) {
+                drive.gear = GearID::Reverse;
+                drive.speed = 100;
+            } else {
+                drive.gear = GearID::Coast;
+                drive.speed = 0;
+            }
+
+            // Brake
+            if (button(ButtonID::Brake).pressed)
+                drive.brake = 100;
+            else
+                drive.brake = 0;
+
+            // Decide if drive command should be sent
+            if (!VehicleState::getInstance().autoStatus.autopilotActive) {
+                // Autopilot inactive so send drive command
+                msgs.push_back(makeMessageFrom(drive));
+            } else if (drive.brake || drive.speed || (drive.steer != 50)) {
+                // Autopilot active and driving input recieved. send command to override autopilot
+                msgs.push_back(makeMessageFrom(drive));
+            }
         }
-
-        // Brake
-        if (button(ButtonID::Brake).pressed)
-            drive.brake = 100;
-        else
-            drive.brake = 0;
-
-        // Decide if drive command should be sent
-        if (!VehicleState::getInstance().autopilotActive) {
-            // Autopilot inactive so send drive command
-            msgs.push_back(makeMessageFrom(drive));
-        } else if (drive.brake || drive.speed || (drive.steer != 50)) {
-            // Autopilot active and driving input recieved. send command to override autopilot
-            msgs.push_back(makeMessageFrom(drive));
-        }
+        lastSendTime = now;
     }
 
     // LIGHT COMMANDS
@@ -99,16 +104,18 @@ std::vector<Message> VehicleController::generateCommands(bool connected, bool au
     }
 
     // CAMERA COMMAND
-    if (connected && autopilotOn) {
+    if (connected) {
         CameraCommand camera;
-        if (button(ButtonID::PanCameraLeft).pressed) { // pan camera left
+        if (button(ButtonID::PanCameraLeft).isPressedEdge()) { // pan camera left
             camera.cameraMove = CameraCmdID::PanCameraLeft;
-        } else if (button(ButtonID::PanCameraRight).pressed) { // pan camera right
+            msgs.push_back(makeMessageFrom(camera));
+        } else if (button(ButtonID::PanCameraRight).isPressedEdge()) { // pan camera right
             camera.cameraMove = CameraCmdID::PanCameraRight;
-        } else if (button(ButtonID::CenterCamera).pressed) { // camera center
+            msgs.push_back(makeMessageFrom(camera));
+        } else if (button(ButtonID::CenterCamera).isPressedEdge()) { // camera center
             camera.cameraMove = CameraCmdID::CenterCamera;
+            msgs.push_back(makeMessageFrom(camera));
         }
-        msgs.push_back(makeMessageFrom(camera));
     }
 
     // SET MAX SPEED COMMAND
@@ -122,7 +129,7 @@ std::vector<Message> VehicleController::generateCommands(bool connected, bool au
 
     // TOGGLE AUTOPILOT COMMAND
     if (button(ButtonID::ToggleAutopilot).isPressedEdge()) {
-        if (VehicleState::getInstance().autopilotActive) {
+        if (VehicleState::getInstance().autoStatus.autopilotActive) {
             StopAutopilotCommand stopAutopilot;
             msgs.push_back(makeMessageFrom(stopAutopilot));
         } else {

@@ -10,8 +10,15 @@ CameraFeedPanel::CameraFeedPanel(UIContext& uiContext, FrameProcessor& fp)
     : UIPanel(uiContext), frameProcessor(fp)
 {
     glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
+
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+    glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 CameraFeedPanel::~CameraFeedPanel()
@@ -21,12 +28,10 @@ CameraFeedPanel::~CameraFeedPanel()
 
 void CameraFeedPanel::onUpdate()
 {
-    std::cout << "Entering camera feed" << std::endl;
     ImGui::Begin("Camera Feed");
 
     // Get available space in the content region
     ImVec2 contentSize = ImGui::GetContentRegionAvail();
-    std::cout << "Made it 1" << std::endl;
 
     // Original frame size
     const float frameWidth = 640.0f;
@@ -46,25 +51,23 @@ void CameraFeedPanel::onUpdate()
     ImVec2 cursorPos = ImGui::GetCursorPos();
     float offsetX = (contentSize.x - drawWidth) * 0.5f;
     ImGui::SetCursorPos(ImVec2(cursorPos.x + offsetX, cursorPos.y));
-    std::cout << "Made it 2" << std::endl;
 
     Frame frame = frameProcessor.getFrame();
-    std::cout << "Got the frame" << std::endl;
     if (frame.ready) {
-        std::cout << "Rendering Texture" << std::endl;
         glBindTexture(GL_TEXTURE_2D, texture);
         if (frame.width != prevWidth || frame.height != prevHeight) {
+            glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, frame.width, frame.height, 0, GL_RGB, GL_UNSIGNED_BYTE, frame.pixels.data());
             prevWidth = frame.width;
             prevHeight = frame.height;
         } else {
+            glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
             glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, frame.width, frame.height, GL_RGB, GL_UNSIGNED_BYTE, frame.pixels.data());
         }
         glBindTexture(GL_TEXTURE_2D, 0);
         ImGui::Image((ImTextureID)(intptr_t)texture, ImVec2(drawWidth, drawHeight));
         ImGui::TextColored(ImVec4(1, 0, 0, 1), "Undergoing test");
     } else {
-        std::cout << "Camera feed unavailable" << std::endl;
         ImGui::TextColored(ImVec4(1, 0, 0, 1), "Camera feed unavailable");
         ImGui::TextWrapped("Please ensure the vehicle is powered on and the camera is connected.");
     }

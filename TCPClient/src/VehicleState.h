@@ -10,16 +10,10 @@ public:
         return instance;
     }
 
-    bool headlightsOn = false;
-    bool brakeLightsOn = false;
-    bool leftSigOn = false;
-    bool rightSigOn = false;
-
-    GearID gear;
-    bool braking;
-
-    bool autopilotActive = false;
-    float currentSpeed = 0.0f;
+    LightsStatus lightStatus;
+    AutopilotStatus autoStatus;
+    DriveStatus driveStatus;
+    GeneralStatus genStatus;
 
 private:
     VehicleState() {}                                   // private constructor to prevent more than one instance
