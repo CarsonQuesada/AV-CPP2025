@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Communication/VehicleClient.h"
+
 class VehicleController;
 
 struct UIContext {

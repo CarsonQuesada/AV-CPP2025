@@ -11,6 +11,7 @@
 #include <thread>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <chrono>
 
 #include "VehicleState.h"
 #include "VehicleController.h"
@@ -90,7 +91,7 @@ int main() {
 			controller.pollKeyboardInput();
 			std::vector<Message> msgs = controller.generateCommands(
 				client.getConnectionState() == ClientConnectionState::Connected, 
-				VehicleState::getInstance().autopilotActive
+				VehicleState::getInstance().autoStatus.autopilotActive
 			);
 
 			for (const auto& msg : msgs) {
@@ -112,11 +113,20 @@ int main() {
 				Message recievedMsg = *received;
 				switch (recievedMsg.messageID)
 				{
-					case MessageID::BatteryStatus:
+					case MessageID::GeneralStatus:
+						VehicleState::getInstance().genStatus = extractPayload<GeneralStatus>(recievedMsg);
 						break;
-					case MessageID::LightStatus:
+					case MessageID::LightsStatus:
+						VehicleState::getInstance().lightStatus = extractPayload<LightsStatus>(recievedMsg);
+						break;
+					case MessageID::DriveStatus:
+						VehicleState::getInstance().driveStatus = extractPayload<DriveStatus>(recievedMsg);
+						break;
+					case MessageID::AutopilotStatus:
+						VehicleState::getInstance().autoStatus = extractPayload<AutopilotStatus>(recievedMsg);
 						break;
 					case MessageID::Ping:
+						// Ping is handled by VehicleServer currently
 						break;
 					case MessageID::Invalid:
 						break;
@@ -127,9 +137,8 @@ int main() {
 		}
 	}
 
-	std::cout << "Pause 1" << std::endl;
 	glfwDestroyWindow(window);
     glfwTerminate();
-	std::cout << "Pause 2" << std::endl;
+	system("pause");	// Keeps console window open after program closes (for debugging)
 	return 0;
 }

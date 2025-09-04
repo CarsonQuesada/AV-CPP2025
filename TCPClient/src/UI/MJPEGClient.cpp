@@ -32,60 +32,89 @@ size_t MJPEGClient::writeCallback(char* ptr, size_t size, size_t nmemb, void* us
 
     client->buffer.insert(client->buffer.end(), ptr, ptr + totalSize);
 
-    // Look for JPEG frame boundaries: 0xFFD8 (start) and 0xFFD9 (end)
     while (true) {
-        auto startIt = std::search(client->buffer.begin(), client->buffer.end(),
-                                   std::begin("\xFF\xD8"), std::end("\xFF\xD8") - 1);
-        auto endIt = std::search(client->buffer.begin(), client->buffer.end(),
-                                 std::begin("\xFF\xD9"), std::end("\xFF\xD9") - 1);
-        if (startIt != client->buffer.end() && endIt != client->buffer.end() && endIt > startIt) {
-            endIt += 2; // Include the end marker
-            std::vector<unsigned char> frame(startIt, endIt);
-            client->frameProcessor.updateFrame(frame);
-            client->buffer.erase(client->buffer.begin(), endIt);
-        } else {
+        // Look for end of headers (\r\n\r\n)
+        auto it = std::search(client->buffer.begin(), client->buffer.end(),
+                              "\r\n\r\n", "\r\n\r\n" + 4);
+        if (it == client->buffer.end()) {
+            // Not enough data yet
             break;
         }
+
+        // Parse headers
+        std::string headers(client->buffer.begin(), it);
+        size_t pos = headers.find("Content-Length:");
+        if (pos == std::string::npos) {
+            // If no Content-Length, discard this block and continue
+            client->buffer.erase(client->buffer.begin(), it + 4);
+            continue;
+        }
+
+        // Extract Content-Length value
+        pos += 15; // move past "Content-Length:"
+        while (pos < headers.size() && (headers[pos] == ' ' || headers[pos] == '\t'))
+            pos++;
+        size_t endpos = headers.find("\r\n", pos);
+        int len = std::stoi(headers.substr(pos, endpos - pos));
+
+        // Do we have the full frame?
+        if (client->buffer.end() - (it + 4) < len) {
+            // Wait for more data
+            break;
+        }
+
+        // Extract JPEG frame
+        auto start = it + 4;
+        std::vector<unsigned char> frame(start, start + len);
+
+        client->frameProcessor.updateFrame(frame);
+
+        // Erase processed data (headers + frame)
+        client->buffer.erase(client->buffer.begin(), start + len);
     }
 
     return totalSize;
 }
 
 void MJPEGClient::run() {
-    while (running) {
-        CURL* curl = curl_easy_init();
-        if (!curl) {
-            std::cerr << "Failed to initialize curl" << std::endl;
-            frameProcessor.setStreamAvailable(false);
-            std::this_thread::sleep_for(std::chrono::seconds(2));
-            continue;
-        }
-
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, &MJPEGClient::writeCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, this);
-        curl_easy_setopt(curl, CURLOPT_USERAGENT, "libcurl-agent/1.0");
-        curl_easy_setopt(curl, CURLOPT_NOPROGRESS, 1L);
-        curl_easy_setopt(curl, CURLOPT_TCP_KEEPALIVE, 1L);
-        curl_easy_setopt(curl, CURLOPT_TIMEOUT, 5L); // Retry every 5s
-        curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 3L); // Connection max 3s
-
-        std::cout << "[MJPEGClient] Connected and streaming..." << std::endl;
-        frameProcessor.setStreamAvailable(true);
-        CURLcode res = curl_easy_perform(curl);
-
-        if (res != CURLE_OK) {
-            std::cerr << "[MJPEGClient] curl_easy_perform() failed: "
-                    << curl_easy_strerror(res) << std::endl;
-            frameProcessor.setStreamAvailable(false);
-        }
-
-        std::cout << "[MJPEGClient] cleaning up " << std::endl;
-        curl_easy_cleanup(curl);
-
-        // Delay before retrying (to avoid busy loop)
-        if (running) {
-            std::this_thread::sleep_for(std::chrono::seconds(2));
-        }
+    CURL* easy = curl_easy_init();
+    if (!easy) {
+        std::cerr << "[MJPEGClient] Failed to initialize curl" << std::endl;
+        frameProcessor.setStreamAvailable(false);
+        return;
     }
+
+    curl_easy_setopt(easy, CURLOPT_URL, url.c_str());
+    curl_easy_setopt(easy, CURLOPT_WRITEFUNCTION, &MJPEGClient::writeCallback);
+    curl_easy_setopt(easy, CURLOPT_WRITEDATA, this);
+    curl_easy_setopt(easy, CURLOPT_USERAGENT, "libcurl-agent/1.0");
+    curl_easy_setopt(easy, CURLOPT_TCP_KEEPALIVE, 1L);
+    curl_easy_setopt(easy, CURLOPT_CONNECTTIMEOUT_MS, 3000L); // max time to connect
+
+    CURLM* multi = curl_multi_init();
+    curl_multi_add_handle(multi, easy);
+
+    int still_running = 0;
+    curl_multi_perform(multi, &still_running);
+
+    std::cout << "[MJPEGClient] Connected and streaming (multi interface)..." << std::endl;
+    frameProcessor.setStreamAvailable(true);
+
+    while (running && still_running) {
+        int numfds = 0;
+        CURLMcode mc = curl_multi_wait(multi, nullptr, 0, 500, &numfds);
+        if (mc != CURLM_OK) {
+            std::cerr << "[MJPEGClient] curl_multi_wait() failed: " << curl_multi_strerror(mc) << std::endl;
+            break;
+        }
+
+        curl_multi_perform(multi, &still_running);
+    }
+
+    curl_multi_remove_handle(multi, easy);
+    curl_easy_cleanup(easy);
+    curl_multi_cleanup(multi);
+
+    std::cout << "[MJPEGClient] Thread exiting cleanly." << std::endl;
+    frameProcessor.setStreamAvailable(false);
 }

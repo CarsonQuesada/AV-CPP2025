@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include <array>
+#include <chrono>
 
 #include "Shared/Message.h"
 #include "VehicleState.h"
@@ -84,6 +85,7 @@ public:
 
 private:
     GLFWwindow* window;
+    std::chrono::steady_clock::time_point lastSendTime = std::chrono::steady_clock::now();
 
     std::array<ButtonState, static_cast<size_t>(ButtonID::Count)> buttonInputs;
     std::array<SliderInputInt, static_cast<size_t>(SliderID::Count)> slidersInt;

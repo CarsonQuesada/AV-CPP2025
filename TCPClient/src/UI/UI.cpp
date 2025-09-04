@@ -3,6 +3,7 @@
 #include <iostream>
 #include <algorithm>
 
+#include "Shared/Keys.h"
 #include "backends/imgui_impl_glfw.h"
 #include "backends/imgui_impl_opengl3.h"
 #include "StatusOverview.h"
@@ -11,8 +12,8 @@
 #include "FrameProcessor.h"
 
 UI::UI(GLFWwindow *imguiContext, VehicleClient& client, VehicleController& controller)
-    : window(imguiContext), statusOverview(StatusOverview(layout)), dockspace(Dockspace(layout)), 
-      videoStream("http://192.168.8.132:8080/stream", frameProcessor)
+    : window(imguiContext), statusOverview(StatusOverview(layout, uiContext)), dockspace(Dockspace(layout)), 
+      videoStream(VIDEO_STREAM_URL, frameProcessor)
 {
     uiContext.client = &client;
     uiContext.controller = &controller;
@@ -52,7 +53,6 @@ UI::~UI() {
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
-    std::cout << "Pause 3" << std::endl;
 }
 
 void UI::onUpdate() {

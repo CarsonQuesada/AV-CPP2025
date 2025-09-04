@@ -35,9 +35,10 @@ public:
     inline std::optional<Message> tryRecvMsg() { return receiveQueue.tryPop(); }
     inline Message waitRecvMsg() { return receiveQueue.waitAndPop(); }
     inline void sendMsg(Message msg) { sendQueue.push(msg); }
+    inline double getConnectionSpeed() { return pingRTTms.load(); } // Returns connection speed as a double in ms
 
 private:
-    void start();
+    bool start();
     void stop();
     bool connect(const std::string& ipAddr);
     void startWorkerThreads();
@@ -46,6 +47,9 @@ private:
     void runReceive();
     void runTransmit();
     void runRegularUpdate();
+    bool performHandshake();
+    uint64_t getCurrentTimeNs(); // For ping messages
+
 
     TCPClient client;
     ThreadSafeQueue<Message> sendQueue;
@@ -58,8 +62,10 @@ private:
 
     std::atomic<bool> reconnectRequested = false;
     std::atomic<bool> stopFlag = true;
+    std::atomic<bool> shutdownFlag = false;
     std::atomic<ClientConnectionState> connectionState = ClientConnectionState::Disconnected;
     std::atomic<bool> cancelConnect = false;
+    std::atomic<double> pingRTTms;
 
     std::atomic<ConnectionType> lastConnectionType = ConnectionType::None;
     std::thread connectionThread;
