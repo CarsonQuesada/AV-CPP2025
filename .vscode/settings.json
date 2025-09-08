@@ -75,5 +75,8 @@
     "C_Cpp.default.browse.path": [
     "${workspaceFolder}",
     "${workspaceFolder}/AV/PiServer"
-    ]
+    ],
+
+    "python.defaultInterpreterPath": "/home/avcpp/AV-CPP2025/Autopilot/.venv/bin/python",
+    "python-envs.pythonProjects": [],
 }
