@@ -1,0 +1,1 @@
+/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/general_status__functions.h

@@ -1,0 +1,17 @@
+state_manager_node:
+  ros__parameters:
+    timeouts.autopilot_ms: 200
+    timeouts.arming_ms: 800
+    status_hz: 5
+    escalate_ap_stale_to_estop: false
+
+    autopilot_profiles.0.name: "DEFAULT"
+    autopilot_profiles.0.features_mask: 3
+    autopilot_profiles.0.params.target_speed: 3.0
+
+    autopilot_profiles.1.name: "LANES_ONLY"
+    autopilot_profiles.1.features_mask: 1
+    autopilot_profiles.1.params.target_speed: 2.0
+
+    autopilot_profiles.2.name: "OBSTACLES_ONLY"
+    autopilot_profiles.2.features_mask: 2

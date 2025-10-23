@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/vehicle_core_container" "TARGETS" "vehicle_core_container" "RUNTIME_DESTINATION" "lib/vehicle_core")

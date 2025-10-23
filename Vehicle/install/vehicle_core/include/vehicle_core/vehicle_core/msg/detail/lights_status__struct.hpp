@@ -1,0 +1,1 @@
+/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/detail/lights_status__struct.hpp

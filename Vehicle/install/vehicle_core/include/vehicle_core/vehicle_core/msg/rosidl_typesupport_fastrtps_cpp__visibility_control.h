@@ -1,0 +1,1 @@
+/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
