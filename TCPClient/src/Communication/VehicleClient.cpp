@@ -9,11 +9,13 @@ VehicleClient::VehicleClient() {
 
 VehicleClient::~VehicleClient() {
     shutdownFlag.store(true);
-    disconnect();
 
-    client.disconnect();
+    disconnect();             // already closes socket and joins workers
 
+    // if a connect thread was running, wait for it
     if (connectionThread.joinable()) connectionThread.join();
+
+    // supervisor thread exits when shutdownFlag==true
     if (supervisorThread.joinable()) supervisorThread.join();
 }
 
@@ -123,25 +125,19 @@ bool VehicleClient::reconnect()
 void VehicleClient::disconnect()
 {
     lastConnectionType = ConnectionType::None;
-    stop();
+    reconnectRequested.store(false);   // << prevent supervisor from racing a reconnect
 
-    // Drain queues
-    while (true) {
-        auto messageOpt = receiveQueue.tryPop();
-        if (!messageOpt.has_value()) break;
-        // Optionally: process or log messageOpt.value()
-    }
+    stop();                            // does close + join
 
-    while (true) {
-        auto messageOpt = sendQueue.tryPop();
-        if (!messageOpt.has_value()) break;
-        // Optionally: process or log messageOpt.value()
-    }
+    // Drain queues (non-blocking)
+    while (receiveQueue.tryPop().has_value()) { /* no-op */ }
+    while (sendQueue.tryPop().has_value())     { /* no-op */ }
 }
 
 bool VehicleClient::start()
 {
     if (!performHandshake()) {
+        std::cout << "Handshake Failed" << std::endl;
         return false;
     }
 
@@ -154,17 +150,22 @@ bool VehicleClient::start()
         std::cerr << "start() called while threads already running!" << std::endl;
         return false;
     }
-    stopFlag.store(false);
     startWorkerThreads();
+    return true;   // << add this
 }
 
 void VehicleClient::stop()
 {
     stopFlag.store(true);
-    cancelConnect.store(true); // in case we're reconnecting
-    stopWorkerThreads();
+    cancelConnect.store(true);
 
-    client.disconnect();
+    // IMPORTANT: first forcibly unblock any I/O
+    client.disconnect();           // should call shutdown(fd, SHUT_RDWR) then close(fd)
+
+    // wake any waits (if you add condition_variables for TX later)
+    // tx_cv.notify_all();  // example
+
+    stopWorkerThreads();           // now safe to join
     connectionState = ClientConnectionState::Disconnected;
 }
 
@@ -196,54 +197,81 @@ void VehicleClient::stopWorkerThreads() {
 
 void VehicleClient::runReceive()
 {
-    int status;
+    try {
+        int status;
+        while (!stopFlag.load()) 
+        {
+            MessageHeader header{};
+            Message message;
 
-    while (!stopFlag.load()) 
-    {
-        MessageHeader header;
-        Message message;
+            // header read
+            int status = client.receiveAll(&header, sizeof(header), /*maxWaitSec=*/1);
+            if (status <= 0) {
+                // If we are intentionally stopping/disconnecting, just exit quietly
+                if (stopFlag.load()) break;
 
-        status = client.receiveAll(&header, sizeof(header));
-        if (status < 0) {
-            // Client disconnected from server
-            message.messageID = MessageID::Disconnected;
-            receiveQueue.push(message);
-            reconnectRequested.store(true);
-            break;
-        }
+                // Timeout -> just loop again (avoid spurious reconnect)
+                if (status == 0) continue;
 
-        message.messageID = header.messageID;
-
-        constexpr uint32_t MAX_PAYLOAD_LENGTH = 1024 * 1024; // 1 MB limit, adjust as needed
-        std::cerr << "Payload length: " << header.payloadLength << std::endl;
-        if (header.payloadLength > MAX_PAYLOAD_LENGTH) {
-            std::cerr << "Payload too large!" << std::endl;
-            reconnectRequested.store(true);
-            break;
-        }
-
-        message.payload.resize(header.payloadLength);
-        status = client.receiveAll(message.payload.data(), header.payloadLength);
-        if (status < 0) {
-            // Client disconnected from server
-            std::cout << "Reconnect Requested" << std::endl;
-            message.messageID = MessageID::Disconnected;
-            receiveQueue.push(message);
-            reconnectRequested.store(true);
-            break;
-        }
-        
-        if (message.messageID != MessageID::Invalid) {
-            if (header.messageID == MessageID::Ping) {
-                Ping ping = extractPayload<Ping>(message); // Assuming you have this
-                uint64_t now = getCurrentTimeNs();
-                pingRTTms = (now - ping.clientSendTimeNs) / 1'000'000.0;
-                continue;
-            } else {
-                std::cout << "Received Feedback: " << static_cast<int>(message.messageID) << std::endl;
+                // Hard error / peer closed -> request reconnect
+                message.messageID = MessageID::Disconnected;
                 receiveQueue.push(message);
+                reconnectRequested.store(true);
+                break;
             }
+
+
+            message.messageID = header.messageID;
+
+            constexpr uint32_t MAX_PAYLOAD_LENGTH = 1024 * 1024;
+            std::cerr << "Payload length: " << header.payloadLength << std::endl;
+            if (header.payloadLength > MAX_PAYLOAD_LENGTH) {
+                std::cerr << "Payload too large!" << std::endl;
+                reconnectRequested.store(true);
+                break;
+            }
+
+            message.payload.resize(header.payloadLength);
+            if (header.payloadLength > 0) {
+                status = client.receiveAll(message.payload.data(), header.payloadLength, 1);
+                if (status <= 0) {
+                    if (stopFlag.load()) break;
+                    if (status == 0) continue; // timeout, try again
+                    std::cout << "Reconnect Requested" << std::endl;
+                    message.messageID = MessageID::Disconnected;
+                    receiveQueue.push(message);
+                    reconnectRequested.store(true);
+                    break;
+                }
+            }
+
+            if (message.messageID == MessageID::Invalid) {
+                continue;
+            }
+
+            if (header.messageID == MessageID::Ping) {
+                // Be tolerant during disconnect / half-closed sockets
+                if (message.payload.size() == sizeof(Ping)) {
+                    Ping ping = extractPayload<Ping>(message);
+                    uint64_t now = getCurrentTimeNs();
+                    pingRTTms = (now - ping.clientSendTimeNs) / 1'000'000.0;
+                } else {
+                    // Treat as keepalive or ignore
+                    std::cerr << "Ping payload size unexpected: " 
+                              << message.payload.size() << " (expected " << sizeof(Ping) << ")\n";
+                }
+                continue; // don't push Ping to app queue
+            }
+
+            std::cout << "Received Feedback: " << static_cast<int>(message.messageID) << std::endl;
+            receiveQueue.push(std::move(message));
         }
+    } catch (const std::exception& ex) {
+        std::cerr << "runReceive() exception: " << ex.what() << std::endl;
+        reconnectRequested.store(true);
+    } catch (...) {
+        std::cerr << "runReceive() unknown exception\n";
+        reconnectRequested.store(true);
     }
 }
 
@@ -356,7 +384,7 @@ bool VehicleClient::performHandshake()
     Message msg = { header.messageID, std::move(payload) };
     ServerInit serverInit = extractPayload<ServerInit>(msg);
     VehicleState::getInstance().genStatus = serverInit.generalStatus;
-    VehicleState::getInstance().autoStatus = serverInit.autopilotStatus;
+    VehicleState::getInstance().stateMode = serverInit.stateMode;
     VehicleState::getInstance().driveStatus = serverInit.driveStatus;
     VehicleState::getInstance().lightStatus = serverInit.lightsStatus;
 

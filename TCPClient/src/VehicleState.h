@@ -11,7 +11,7 @@ public:
     }
 
     LightsStatus lightStatus;
-    AutopilotStatus autoStatus;
+    StateMode stateMode;
     DriveStatus driveStatus;
     GeneralStatus genStatus;
 

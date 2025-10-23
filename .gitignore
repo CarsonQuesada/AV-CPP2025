@@ -34,6 +34,18 @@
 # IP address and listening port
 Shared/TCP.h
 
-# Ignores for libraries used with ui
-!TCPClient/Dependencies/curl/lib/*.a
-!TCPClient/Dependencies/glfw/lib-mingw/*.a
+build/
+**/build/
+**/.build/
+
+**/CMakeFiles/
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/Makefile
+**/compile_commands.json
+
+**/_deps/
+
+**/*.exe
+**/*.pdb
+**/*.dll

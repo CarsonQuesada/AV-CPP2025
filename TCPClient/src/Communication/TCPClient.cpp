@@ -104,117 +104,107 @@ bool TCPClient::tryConnect(const char* ipAddr, int port, std::atomic<bool>& canc
 
 void TCPClient::disconnect()
 {
-    std::unique_lock<std::shared_mutex> lock(sockMut);
-    if (connected.load()) {
-        shutdown(sock, SD_BOTH);
-        closesocket(sock);
-        connected.store(false);
+    // Copy current socket without blocking the reader for long
+    SOCKET s_copy = INVALID_SOCKET;
+    {
+        std::shared_lock<std::shared_mutex> rlk(sockMut);
+        s_copy = sock;
+    }
+
+    // Interrupt any pending I/O immediately
+    if (s_copy != INVALID_SOCKET) {
+        shutdown(s_copy, SD_BOTH);
+    }
+
+    // Now take the exclusive lock and close / reset state
+    {
+        std::unique_lock<std::shared_mutex> wlk(sockMut);
+        if (sock != INVALID_SOCKET) {
+            closesocket(sock);
+            sock = INVALID_SOCKET;
+        }
+        connected.store(false, std::memory_order_release);
     }
 }
 
 int TCPClient::receiveAll(void* buffer, int length, int maxWait)
 {
-    if (!connected)
-        return false; // signal no connection to server
+    if (!connected.load(std::memory_order_acquire))
+        return 0; // not connected
 
     int bytesRead = 0;
-    fd_set readfds;
-    timeval timeout;
-    int activity;
 
-    std::shared_lock<std::shared_mutex> lock(sockMut); // shared with transmit()
-
-    if (connected.load()) {
-        while (bytesRead < length) {
-            FD_ZERO(&readfds);              // Clear the readfds set
-            FD_SET(sock, &readfds);         // Add the client socket to the read set
-            timeout.tv_sec = maxWait;       // Timeout after maxWait seconds
-            timeout.tv_usec = 0;
-
-            // Use select() to check if the socket is ready to be read
-            activity = select(0, &readfds, nullptr, nullptr, &timeout);
-
-            if (activity == SOCKET_ERROR) {
-                std::cout << "Error in select(): " << WSAGetLastError() << std::endl;
-                return false;
-            } else if (activity == 0) {
-                // Timeout reached, no data received
-                std::cout << "Timeout reached while waiting for data" << std::endl;
-                return false;
-            } else if (FD_ISSET(sock, &readfds)) {
-                // Begin receiving the message
-                int bytesRecovered = recv(sock, (char*)buffer + bytesRead, length - bytesRead, 0);
-
-                if (bytesRecovered > 0) {
-                    bytesRead += bytesRecovered;
-                } else if (bytesRecovered == 0) {
-                    std::cout << "Connection closed gracefully by user" << std::endl;
-                    return false; // Connection closed by user gracefully
-                } else if (bytesRecovered < 0) {
-                    int err = WSAGetLastError();
-                    if (err == WSAEWOULDBLOCK) {
-                        std::cout << "Received no data\n" << std::endl;
-                    } else {
-                        std::cout << "TCP disconnected incorrectly\n" << std::endl;
-                        return -1; // TCP disconnected incorrectly
-                    }
-                }
-            }
+    while (bytesRead < length) {
+        // Snapshot the socket under a shared lock, then release it
+        SOCKET s_copy;
+        {
+            std::shared_lock<std::shared_mutex> rlk(sockMut);
+            s_copy = sock;
         }
-    } else {
-        return false; // Not connected
+        if (s_copy == INVALID_SOCKET) return 0;
+
+        fd_set readfds; FD_ZERO(&readfds); FD_SET(s_copy, &readfds);
+        timeval timeout{ maxWait, 0 };
+
+        int activity = select(0, &readfds, nullptr, nullptr, &timeout);
+        if (activity == SOCKET_ERROR) {
+            // select error -> treat as hard failure
+            return -1;
+        } else if (activity == 0) {
+            // timeout
+            return 0;
+        }
+
+        int n = recv(s_copy, (char*)buffer + bytesRead, length - bytesRead, 0);
+        if (n > 0) {
+            bytesRead += n;
+            continue;
+        }
+        if (n == 0) {
+            // peer closed
+            return 0;
+        }
+        int err = WSAGetLastError();
+        if (err == WSAEWOULDBLOCK) {
+            // Spurious — loop again
+            continue;
+        }
+        // real recv error
+        return -1;
     }
 
-    return true;
+    return 1; // success
 }
 
-int TCPClient::transmitAll(const void *data, int length)
+int TCPClient::transmitAll(const void* data, int length)
 {
-    if (!connected)
-        return -2; // signal no connection to server
+    if (!connected.load(std::memory_order_acquire))
+        return -2;
 
     int totalSent = 0;
-    const int timeoutSeconds = 1;
 
-    std::shared_lock<std::shared_mutex> lock(sockMut); // shared with receive()
-    if (connected.load()) {
-        while (totalSent < length) {
-            // Wait for the socket to be writable
-            fd_set writefds;
-            FD_ZERO(&writefds);
-            FD_SET(sock, &writefds);
-
-            struct timeval timeout;
-            timeout.tv_sec = timeoutSeconds;
-            timeout.tv_usec = 0;
-
-            int ready = select(0, nullptr, &writefds, nullptr, &timeout);
-            if (ready < 0) {
-                std::cerr << "select() error: " << WSAGetLastError() << std::endl;
-                return false;
-            } else if (ready == 0) {
-                std::cerr << "sendAll() timeout while waiting to send.\n";
-                return false;
-            }
-
-            // Write to socket
-            int bytesSent = send(sock, (const char*)data + totalSent, length - totalSent, 0);
-            if (bytesSent < 0) {
-                int err = WSAGetLastError();
-                if (err == WSAEWOULDBLOCK) {
-                    continue; // Try again
-                } else {
-                    std::cerr << "send() error: " << err << "\n";
-                    return false;
-                }
-            } else if (bytesSent == 0) {
-                std::cerr << "Connection closed by peer.\n";
-                return false;
-            }
-
-            totalSent += bytesSent;
+    while (totalSent < length) {
+        SOCKET s_copy;
+        {
+            std::shared_lock<std::shared_mutex> rlk(sockMut);
+            s_copy = sock;
         }
+        if (s_copy == INVALID_SOCKET) return 0;
+
+        fd_set writefds; FD_ZERO(&writefds); FD_SET(s_copy, &writefds);
+        timeval timeout{ 1, 0 };
+        int ready = select(0, nullptr, &writefds, nullptr, &timeout);
+        if (ready == SOCKET_ERROR) return -1;
+        if (ready == 0) return 0; // send timeout
+
+        int n = send(s_copy, (const char*)data + totalSent, length - totalSent, 0);
+        if (n > 0) { totalSent += n; continue; }
+        if (n == 0) { return 0; }
+
+        int err = WSAGetLastError();
+        if (err == WSAEWOULDBLOCK) continue;
+        return -1;
     }
 
-    return true;
+    return 1;
 }

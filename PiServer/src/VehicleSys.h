@@ -36,7 +36,7 @@ public:
     GeneralStatus getGeneralStatus();
     DriveStatus getDriveStatus();
     inline TelemetryData getTelemetryData() { return telemetryData; }
-    inline AutopilotStatus getAutopilotStatus() { return autopilotStatus; }
+    inline StateMode getStateMode() { return stateMode; }
     inline bool consumeLightsStatusDirty() { return lightsStatusDirty.exchange(false); }
 
     void statusUpdate();
@@ -54,7 +54,7 @@ private:
     std::atomic<bool> lightsStatusDirty = false; // Set true when a light's state changes (except connect status LED)
     float batteryPercent = 0.0;
     TelemetryData telemetryData;
-    AutopilotStatus autopilotStatus;
+    StateMode stateMode;
 
     // IO Devices
     Lighting lighting;

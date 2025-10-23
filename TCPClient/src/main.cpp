@@ -9,9 +9,9 @@
 #include <iostream>
 #include <iomanip>
 #include <thread>
+#include <chrono>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <chrono>
 
 #include "VehicleState.h"
 #include "VehicleController.h"
@@ -91,7 +91,7 @@ int main() {
 			controller.pollKeyboardInput();
 			std::vector<Message> msgs = controller.generateCommands(
 				client.getConnectionState() == ClientConnectionState::Connected, 
-				VehicleState::getInstance().autoStatus.autopilotActive
+				(VehicleState::getInstance().stateMode.mode == 3)
 			);
 
 			for (const auto& msg : msgs) {
@@ -122,8 +122,8 @@ int main() {
 					case MessageID::DriveStatus:
 						VehicleState::getInstance().driveStatus = extractPayload<DriveStatus>(recievedMsg);
 						break;
-					case MessageID::AutopilotStatus:
-						VehicleState::getInstance().autoStatus = extractPayload<AutopilotStatus>(recievedMsg);
+					case MessageID::StateMode:
+						VehicleState::getInstance().stateMode = extractPayload<StateMode>(recievedMsg);
 						break;
 					case MessageID::Ping:
 						// Ping is handled by VehicleServer currently

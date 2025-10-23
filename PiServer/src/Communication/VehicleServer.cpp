@@ -266,7 +266,7 @@ bool VehicleServer::performHandshake()
     ServerInit response = {};
     response.generalStatus = VehicleSys::getInstance().getGeneralStatus();
     response.lightsStatus = VehicleSys::getInstance().getLightsStatus();
-    response.autopilotStatus = VehicleSys::getInstance().getAutopilotStatus();
+    response.stateMode = VehicleSys::getInstance().getStateMode();
 
     MessageHeader responseHeader;
     responseHeader.messageID = MessageID::ServerInit;

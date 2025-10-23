@@ -9,22 +9,21 @@ enum class MessageID : uint8_t {
     Ping = 0,    // used to notify it is still connected
     Drive = 1,
     ToggleLights = 2,
-    MoveCamera = 3,
     SetMaxSpeed = 4,
     ClientInit = 5,
 
     // To Autopilot
     StartAutopilot = 50, 
     StopAutopilot = 51,
-    TelemetryData = 52,
 
     // To Client 
     LightsStatus = 100,
     GeneralStatus = 101,
     DriveStatus = 102,
-    AutopilotStatus = 103,
-    ServerInit = 104,
-    Error = 105,
+    StateMode = 103,
+    TelemetryData = 104,
+    ServerInit = 105,
+    Error = 106,
 
     // Should not be sent over TCP
     Disconnected = 254,
@@ -39,11 +38,6 @@ enum class GearID : uint8_t
 enum class LightID : uint8_t
 {
     NoInput = 0x00, LeftTurnSig = 0x01, RightTurnSig = 0x02, Headlights = 0x03
-};
-
-enum class CameraCmdID : uint8_t
-{
-    NoInput = 0x00, PanCameraLeft = 0x01, CenterCamera = 0x02, PanCameraRight = 0x03
 };
 
 enum class ErrorCode 
@@ -81,10 +75,6 @@ struct LightsCommand {
     LightID lightID;
 };
 
-struct CameraCommand {
-    CameraCmdID cameraMove;
-};
-
 struct SetMaxSpeedCommand {
     uint8_t maxSpeed;       // Value 1-100
 };
@@ -107,25 +97,24 @@ struct GeneralStatus {
     uint32_t speed;
     uint32_t batteryPercent; // 0-100%
     uint8_t gpsOnline;       // 1 = true, 0 = false
-    // Add feilds as needed (max speed maybe)
+    // Add fields as needed (max speed maybe)
 };
 
 struct DriveStatus {
     GearID gear;
     uint8_t braking;        // 1 = true, 0 = false
-    // Add feilds as needed
+    // Add fields as needed
 };
 
-struct AutopilotStatus {
-    uint8_t autopilotActive; // 1 = true, 0 = false
-    uint8_t lidarReady;      // 1 = true, 0 = false
+struct StateMode {
+    uint8_t mode; // 1 = true, 0 = false
 };
 
 struct ServerInit {
     GeneralStatus generalStatus;
     LightsStatus lightsStatus;
     DriveStatus driveStatus;
-    AutopilotStatus autopilotStatus;
+    StateMode stateMode;
     // Add feilds as needed
 };
 
@@ -173,7 +162,6 @@ constexpr MessageID getMessageID() {
 REGISTER_MESSAGE_ID(Ping, MessageID::Ping)
 REGISTER_MESSAGE_ID(DriveCommand, MessageID::Drive)
 REGISTER_MESSAGE_ID(LightsCommand, MessageID::ToggleLights)
-REGISTER_MESSAGE_ID(CameraCommand, MessageID::MoveCamera)
 REGISTER_MESSAGE_ID(SetMaxSpeedCommand, MessageID::SetMaxSpeed)
 REGISTER_MESSAGE_ID(ClientInit, MessageID::ClientInit)
 REGISTER_MESSAGE_ID(StartAutopilotCommand, MessageID::StartAutopilot)
@@ -182,7 +170,7 @@ REGISTER_MESSAGE_ID(TelemetryData, MessageID::TelemetryData)
 REGISTER_MESSAGE_ID(LightsStatus, MessageID::LightsStatus)
 REGISTER_MESSAGE_ID(GeneralStatus, MessageID::GeneralStatus)
 REGISTER_MESSAGE_ID(DriveStatus, MessageID::DriveStatus)
-REGISTER_MESSAGE_ID(AutopilotStatus, MessageID::AutopilotStatus)
+REGISTER_MESSAGE_ID(StateMode, MessageID::StateMode)
 REGISTER_MESSAGE_ID(ServerInit, MessageID::ServerInit)
 REGISTER_MESSAGE_ID(ErrorMessage, MessageID::Error)
 

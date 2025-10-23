@@ -1,0 +1,48 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "win-tcpclient-debug",
+      "displayName": "Windows MinGW - TCPClient Debug",
+      "generator": "MinGW Makefiles",
+      "binaryDir": "${sourceDir}/build/win-tcpclient-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "DEPS_FORCE_FETCH": "OFF"
+      }
+    },
+    {
+      "name": "win-tcpclient-debug-fetch",
+      "displayName": "Windows MinGW - TCPClient Debug (force fetch deps)",
+      "generator": "MinGW Makefiles",
+      "binaryDir": "${sourceDir}/build/win-tcpclient-debug-fetch",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "DEPS_FORCE_FETCH": "ON"
+      }
+    },
+    {
+      "name": "vehicle-debug",
+      "displayName": "Vehicle - Debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/vehicle-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "win-tcpclient-debug",        "configurePreset": "win-tcpclient-debug" },
+    { "name": "win-tcpclient-debug-fetch",  "configurePreset": "win-tcpclient-debug-fetch" },
+    { "name": "vehicle-debug",              "configurePreset": "vehicle-debug" }
+  ],
+  "workflowPresets": [
+    {
+      "name": "tcpclient",
+      "steps": [
+        { "type": "configure", "name": "win-tcpclient-debug" },
+        { "type": "build",     "name": "win-tcpclient-debug" }
+      ]
+    }
+  ]
+}
