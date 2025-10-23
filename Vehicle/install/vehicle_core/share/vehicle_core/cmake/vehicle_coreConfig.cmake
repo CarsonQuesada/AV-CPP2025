@@ -1,0 +1,1 @@
+/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_core/vehicle_coreConfig.cmake

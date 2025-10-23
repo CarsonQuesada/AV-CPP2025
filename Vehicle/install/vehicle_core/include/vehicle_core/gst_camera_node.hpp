@@ -1,0 +1,1 @@
+/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/gst_camera_node.hpp

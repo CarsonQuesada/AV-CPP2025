@@ -1,0 +1,1 @@
+uint8 action  # 0=STOP, 1=START

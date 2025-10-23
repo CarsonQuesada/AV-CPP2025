@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/libgst_camera_component.so" "TARGETS" "gst_camera_component" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

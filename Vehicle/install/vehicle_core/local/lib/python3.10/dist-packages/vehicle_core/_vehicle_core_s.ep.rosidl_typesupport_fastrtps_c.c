@@ -1,0 +1,1 @@
+/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/_vehicle_core_s.ep.rosidl_typesupport_fastrtps_c.c

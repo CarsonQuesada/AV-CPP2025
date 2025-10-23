@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing opi_vision.egg-info/PKG-INFO
+writing dependency_links to opi_vision.egg-info/dependency_links.txt
+writing entry points to opi_vision.egg-info/entry_points.txt
+writing requirements to opi_vision.egg-info/requires.txt
+writing top-level names to opi_vision.egg-info/top_level.txt
+reading manifest file 'opi_vision.egg-info/SOURCES.txt'
+writing manifest file 'opi_vision.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/avcpp/AV-CPP2025/Autopilot/install/opi_vision/lib/python3.10/site-packages/opi-vision.egg-link (link to .)
+Installing image_rate script to /home/avcpp/AV-CPP2025/Autopilot/install/opi_vision/lib/opi_vision
+Installing mjpeg_server script to /home/avcpp/AV-CPP2025/Autopilot/install/opi_vision/lib/opi_vision
+Installing yolo_annotate script to /home/avcpp/AV-CPP2025/Autopilot/install/opi_vision/lib/opi_vision
+
+Installed /home/avcpp/AV-CPP2025/Autopilot/build/opi_vision
+running symlink_data

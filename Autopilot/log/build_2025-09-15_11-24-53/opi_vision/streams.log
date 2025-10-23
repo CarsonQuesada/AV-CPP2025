@@ -1,0 +1,24 @@
+[0.880s] Invoking command in '/home/avcpp/AV-CPP2025/Autopilot/src/opi_vision': PYTHONPATH=/home/avcpp/AV-CPP2025/Autopilot/build/opi_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/avcpp/AV-CPP2025/Autopilot/install/opi_vision/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/opi_vision build --build-base /home/avcpp/AV-CPP2025/Autopilot/build/opi_vision/build install --record /home/avcpp/AV-CPP2025/Autopilot/build/opi_vision/install.log --single-version-externally-managed install_data
+[1.138s] running egg_info
+[1.140s] writing ../../build/opi_vision/opi_vision.egg-info/PKG-INFO
+[1.140s] writing dependency_links to ../../build/opi_vision/opi_vision.egg-info/dependency_links.txt
+[1.141s] writing entry points to ../../build/opi_vision/opi_vision.egg-info/entry_points.txt
+[1.141s] writing requirements to ../../build/opi_vision/opi_vision.egg-info/requires.txt
+[1.142s] writing top-level names to ../../build/opi_vision/opi_vision.egg-info/top_level.txt
+[1.143s] reading manifest file '../../build/opi_vision/opi_vision.egg-info/SOURCES.txt'
+[1.144s] writing manifest file '../../build/opi_vision/opi_vision.egg-info/SOURCES.txt'
+[1.144s] running build
+[1.145s] running build_py
+[1.145s] running install
+[1.145s] running install_lib
+[1.147s] running install_data
+[1.147s] copying launch/bringup.launch.py -> /home/avcpp/AV-CPP2025/Autopilot/install/opi_vision/share/opi_vision/launch
+[1.147s] running install_egg_info
+[1.150s] removing '/home/avcpp/AV-CPP2025/Autopilot/install/opi_vision/lib/python3.10/site-packages/opi_vision-0.1.0-py3.10.egg-info' (and everything under it)
+[1.151s] Copying ../../build/opi_vision/opi_vision.egg-info to /home/avcpp/AV-CPP2025/Autopilot/install/opi_vision/lib/python3.10/site-packages/opi_vision-0.1.0-py3.10.egg-info
+[1.151s] running install_scripts
+[1.183s] Installing image_rate script to /home/avcpp/AV-CPP2025/Autopilot/install/opi_vision/lib/opi_vision
+[1.183s] Installing mjpeg_server script to /home/avcpp/AV-CPP2025/Autopilot/install/opi_vision/lib/opi_vision
+[1.184s] Installing yolo_annotate script to /home/avcpp/AV-CPP2025/Autopilot/install/opi_vision/lib/opi_vision
+[1.185s] writing list of installed files to '/home/avcpp/AV-CPP2025/Autopilot/build/opi_vision/install.log'
+[1.277s] Invoked command in '/home/avcpp/AV-CPP2025/Autopilot/src/opi_vision' returned '0': PYTHONPATH=/home/avcpp/AV-CPP2025/Autopilot/build/opi_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/avcpp/AV-CPP2025/Autopilot/install/opi_vision/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/opi_vision build --build-base /home/avcpp/AV-CPP2025/Autopilot/build/opi_vision/build install --record /home/avcpp/AV-CPP2025/Autopilot/build/opi_vision/install.log --single-version-externally-managed install_data

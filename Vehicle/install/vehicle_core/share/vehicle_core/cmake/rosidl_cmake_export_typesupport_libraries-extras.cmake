@@ -1,0 +1,1 @@
+/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
