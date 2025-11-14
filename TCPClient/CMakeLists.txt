@@ -16,7 +16,6 @@ set(STB_DIR   "${APP_DIR}/Dependencies/stb_image")
 
 file(GLOB TCPCLIENT_SRC CONFIGURE_DEPENDS
   "${SRC_DIR}/*.cpp"
-  "${SRC_DIR}/Communication/*.cpp"
   "${SRC_DIR}/UI/*.cpp"
   "${SRC_DIR}/UI/Panels/*.cpp"
 )
@@ -35,6 +34,8 @@ add_executable(TCPClient ${TCPCLIENT_SRC})
 target_include_directories(TCPClient PRIVATE
   "${APP_DIR}"
   "${SRC_DIR}"
+  "${SRC_DIR}/UI"
+  "${SRC_DIR}/UI/Panels"
   "${IMGUI_DIR}"
   "${IMGUI_DIR}/backends"
   "${GLAD_DIR}/include"
@@ -42,6 +43,7 @@ target_include_directories(TCPClient PRIVATE
 )
 target_compile_definitions(TCPClient PRIVATE
   IMGUI_IMPL_OPENGL_LOADER_CUSTOM
+  GLFW_INCLUDE_NONE
   GLFW_STATIC
   CURL_STATICLIB
   $<$<CONFIG:Debug>:DEBUG>

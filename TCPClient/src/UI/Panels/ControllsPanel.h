@@ -1,7 +1,6 @@
 #pragma once
 
 #include "UIPanel.h"
-#include "Communication/VehicleClient.h"
 
 class ControllsPanel : public UIPanel
 {

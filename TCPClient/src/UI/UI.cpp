@@ -3,17 +3,14 @@
 #include <iostream>
 #include <algorithm>
 
-#include "Shared/Keys.h"
 #include "backends/imgui_impl_glfw.h"
 #include "backends/imgui_impl_opengl3.h"
 #include "StatusOverview.h"
 #include "ResourceManager.h"
 #include "FontManager.h"
-#include "FrameProcessor.h"
 
 UI::UI(GLFWwindow *imguiContext, VehicleClient& client, VehicleController& controller)
-    : window(imguiContext), statusOverview(StatusOverview(layout, uiContext)), dockspace(Dockspace(layout)), 
-      videoStream(VIDEO_STREAM_URL, frameProcessor)
+    : window(imguiContext), statusOverview(StatusOverview(layout, uiContext)), dockspace(Dockspace(layout))
 {
     uiContext.client = &client;
     uiContext.controller = &controller;
@@ -36,20 +33,16 @@ UI::UI(GLFWwindow *imguiContext, VehicleClient& client, VehicleController& contr
     layout.viewport = ImGui::GetMainViewport();
     layout.statusOverviewHeight = 30.0f;
 
-    frameProcessor.start();
-    videoStream.start();
-
     panels.push_back(std::make_unique<VehiclePanel>(uiContext));
     panels.push_back(std::make_unique<MessagePanel>(uiContext));
-    panels.push_back(std::make_unique<CameraFeedPanel>(uiContext, frameProcessor));
+    panels.push_back(std::make_unique<CameraFeedPanel>(uiContext));
     panels.push_back(std::make_unique<ConnectionPanel>(uiContext));
     panels.push_back(std::make_unique<ControllsPanel>(uiContext));
     panels.push_back(std::make_unique<AutopilotPanel>(uiContext));
 }
 
 UI::~UI() {
-    frameProcessor.stop();
-    videoStream.stop();
+    panels.clear();
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();

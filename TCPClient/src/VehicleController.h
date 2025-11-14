@@ -60,11 +60,19 @@ struct ButtonState {
 
 struct SliderInputInt {
     int value = 0;
-    int prevValue = 0;
-    inline bool changed() const { return value != prevValue; }
+    bool dirty = false;
+    inline bool consume(int& outValue) { 
+        if(!dirty) {
+            return false;
+        } else {
+            outValue = value;
+            dirty = false;
+            return true; 
+        }
+    }
     inline void update(int newValue) {
-        prevValue = value;
         value = newValue;
+        dirty = true;
     }
 };
 

@@ -3,7 +3,6 @@
 #include <functional>
 
 #include "UIPanel.h"
-#include "Communication/VehicleClient.h"
 #include "VehicleController.h"
 
 class VehiclePanel : public UIPanel
