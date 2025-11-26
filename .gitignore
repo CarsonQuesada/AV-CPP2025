@@ -32,7 +32,7 @@
 *.app
 
 # IP address and listening port
-Shared/TCP.h
+Shared/Keys.h
 
 build/
 **/build/
