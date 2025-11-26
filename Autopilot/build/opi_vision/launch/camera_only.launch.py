@@ -1,1 +1,0 @@
-/home/avcpp/AV-CPP2025/Autopilot/src/opi_vision/launch/camera_only.launch.py

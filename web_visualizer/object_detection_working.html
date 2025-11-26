@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LiDAR Object Detection - Working</title>
+    <script src="https://cdn.jsdelivr.net/npm/roslib@latest/build/roslib.min.js"></script>
+    <style>
+        body { font-family: Arial; background: #1e1e1e; color: white; padding: 20px; margin: 0; }
+        .container { display: flex; gap: 20px; }
+        .panel { background: #2d2d2d; padding: 15px; border-radius: 10px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .connected { background: green; }
+        .error { background: red; }
+        .waiting { background: orange; }
+        .data { background: #3d3d3d; padding: 10px; border-radius: 5px; margin: 5px 0; }
+        .object-list { max-height: 400px; overflow-y: auto; }
+        .object-item { padding: 8px; margin: 5px 0; border-radius: 5px; background: #3d3d3d; }
+        .person { border-left: 4px solid red; }
+        .small_obstacle { border-left: 4px solid orange; }
+        .medium_obstacle { border-left: 4px solid yellow; }
+        .wall { border-left: 4px solid blue; }
+        .unknown { border-left: 4px solid purple; }
+        canvas { border: 2px solid #444; background: #000; display: block; }
+    </style>
+</head>
+<body>
+    <h1>LiDAR Object Detection - Working</h1>
+    
+    <div id="status" class="status waiting">Connecting to ROS...</div>
+    
+    <div class="container">
+        <div class="panel" style="flex: 1;">
+            <h3>Detected Objects</h3>
+            <div id="objectCount" class="data">Objects: 0</div>
+            <div id="objectList" class="object-list">No objects detected</div>
+        </div>
+        
+        <div class="panel" style="flex: 2;">
+            <h3>Live View</h3>
+            <div id="lidarInfo" class="data">Waiting for LiDAR data...</div>
+            <canvas id="lidarCanvas" width="600" height="600"></canvas>
+        </div>
+    </div>
+
+    <script>
+        console.log("Starting object detection viewer...");
+        
+        const status = document.getElementById('status');
+        const objectCount = document.getElementById('objectCount');
+        const objectList = document.getElementById('objectList');
+        const lidarInfo = document.getElementById('lidarInfo');
+        const canvas = document.getElementById('lidarCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Global variables
+        let objects = [];
+        let lidarData = null;
+        let messageCount = 0;
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const scale = 50; // pixels per meter
+
+        // ROS connection
+        const ros = new ROSLIB.Ros({ 
+            url: 'ws://localhost:9090' 
+        });
+
+        ros.on('connection', () => {
+            console.log('✓ Connected to ROS Bridge');
+            status.textContent = '✓ Connected to ROS Bridge';
+            status.className = 'status connected';
+            setupSubscriptions();
+        });
+
+        ros.on('error', (error) => {
+            console.error('ROS Error:', error);
+            status.textContent = '✗ Error: ' + error;
+            status.className = 'status error';
+        });
+
+        ros.on('close', () => {
+            console.log('ROS connection closed');
+            status.textContent = '✗ Disconnected from ROS';
+            status.className = 'status error';
+        });
+
+        function setupSubscriptions() {
+            console.log('Setting up subscriptions...');
+            
+            // Subscribe to LiDAR data
+            const lidarTopic = new ROSLIB.Topic({
+                ros: ros,
+                name: '/scan',
+                messageType: 'sensor_msgs/LaserScan'
+            });
+
+            lidarTopic.subscribe((message) => {
+                messageCount++;
+                lidarData = message;
+                console.log(`Received LiDAR data #${messageCount}: ${message.ranges.length} points`);
+                
+                lidarInfo.textContent = `LiDAR: ${messageCount} msgs, ${message.ranges.length} points`;
+                drawVisualization();
+            });
+
+            // Subscribe to object markers
+            const objectTopic = new ROSLIB.Topic({
+                ros: ros,
+                name: '/detected_objects',
+                messageType: 'visualization_msgs/MarkerArray'
+            });
+
+            objectTopic.subscribe((message) => {
+                console.log('Received object markers:', message.markers.length);
+                updateObjects(message.markers);
+            });
+
+            console.log('Subscriptions setup complete');
+        }
+
+        function updateObjects(markers) {
+            // Filter for object centroids (ignore text labels and bounding boxes)
+            objects = markers.filter(m => 
+                m.ns === "object_centroids" && 
+                m.action === 0 && // ADD action
+                m.type === 2      // SPHERE type
+            );
+            
+            console.log(`Filtered objects: ${objects.length}`);
+            
+            objectCount.textContent = `Objects: ${objects.length}`;
+            
+            if (objects.length === 0) {
+                objectList.innerHTML = '<div class="object-item">No objects detected</div>';
+                return;
+            }
+
+            objectList.innerHTML = objects.map(obj => {
+                const type = getTypeFromColor(obj.color);
+                return `
+                    <div class="object-item ${type}">
+                        <strong>${type.toUpperCase()}</strong><br>
+                        Position: (${obj.pose.position.x.toFixed(2)}, ${obj.pose.position.y.toFixed(2)})<br>
+                        Points: ${getPointCountForObject(obj.id, markers)}<br>
+                        ID: ${obj.id}
+                    </div>
+                `;
+            }).join('');
+            
+            // Redraw to show objects
+            drawVisualization();
+        }
+
+        function getPointCountForObject(objId, markers) {
+            // Find the text marker for this object to get point count
+            const textMarker = markers.find(m => 
+                m.ns === "object_labels" && 
+                m.id === objId &&
+                m.action === 0
+            );
+            if (textMarker && textMarker.text) {
+                const match = textMarker.text.match(/(\d+)pts/);
+                return match ? match[1] : '?';
+            }
+            return '?';
+        }
+
+        function getTypeFromColor(color) {
+            const {r, g, b} = color;
+            if (r === 1 && g === 0 && b === 0) return 'person';
+            if (r === 1 && g === 0.5 && b === 0) return 'small_obstacle';
+            if (r === 1 && g === 1 && b === 0) return 'medium_obstacle';
+            if (r === 0 && g === 0 && b === 1) return 'wall';
+            return 'unknown';
+        }
+
+        function drawVisualization() {
+            // Clear canvas
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            if (!lidarData) {
+                ctx.fillStyle = 'white';
+                ctx.font = '20px Arial';
+                ctx.fillText('Waiting for LiDAR data...', centerX - 100, centerY);
+                return;
+            }
+            
+            drawGrid();
+            drawLidarPoints();
+            drawObjects();
+            drawRobot();
+        }
+
+        function drawGrid() {
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 1;
+            for (let r = 1; r <= 8; r++) {
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, r * scale, 0, 2 * Math.PI);
+                ctx.stroke();
+                
+                // Distance labels
+                ctx.fillStyle = '#666';
+                ctx.font = '12px Arial';
+                ctx.fillText(r + 'm', centerX + r * scale + 5, centerY);
+            }
+            
+            // Draw axes
+            ctx.strokeStyle = '#555';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(centerX - 300, centerY);
+            ctx.lineTo(centerX + 300, centerY);
+            ctx.moveTo(centerX, centerY - 300);
+            ctx.lineTo(centerX, centerY + 300);
+            ctx.stroke();
+        }
+
+        function drawLidarPoints() {
+            ctx.fillStyle = '#0f0';
+            for (let i = 0; i < lidarData.ranges.length; i++) {
+                const range = lidarData.ranges[i];
+                if (range > 0.1 && range < 16.0) {
+                    const angle = lidarData.angle_min + i * lidarData.angle_increment;
+                    const x = centerX + Math.cos(angle) * range * scale;
+                    const y = centerY + Math.sin(angle) * range * scale;
+                    
+                    ctx.beginPath();
+                    ctx.arc(x, y, 2, 0, 2 * Math.PI);
+                    ctx.fill();
+                }
+            }
+        }
+
+        function drawObjects() {
+            objects.forEach(obj => {
+                const x = centerX + obj.pose.position.x * scale;
+                const y = centerY + obj.pose.position.y * scale;
+                const color = `rgb(${Math.floor(obj.color.r * 255)}, ${Math.floor(obj.color.g * 255)}, ${Math.floor(obj.color.b * 255)})`;
+                const type = getTypeFromColor(obj.color);
+                
+                // Draw object center (larger circle)
+                ctx.fillStyle = color;
+                ctx.beginPath();
+                ctx.arc(x, y, 10, 0, 2 * Math.PI);
+                ctx.fill();
+                
+                // Draw outline
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                // Draw bounding box (approximate size based on type)
+                let boxSize = 20;
+                if (type === 'person') boxSize = 15;
+                if (type === 'wall') boxSize = 30;
+                
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 2;
+                ctx.strokeRect(x - boxSize/2, y - boxSize/2, boxSize, boxSize);
+                
+                // Draw label
+                ctx.fillStyle = 'white';
+                ctx.font = '12px Arial';
+                ctx.fillText(`${type} ${obj.id}`, x + 12, y - 12);
+            });
+        }
+
+        function drawRobot() {
+            // Draw robot position
+            ctx.fillStyle = '#f00';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 12, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Draw front indicator
+            ctx.strokeStyle = '#f00';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(centerX, centerY - 25);
+            ctx.stroke();
+            
+            // Draw robot label
+            ctx.fillStyle = 'white';
+            ctx.font = '14px Arial';
+            ctx.fillText('ROBOT', centerX - 20, centerY + 30);
+        }
+
+        console.log("Object detection viewer setup complete");
+    </script>
+</body>
+</html>

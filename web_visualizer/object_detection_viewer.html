@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LiDAR Object Detection</title>
+    <script src="https://cdn.jsdelivr.net/npm/roslib@latest/build/roslib.min.js"></script>
+    <style>
+        body { font-family: Arial; background: #1e1e1e; color: white; padding: 20px; }
+        .container { display: flex; gap: 20px; }
+        .panel { background: #2d2d2d; padding: 15px; border-radius: 10px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .connected { background: green; }
+        .error { background: red; }
+        .waiting { background: orange; }
+        .object-list { max-height: 400px; overflow-y: auto; }
+        .object-item { padding: 8px; margin: 5px 0; border-radius: 5px; background: #3d3d3d; }
+        .person { border-left: 4px solid red; }
+        .small_obstacle { border-left: 4px solid orange; }
+        .medium_obstacle { border-left: 4px solid yellow; }
+        .wall { border-left: 4px solid blue; }
+        .unknown { border-left: 4px solid purple; }
+        canvas { border: 2px solid #444; background: #000; }
+    </style>
+</head>
+<body>
+    <h1>LiDAR Object Detection</h1>
+    
+    <div id="status" class="status waiting">Connecting to ROS...</div>
+    
+    <div class="container">
+        <div class="panel" style="flex: 1;">
+            <h3>Detected Objects</h3>
+            <div id="objectList" class="object-list">No objects detected</div>
+        </div>
+        
+        <div class="panel" style="flex: 2;">
+            <h3>Live View</h3>
+            <canvas id="lidarCanvas" width="600" height="600"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const status = document.getElementById('status');
+        const objectList = document.getElementById('objectList');
+        const canvas = document.getElementById('lidarCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        let objects = [];
+        let lidarData = null;
+
+        // ROS connection
+        const ros = new ROSLIB.Ros({ url: 'ws://localhost:9090' });
+
+        ros.on('connection', () => {
+            status.textContent = '✓ Connected to ROS - Waiting for data...';
+            status.className = 'status connected';
+            setupSubscriptions();
+        });
+
+        ros.on('error', (error) => {
+            status.textContent = '✗ Error: ' + error;
+            status.className = 'status error';
+        });
+
+        function setupSubscriptions() {
+            // LiDAR data
+            new ROSLIB.Topic({
+                ros: ros,
+                name: '/scan',
+                messageType: 'sensor_msgs/LaserScan'
+            }).subscribe((msg) => {
+                lidarData = msg;
+                drawVisualization();
+            });
+
+            // Object markers
+            new ROSLIB.Topic({
+                ros: ros,
+                name: '/detected_objects',
+                messageType: 'visualization_msgs/MarkerArray'
+            }).subscribe((msg) => {
+                updateObjects(msg.markers);
+            });
+        }
+
+        function updateObjects(markers) {
+            objects = markers.filter(m => m.ns === "object_centroids" && m.action === 0);
+            
+            if (objects.length === 0) {
+                objectList.innerHTML = '<div class="object-item">No objects detected</div>';
+                return;
+            }
+
+            objectList.innerHTML = objects.map(obj => {
+                const type = getTypeFromColor(obj.color);
+                return `
+                    <div class="object-item ${type}">
+                        <strong>${type.toUpperCase()}</strong><br>
+                        Position: (${obj.pose.position.x.toFixed(2)}, ${obj.pose.position.y.toFixed(2)})<br>
+                        ID: ${obj.id}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function getTypeFromColor(color) {
+            const {r, g, b} = color;
+            if (r === 1 && g === 0 && b === 0) return 'person';
+            if (r === 1 && g === 0.5 && b === 0) return 'small_obstacle';
+            if (r === 1 && g === 1 && b === 0) return 'medium_obstacle';
+            if (r === 0 && g === 0 && b === 1) return 'wall';
+            return 'unknown';
+        }
+
+        function drawVisualization() {
+            if (!lidarData) return;
+            
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const scale = 50;
+            
+            // Draw grid and LiDAR points
+            drawGrid();
+            drawLidarPoints();
+            
+            // Draw detected objects
+            drawObjects();
+        }
+
+        function drawGrid() {
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 1;
+            for (let r = 1; r <= 8; r++) {
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, r * scale, 0, 2 * Math.PI);
+                ctx.stroke();
+            }
+            
+            // Draw axes
+            ctx.strokeStyle = '#555';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(centerX - 300, centerY);
+            ctx.lineTo(centerX + 300, centerY);
+            ctx.moveTo(centerX, centerY - 300);
+            ctx.lineTo(centerX, centerY + 300);
+            ctx.stroke();
+        }
+
+        function drawLidarPoints() {
+            ctx.fillStyle = '#0f0';
+            lidarData.ranges.forEach((range, i) => {
+                if (range > 0.1 && range < 16.0) {
+                    const angle = lidarData.angle_min + i * lidarData.angle_increment;
+                    const x = centerX + Math.cos(angle) * range * scale;
+                    const y = centerY + Math.sin(angle) * range * scale;
+                    
+                    ctx.beginPath();
+                    ctx.arc(x, y, 1, 0, 2 * Math.PI);
+                    ctx.fill();
+                }
+            });
+        }
+
+        function drawObjects() {
+            objects.forEach(obj => {
+                const x = centerX + obj.pose.position.x * scale;
+                const y = centerY + obj.pose.position.y * scale;
+                const color = `rgb(${obj.color.r * 255}, ${obj.color.g * 255}, ${obj.color.b * 255})`;
+                
+                // Draw object center
+                ctx.fillStyle = color;
+                ctx.beginPath();
+                ctx.arc(x, y, 8, 0, 2 * Math.PI);
+                ctx.fill();
+                
+                // Draw bounding box (approximate)
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 2;
+                ctx.strokeRect(x - 15, y - 15, 30, 30);
+                
+                // Draw label
+                ctx.fillStyle = 'white';
+                ctx.font = '12px Arial';
+                ctx.fillText(`Obj ${obj.id}`, x + 10, y - 10);
+            });
+            
+            // Draw robot
+            ctx.fillStyle = '#f00';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 10, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+        
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+    </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LiDAR Direct Viewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/roslib@latest/build/roslib.min.js"></script>
+    <style>
+        body { font-family: Arial; background: #1e1e1e; color: white; padding: 20px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .connected { background: green; }
+        .error { background: red; }
+        .waiting { background: orange; }
+        .data { background: #2d2d2d; padding: 15px; border-radius: 5px; margin: 10px 0; }
+        canvas { border: 2px solid #444; background: #000; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>LiDAR Direct Viewer</h1>
+    
+    <div id="status" class="status waiting">Connecting to ROS Bridge...</div>
+    <div id="data" class="data">Waiting for LiDAR data...</div>
+    <canvas id="lidarCanvas" width="600" height="600"></canvas>
+
+    <script>
+        console.log("Starting direct LiDAR viewer...");
+        
+        const status = document.getElementById('status');
+        const dataDiv = document.getElementById('data');
+        const canvas = document.getElementById('lidarCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        let messageCount = 0;
+
+        // Direct ROS connection
+        const ros = new ROSLIB.Ros({
+            url: 'ws://localhost:9090'
+        });
+
+        ros.on('connection', () => {
+            console.log('✓ Connected to ROS Bridge');
+            status.textContent = '✓ Connected to ROS Bridge - Waiting for LiDAR data...';
+            status.className = 'status connected';
+            
+            // Subscribe directly to LiDAR topic
+            const lidarTopic = new ROSLIB.Topic({
+                ros: ros,
+                name: '/scan',
+                messageType: 'sensor_msgs/LaserScan'
+            });
+
+            lidarTopic.subscribe((message) => {
+                messageCount++;
+                console.log('✓ Received LiDAR message #' + messageCount);
+                
+                const ranges = message.ranges;
+                const validRanges = ranges.filter(r => r > 0.1 && r < 16.0);
+                
+                // Update data display
+                dataDiv.innerHTML = `
+                    <h3>✓ LiDAR Data Received! (Message #${messageCount})</h3>
+                    <div><strong>Total Points:</strong> ${ranges.length}</div>
+                    <div><strong>Valid Points:</strong> ${validRanges.length}</div>
+                    <div><strong>Min Distance:</strong> ${validRanges.length > 0 ? Math.min(...validRanges).toFixed(2) : 'N/A'}m</div>
+                    <div><strong>Max Distance:</strong> ${validRanges.length > 0 ? Math.max(...validRanges).toFixed(2) : 'N/A'}m</div>
+                    <div><strong>Frame ID:</strong> ${message.header.frame_id}</div>
+                    <div><strong>Sample ranges:</strong> ${ranges.slice(0, 5).map(r => r.toFixed(2)).join(', ')}</div>
+                `;
+                
+                // Draw LiDAR visualization
+                drawLidarData(ranges, message.angle_min, message.angle_increment);
+            });
+        });
+
+        ros.on('error', (error) => {
+            console.error('ROS Error:', error);
+            status.textContent = '✗ Error: ' + error;
+            status.className = 'status error';
+        });
+
+        ros.on('close', () => {
+            console.log('ROS connection closed');
+            status.textContent = '✗ Disconnected from ROS';
+            status.className = 'status error';
+        });
+
+        function drawLidarData(ranges, angleMin, angleIncrement) {
+            // Clear canvas
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const scale = 50; // pixels per meter
+            
+            // Draw grid
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 1;
+            for (let r = 1; r <= 8; r++) {
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, r * scale, 0, 2 * Math.PI);
+                ctx.stroke();
+                ctx.fillStyle = '#666';
+                ctx.fillText(r + 'm', centerX + r * scale + 5, centerY);
+            }
+            
+            // Draw axes
+            ctx.strokeStyle = '#555';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(centerX - 300, centerY);
+            ctx.lineTo(centerX + 300, centerY);
+            ctx.moveTo(centerX, centerY - 300);
+            ctx.lineTo(centerX, centerY + 300);
+            ctx.stroke();
+            
+            // Draw LiDAR points
+            ctx.fillStyle = '#0f0';
+            for (let i = 0; i < ranges.length; i++) {
+                const range = ranges[i];
+                if (range > 0.1 && range < 16.0) {
+                    const angle = angleMin + i * angleIncrement;
+                    const x = centerX + Math.cos(angle) * range * scale;
+                    const y = centerY + Math.sin(angle) * range * scale;
+                    
+                    ctx.beginPath();
+                    ctx.arc(x, y, 2, 0, 2 * Math.PI);
+                    ctx.fill();
+                }
+            }
+            
+            // Draw robot position
+            ctx.fillStyle = '#f00';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 8, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+        
+        console.log("Direct LiDAR viewer setup complete");
+    </script>
+</body>
+</html>
