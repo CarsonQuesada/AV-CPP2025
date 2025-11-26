@@ -361,8 +361,8 @@ include("/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_symlink_i
 # install(FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/msg/DriveTarget.idl" "DESTINATION" "share/vehicle_core/msg")
 ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/msg/DriveTarget.idl" "DESTINATION" "share/vehicle_core/msg")
 
-# install(FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/msg/AutopilotDriveCommand.idl" "DESTINATION" "share/vehicle_core/msg")
-ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/msg/AutopilotDriveCommand.idl" "DESTINATION" "share/vehicle_core/msg")
+# install(FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/msg/InternalDriveCommand.idl" "DESTINATION" "share/vehicle_core/msg")
+ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/msg/InternalDriveCommand.idl" "DESTINATION" "share/vehicle_core/msg")
 
 # install(FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/msg/ManualDriveCommand.idl" "DESTINATION" "share/vehicle_core/msg")
 ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/msg/ManualDriveCommand.idl" "DESTINATION" "share/vehicle_core/msg")
@@ -412,14 +412,23 @@ ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_co
 # install(FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/msg/DriveFeedback.idl" "DESTINATION" "share/vehicle_core/msg")
 ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/msg/DriveFeedback.idl" "DESTINATION" "share/vehicle_core/msg")
 
+# install(FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/msg/IMUStatus.idl" "DESTINATION" "share/vehicle_core/msg")
+ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/msg/IMUStatus.idl" "DESTINATION" "share/vehicle_core/msg")
+
+# install(FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/srv/RequestInternalControl.idl" "DESTINATION" "share/vehicle_core/srv")
+ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/srv/RequestInternalControl.idl" "DESTINATION" "share/vehicle_core/srv")
+
+# install(FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/srv/ReleaseInternalControl.idl" "DESTINATION" "share/vehicle_core/srv")
+ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/srv/ReleaseInternalControl.idl" "DESTINATION" "share/vehicle_core/srv")
+
 # install(FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/srv/SetAutopilotProfile.idl" "DESTINATION" "share/vehicle_core/srv")
 ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/srv/SetAutopilotProfile.idl" "DESTINATION" "share/vehicle_core/srv")
 
 # install(FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/DriveTarget.msg" "DESTINATION" "share/vehicle_core/msg")
 ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/DriveTarget.msg" "DESTINATION" "share/vehicle_core/msg")
 
-# install(FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/AutopilotDriveCommand.msg" "DESTINATION" "share/vehicle_core/msg")
-ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/AutopilotDriveCommand.msg" "DESTINATION" "share/vehicle_core/msg")
+# install(FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/InternalDriveCommand.msg" "DESTINATION" "share/vehicle_core/msg")
+ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/InternalDriveCommand.msg" "DESTINATION" "share/vehicle_core/msg")
 
 # install(FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/ManualDriveCommand.msg" "DESTINATION" "share/vehicle_core/msg")
 ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/ManualDriveCommand.msg" "DESTINATION" "share/vehicle_core/msg")
@@ -469,6 +478,27 @@ ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_co
 # install(FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/DriveFeedback.msg" "DESTINATION" "share/vehicle_core/msg")
 ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/DriveFeedback.msg" "DESTINATION" "share/vehicle_core/msg")
 
+# install(FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/IMUStatus.msg" "DESTINATION" "share/vehicle_core/msg")
+ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/IMUStatus.msg" "DESTINATION" "share/vehicle_core/msg")
+
+# install(FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/srv/RequestInternalControl.srv" "DESTINATION" "share/vehicle_core/srv")
+ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/srv/RequestInternalControl.srv" "DESTINATION" "share/vehicle_core/srv")
+
+# install(FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_cmake/srv/RequestInternalControl_Request.msg" "DESTINATION" "share/vehicle_core/srv")
+ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_cmake/srv/RequestInternalControl_Request.msg" "DESTINATION" "share/vehicle_core/srv")
+
+# install(FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_cmake/srv/RequestInternalControl_Response.msg" "DESTINATION" "share/vehicle_core/srv")
+ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_cmake/srv/RequestInternalControl_Response.msg" "DESTINATION" "share/vehicle_core/srv")
+
+# install(FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/srv/ReleaseInternalControl.srv" "DESTINATION" "share/vehicle_core/srv")
+ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/srv/ReleaseInternalControl.srv" "DESTINATION" "share/vehicle_core/srv")
+
+# install(FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_cmake/srv/ReleaseInternalControl_Request.msg" "DESTINATION" "share/vehicle_core/srv")
+ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_cmake/srv/ReleaseInternalControl_Request.msg" "DESTINATION" "share/vehicle_core/srv")
+
+# install(FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_cmake/srv/ReleaseInternalControl_Response.msg" "DESTINATION" "share/vehicle_core/srv")
+ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_cmake/srv/ReleaseInternalControl_Response.msg" "DESTINATION" "share/vehicle_core/srv")
+
 # install(FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/srv/SetAutopilotProfile.srv" "DESTINATION" "share/vehicle_core/srv")
 ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/srv/SetAutopilotProfile.srv" "DESTINATION" "share/vehicle_core/srv")
 
@@ -481,23 +511,35 @@ ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_co
 # install(DIRECTORY "include/" "DESTINATION" "include")
 ament_cmake_symlink_install_directory("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" DIRECTORY "include/" "DESTINATION" "include")
 
+# install(DIRECTORY "data/" "DESTINATION" "share/vehicle_core/data")
+ament_cmake_symlink_install_directory("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" DIRECTORY "data/" "DESTINATION" "share/vehicle_core/data")
+
 # install("TARGETS" "state_manager_node_component" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")
 include("/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_symlink_install_targets_3_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install("TARGETS" "drive_arbiter_node_component" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")
+# install("TARGETS" "heading_calibrator_node_component" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")
 include("/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_symlink_install_targets_4_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install("TARGETS" "tcp_server_node_component" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")
+# install("TARGETS" "drive_arbiter_node_component" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")
 include("/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_symlink_install_targets_5_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install("TARGETS" "i2c_bridge_node" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")
+# install("TARGETS" "gt_u7_gps_node_component" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")
 include("/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_symlink_install_targets_6_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install("TARGETS" "gst_camera_component" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")
+# install("TARGETS" "tcp_server_node_component" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")
 include("/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_symlink_install_targets_7_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install("TARGETS" "vehicle_core_container" "RUNTIME_DESTINATION" "lib/vehicle_core")
+# install("TARGETS" "i2c_bridge_node" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")
 include("/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_symlink_install_targets_8_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+
+# install("TARGETS" "autopilot_node_component" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")
+include("/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_symlink_install_targets_9_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+
+# install("TARGETS" "gst_camera_component" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")
+include("/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_symlink_install_targets_10_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+
+# install("TARGETS" "vehicle_core_container" "RUNTIME_DESTINATION" "lib/vehicle_core")
+include("/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_symlink_install_targets_11_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(DIRECTORY "cfg" "launch" "DESTINATION" "share/vehicle_core")
 ament_cmake_symlink_install_directory("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" DIRECTORY "cfg" "launch" "DESTINATION" "share/vehicle_core")

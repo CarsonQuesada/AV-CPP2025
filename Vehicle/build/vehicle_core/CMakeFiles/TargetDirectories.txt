@@ -16,9 +16,12 @@
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c__pyext.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/vehicle_core__rosidl_typesupport_c__pyext.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/state_manager_node_component.dir
+/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/heading_calibrator_node_component.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/drive_arbiter_node_component.dir
+/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/gt_u7_gps_node_component.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/tcp_server_node_component.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/i2c_bridge_node.dir
+/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/autopilot_node_component.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/gst_camera_component.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/vehicle_core_container.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/test.dir

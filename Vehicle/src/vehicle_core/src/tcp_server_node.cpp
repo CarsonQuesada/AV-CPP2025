@@ -41,7 +41,6 @@ TcpServerNode::TcpServerNode(const rclcpp::NodeOptions& options)
   hz_lights_    = this->declare_parameter<double>("lights_status_hz",   10.0);
   hz_drive_     = this->declare_parameter<double>("drive_status_hz",    40.0);
   hz_autopilot_ = this->declare_parameter<double>("autopilot_status_hz", 2.0);
-  hz_telem_     = this->declare_parameter<double>("telemetry_hz",       10.0);
 
   // Publishers (decoded inbound control)
   pub_state_         = this->create_publisher<std_msgs::msg::UInt8>("/tcp_server/connection_state", rclcpp::QoS(1).reliable().transient_local());
@@ -50,46 +49,43 @@ TcpServerNode::TcpServerNode(const rclcpp::NodeOptions& options)
   pub_max_speed_cmd_ = this->create_publisher<vehicle_core::msg::MaxSpeed>("vehicle/max_speed_cmd", 10);
   pub_autopilot_cmd_ = this->create_publisher<vehicle_core::msg::AutopilotCommand>("autopilot/active_cmd", 10);
 
-  // Subscribers (status → to TCP client)
-  using vehicle_core::msg::LightsStatus;
-  using vehicle_core::msg::GeneralStatus;
-  using vehicle_core::msg::DriveStatus;
-  using vehicle_core::msg::StateMode;
-  using vehicle_core::msg::TelemetryData;
-  using vehicle_core::msg::Error;
-
-  using std::placeholders::_1;
-
   sub_lights_status_ = this->create_subscription<vehicle_core::msg::LightsStatus>(
     "vehicle/lights_status", rclcpp::QoS(10),
-    std::bind(&TcpServerNode::onLightsStatus, this, _1));
+    std::bind(&TcpServerNode::onLightsStatus, this, std::placeholders::_1));
 
   sub_general_status_ = this->create_subscription<vehicle_core::msg::GeneralStatus>(
     "vehicle/general_status", rclcpp::QoS(10),
-    std::bind(&TcpServerNode::onGeneralStatus, this, _1));
+    std::bind(&TcpServerNode::onGeneralStatus, this, std::placeholders::_1));
 
   sub_drive_status_ = this->create_subscription<vehicle_core::msg::DriveStatus>(
     "vehicle/drive_status", rclcpp::QoS(20),
-    std::bind(&TcpServerNode::onDriveStatus, this, _1));
+    std::bind(&TcpServerNode::onDriveStatus, this, std::placeholders::_1));
 
-  sub_autopilot_status_ = this->create_subscription<vehicle_core::msg::StateMode>(
-    "autopilot/status", rclcpp::QoS(10),
-    std::bind(&TcpServerNode::onStateMode, this, _1));
+  sub_state_mode_ = this->create_subscription<vehicle_core::msg::StateMode>(
+    "/vehicle/state_mode", rclcpp::QoS(10),
+    std::bind(&TcpServerNode::onStateMode, this, std::placeholders::_1));
 
   sub_telemetry_ = this->create_subscription<vehicle_core::msg::TelemetryData>(
     "vehicle/telemetry", rclcpp::QoS(20),
-    std::bind(&TcpServerNode::onTelemetry, this, _1));
+    std::bind(&TcpServerNode::onTelemetry, this, std::placeholders::_1));
 
   sub_error_ = this->create_subscription<vehicle_core::msg::Error>(
     "vehicle/error", rclcpp::QoS(5),
-    std::bind(&TcpServerNode::onError, this, _1));
+    std::bind(&TcpServerNode::onError, this, std::placeholders::_1));
+
+    // Clients
+    cli_req_estop_ = this->create_client<std_srvs::srv::Trigger>("/state_manager/request_estop");
+    cli_clear_estop_ = this->create_client<std_srvs::srv::Trigger>("/state_manager/clear_estop");
+    cli_req_manual_ = this->create_client<std_srvs::srv::Trigger>("/state_manager/request_manual");
+    cli_req_auto_ = this->create_client<std_srvs::srv::Trigger>("/state_manager/request_auto");
+    cli_heading_start_  = this->create_client<std_srvs::srv::Trigger>("/routines/heading/start");
+    cli_heading_stop_ = this->create_client<std_srvs::srv::Trigger>("/routines/heading/cancel");
 
     // Timers for periodic sends
     if (hz_general_ > 0.0)   timer_general_   = this->create_wall_timer(std::chrono::milliseconds((int)(1000.0/hz_general_)),   [this]{ if (state_.load()==ConnState::Connected) { std::lock_guard<std::mutex> lk(cache_m_); if (cache_general_)   enqueue_message(*cache_general_,   MessageID::GeneralStatus); }});
     if (hz_lights_  > 0.0)   timer_lights_    = this->create_wall_timer(std::chrono::milliseconds((int)(1000.0/hz_lights_)),    [this]{ if (state_.load()==ConnState::Connected) { std::lock_guard<std::mutex> lk(cache_m_); if (cache_lights_)    enqueue_message(*cache_lights_,    MessageID::LightsStatus);  dirty_lights_ = false; }});
     if (hz_drive_   > 0.0)   timer_drive_     = this->create_wall_timer(std::chrono::milliseconds((int)(1000.0/hz_drive_)),     [this]{ if (state_.load()==ConnState::Connected) { std::lock_guard<std::mutex> lk(cache_m_); if (cache_drive_)     enqueue_message(*cache_drive_,     MessageID::DriveStatus); }});
     if (hz_autopilot_>0.0)   timer_autopilot_ = this->create_wall_timer(std::chrono::milliseconds((int)(1000.0/hz_autopilot_)), [this]{ if (state_.load()==ConnState::Connected) { std::lock_guard<std::mutex> lk(cache_m_); if (cache_mode_)      enqueue_message(*cache_mode_,      MessageID::StateMode); }});
-    if (hz_telem_   > 0.0)   timer_telemetry_ = this->create_wall_timer(std::chrono::milliseconds((int)(1000.0/hz_telem_)),     [this]{ if (state_.load()==ConnState::Connected) { std::lock_guard<std::mutex> lk(cache_m_); if (cache_telem_)     enqueue_message(*cache_telem_,     MessageID::TelemetryData); }});
 
     // Start supervisor thread
     supervisor_thread_ = std::thread([this]{ supervisorLoop(); });
@@ -175,20 +171,19 @@ void TcpServerNode::supervisorLoop() {
       int fd = openListenSocket();
       if (fd < 0) {
         RCLCPP_ERROR(get_logger(), "Listen failed (code %d); retry in 2s", fd);
-        publishState(ConnState::Disconnected);
+        changeState(ConnState::Disconnected);
         std::this_thread::sleep_for(2s);
         continue;
       }
       { std::unique_lock<std::shared_mutex> lk(sock_mut_); listen_fd_ = fd; }
-      state_.store(ConnState::Listening);
-      publishState(ConnState::Listening);
+      changeState(ConnState::Listening);
       RCLCPP_INFO(get_logger(), "Listening on %s:%d", bind_addr_.c_str(), port_);
     }
 
     if (state_.load() == ConnState::Listening) {
       int fd_copy;
       { std::shared_lock<std::shared_mutex> lk(sock_mut_); fd_copy = listen_fd_; }
-      if (fd_copy < 0) { state_.store(ConnState::Disconnected); continue; }
+      if (fd_copy < 0) { changeState(ConnState::Disconnected);; continue; }
 
       fd_set rfds; FD_ZERO(&rfds); FD_SET(fd_copy, &rfds);
       timeval tv{1,0};
@@ -217,8 +212,7 @@ void TcpServerNode::supervisorLoop() {
           rx_thread_ = std::thread([this]{ rxLoop(); });
           tx_thread_ = std::thread([this]{ txLoop(); });
 
-          state_.store(ConnState::Connected);
-          publishState(ConnState::Connected);
+          changeState(ConnState::Connected);
           RCLCPP_INFO(get_logger(), "Accepted client");
         }
       }
@@ -238,8 +232,7 @@ void TcpServerNode::supervisorLoop() {
         if (tx_thread_.joinable()) tx_thread_.join();
 
         // Back to listening
-        state_.store(ConnState::Listening);
-        publishState(ConnState::Listening);
+        changeState(ConnState::Listening);
         RCLCPP_INFO(get_logger(), "Cleaned up; back to Listening");
       }
     }
@@ -321,15 +314,50 @@ bool TcpServerNode::sendAll(const void* buf, int len) {
 void TcpServerNode::rxLoop() {
   RCLCPP_INFO(get_logger(), "rxLoop started");
   while (rclcpp::ok() && !stop_workers_.load()) {
+    // Read header
     MessageHeader h{};
     if (!recvAll(&h, sizeof(h), recv_timeout_sec_)) break;
 
+    // Run checks to see if valid message
+    if (h.payloadLength > MAX_PAYLOAD) {
+        RCLCPP_WARN(get_logger(), "BAD header: id=%u len=%u (cap=%u) — resetting link",
+                    (unsigned)h.messageID, (unsigned)h.payloadLength, (unsigned)MAX_PAYLOAD);
+        stop_workers_.store(true);
+        { std::lock_guard<std::mutex> lk(tx_m_); tx_stop_ = true; }
+        tx_cv_.notify_all();
+        return; // supervisor will close and go back to Listening
+    }
+    auto expect = expectedPayloadSize(h.messageID);
+    if (!expect.has_value()) {
+        RCLCPP_WARN(get_logger(), "BAD header: id=%u (%s) not allowed — resetting link",
+                    (unsigned)h.messageID, msgName(h.messageID));
+        stop_workers_.store(true);
+        { std::lock_guard<std::mutex> lk(tx_m_); tx_stop_ = true; }
+        tx_cv_.notify_all();
+        return;
+    }
+    if (h.payloadLength != expect.value()) {
+        RCLCPP_WARN(get_logger(), "BAD length for id=%u (%s): len=%u expected=%zu — resetting link",
+                    (unsigned)h.messageID, msgName(h.messageID),
+                    (unsigned)h.payloadLength, expect.value());
+        stop_workers_.store(true);
+        { std::lock_guard<std::mutex> lk(tx_m_); tx_stop_ = true; }
+        tx_cv_.notify_all();
+        return;
+    }
+
+    // Read payload
     Message m;
     m.messageID = h.messageID;
     m.payload.resize(h.payloadLength);
     if (h.payloadLength > 0) {
       if (!recvAll(m.payload.data(), h.payloadLength, recv_timeout_sec_)) break;
     }
+
+    // RCLCPP_DEBUG(get_logger(), "RX id=%u (%s) len=%zu payload=%s",
+    //          (unsigned)m.messageID, msgName(m.messageID),
+    //          m.payload.size(),
+    //          m.payload.empty() ? "" : hexDump(m.payload.data(), m.payload.size()).c_str());
 
     // Decode and publish other messages
     switch (m.messageID) {
@@ -377,12 +405,26 @@ void TcpServerNode::rxLoop() {
         vehicle_core::msg::AutopilotCommand out;
         out.action = 1; // START
         pub_autopilot_cmd_->publish(out);
+        callTriggerAsync(cli_req_auto_, "Autopilot Mode", "Client started autopilot");
+        RCLCPP_INFO(get_logger(), "Turning ON autopilot");
         break;
       }
       case MessageID::StopAutopilot: {
         vehicle_core::msg::AutopilotCommand out;
         out.action = 0; // STOP
         pub_autopilot_cmd_->publish(out);
+        callTriggerAsync(cli_req_manual_, "Manual Mode", "Client stopped autopilot");
+        RCLCPP_INFO(get_logger(), "Turning OFF autopilot");
+        break;
+      }
+      case MessageID::StartHeadingCalib: {
+        callTriggerAsync(cli_heading_start_, "Heading Start", "Starting heading calibration");
+        RCLCPP_INFO(get_logger(), "Starting heading calibration");
+        break;
+      }
+      case MessageID::StopHeadingCalib: {
+        callTriggerAsync(cli_heading_stop_, "Heading Stop", "Stopping heading calibration");
+        RCLCPP_INFO(get_logger(), "Stopping heading calibration");
         break;
       }
       case MessageID::ClientInit:
@@ -419,8 +461,10 @@ void TcpServerNode::txLoop() {
       RCLCPP_WARN(get_logger(), "Outgoing frame too small: %zu bytes", flat.size());
       continue;
     }
+
     if (!sendAll(flat.data(), static_cast<int>(flat.size()))) {
-      RCLCPP_WARN(get_logger(), "tx send failed");
+      RCLCPP_WARN(get_logger(), "tx send failed; signaling cleanup");
+      requestCleanup();               
       break;
     }
   }
@@ -511,7 +555,7 @@ void TcpServerNode::onDriveStatus(const vehicle_core::msg::DriveStatus::SharedPt
 
 void TcpServerNode::onStateMode(const vehicle_core::msg::StateMode::SharedPtr m) {
   std::lock_guard<std::mutex> lk(cache_m_);
-  cache_mode_ = wire::StateMode{static_cast<bool>(m->mode)};
+  cache_mode_ = wire::StateMode{static_cast<uint8_t>(m->mode)};
 }
 
 void TcpServerNode::onTelemetry(const vehicle_core::msg::TelemetryData::SharedPtr m) {
@@ -531,6 +575,51 @@ void TcpServerNode::onError(const vehicle_core::msg::Error::SharedPtr m) {
   if (state_.load() == ConnState::Connected) {
     enqueue_message(local, MessageID::Error);        // reactive send
   }
+}
+
+void TcpServerNode::callTriggerAsync(
+  rclcpp::Client<std_srvs::srv::Trigger>::SharedPtr& client,
+  const char* action,
+  const char* reason,
+  std::chrono::milliseconds wait,
+  std::chrono::milliseconds timeout)
+{
+  if (!client) {
+    RCLCPP_ERROR(get_logger(), "%s: client is null", action);
+    return;
+  }
+  if (!client->service_is_ready()) {
+    client->wait_for_service(wait);
+  }
+
+  auto req = std::make_shared<std_srvs::srv::Trigger::Request>();
+  (void)client->async_send_request(req,
+    [this, action, reason, timeout](rclcpp::Client<std_srvs::srv::Trigger>::SharedFuture f) {
+      try {
+        if (f.wait_for(timeout) != std::future_status::ready) {
+          RCLCPP_ERROR(get_logger(), "%s timed out (%s)", action, reason ? reason : "n/a");
+          return;
+        }
+        auto res = f.get();
+        RCLCPP_INFO(get_logger(), "%s: success=%s msg=\"%s\" (%s)",
+                    action, res->success ? "true" : "false",
+                    res->message.c_str(), reason ? reason : "n/a");
+      } catch (const std::exception& e) {
+        RCLCPP_ERROR(get_logger(), "%s failed (%s): %s", action, reason ? reason : "n/a", e.what());
+      }
+    });
+}
+
+void TcpServerNode::changeState(ConnState st) {
+  if ((state_ != ConnState::Disconnected) && (st == ConnState::Disconnected)) {
+    callTriggerAsync(cli_req_estop_, "ESTOP", "TCP disconnected from client");
+  } else if ((state_ != ConnState::Listening) && (st == ConnState::Listening)) {
+    callTriggerAsync(cli_req_estop_, "ESTOP", "TCP not connected to client");
+  } else if (st == ConnState::Connected) {
+    callTriggerAsync(cli_clear_estop_, "Clear ESTOP", "TCP connected to client");
+  }
+  state_.store(st);
+  publishState(st);
 }
 
 #include <rclcpp_components/register_node_macro.hpp>

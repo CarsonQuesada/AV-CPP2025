@@ -1,0 +1,3 @@
+autopilot_node:
+  control_rate_hz: 20.0
+  wheelbase_m: 1.0

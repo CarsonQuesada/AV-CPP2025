@@ -1,0 +1,1 @@
+/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__rosidl_typesupport_fastrtps_c.h

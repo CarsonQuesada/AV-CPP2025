@@ -1,0 +1,1 @@
+/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c

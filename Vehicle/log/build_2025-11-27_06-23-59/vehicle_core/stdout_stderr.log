@@ -1,0 +1,52 @@
+[  0%] Built target vehicle_core__cpp
+[  1%] Built target vehicle_core_container
+[ 12%] Built target vehicle_core__rosidl_generator_c
+[ 12%] Built target ament_cmake_python_symlink_vehicle_core
+[ 23%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[ 34%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[ 45%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[ 56%] Built target vehicle_core__rosidl_typesupport_c
+[ 66%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[ 76%] Built target vehicle_core__rosidl_typesupport_cpp
+[ 76%] Built target vehicle_core
+[ 76%] Built target vehicle_core__py
+[35m[1mConsolidate compiler generated dependencies of target tcp_server_node_component[0m
+[ 80%] Built target i2c_bridge_node
+[ 82%] Built target heading_calibrator_node_component
+[ 82%] Built target gt_u7_gps_node_component
+[ 83%] Built target state_manager_node_component
+[ 83%] [32mBuilding CXX object CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o[0m
+[ 84%] Built target drive_arbiter_node_component
+[ 85%] Built target autopilot_node_component
+[ 86%] Built target gst_camera_component
+running egg_info
+[ 96%] Built target vehicle_core__rosidl_generator_py
+writing vehicle_core.egg-info/PKG-INFO
+writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+writing top-level names to vehicle_core.egg-info/top_level.txt
+[ 97%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+[ 98%] Built target vehicle_core__rosidl_typesupport_c__pyext
+[ 99%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext
+reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[ 99%] Built target ament_cmake_python_build_vehicle_core_egg
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/tcp_server_node.hpp:3[m[K,
+                 from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:1[m[K:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:[m[K In lambda function:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:88:298:[m[K [01;31m[Kerror: [m[Kinvalid ‘[01m[Kstatic_cast[m[K’ from type ‘[01m[KStateMode[m[K’ to type ‘[01m[Kint[m[K’
+   88 |     if (hz_autopilot_>0.0)   timer_autopilot_ = this->create_wall_timer(std::chrono::milliseconds((int)(1000.0/hz_autopilot_)), [this]{ if (state_.load()==ConnState::Connected) { std::lock_guard<std::mutex> lk(cache_m_); if (cache_mode_)      {RCLCPP_DEBUG(get_logger(), "enqueing statemode: " << [01;31m[Kstatic_cast<int>(*cache_mode_)[m[K); enqueue_message(*cache_mode_,      MessageID::StateMode); }}});
+      |                                                                                                                                                                                                                                                                                                          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/tcp_server_node_component.dir/build.make:76: CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:722: CMakeFiles/tcp_server_node_component.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,440 @@
+[0.025s] Invoking command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8
+[0.268s] [  1%] Built target vehicle_core__cpp
+[0.278s] [  2%] Built target vehicle_core_container
+[0.300s] [  2%] Built target ament_cmake_python_symlink_vehicle_core
+[0.302s] [ 13%] Built target vehicle_core__rosidl_generator_c
+[0.344s] [ 24%] Built target vehicle_core__rosidl_typesupport_cpp
+[0.345s] [ 35%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[0.364s] [ 46%] Built target vehicle_core__rosidl_typesupport_c
+[0.392s] [ 57%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[0.400s] [ 68%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[0.409s] [ 79%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[0.452s] [ 79%] Built target vehicle_core
+[0.516s] [ 82%] Built target drive_arbiter_node_component
+[0.517s] [ 82%] Built target tcp_server_node_component
+[0.518s] [ 82%] Built target gt_u7_gps_node_component
+[0.540s] [ 82%] Built target vehicle_core__py
+[0.544s] [35m[1mConsolidate compiler generated dependencies of target autopilot_node_component[0m
+[0.546s] [ 82%] Built target i2c_bridge_node
+[0.556s] [ 83%] Built target state_manager_node_component
+[0.566s] [ 84%] Built target gst_camera_component
+[0.567s] [ 85%] Built target heading_calibrator_node_component
+[0.568s] [ 85%] [32mBuilding CXX object CMakeFiles/autopilot_node_component.dir/src/autopilot_node.cpp.o[0m
+[0.582s] [ 85%] [32mBuilding CXX object CMakeFiles/autopilot_node_component.dir/src/KmlPathLoader.cpp.o[0m
+[0.625s] [ 96%] Built target vehicle_core__rosidl_generator_py
+[0.651s] running egg_info
+[0.672s] writing vehicle_core.egg-info/PKG-INFO
+[0.674s] writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+[0.674s] writing top-level names to vehicle_core.egg-info/top_level.txt
+[0.681s] [ 97%] Built target vehicle_core__rosidl_typesupport_c__pyext
+[0.697s] [ 98%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+[0.697s] [ 99%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext
+[0.732s] reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[0.735s] writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[0.880s] [ 99%] Built target ament_cmake_python_build_vehicle_core_egg
+[1.055s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/KmlPathLoader.hpp:6[m[K,
+[1.056s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/KmlPathLoader.cpp:1[m[K:
+[1.056s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/PurePursuit.hpp:[m[K In member function ‘[01m[KCommand PurePursuit::update(const Pose2D&, double)[m[K’:
+[1.057s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/PurePursuit.hpp:25:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kclamp[m[K’ is not a member of ‘[01m[Kstd[m[K’
+[1.057s]    25 |     const double Ld = std::[01;31m[Kclamp[m[K(Ld_min_ + k_ * speed, Ld_min_, Ld_max_);
+[1.057s]       |                            [01;31m[K^~~~~[m[K
+[1.569s] gmake[2]: *** [CMakeFiles/autopilot_node_component.dir/build.make:90: CMakeFiles/autopilot_node_component.dir/src/KmlPathLoader.cpp.o] Error 1
+[1.570s] gmake[2]: *** Waiting for unfinished jobs....
+[5.167s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.168s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:29:38:[m[K [01;31m[Kerror: [m[K‘[01m[KTrigger[m[K’ is not a member of ‘[01m[Kvehicle_core::srv[m[K’; did you mean ‘[01m[Kstd_srvs::srv::Trigger[m[K’?
+[5.169s]    29 |   rclcpp::Service<vehicle_core::srv::[01;31m[KTrigger[m[K>::SharedPtr srv_start_;
+[5.169s]       |                                      [01;31m[K^~~~~~~[m[K
+[5.170s] In file included from [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7[m[K,
+[5.170s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5[m[K,
+[5.171s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.171s] [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstd_srvs::srv::Trigger[m[K’ declared here
+[5.172s]   258 | struct [01;36m[KTrigger[m[K
+[5.172s]       |        [01;36m[K^~~~~~~[m[K
+[5.173s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.173s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:29:45:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.173s]    29 |   rclcpp::Service<vehicle_core::srv::Trigger[01;31m[K>[m[K::SharedPtr srv_start_;
+[5.174s]       |                                             [01;31m[K^[m[K
+[5.174s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:29:48:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[5.175s]    29 |   rclcpp::Service<vehicle_core::srv::Trigger>::[01;31m[KSharedPtr[m[K srv_start_;
+[5.175s]       |                                                [01;31m[K^~~~~~~~~[m[K
+[5.175s]       |                                                         [32m[K;[m[K
+[5.176s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:29:58:[m[K [01;31m[Kerror: [m[K‘[01m[Ksrv_start_[m[K’ does not name a type; did you mean ‘[01m[Kva_start[m[K’?
+[5.176s]    29 |   rclcpp::Service<vehicle_core::srv::Trigger>::SharedPtr [01;31m[Ksrv_start_[m[K;
+[5.176s]       |                                                          [01;31m[K^~~~~~~~~~[m[K
+[5.177s]       |                                                          [32m[Kva_start[m[K
+[5.177s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:30:38:[m[K [01;31m[Kerror: [m[K‘[01m[KTrigger[m[K’ is not a member of ‘[01m[Kvehicle_core::srv[m[K’; did you mean ‘[01m[Kstd_srvs::srv::Trigger[m[K’?
+[5.178s]    30 |   rclcpp::Service<vehicle_core::srv::[01;31m[KTrigger[m[K>::SharedPtr srv_cancel_;
+[5.178s]       |                                      [01;31m[K^~~~~~~[m[K
+[5.178s] In file included from [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7[m[K,
+[5.179s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5[m[K,
+[5.179s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.179s] [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstd_srvs::srv::Trigger[m[K’ declared here
+[5.180s]   258 | struct [01;36m[KTrigger[m[K
+[5.180s]       |        [01;36m[K^~~~~~~[m[K
+[5.181s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.181s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:30:45:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.181s]    30 |   rclcpp::Service<vehicle_core::srv::Trigger[01;31m[K>[m[K::SharedPtr srv_cancel_;
+[5.182s]       |                                             [01;31m[K^[m[K
+[5.182s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:30:48:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[5.182s]    30 |   rclcpp::Service<vehicle_core::srv::Trigger>::[01;31m[KSharedPtr[m[K srv_cancel_;
+[5.183s]       |                                                [01;31m[K^~~~~~~~~[m[K
+[5.183s]       |                                                         [32m[K;[m[K
+[5.184s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:30:48:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kint vehicle_core::AutopilotNode::SharedPtr[m[K’
+[5.184s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:29:48:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[Kint vehicle_core::AutopilotNode::SharedPtr[m[K’
+[5.184s]    29 |   rclcpp::Service<vehicle_core::srv::Trigger>::[01;36m[KSharedPtr[m[K srv_start_;
+[5.185s]       |                                                [01;36m[K^~~~~~~~~[m[K
+[5.185s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:30:58:[m[K [01;31m[Kerror: [m[K‘[01m[Ksrv_cancel_[m[K’ does not name a type
+[5.185s]    30 |   rclcpp::Service<vehicle_core::srv::Trigger>::SharedPtr [01;31m[Ksrv_cancel_[m[K;
+[5.186s]       |                                                          [01;31m[K^~~~~~~~~~~[m[K
+[5.390s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:35:37:[m[K [01;31m[Kerror: [m[K‘[01m[KTrigger[m[K’ is not a member of ‘[01m[Kvehicle_core::srv[m[K’; did you mean ‘[01m[Kstd_srvs::srv::Trigger[m[K’?
+[5.391s]    35 |   rclcpp::Client<vehicle_core::srv::[01;31m[KTrigger[m[K>::SharedPtr cli_notify_ready_;
+[5.391s]       |                                     [01;31m[K^~~~~~~[m[K
+[5.392s] In file included from [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7[m[K,
+[5.392s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5[m[K,
+[5.392s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.393s] [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstd_srvs::srv::Trigger[m[K’ declared here
+[5.393s]   258 | struct [01;36m[KTrigger[m[K
+[5.393s]       |        [01;36m[K^~~~~~~[m[K
+[5.394s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.394s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:35:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.395s]    35 |   rclcpp::Client<vehicle_core::srv::Trigger[01;31m[K>[m[K::SharedPtr cli_notify_ready_;
+[5.395s]       |                                            [01;31m[K^[m[K
+[5.395s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:35:47:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[5.396s]    35 |   rclcpp::Client<vehicle_core::srv::Trigger>::[01;31m[KSharedPtr[m[K cli_notify_ready_;
+[5.396s]       |                                               [01;31m[K^~~~~~~~~[m[K
+[5.397s]       |                                                        [32m[K;[m[K
+[5.397s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:35:47:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kint vehicle_core::AutopilotNode::SharedPtr[m[K’
+[5.398s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:29:48:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[Kint vehicle_core::AutopilotNode::SharedPtr[m[K’
+[5.398s]    29 |   rclcpp::Service<vehicle_core::srv::Trigger>::[01;36m[KSharedPtr[m[K srv_start_;
+[5.398s]       |                                                [01;36m[K^~~~~~~~~[m[K
+[5.399s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:35:57:[m[K [01;31m[Kerror: [m[K‘[01m[Kcli_notify_ready_[m[K’ does not name a type
+[5.399s]    35 |   rclcpp::Client<vehicle_core::srv::Trigger>::SharedPtr [01;31m[Kcli_notify_ready_[m[K;
+[5.400s]       |                                                         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[5.400s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:46:[m[K [01;31m[Kerror: [m[K‘[01m[KTrigger[m[K’ is not a member of ‘[01m[Kvehicle_core::srv[m[K’; did you mean ‘[01m[Kstd_srvs::srv::Trigger[m[K’?
+[5.400s]    42 |     const std::shared_ptr<vehicle_core::srv::[01;31m[KTrigger[m[K::Request> req,
+[5.400s]       |                                              [01;31m[K^~~~~~~[m[K
+[5.400s] In file included from [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7[m[K,
+[5.400s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5[m[K,
+[5.400s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.400s] [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstd_srvs::srv::Trigger[m[K’ declared here
+[5.400s]   258 | struct [01;36m[KTrigger[m[K
+[5.400s]       |        [01;36m[K^~~~~~~[m[K
+[5.400s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.400s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:62:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.400s]    42 |     const std::shared_ptr<vehicle_core::srv::Trigger::Request[01;31m[K>[m[K req,
+[5.401s]       |                                                              [01;31m[K^[m[K
+[5.402s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:46:[m[K [01;31m[Kerror: [m[K‘[01m[KTrigger[m[K’ is not a member of ‘[01m[Kvehicle_core::srv[m[K’; did you mean ‘[01m[Kstd_srvs::srv::Trigger[m[K’?
+[5.402s]    42 |     const std::shared_ptr<vehicle_core::srv::[01;31m[KTrigger[m[K::Request> req,
+[5.402s]       |                                              [01;31m[K^~~~~~~[m[K
+[5.402s] In file included from [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7[m[K,
+[5.402s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5[m[K,
+[5.402s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.402s] [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstd_srvs::srv::Trigger[m[K’ declared here
+[5.402s]   258 | struct [01;36m[KTrigger[m[K
+[5.402s]       |        [01;36m[K^~~~~~~[m[K
+[5.402s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.403s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:62:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.403s]    42 |     const std::shared_ptr<vehicle_core::srv::Trigger::Request[01;31m[K>[m[K req,
+[5.403s]       |                                                              [01;31m[K^[m[K
+[5.404s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:46:[m[K [01;31m[Kerror: [m[K‘[01m[KTrigger[m[K’ is not a member of ‘[01m[Kvehicle_core::srv[m[K’; did you mean ‘[01m[Kstd_srvs::srv::Trigger[m[K’?
+[5.405s]    42 |     const std::shared_ptr<vehicle_core::srv::[01;31m[KTrigger[m[K::Request> req,
+[5.405s]       |                                              [01;31m[K^~~~~~~[m[K
+[5.406s] In file included from [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7[m[K,
+[5.406s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5[m[K,
+[5.407s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.407s] [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstd_srvs::srv::Trigger[m[K’ declared here
+[5.408s]   258 | struct [01;36m[KTrigger[m[K
+[5.408s]       |        [01;36m[K^~~~~~~[m[K
+[5.408s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.409s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:62:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.410s]    42 |     const std::shared_ptr<vehicle_core::srv::Trigger::Request[01;31m[K>[m[K req,
+[5.410s]       |                                                              [01;31m[K^[m[K
+[5.410s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:11:[m[K [01;31m[Kerror: [m[Kinvalid template-id
+[5.411s]    42 |     const [01;31m[Kstd[m[K::shared_ptr<vehicle_core::srv::Trigger::Request> req,
+[5.411s]       |           [01;31m[K^~~[m[K
+[5.412s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:46:[m[K [01;31m[Kerror: [m[K‘[01m[Kvehicle_core::srv::Trigger[m[K’ has not been declared
+[5.412s]    42 |     const std::shared_ptr<vehicle_core::srv::[01;31m[KTrigger[m[K::Request> req,
+[5.412s]       |                                              [01;31m[K^~~~~~~[m[K
+[5.413s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:5:[m[K [01;31m[Kerror: [m[Kclass template placeholder ‘[01m[Kstd::shared_ptr[m[K’ not permitted in this context
+[5.413s]    42 |     [01;31m[Kconst[m[K std::shared_ptr<vehicle_core::srv::Trigger::Request> req,
+[5.414s]       |     [01;31m[K^~~~~[m[K
+[5.414s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:40:[m[K [01;31m[Kerror: [m[K‘[01m[KTrigger[m[K’ is not a member of ‘[01m[Kvehicle_core::srv[m[K’; did you mean ‘[01m[Kstd_srvs::srv::Trigger[m[K’?
+[5.415s]    43 |     std::shared_ptr<vehicle_core::srv::[01;31m[KTrigger[m[K::Response> res);
+[5.415s]       |                                        [01;31m[K^~~~~~~[m[K
+[5.416s] In file included from [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7[m[K,
+[5.416s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5[m[K,
+[5.416s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.417s] [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstd_srvs::srv::Trigger[m[K’ declared here
+[5.417s]   258 | struct [01;36m[KTrigger[m[K
+[5.417s]       |        [01;36m[K^~~~~~~[m[K
+[5.418s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.418s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:57:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.419s]    43 |     std::shared_ptr<vehicle_core::srv::Trigger::Response[01;31m[K>[m[K res);
+[5.419s]       |                                                         [01;31m[K^[m[K
+[5.420s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:40:[m[K [01;31m[Kerror: [m[K‘[01m[KTrigger[m[K’ is not a member of ‘[01m[Kvehicle_core::srv[m[K’; did you mean ‘[01m[Kstd_srvs::srv::Trigger[m[K’?
+[5.420s]    43 |     std::shared_ptr<vehicle_core::srv::[01;31m[KTrigger[m[K::Response> res);
+[5.420s]       |                                        [01;31m[K^~~~~~~[m[K
+[5.421s] In file included from [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7[m[K,
+[5.421s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5[m[K,
+[5.422s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.422s] [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstd_srvs::srv::Trigger[m[K’ declared here
+[5.422s]   258 | struct [01;36m[KTrigger[m[K
+[5.423s]       |        [01;36m[K^~~~~~~[m[K
+[5.423s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.423s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:57:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.424s]    43 |     std::shared_ptr<vehicle_core::srv::Trigger::Response[01;31m[K>[m[K res);
+[5.424s]       |                                                         [01;31m[K^[m[K
+[5.424s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:40:[m[K [01;31m[Kerror: [m[K‘[01m[KTrigger[m[K’ is not a member of ‘[01m[Kvehicle_core::srv[m[K’; did you mean ‘[01m[Kstd_srvs::srv::Trigger[m[K’?
+[5.425s]    43 |     std::shared_ptr<vehicle_core::srv::[01;31m[KTrigger[m[K::Response> res);
+[5.425s]       |                                        [01;31m[K^~~~~~~[m[K
+[5.426s] In file included from [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7[m[K,
+[5.426s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5[m[K,
+[5.426s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.427s] [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstd_srvs::srv::Trigger[m[K’ declared here
+[5.427s]   258 | struct [01;36m[KTrigger[m[K
+[5.427s]       |        [01;36m[K^~~~~~~[m[K
+[5.428s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.428s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:57:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.428s]    43 |     std::shared_ptr<vehicle_core::srv::Trigger::Response[01;31m[K>[m[K res);
+[5.429s]       |                                                         [01;31m[K^[m[K
+[5.429s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:5:[m[K [01;31m[Kerror: [m[Kinvalid template-id
+[5.430s]    43 |     [01;31m[Kstd[m[K::shared_ptr<vehicle_core::srv::Trigger::Response> res);
+[5.430s]       |     [01;31m[K^~~[m[K
+[5.430s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:40:[m[K [01;31m[Kerror: [m[K‘[01m[Kvehicle_core::srv::Trigger[m[K’ has not been declared
+[5.431s]    43 |     std::shared_ptr<vehicle_core::srv::[01;31m[KTrigger[m[K::Response> res);
+[5.431s]       |                                        [01;31m[K^~~~~~~[m[K
+[5.431s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:5:[m[K [01;31m[Kerror: [m[Kclass template placeholder ‘[01m[Kstd::shared_ptr[m[K’ not permitted in this context
+[5.432s]    43 |     [01;31m[Kstd[m[K::shared_ptr<vehicle_core::srv::Trigger::Response> res);
+[5.432s]       |     [01;31m[K^~~[m[K
+[5.433s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:46:[m[K [01;31m[Kerror: [m[K‘[01m[KTrigger[m[K’ is not a member of ‘[01m[Kvehicle_core::srv[m[K’; did you mean ‘[01m[Kstd_srvs::srv::Trigger[m[K’?
+[5.433s]    45 |     const std::shared_ptr<vehicle_core::srv::[01;31m[KTrigger[m[K::Request> req,
+[5.433s]       |                                              [01;31m[K^~~~~~~[m[K
+[5.434s] In file included from [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7[m[K,
+[5.434s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5[m[K,
+[5.434s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.435s] [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstd_srvs::srv::Trigger[m[K’ declared here
+[5.435s]   258 | struct [01;36m[KTrigger[m[K
+[5.435s]       |        [01;36m[K^~~~~~~[m[K
+[5.436s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.436s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:62:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.437s]    45 |     const std::shared_ptr<vehicle_core::srv::Trigger::Request[01;31m[K>[m[K req,
+[5.437s]       |                                                              [01;31m[K^[m[K
+[5.437s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:46:[m[K [01;31m[Kerror: [m[K‘[01m[KTrigger[m[K’ is not a member of ‘[01m[Kvehicle_core::srv[m[K’; did you mean ‘[01m[Kstd_srvs::srv::Trigger[m[K’?
+[5.438s]    45 |     const std::shared_ptr<vehicle_core::srv::[01;31m[KTrigger[m[K::Request> req,
+[5.438s]       |                                              [01;31m[K^~~~~~~[m[K
+[5.438s] In file included from [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7[m[K,
+[5.439s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5[m[K,
+[5.439s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.440s] [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstd_srvs::srv::Trigger[m[K’ declared here
+[5.440s]   258 | struct [01;36m[KTrigger[m[K
+[5.440s]       |        [01;36m[K^~~~~~~[m[K
+[5.441s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.441s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:62:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.441s]    45 |     const std::shared_ptr<vehicle_core::srv::Trigger::Request[01;31m[K>[m[K req,
+[5.442s]       |                                                              [01;31m[K^[m[K
+[5.442s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:46:[m[K [01;31m[Kerror: [m[K‘[01m[KTrigger[m[K’ is not a member of ‘[01m[Kvehicle_core::srv[m[K’; did you mean ‘[01m[Kstd_srvs::srv::Trigger[m[K’?
+[5.442s]    45 |     const std::shared_ptr<vehicle_core::srv::[01;31m[KTrigger[m[K::Request> req,
+[5.443s]       |                                              [01;31m[K^~~~~~~[m[K
+[5.444s] In file included from [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7[m[K,
+[5.444s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5[m[K,
+[5.445s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.445s] [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstd_srvs::srv::Trigger[m[K’ declared here
+[5.445s]   258 | struct [01;36m[KTrigger[m[K
+[5.446s]       |        [01;36m[K^~~~~~~[m[K
+[5.446s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.446s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:62:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.447s]    45 |     const std::shared_ptr<vehicle_core::srv::Trigger::Request[01;31m[K>[m[K req,
+[5.447s]       |                                                              [01;31m[K^[m[K
+[5.448s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:11:[m[K [01;31m[Kerror: [m[Kinvalid template-id
+[5.448s]    45 |     const [01;31m[Kstd[m[K::shared_ptr<vehicle_core::srv::Trigger::Request> req,
+[5.448s]       |           [01;31m[K^~~[m[K
+[5.449s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:46:[m[K [01;31m[Kerror: [m[K‘[01m[Kvehicle_core::srv::Trigger[m[K’ has not been declared
+[5.449s]    45 |     const std::shared_ptr<vehicle_core::srv::[01;31m[KTrigger[m[K::Request> req,
+[5.450s]       |                                              [01;31m[K^~~~~~~[m[K
+[5.450s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:5:[m[K [01;31m[Kerror: [m[Kclass template placeholder ‘[01m[Kstd::shared_ptr[m[K’ not permitted in this context
+[5.450s]    45 |     [01;31m[Kconst[m[K std::shared_ptr<vehicle_core::srv::Trigger::Request> req,
+[5.451s]       |     [01;31m[K^~~~~[m[K
+[5.451s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:40:[m[K [01;31m[Kerror: [m[K‘[01m[KTrigger[m[K’ is not a member of ‘[01m[Kvehicle_core::srv[m[K’; did you mean ‘[01m[Kstd_srvs::srv::Trigger[m[K’?
+[5.452s]    46 |     std::shared_ptr<vehicle_core::srv::[01;31m[KTrigger[m[K::Response> res);
+[5.452s]       |                                        [01;31m[K^~~~~~~[m[K
+[5.452s] In file included from [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7[m[K,
+[5.453s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5[m[K,
+[5.453s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.454s] [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstd_srvs::srv::Trigger[m[K’ declared here
+[5.454s]   258 | struct [01;36m[KTrigger[m[K
+[5.454s]       |        [01;36m[K^~~~~~~[m[K
+[5.455s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.455s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:57:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.455s]    46 |     std::shared_ptr<vehicle_core::srv::Trigger::Response[01;31m[K>[m[K res);
+[5.456s]       |                                                         [01;31m[K^[m[K
+[5.456s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:40:[m[K [01;31m[Kerror: [m[K‘[01m[KTrigger[m[K’ is not a member of ‘[01m[Kvehicle_core::srv[m[K’; did you mean ‘[01m[Kstd_srvs::srv::Trigger[m[K’?
+[5.457s]    46 |     std::shared_ptr<vehicle_core::srv::[01;31m[KTrigger[m[K::Response> res);
+[5.457s]       |                                        [01;31m[K^~~~~~~[m[K
+[5.457s] In file included from [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7[m[K,
+[5.458s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5[m[K,
+[5.458s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.459s] [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstd_srvs::srv::Trigger[m[K’ declared here
+[5.459s]   258 | struct [01;36m[KTrigger[m[K
+[5.459s]       |        [01;36m[K^~~~~~~[m[K
+[5.459s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.460s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:57:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.460s]    46 |     std::shared_ptr<vehicle_core::srv::Trigger::Response[01;31m[K>[m[K res);
+[5.460s]       |                                                         [01;31m[K^[m[K
+[5.460s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:40:[m[K [01;31m[Kerror: [m[K‘[01m[KTrigger[m[K’ is not a member of ‘[01m[Kvehicle_core::srv[m[K’; did you mean ‘[01m[Kstd_srvs::srv::Trigger[m[K’?
+[5.460s]    46 |     std::shared_ptr<vehicle_core::srv::[01;31m[KTrigger[m[K::Response> res);
+[5.460s]       |                                        [01;31m[K^~~~~~~[m[K
+[5.460s] In file included from [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7[m[K,
+[5.460s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5[m[K,
+[5.460s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.460s] [01m[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstd_srvs::srv::Trigger[m[K’ declared here
+[5.460s]   258 | struct [01;36m[KTrigger[m[K
+[5.460s]       |        [01;36m[K^~~~~~~[m[K
+[5.460s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.461s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:57:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.461s]    46 |     std::shared_ptr<vehicle_core::srv::Trigger::Response[01;31m[K>[m[K res);
+[5.461s]       |                                                         [01;31m[K^[m[K
+[5.461s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:5:[m[K [01;31m[Kerror: [m[Kinvalid template-id
+[5.461s]    46 |     [01;31m[Kstd[m[K::shared_ptr<vehicle_core::srv::Trigger::Response> res);
+[5.461s]       |     [01;31m[K^~~[m[K
+[5.461s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:40:[m[K [01;31m[Kerror: [m[K‘[01m[Kvehicle_core::srv::Trigger[m[K’ has not been declared
+[5.461s]    46 |     std::shared_ptr<vehicle_core::srv::[01;31m[KTrigger[m[K::Response> res);
+[5.461s]       |                                        [01;31m[K^~~~~~~[m[K
+[5.461s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:5:[m[K [01;31m[Kerror: [m[Kclass template placeholder ‘[01m[Kstd::shared_ptr[m[K’ not permitted in this context
+[5.461s]    46 |     [01;31m[Kstd[m[K::shared_ptr<vehicle_core::srv::Trigger::Response> res);
+[5.461s]       |     [01;31m[K^~~[m[K
+[5.468s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:[m[K In constructor ‘[01m[Kvehicle_core::AutopilotNode::AutopilotNode(const rclcpp::NodeOptions&)[m[K’:
+[5.468s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:27:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kcli_notify_ready_[m[K’ was not declared in this scope
+[5.468s]    27 |         [01;31m[Kcli_notify_ready_[m[K = create_client<std_srvs::srv::Trigger>(
+[5.468s]       |         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[5.580s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:31:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksrv_start_[m[K’ was not declared in this scope; did you mean ‘[01m[Kva_start[m[K’?
+[5.580s]    31 |         [01;31m[Ksrv_start_[m[K = create_service<std_srvs::srv::Trigger>(
+[5.580s]       |         [01;31m[K^~~~~~~~~~[m[K
+[5.580s]       |         [32m[Kva_start[m[K
+[5.633s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:33:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksrv_cancel_[m[K’ was not declared in this scope; did you mean ‘[01m[Kcancel_[m[K’?
+[5.633s]    33 |         [01;31m[Ksrv_cancel_[m[K = create_service<std_srvs::srv::Trigger>(
+[5.634s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[5.634s]       |         [32m[Kcancel_[m[K
+[5.654s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:[m[K At global scope:
+[5.655s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:50:10:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid vehicle_core::AutopilotNode::handleStart(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)[m[K’
+[5.655s]    50 |     void [01;31m[KAutopilotNode[m[K::handleStart(
+[5.655s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[5.655s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.655s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:41:8:[m[K [01;36m[Knote: [m[Kcandidate is: ‘[01m[Kvoid vehicle_core::AutopilotNode::handleStart(...)[m[K’
+[5.655s]    41 |   void [01;36m[KhandleStart[m[K(
+[5.655s]       |        [01;36m[K^~~~~~~~~~~[m[K
+[5.656s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:17:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass vehicle_core::AutopilotNode[m[K’ defined here
+[5.656s]    17 | class [01;36m[KAutopilotNode[m[K : public rclcpp::Node {
+[5.656s]       |       [01;36m[K^~~~~~~~~~~~~[m[K
+[5.656s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:62:10:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid vehicle_core::AutopilotNode::handleCancel(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)[m[K’
+[5.656s]    62 |     void [01;31m[KAutopilotNode[m[K::handleCancel(
+[5.656s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[5.657s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[5.657s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:44:8:[m[K [01;36m[Knote: [m[Kcandidate is: ‘[01m[Kvoid vehicle_core::AutopilotNode::handleCancel(...)[m[K’
+[5.657s]    44 |   void [01;36m[KhandleCancel[m[K(
+[5.657s]       |        [01;36m[K^~~~~~~~~~~~[m[K
+[5.657s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:17:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass vehicle_core::AutopilotNode[m[K’ defined here
+[5.657s]    17 | class [01;36m[KAutopilotNode[m[K : public rclcpp::Node {
+[5.657s]       |       [01;36m[K^~~~~~~~~~~~~[m[K
+[6.283s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:39[m[K,
+[6.283s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[6.284s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[6.284s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[6.284s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[6.284s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[6.285s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[6.285s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[6.285s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[6.285s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[6.286s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:3[m[K,
+[6.286s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[6.286s] /opt/ros/humble/include/rclcpp/rclcpp/function_traits.hpp: In instantiation of ‘[01m[Kstruct rclcpp::function_traits::function_traits<std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)> >[m[K’:
+[6.287s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/function_traits.hpp:165:8:[m[K   required from ‘[01m[Kstruct rclcpp::function_traits::same_arguments<std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>, std::function<void(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)> >[m[K’
+[6.287s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_service_callback.hpp:76:10:[m[K   required from ‘[01m[Kvoid rclcpp::AnyServiceCallback<ServiceT>::set(CallbackT&&) [with CallbackT = std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>; typename std::enable_if<(! rclcpp::detail::can_be_nullptr<CallbackT>::value), int>::type <anonymous> = 0; ServiceT = std_srvs::srv::Trigger][m[K’
+[6.287s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/create_service.hpp:43:27:[m[K   required from ‘[01m[Ktypename rclcpp::Service<ServiceT>::SharedPtr rclcpp::create_service(std::shared_ptr<rclcpp::node_interfaces::NodeBaseInterface>, std::shared_ptr<rclcpp::node_interfaces::NodeServicesInterface>, const string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [with ServiceT = std_srvs::srv::Trigger; CallbackT = std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>; typename rclcpp::Service<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K’
+[6.288s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:147:53:[m[K   required from ‘[01m[Ktypename rclcpp::Service<ServiceT>::SharedPtr rclcpp::Node::create_service(const string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [with ServiceT = std_srvs::srv::Trigger; CallbackT = std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>; typename rclcpp::Service<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K’
+[6.288s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:31:60:[m[K   required from here
+[6.289s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/function_traits.hpp:51:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdecltype[m[K’ cannot resolve address of overloaded function
+[6.289s]    51 |   using [01;31m[Karguments[m[K = typename tuple_tail<
+[6.289s]       |         [01;31m[K^~~~~~~~~[m[K
+[6.289s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/function_traits.hpp:57:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdecltype[m[K’ cannot resolve address of overloaded function
+[6.290s]    57 |   using [01;31m[Kargument_type[m[K = typename std::tuple_element<N, arguments>::type;
+[6.290s]       |         [01;31m[K^~~~~~~~~~~~~[m[K
+[6.290s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/function_traits.hpp:59:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdecltype[m[K’ cannot resolve address of overloaded function
+[6.291s]    59 |   using [01;31m[Kreturn_type[m[K = typename function_traits<decltype( &FunctionT::operator())>::return_type;
+[6.291s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[6.291s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/service.hpp:36[m[K,
+[6.291s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:28[m[K,
+[6.292s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[6.292s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[6.293s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[6.293s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[6.293s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[6.293s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[6.294s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[6.294s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[6.294s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:3[m[K,
+[6.295s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[6.295s] /opt/ros/humble/include/rclcpp/rclcpp/any_service_callback.hpp: In instantiation of ‘[01m[Kvoid rclcpp::AnyServiceCallback<ServiceT>::set(CallbackT&&) [with CallbackT = std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>; typename std::enable_if<(! rclcpp::detail::can_be_nullptr<CallbackT>::value), int>::type <anonymous> = 0; ServiceT = std_srvs::srv::Trigger][m[K’:
+[6.295s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/create_service.hpp:43:27:[m[K   required from ‘[01m[Ktypename rclcpp::Service<ServiceT>::SharedPtr rclcpp::create_service(std::shared_ptr<rclcpp::node_interfaces::NodeBaseInterface>, std::shared_ptr<rclcpp::node_interfaces::NodeServicesInterface>, const string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [with ServiceT = std_srvs::srv::Trigger; CallbackT = std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>; typename rclcpp::Service<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K’
+[6.296s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:147:53:[m[K   required from ‘[01m[Ktypename rclcpp::Service<ServiceT>::SharedPtr rclcpp::Node::create_service(const string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [with ServiceT = std_srvs::srv::Trigger; CallbackT = std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>; typename rclcpp::Service<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K’
+[6.296s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:31:60:[m[K   required from here
+[6.296s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_service_callback.hpp:76:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kvalue[m[K’ is not a member of ‘[01m[Krclcpp::function_traits::same_arguments<std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>, std::function<void(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)> >[m[K’
+[6.297s]    76 |       >::[01;31m[Kvalue[m[K)
+[6.297s]       |          [01;31m[K^~~~~[m[K
+[6.297s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_service_callback.hpp:83:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kvalue[m[K’ is not a member of ‘[01m[Krclcpp::function_traits::same_arguments<std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)> >[m[K’
+[6.297s]    83 |       >::[01;31m[Kvalue[m[K)
+[6.298s]       |          [01;31m[K^~~~~[m[K
+[6.298s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_service_callback.hpp:90:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kvalue[m[K’ is not a member of ‘[01m[Krclcpp::function_traits::same_arguments<std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)> >[m[K’
+[6.298s]    90 |       >::[01;31m[Kvalue[m[K)
+[6.299s]       |          [01;31m[K^~~~~[m[K
+[6.299s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_service_callback.hpp:97:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kvalue[m[K’ is not a member of ‘[01m[Krclcpp::function_traits::same_arguments<std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>, std::function<void(std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >, std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)> >[m[K’
+[6.299s]    97 |       >::[01;31m[Kvalue[m[K)
+[6.299s]       |          [01;31m[K^~~~~[m[K
+[6.301s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_service_callback.hpp:103:17:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Kstd::variant<std::monostate, std::function<void(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >, std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)> >[m[K’ and ‘[01m[Kstd::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>[m[K’)
+[6.301s]   103 |       [01;31m[Kcallback_ = std::forward<CallbackT>(callback)[m[K;
+[6.301s]       |       [01;31m[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[6.302s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:28[m[K,
+[6.302s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[6.302s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[6.302s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[6.302s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[6.302s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[6.302s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[6.302s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[6.303s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[6.303s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[6.303s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:3[m[K,
+[6.303s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1[m[K:
+[6.303s] [01m[K/usr/include/c++/11/variant:1461:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> std::enable_if_t<((__exactly_once<std::variant<_Types>::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type> > && is_constructible_v<std::variant<_Types>::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type>, _Tp>) && is_assignable_v<std::variant<_Types>::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type>&, _Tp>), std::variant<_Types>&> std::variant<_Types>::operator=(_Tp&&) [with _Tp = _Tp; _Types = {std::monostate, std::function<void(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >, std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)>}][m[K’
+[6.303s]  1461 |         [01;36m[Koperator[m[K=(_Tp&& __rhs)
+[6.303s]       |         [01;36m[K^~~~~~~~[m[K
+[6.303s] [01m[K/usr/include/c++/11/variant:1461:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[6.303s] /usr/include/c++/11/variant: In substitution of ‘[01m[Ktemplate<class ... _Types> template<class _Tp, class> using __accepted_type = std::variant<_Types>::__to_type<__accepted_index<_Tp> > [with _Tp = std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>&&; <template-parameter-2-2> = void; _Types = {std::monostate, std::function<void(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >, std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)>}][m[K’:
+[6.303s] [01m[K/usr/include/c++/11/variant:1457:14:[m[K   required by substitution of ‘[01m[Ktemplate<class _Tp> std::enable_if_t<((__exactly_once<std::variant<std::monostate, std::function<void(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >, std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)> >::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type> > && is_constructible_v<std::variant<std::monostate, std::function<void(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >, std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)> >::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type>, _Tp>) && is_assignable_v<std::variant<std::monostate, std::function<void(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >, std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)> >::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type>&, _Tp>), std::variant<std::monostate, std::function<void(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >, std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)> >&> std::variant<std::monostate, std::function<void(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >, std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)> >::operator=<_Tp>(_Tp&&) [with _Tp = std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>][m[K’
+[6.304s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_service_callback.hpp:103:17:[m[K   required from ‘[01m[Kvoid rclcpp::AnyServiceCallback<ServiceT>::set(CallbackT&&) [with CallbackT = std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>; typename std::enable_if<(! rclcpp::detail::can_be_nullptr<CallbackT>::value), int>::type <anonymous> = 0; ServiceT = std_srvs::srv::Trigger][m[K’
+[6.304s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/create_service.hpp:43:27:[m[K   required from ‘[01m[Ktypename rclcpp::Service<ServiceT>::SharedPtr rclcpp::create_service(std::shared_ptr<rclcpp::node_interfaces::NodeBaseInterface>, std::shared_ptr<rclcpp::node_interfaces::NodeServicesInterface>, const string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [with ServiceT = std_srvs::srv::Trigger; CallbackT = std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>; typename rclcpp::Service<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K’
+[6.304s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:147:53:[m[K   required from ‘[01m[Ktypename rclcpp::Service<ServiceT>::SharedPtr rclcpp::Node::create_service(const string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [with ServiceT = std_srvs::srv::Trigger; CallbackT = std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>; typename rclcpp::Service<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K’
+[6.304s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:31:60:[m[K   required from here
+[6.304s] [01m[K/usr/include/c++/11/variant:1375:15:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, void>[m[K’
+[6.304s]  1375 |         using [01;31m[K__accepted_type[m[K = __to_type<__accepted_index<_Tp>>;
+[6.304s]       |               [01;31m[K^~~~~~~~~~~~~~~[m[K
+[6.304s] /opt/ros/humble/include/rclcpp/rclcpp/any_service_callback.hpp: In instantiation of ‘[01m[Kvoid rclcpp::AnyServiceCallback<ServiceT>::set(CallbackT&&) [with CallbackT = std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>; typename std::enable_if<(! rclcpp::detail::can_be_nullptr<CallbackT>::value), int>::type <anonymous> = 0; ServiceT = std_srvs::srv::Trigger][m[K’:
+[6.304s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/create_service.hpp:43:27:[m[K   required from ‘[01m[Ktypename rclcpp::Service<ServiceT>::SharedPtr rclcpp::create_service(std::shared_ptr<rclcpp::node_interfaces::NodeBaseInterface>, std::shared_ptr<rclcpp::node_interfaces::NodeServicesInterface>, const string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [with ServiceT = std_srvs::srv::Trigger; CallbackT = std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>; typename rclcpp::Service<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K’
+[6.304s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:147:53:[m[K   required from ‘[01m[Ktypename rclcpp::Service<ServiceT>::SharedPtr rclcpp::Node::create_service(const string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [with ServiceT = std_srvs::srv::Trigger; CallbackT = std::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>; typename rclcpp::Service<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K’
+[6.304s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:31:60:[m[K   required from here
+[6.304s] [01m[K/usr/include/c++/11/variant:1398:16:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::variant<_Types>& std::variant<_Types>::operator=(const std::variant<_Types>&) [with _Types = {std::monostate, std::function<void(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >, std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)>}][m[K’
+[6.305s]  1398 |       variant& [01;36m[Koperator[m[K=(const variant&) = default;
+[6.305s]       |                [01;36m[K^~~~~~~~[m[K
+[6.305s] [01m[K/usr/include/c++/11/variant:1398:26:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>[m[K’ to ‘[01m[Kconst std::variant<std::monostate, std::function<void(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >, std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)> >&[m[K’
+[6.305s]  1398 |       variant& operator=([01;36m[Kconst variant&[m[K) = default;
+[6.305s]       |                          [01;36m[K^~~~~~~~~~~~~~[m[K
+[6.305s] [01m[K/usr/include/c++/11/variant:1399:16:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::variant<_Types>& std::variant<_Types>::operator=(std::variant<_Types>&&) [with _Types = {std::monostate, std::function<void(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >, std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)>}][m[K’
+[6.305s]  1399 |       variant& [01;36m[Koperator[m[K=(variant&&) = default;
+[6.305s]       |                [01;36m[K^~~~~~~~[m[K
+[6.305s] [01m[K/usr/include/c++/11/variant:1399:26:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::_Bind<void (vehicle_core::AutopilotNode::*(vehicle_core::AutopilotNode*, std::_Placeholder<1>, std::_Placeholder<2>))(...)>[m[K’ to ‘[01m[Kstd::variant<std::monostate, std::function<void(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<rclcpp::Service<std_srvs::srv::Trigger> >, std::shared_ptr<rmw_request_id_s>, std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >)> >&&[m[K’
+[6.305s]  1399 |       variant& operator=([01;36m[Kvariant&&[m[K) = default;
+[6.305s]       |                          [01;36m[K^~~~~~~~~[m[K
+[11.696s] gmake[2]: *** [CMakeFiles/autopilot_node_component.dir/build.make:76: CMakeFiles/autopilot_node_component.dir/src/autopilot_node.cpp.o] Error 1
+[11.697s] gmake[1]: *** [CMakeFiles/Makefile2:778: CMakeFiles/autopilot_node_component.dir/all] Error 2
+[11.697s] gmake: *** [Makefile:146: all] Error 2
+[11.705s] Invoked command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8

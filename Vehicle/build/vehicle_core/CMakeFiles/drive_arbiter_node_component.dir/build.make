@@ -97,7 +97,6 @@ libdrive_arbiter_node_component.so: /opt/ros/humble/lib/libstd_msgs__rosidl_type
 libdrive_arbiter_node_component.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_cpp.so
 libdrive_arbiter_node_component.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
 libdrive_arbiter_node_component.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_cpp.so
-libdrive_arbiter_node_component.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
 libdrive_arbiter_node_component.so: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_py.so
 libdrive_arbiter_node_component.so: /opt/ros/humble/lib/libstd_srvs__rosidl_typesupport_fastrtps_c.so
 libdrive_arbiter_node_component.so: /opt/ros/humble/lib/libstd_srvs__rosidl_typesupport_introspection_c.so
@@ -168,6 +167,7 @@ libdrive_arbiter_node_component.so: /opt/ros/humble/lib/librosidl_typesupport_in
 libdrive_arbiter_node_component.so: /opt/ros/humble/lib/libstd_srvs__rosidl_typesupport_c.so
 libdrive_arbiter_node_component.so: /opt/ros/humble/lib/libstd_srvs__rosidl_generator_c.so
 libdrive_arbiter_node_component.so: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+libdrive_arbiter_node_component.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
 libdrive_arbiter_node_component.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
 libdrive_arbiter_node_component.so: /opt/ros/humble/lib/librosidl_typesupport_cpp.so
 libdrive_arbiter_node_component.so: /opt/ros/humble/lib/librosidl_typesupport_c.so

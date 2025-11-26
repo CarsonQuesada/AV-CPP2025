@@ -1,0 +1,43 @@
+[  1%] Built target vehicle_core__cpp
+[  2%] Built target vehicle_core_container
+[ 13%] Built target vehicle_core__rosidl_generator_c
+[ 13%] Built target ament_cmake_python_symlink_vehicle_core
+[ 24%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[ 35%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[ 46%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[ 57%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[ 68%] Built target vehicle_core__rosidl_typesupport_cpp
+[ 79%] Built target vehicle_core__rosidl_typesupport_c
+[ 79%] Built target vehicle_core
+[ 80%] Built target state_manager_node_component
+[ 80%] Built target vehicle_core__py
+[ 80%] Built target i2c_bridge_node
+[ 81%] Built target gt_u7_gps_node_component
+[35m[1mConsolidate compiler generated dependencies of target autopilot_node_component[0m
+[ 82%] Built target tcp_server_node_component
+[ 83%] Built target drive_arbiter_node_component
+[ 83%] [32mBuilding CXX object CMakeFiles/autopilot_node_component.dir/src/KmlPathLoader.cpp.o[0m
+[ 83%] [32mBuilding CXX object CMakeFiles/autopilot_node_component.dir/src/autopilot_node.cpp.o[0m
+[ 84%] Built target heading_calibrator_node_component
+[ 95%] Built target vehicle_core__rosidl_generator_py
+[ 96%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+running egg_info
+[ 97%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext
+[ 98%] Built target gst_camera_component
+[ 99%] Built target vehicle_core__rosidl_typesupport_c__pyext
+writing vehicle_core.egg-info/PKG-INFO
+writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+writing top-level names to vehicle_core.egg-info/top_level.txt
+reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[ 99%] Built target ament_cmake_python_build_vehicle_core_egg
+In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/KmlPathLoader.hpp:6[m[K,
+                 from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/KmlPathLoader.cpp:1[m[K:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/PurePursuit.hpp:[m[K In member function ‘[01m[KCommand PurePursuit::update(const Pose2D&, double)[m[K’:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/PurePursuit.hpp:25:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kclamp[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   25 |     const double Ld = std::[01;31m[Kclamp[m[K(Ld_min_ + k_ * speed, Ld_min_, Ld_max_);
+      |                            [01;31m[K^~~~~[m[K
+gmake[2]: *** [CMakeFiles/autopilot_node_component.dir/build.make:90: CMakeFiles/autopilot_node_component.dir/src/KmlPathLoader.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:778: CMakeFiles/autopilot_node_component.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

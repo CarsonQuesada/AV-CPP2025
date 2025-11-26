@@ -1,0 +1,43 @@
+[0.026s] Invoking command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8
+[0.259s] [ 11%] Built target vehicle_core__rosidl_generator_c
+[0.263s] [ 12%] Built target ament_cmake_python_symlink_vehicle_core
+[0.264s] [ 12%] Built target vehicle_core__cpp
+[0.265s] [ 13%] Built target vehicle_core_container
+[0.313s] [ 24%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[0.332s] [ 35%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[0.341s] [ 46%] Built target vehicle_core__rosidl_typesupport_c
+[0.347s] [ 57%] Built target vehicle_core__rosidl_typesupport_cpp
+[0.353s] [ 68%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[0.367s] [ 79%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[0.427s] [ 79%] Built target vehicle_core
+[0.482s] [ 81%] Built target heading_calibrator_node_component
+[0.482s] [ 81%] Built target drive_arbiter_node_component
+[0.483s] [35m[1mConsolidate compiler generated dependencies of target i2c_bridge_node[0m
+[0.492s] [ 82%] Built target state_manager_node_component
+[0.513s] [ 82%] Built target vehicle_core__py
+[0.514s] [ 83%] Built target gt_u7_gps_node_component
+[0.534s] [ 84%] Built target gst_camera_component
+[0.534s] [ 84%] Built target i2c_bridge_node
+[0.538s] [ 85%] Built target tcp_server_node_component
+[0.547s] [ 85%] [32mBuilding CXX object CMakeFiles/autopilot_node_component.dir/src/autopilot_node.cpp.o[0m
+[0.560s] [ 85%] [32mBuilding CXX object CMakeFiles/autopilot_node_component.dir/src/KmlPathLoader.cpp.o[0m
+[0.580s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/KmlPathLoader.cpp:1:10:[m[K [01;31m[Kfatal error: [m[KKmlPathLoader.hpp: No such file or directory
+[0.581s]     1 | #include [01;31m[K"KmlPathLoader.hpp"[m[K
+[0.581s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[0.581s] compilation terminated.
+[0.582s] gmake[2]: *** [CMakeFiles/autopilot_node_component.dir/build.make:90: CMakeFiles/autopilot_node_component.dir/src/KmlPathLoader.cpp.o] Error 1
+[0.582s] gmake[2]: *** Waiting for unfinished jobs....
+[0.608s] [ 96%] Built target vehicle_core__rosidl_generator_py
+[0.622s] running egg_info
+[0.642s] writing vehicle_core.egg-info/PKG-INFO
+[0.643s] writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+[0.643s] writing top-level names to vehicle_core.egg-info/top_level.txt
+[0.660s] [ 97%] Built target vehicle_core__rosidl_typesupport_c__pyext
+[0.666s] [ 98%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext
+[0.679s] [ 99%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+[0.700s] reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[0.703s] writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[0.824s] [ 99%] Built target ament_cmake_python_build_vehicle_core_egg
+[21.457s] gmake[1]: *** [CMakeFiles/Makefile2:778: CMakeFiles/autopilot_node_component.dir/all] Error 2
+[21.458s] gmake: *** [Makefile:146: all] Error 2
+[21.468s] Invoked command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8

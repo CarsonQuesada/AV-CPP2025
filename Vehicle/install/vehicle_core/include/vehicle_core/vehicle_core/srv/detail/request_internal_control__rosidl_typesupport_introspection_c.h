@@ -1,0 +1,1 @@
+/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__rosidl_typesupport_introspection_c.h

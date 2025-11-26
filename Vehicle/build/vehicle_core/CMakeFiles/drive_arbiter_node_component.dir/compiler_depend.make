@@ -716,11 +716,11 @@ CMakeFiles/drive_arbiter_node_component.dir/src/drive_arbiter.cpp.o: /home/avcpp
   /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__traits.hpp \
   /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__type_support.hpp \
   /opt/ros/humble/include/std_srvs/std_srvs/msg/rosidl_generator_cpp__visibility_control.hpp \
-  rosidl_generator_cpp/vehicle_core/msg/autopilot_drive_command.hpp \
-  rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__struct.hpp \
-  rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__builder.hpp \
-  rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__traits.hpp \
-  rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.hpp \
+  rosidl_generator_cpp/vehicle_core/msg/internal_drive_command.hpp \
+  rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__struct.hpp \
+  rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__builder.hpp \
+  rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__traits.hpp \
+  rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.hpp \
   rosidl_generator_cpp/vehicle_core/msg/rosidl_generator_cpp__visibility_control.hpp \
   rosidl_generator_cpp/vehicle_core/msg/manual_drive_command.hpp \
   rosidl_generator_cpp/vehicle_core/msg/detail/manual_drive_command__struct.hpp \
@@ -742,6 +742,16 @@ CMakeFiles/drive_arbiter_node_component.dir/src/drive_arbiter.cpp.o: /home/avcpp
   rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__builder.hpp \
   rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__traits.hpp \
   rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__type_support.hpp \
+  rosidl_generator_cpp/vehicle_core/srv/request_internal_control.hpp \
+  rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__struct.hpp \
+  rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__builder.hpp \
+  rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__traits.hpp \
+  rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__type_support.hpp \
+  rosidl_generator_cpp/vehicle_core/srv/release_internal_control.hpp \
+  rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__struct.hpp \
+  rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__builder.hpp \
+  rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__traits.hpp \
+  rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__type_support.hpp \
   /opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp \
   /opt/ros/humble/include/class_loader/class_loader/class_loader.hpp \
   /usr/include/c++/11/cstddef \
@@ -766,6 +776,12 @@ CMakeFiles/drive_arbiter_node_component.dir/src/drive_arbiter.cpp.o: /home/avcpp
 /opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp:
 
 /usr/include/console_bridge_export.h:
+
+rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__traits.hpp:
+
+rosidl_generator_cpp/vehicle_core/srv/release_internal_control.hpp:
+
+rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__type_support.hpp:
 
 rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__traits.hpp:
 
@@ -793,7 +809,9 @@ rosidl_generator_cpp/vehicle_core/msg/detail/manual_drive_command__builder.hpp:
 
 rosidl_generator_cpp/vehicle_core/msg/manual_drive_command.hpp:
 
-rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__builder.hpp:
+rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__builder.hpp:
+
+rosidl_generator_cpp/vehicle_core/msg/internal_drive_command.hpp:
 
 /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__traits.hpp:
 
@@ -892,6 +910,8 @@ rosidl_generator_cpp/vehicle_core/msg/detail/manual_drive_command__struct.hpp:
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_waitables_interface.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_time_source_interface.hpp:
+
+rosidl_generator_cpp/vehicle_core/srv/request_internal_control.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__type_support.hpp:
 
@@ -1019,6 +1039,8 @@ rosidl_generator_cpp/vehicle_core/msg/detail/drive_target__struct.hpp:
 
 /usr/include/c++/11/iostream:
 
+rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__traits.hpp:
+
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__builder.hpp:
 
 /usr/include/c++/11/set:
@@ -1114,6 +1136,8 @@ rosidl_generator_cpp/vehicle_core/msg/detail/drive_target__struct.hpp:
 /opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:
 
 /usr/include/aarch64-linux-gnu/bits/types/__fpos_t.h:
+
+rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__builder.hpp:
 
 /usr/include/c++/11/bits/atomic_lockfree_defines.h:
 
@@ -1304,6 +1328,8 @@ rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__struct.hpp:
 /usr/include/unistd.h:
 
 rosidl_generator_cpp/vehicle_core/msg/state_mode.hpp:
+
+rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__struct.hpp:
 
 /usr/include/c++/11/bits/stl_algobase.h:
 
@@ -1537,8 +1563,6 @@ rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__type_support.hpp:
 
 /usr/include/aarch64-linux-gnu/bits/fp-logb.h:
 
-rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__struct.hpp:
-
 /usr/include/c++/11/pstl/pstl_config.h:
 
 /usr/include/aarch64-linux-gnu/bits/pthread_stack_min-dynamic.h:
@@ -1564,6 +1588,8 @@ rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__struct.hpp
 /usr/include/c++/11/bits/atomic_base.h:
 
 /usr/include/c++/11/debug/debug.h:
+
+rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__traits.hpp:
 
 /usr/include/c++/11/system_error:
 
@@ -1801,11 +1827,15 @@ rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__struct.hpp
 
 /usr/include/c++/11/bits/ios_base.h:
 
+rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__type_support.hpp:
+
 /opt/ros/humble/include/rmw/rmw/message_sequence.h:
 
 /usr/include/aarch64-linux-gnu/sys/procfs.h:
 
 /usr/include/c++/11/bits/locale_classes.h:
+
+rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__builder.hpp:
 
 /usr/include/c++/11/ext/aligned_buffer.h:
 
@@ -1818,8 +1848,6 @@ rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__struct.hpp
 /usr/include/string.h:
 
 /usr/include/c++/11/bits/streambuf_iterator.h:
-
-rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__traits.hpp:
 
 /usr/include/c++/11/istream:
 
@@ -1860,6 +1888,8 @@ rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__traits.hpp
 /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/visibility_control.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/network_flow_endpoint.hpp:
+
+rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.hpp:
 
 /opt/ros/humble/include/rmw/rmw/init_options.h:
 
@@ -1967,8 +1997,6 @@ rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__traits.hpp
 
 /opt/ros/humble/include/rcl/rcl/client.h:
 
-rosidl_generator_cpp/vehicle_core/msg/autopilot_drive_command.hpp:
-
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/get_parameters.hpp:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h:
@@ -2047,6 +2075,8 @@ rosidl_generator_cpp/vehicle_core/msg/autopilot_drive_command.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/macros.hpp:
 
+rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__struct.hpp:
+
 /opt/ros/humble/include/rclcpp/rclcpp/contexts/default_context.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/guard_condition.hpp:
@@ -2084,6 +2114,8 @@ rosidl_generator_cpp/vehicle_core/msg/detail/drive_target__builder.hpp:
 /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__type_support.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/utilities.hpp:
+
+rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__struct.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_graph_interface.hpp:
 
@@ -2164,8 +2196,6 @@ rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp:
 /opt/ros/humble/include/rmw/rmw/events_statuses/liveliness_changed.h:
 
 /opt/ros/humble/include/tracetools/tracetools/visibility_control.hpp:
-
-rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.hpp:
 
 /usr/include/aarch64-linux-gnu/bits/procfs-id.h:
 

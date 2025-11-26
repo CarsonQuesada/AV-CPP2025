@@ -44,6 +44,7 @@ find_package(nav_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(cv_bridge REQUIRED)
+find_package(robot_localization REQUIRED)
 
 # OpenCV is usually pulled by cv_bridge; make it optional to avoid breaking a working setup
 find_package(OpenCV QUIET)
@@ -67,7 +68,7 @@ link_directories(${GSTREAMER_LIBRARY_DIRS})
 # Keep your existing list exactly; DriveFeedback.msg included
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/DriveTarget.msg"
-  "msg/AutopilotDriveCommand.msg"
+  "msg/InternalDriveCommand.msg"
   "msg/ManualDriveCommand.msg"
   "msg/LightsCommand.msg"
   "msg/MaxSpeed.msg"
@@ -84,8 +85,11 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/StateMode.msg"
   "msg/StateEvent.msg"
   "msg/DriveFeedback.msg"
+  "msg/IMUStatus.msg"
+  "srv/RequestInternalControl.srv"
+  "srv/ReleaseInternalControl.srv"
   "srv/SetAutopilotProfile.srv"
-  DEPENDENCIES builtin_interfaces
+  DEPENDENCIES builtin_interfaces std_msgs
 )
 ament_export_dependencies(rosidl_default_runtime)
 
@@ -93,6 +97,7 @@ ament_export_dependencies(rosidl_default_runtime)
 #   Install public headers
 # ================================
 install(DIRECTORY include/ DESTINATION include)
+install(DIRECTORY data/ DESTINATION share/${PROJECT_NAME}/data)
 ament_export_include_directories(include)
 
 # Also export deps for downstream tools/containers
@@ -145,6 +150,21 @@ install(TARGETS state_manager_node_component
   RUNTIME DESTINATION bin
 )
 
+# --- heading calibrator component ---
+add_library(heading_calibrator_node_component SHARED src/heading_calibrator_node.cpp)
+target_include_directories(heading_calibrator_node_component PUBLIC
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+  ${SHARED_ROOT}
+)
+ament_target_dependencies(heading_calibrator_node_component rclcpp rclcpp_components std_msgs std_srvs geometry_msgs sensor_msgs nav_msgs robot_localization tf2)
+rosidl_target_interfaces(heading_calibrator_node_component ${PROJECT_NAME} "rosidl_typesupport_cpp")
+rclcpp_components_register_nodes(heading_calibrator_node_component "vehicle_core::HeadingCalibratorNode")
+install(TARGETS heading_calibrator_node_component
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
 # --- Drive Arbiter component ---
 add_library(drive_arbiter_node_component SHARED src/drive_arbiter.cpp)
 target_include_directories(drive_arbiter_node_component PUBLIC
@@ -160,6 +180,29 @@ install(TARGETS drive_arbiter_node_component
   RUNTIME DESTINATION bin
 )
 
+# --- GT-U7 GPS component ---
+add_library(gt_u7_gps_node_component SHARED 
+  src/gt_u7_gps_node.cpp
+  src/Devices/GtU7Gps.cpp
+)
+target_include_directories(gt_u7_gps_node_component PUBLIC
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+  ${SHARED_ROOT}
+)
+ament_target_dependencies(gt_u7_gps_node_component
+  rclcpp rclcpp_components sensor_msgs
+)
+# if your node uses your package's custom msgs, keep this line:
+rosidl_target_interfaces(gt_u7_gps_node_component
+  ${PROJECT_NAME} "rosidl_typesupport_cpp"
+)
+rclcpp_components_register_nodes(gt_u7_gps_node_component "vehicle_core::GtU7GpsNode")
+install(TARGETS gt_u7_gps_node_component
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
 # --- TCP Server component ---
 add_library(tcp_server_node_component SHARED src/tcp_server_node.cpp)
 target_include_directories(tcp_server_node_component PUBLIC
@@ -167,7 +210,7 @@ target_include_directories(tcp_server_node_component PUBLIC
   ${SHARED_ROOT}
 )
 ament_target_dependencies(tcp_server_node_component
-  rclcpp rclcpp_components std_msgs
+  rclcpp rclcpp_components std_msgs std_srvs
 )
 rosidl_target_interfaces(tcp_server_node_component
   ${PROJECT_NAME} "rosidl_typesupport_cpp"
@@ -180,7 +223,15 @@ install(TARGETS tcp_server_node_component
 )
 
 # --- I2C Bridge component ---
-add_library(i2c_bridge_node SHARED src/i2c_bridge_node.cpp)
+add_library(i2c_bridge_node SHARED 
+  src/i2c_bridge_node.cpp
+  src/Devices/I2C/I2CBus.cpp
+  src/Devices/I2C/I2CBusRegistry.cpp
+  src/Devices/I2C/I2CDevice.cpp
+  src/Devices/BNO055.cpp
+  src/Devices/DriveSubsys.cpp
+  src/Devices/LightingSubsys.cpp
+)
 target_include_directories(i2c_bridge_node PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
@@ -195,6 +246,28 @@ install(TARGETS i2c_bridge_node
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
+)
+
+# --- Autopilot component ---
+add_library(autopilot_node_component SHARED 
+  src/Autopilot/autopilot_node.cpp
+  src/Autopilot/KmlPathLoader.cpp
+  src/Autopilot/PurePursuit.cpp
+)
+target_include_directories(autopilot_node_component PUBLIC
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+  ${SHARED_ROOT}
+)
+ament_target_dependencies(autopilot_node_component rclcpp rclcpp_components std_msgs std_srvs geometry_msgs sensor_msgs nav_msgs robot_localization tf2)
+rosidl_target_interfaces(autopilot_node_component ${PROJECT_NAME} "rosidl_typesupport_cpp")
+rclcpp_components_register_nodes(autopilot_node_component "vehicle_core::AutopilotNode")
+install(TARGETS autopilot_node_component
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+target_link_libraries(autopilot_node_component
+  Geographic
 )
 
 # --- GST Camera component (C++) ---

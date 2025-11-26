@@ -1,0 +1,716 @@
+[0.000000] (-) TimerEvent: {}
+[0.000723] (vehicle_core) JobQueued: {'identifier': 'vehicle_core', 'dependencies': OrderedDict()}
+[0.001038] (vehicle_core) JobStarted: {'identifier': 'vehicle_core'}
+[0.023235] (vehicle_core) JobProgress: {'identifier': 'vehicle_core', 'progress': 'cmake'}
+[0.024934] (vehicle_core) JobProgress: {'identifier': 'vehicle_core', 'progress': 'build'}
+[0.026604] (vehicle_core) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core', '--', '-j8', '-l8'], 'cwd': '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('UMS_MOUNTPOINT', '/mnt/ums'), ('GST_V4L2_PREFERRED_FOURCC', 'NV12:YU12:NV16:YUY2'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'avcpp'), ('SSH_CLIENT', '192.168.8.103 17862 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('USB_FUNCS', 'adb'), ('LD_LIBRARY_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/avcpp'), ('OLDPWD', '/home/avcpp/AV-CPP2025'), ('TERM_PROGRAM_VERSION', '1.106.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1001/vscode-ipc-3b66f37e-ce1b-40e0-9895-db66ca486818.sock'), ('GST_INSPECT_NO_COLORS', '1'), ('GST_MPP_NO_RGA', '1'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1001/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install'), ('GST_V4L2SRC_MAX_RESOLUTION', '3840x2160'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'avcpp'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', '6'), ('GST_VIDEO_CONVERT_PREFERRED_FORMAT', 'NV12:NV16:I420:YUY2'), ('GST_V4L2SRC_RK_DEVICES', '_mainpath:_selfpath:_bypass:_scale'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/bin/remote-cli:/home/avcpp/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/bundled/scripts/noConfigScripts'), ('XDG_RUNTIME_DIR', '/run/user/1001'), ('GST_GL_PLATFORM', 'egl'), ('GST_DEBUG_NO_COLOR', '1'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('GST_V4L2SRC_DEFAULT_DEVICE', '/dev/video-camera0'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/.noConfigDebugAdapterEndpoints/endpoint-ef25f7e9429dbf34.txt'), ('LANG', 'en_US.UTF-8'), ('PYTHONSTARTUP', '/home/avcpp/.vscode-server/data/User/workspaceStorage/da628a90441345ac74af00bc07084975/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1001/vscode-git-c9ee365bab.sock'), ('TERM_PROGRAM', 'vscode'), ('GST_V4L2_USE_LIBV4L2', '1'), ('UMS_SIZE', '256M'), ('AMENT_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/opt/ros/humble'), ('LC_MESSAGES', 'en_US.UTF-8'), ('SHELL', '/bin/bash'), ('UMS_RO', '0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('UMS_FSTYPE', 'vfat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.8.103 17862 192.168.8.176 22'), ('PYTHONPATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('UMS_MOUNT', '0'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/opt/ros/humble'), ('UMS_FILE', '/userdata/ums_shared.img')]), 'shell': False}
+[0.098617] (-) TimerEvent: {}
+[0.199989] (-) TimerEvent: {}
+[0.301269] (-) TimerEvent: {}
+[0.315578] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core_container\x1b[0m\n'}
+[0.331581] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_generator_c\x1b[0m\n'}
+[0.358806] (vehicle_core) StdoutLine: {'line': b'[  1%] Built target vehicle_core__cpp\n'}
+[0.362591] (vehicle_core) StdoutLine: {'line': b'[  1%] Built target ament_cmake_python_symlink_vehicle_core\n'}
+[0.392492] (vehicle_core) StdoutLine: {'line': b'[  2%] Built target vehicle_core_container\n'}
+[0.395169] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[0.396840] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[0.401555] (-) TimerEvent: {}
+[0.406418] (vehicle_core) StdoutLine: {'line': b'[ 13%] Built target vehicle_core__rosidl_generator_c\n'}
+[0.422602] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_cpp\x1b[0m\n'}
+[0.451211] (vehicle_core) StdoutLine: {'line': b'[ 24%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp\n'}
+[0.456185] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[0.458124] (vehicle_core) StdoutLine: {'line': b'[ 35%] Built target vehicle_core__rosidl_typesupport_introspection_cpp\n'}
+[0.461376] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_c\x1b[0m\n'}
+[0.463295] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[0.473914] (vehicle_core) StdoutLine: {'line': b'[ 46%] Built target vehicle_core__rosidl_typesupport_cpp\n'}
+[0.486966] (vehicle_core) StdoutLine: {'line': b'[ 57%] Built target vehicle_core__rosidl_typesupport_introspection_c\n'}
+[0.492665] (vehicle_core) StdoutLine: {'line': b'[ 68%] Built target vehicle_core__rosidl_typesupport_c\n'}
+[0.501609] (-) TimerEvent: {}
+[0.523026] (vehicle_core) StdoutLine: {'line': b'[ 79%] Built target vehicle_core__rosidl_typesupport_fastrtps_c\n'}
+[0.578734] (vehicle_core) StdoutLine: {'line': b'[ 79%] Built target vehicle_core\n'}
+[0.600860] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target heading_calibrator_node_component\x1b[0m\n'}
+[0.603232] (-) TimerEvent: {}
+[0.605480] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target state_manager_node_component\x1b[0m\n'}
+[0.624107] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target tcp_server_node_component\x1b[0m\n'}
+[0.628015] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target i2c_bridge_node\x1b[0m\n'}
+[0.634167] (vehicle_core) StdoutLine: {'line': b'[ 80%] Built target heading_calibrator_node_component\n'}
+[0.634781] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target gt_u7_gps_node_component\x1b[0m\n'}
+[0.638989] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target drive_arbiter_node_component\x1b[0m\n'}
+[0.639882] (vehicle_core) StdoutLine: {'line': b'[ 81%] Built target state_manager_node_component\n'}
+[0.663202] (vehicle_core) StdoutLine: {'line': b'[ 81%] Built target vehicle_core__py\n'}
+[0.681658] (vehicle_core) StdoutLine: {'line': b'[ 82%] Built target gt_u7_gps_node_component\n'}
+[0.682451] (vehicle_core) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding CXX object CMakeFiles/autopilot_node_component.dir/src/autopilot_node.cpp.o\x1b[0m\n'}
+[0.683342] (vehicle_core) StdoutLine: {'line': b'[ 82%] Built target i2c_bridge_node\n'}
+[0.694841] (vehicle_core) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CXX object CMakeFiles/autopilot_node_component.dir/src/KmlPathLoader.cpp.o\x1b[0m\n'}
+[0.695192] (vehicle_core) StdoutLine: {'line': b'[ 83%] Built target drive_arbiter_node_component\n'}
+[0.702801] (vehicle_core) StdoutLine: {'line': b'[ 84%] Built target tcp_server_node_component\n'}
+[0.703573] (-) TimerEvent: {}
+[0.706947] (vehicle_core) StdoutLine: {'line': b'running egg_info\n'}
+[0.710412] (vehicle_core) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding CXX object CMakeFiles/gst_camera_component.dir/src/gst_camera_node.cpp.o\x1b[0m\n'}
+[0.728574] (vehicle_core) StdoutLine: {'line': b'writing vehicle_core.egg-info/PKG-INFO\n'}
+[0.729936] (vehicle_core) StdoutLine: {'line': b'writing dependency_links to vehicle_core.egg-info/dependency_links.txt\n'}
+[0.730805] (vehicle_core) StdoutLine: {'line': b'writing top-level names to vehicle_core.egg-info/top_level.txt\n'}
+[0.736295] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/KmlPathLoader.cpp:1:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kkml_path_loader.hpp: No such file or directory\n'}
+[0.736642] (vehicle_core) StderrLine: {'line': b'    1 | #include \x1b[01;31m\x1b[K"kml_path_loader.hpp"\x1b[m\x1b[K\n'}
+[0.736738] (vehicle_core) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.736816] (vehicle_core) StderrLine: {'line': b'compilation terminated.\n'}
+[0.739173] (vehicle_core) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/autopilot_node_component.dir/build.make:90: CMakeFiles/autopilot_node_component.dir/src/KmlPathLoader.cpp.o] Error 1\n'}
+[0.739950] (vehicle_core) StderrLine: {'line': b'gmake[2]: *** Waiting for unfinished jobs....\n'}
+[0.740312] (vehicle_core) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_drive_target_s.c.o\x1b[0m\n'}
+[0.741938] (vehicle_core) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_lights_command_s.c.o\x1b[0m\n'}
+[0.743731] (vehicle_core) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.o\x1b[0m\n'}
+[0.747663] (vehicle_core) StdoutLine: {'line': b'[ 86%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_manual_drive_command_s.c.o\x1b[0m\n'}
+[0.773514] (vehicle_core) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_max_speed_s.c.o\x1b[0m\n'}
+[0.790228] (vehicle_core) StdoutLine: {'line': b"reading manifest file 'vehicle_core.egg-info/SOURCES.txt'\n"}
+[0.794108] (vehicle_core) StdoutLine: {'line': b"writing manifest file 'vehicle_core.egg-info/SOURCES.txt'\n"}
+[0.803744] (-) TimerEvent: {}
+[0.893180] (vehicle_core) StdoutLine: {'line': b'[ 87%] Built target ament_cmake_python_build_vehicle_core_egg\n'}
+[0.903879] (-) TimerEvent: {}
+[0.923674] (vehicle_core) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_command_s.c.o\x1b[0m\n'}
+[1.004164] (-) TimerEvent: {}
+[1.057069] (vehicle_core) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_lights_status_s.c.o\x1b[0m\n'}
+[1.062131] (vehicle_core) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_general_status_s.c.o\x1b[0m\n'}
+[1.079883] (vehicle_core) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_drive_status_s.c.o\x1b[0m\n'}
+[1.087919] (vehicle_core) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_status_s.c.o\x1b[0m\n'}
+[1.095400] (vehicle_core) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_telemetry_data_s.c.o\x1b[0m\n'}
+[1.104270] (-) TimerEvent: {}
+[1.148410] (vehicle_core) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_error_s.c.o\x1b[0m\n'}
+[1.204501] (-) TimerEvent: {}
+[1.247679] (vehicle_core) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_config_s.c.o\x1b[0m\n'}
+[1.250662] (vehicle_core) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_server_init_s.c.o\x1b[0m\n'}
+[1.254365] (vehicle_core) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_perception_profile_s.c.o\x1b[0m\n'}
+[1.304759] (-) TimerEvent: {}
+[1.354289] (vehicle_core) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_state_mode_s.c.o\x1b[0m\n'}
+[1.371806] (vehicle_core) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_state_event_s.c.o\x1b[0m\n'}
+[1.405027] (-) TimerEvent: {}
+[1.419362] (vehicle_core) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_drive_feedback_s.c.o\x1b[0m\n'}
+[1.481844] (vehicle_core) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.o\x1b[0m\n'}
+[1.489290] (vehicle_core) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.o\x1b[0m\n'}
+[1.497783] (vehicle_core) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.o\x1b[0m\n'}
+[1.505336] (-) TimerEvent: {}
+[1.572571] (vehicle_core) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.c.o\x1b[0m\n'}
+[1.605559] (-) TimerEvent: {}
+[1.706885] (-) TimerEvent: {}
+[1.807889] (-) TimerEvent: {}
+[1.845468] (vehicle_core) StdoutLine: {'line': b'[ 95%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so\x1b[0m\n'}
+[1.908402] (-) TimerEvent: {}
+[1.992426] (vehicle_core) StdoutLine: {'line': b'[ 95%] Built target vehicle_core__rosidl_generator_py\n'}
+[2.008969] (-) TimerEvent: {}
+[2.054439] (vehicle_core) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/vehicle_core/_vehicle_core_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[2.074636] (vehicle_core) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/vehicle_core/_vehicle_core_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[2.075189] (vehicle_core) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding C object CMakeFiles/vehicle_core__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/vehicle_core/_vehicle_core_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[2.109341] (-) TimerEvent: {}
+[2.211025] (-) TimerEvent: {}
+[2.312579] (-) TimerEvent: {}
+[2.413588] (-) TimerEvent: {}
+[2.439913] (vehicle_core) StdoutLine: {'line': b'[ 96%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/vehicle_core/vehicle_core_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[2.476013] (vehicle_core) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/vehicle_core/vehicle_core_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[2.505216] (vehicle_core) StdoutLine: {'line': b'[ 98%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/vehicle_core/vehicle_core_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[2.513498] (vehicle_core) StdoutLine: {'line': b'[ 98%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext\n'}
+[2.514250] (-) TimerEvent: {}
+[2.566043] (vehicle_core) StdoutLine: {'line': b'[ 98%] Built target vehicle_core__rosidl_typesupport_c__pyext\n'}
+[2.614379] (-) TimerEvent: {}
+[2.622660] (vehicle_core) StdoutLine: {'line': b'[ 98%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext\n'}
+[2.714873] (-) TimerEvent: {}
+[2.816239] (-) TimerEvent: {}
+[2.917619] (-) TimerEvent: {}
+[3.019030] (-) TimerEvent: {}
+[3.120469] (-) TimerEvent: {}
+[3.221869] (-) TimerEvent: {}
+[3.323349] (-) TimerEvent: {}
+[3.424742] (-) TimerEvent: {}
+[3.526236] (-) TimerEvent: {}
+[3.627610] (-) TimerEvent: {}
+[3.729041] (-) TimerEvent: {}
+[3.830512] (-) TimerEvent: {}
+[3.931923] (-) TimerEvent: {}
+[4.033258] (-) TimerEvent: {}
+[4.134655] (-) TimerEvent: {}
+[4.236102] (-) TimerEvent: {}
+[4.337373] (-) TimerEvent: {}
+[4.438803] (-) TimerEvent: {}
+[4.540203] (-) TimerEvent: {}
+[4.641638] (-) TimerEvent: {}
+[4.742825] (-) TimerEvent: {}
+[4.843548] (-) TimerEvent: {}
+[4.944223] (-) TimerEvent: {}
+[5.044915] (-) TimerEvent: {}
+[5.145632] (-) TimerEvent: {}
+[5.246334] (-) TimerEvent: {}
+[5.347008] (-) TimerEvent: {}
+[5.447704] (-) TimerEvent: {}
+[5.520554] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.521631] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:29:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.522216] (vehicle_core) StderrLine: {'line': b'   29 |   rclcpp::Service<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K>::SharedPtr srv_start_;\n'}
+[5.522631] (vehicle_core) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.523008] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.523385] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.523756] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.524134] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.524518] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.524891] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.525285] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.525694] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:29:45:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.526078] (vehicle_core) StderrLine: {'line': b'   29 |   rclcpp::Service<vehicle_core::srv::Trigger\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr srv_start_;\n'}
+[5.526455] (vehicle_core) StderrLine: {'line': b'      |                                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.526826] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:29:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[5.527211] (vehicle_core) StderrLine: {'line': b'   29 |   rclcpp::Service<vehicle_core::srv::Trigger>::\x1b[01;31m\x1b[KSharedPtr\x1b[m\x1b[K srv_start_;\n'}
+[5.527589] (vehicle_core) StderrLine: {'line': b'      |                                                \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.528044] (vehicle_core) StderrLine: {'line': b'      |                                                         \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[5.528421] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:29:58:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksrv_start_\x1b[m\x1b[K\xe2\x80\x99 does not name a type; did you mean \xe2\x80\x98\x1b[01m\x1b[Kva_start\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.528832] (vehicle_core) StderrLine: {'line': b'   29 |   rclcpp::Service<vehicle_core::srv::Trigger>::SharedPtr \x1b[01;31m\x1b[Ksrv_start_\x1b[m\x1b[K;\n'}
+[5.529251] (vehicle_core) StderrLine: {'line': b'      |                                                          \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.529618] (vehicle_core) StderrLine: {'line': b'      |                                                          \x1b[32m\x1b[Kva_start\x1b[m\x1b[K\n'}
+[5.530205] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:30:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.530787] (vehicle_core) StderrLine: {'line': b'   30 |   rclcpp::Service<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K>::SharedPtr srv_cancel_;\n'}
+[5.531157] (vehicle_core) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.531523] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.531933] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.532328] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.532722] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.533107] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.533485] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.533861] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.534275] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:30:45:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.534648] (vehicle_core) StderrLine: {'line': b'   30 |   rclcpp::Service<vehicle_core::srv::Trigger\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr srv_cancel_;\n'}
+[5.535024] (vehicle_core) StderrLine: {'line': b'      |                                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.535418] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:30:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[5.535821] (vehicle_core) StderrLine: {'line': b'   30 |   rclcpp::Service<vehicle_core::srv::Trigger>::\x1b[01;31m\x1b[KSharedPtr\x1b[m\x1b[K srv_cancel_;\n'}
+[5.536228] (vehicle_core) StderrLine: {'line': b'      |                                                \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.536606] (vehicle_core) StderrLine: {'line': b'      |                                                         \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[5.536976] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:30:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kredeclaration of \xe2\x80\x98\x1b[01m\x1b[Kint vehicle_core::AutopilotNode::SharedPtr\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.537362] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:29:48:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kprevious declaration \xe2\x80\x98\x1b[01m\x1b[Kint vehicle_core::AutopilotNode::SharedPtr\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.537763] (vehicle_core) StderrLine: {'line': b'   29 |   rclcpp::Service<vehicle_core::srv::Trigger>::\x1b[01;36m\x1b[KSharedPtr\x1b[m\x1b[K srv_start_;\n'}
+[5.538267] (vehicle_core) StderrLine: {'line': b'      |                                                \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.538662] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:30:58:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksrv_cancel_\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[5.539051] (vehicle_core) StderrLine: {'line': b'   30 |   rclcpp::Service<vehicle_core::srv::Trigger>::SharedPtr \x1b[01;31m\x1b[Ksrv_cancel_\x1b[m\x1b[K;\n'}
+[5.539418] (vehicle_core) StderrLine: {'line': b'      |                                                          \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.548015] (-) TimerEvent: {}
+[5.649316] (-) TimerEvent: {}
+[5.750714] (-) TimerEvent: {}
+[5.763891] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:35:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.764944] (vehicle_core) StderrLine: {'line': b'   35 |   rclcpp::Client<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K>::SharedPtr cli_notify_ready_;\n'}
+[5.765417] (vehicle_core) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.765805] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.766176] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.766547] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.766915] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.767290] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.767661] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.768024] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.768391] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:35:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.768783] (vehicle_core) StderrLine: {'line': b'   35 |   rclcpp::Client<vehicle_core::srv::Trigger\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr cli_notify_ready_;\n'}
+[5.769152] (vehicle_core) StderrLine: {'line': b'      |                                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.769580] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:35:47:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[5.769953] (vehicle_core) StderrLine: {'line': b'   35 |   rclcpp::Client<vehicle_core::srv::Trigger>::\x1b[01;31m\x1b[KSharedPtr\x1b[m\x1b[K cli_notify_ready_;\n'}
+[5.770321] (vehicle_core) StderrLine: {'line': b'      |                                               \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.770717] (vehicle_core) StderrLine: {'line': b'      |                                                        \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[5.771299] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:35:47:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kredeclaration of \xe2\x80\x98\x1b[01m\x1b[Kint vehicle_core::AutopilotNode::SharedPtr\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.771682] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:29:48:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kprevious declaration \xe2\x80\x98\x1b[01m\x1b[Kint vehicle_core::AutopilotNode::SharedPtr\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.772115] (vehicle_core) StderrLine: {'line': b'   29 |   rclcpp::Service<vehicle_core::srv::Trigger>::\x1b[01;36m\x1b[KSharedPtr\x1b[m\x1b[K srv_start_;\n'}
+[5.772492] (vehicle_core) StderrLine: {'line': b'      |                                                \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.772858] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:35:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcli_notify_ready_\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[5.773323] (vehicle_core) StderrLine: {'line': b'   35 |   rclcpp::Client<vehicle_core::srv::Trigger>::SharedPtr \x1b[01;31m\x1b[Kcli_notify_ready_\x1b[m\x1b[K;\n'}
+[5.773695] (vehicle_core) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.774096] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.774483] (vehicle_core) StderrLine: {'line': b'   42 |     const std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Request> req,\n'}
+[5.774847] (vehicle_core) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.775283] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.775700] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.776074] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.776454] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.776829] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.777451] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.777866] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.778248] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.778646] (vehicle_core) StderrLine: {'line': b'   42 |     const std::shared_ptr<vehicle_core::srv::Trigger::Request\x1b[01;31m\x1b[K>\x1b[m\x1b[K req,\n'}
+[5.779080] (vehicle_core) StderrLine: {'line': b'      |                                                              \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.779452] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.780164] (vehicle_core) StderrLine: {'line': b'   42 |     const std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Request> req,\n'}
+[5.780295] (vehicle_core) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.780383] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.780471] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.780551] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.780629] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.780732] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.780809] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.780881] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.780959] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.781036] (vehicle_core) StderrLine: {'line': b'   42 |     const std::shared_ptr<vehicle_core::srv::Trigger::Request\x1b[01;31m\x1b[K>\x1b[m\x1b[K req,\n'}
+[5.781106] (vehicle_core) StderrLine: {'line': b'      |                                                              \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.781179] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.781258] (vehicle_core) StderrLine: {'line': b'   42 |     const std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Request> req,\n'}
+[5.781334] (vehicle_core) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.781404] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.781607] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.781687] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.781762] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.781850] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.781923] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.782015] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.782098] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.782171] (vehicle_core) StderrLine: {'line': b'   42 |     const std::shared_ptr<vehicle_core::srv::Trigger::Request\x1b[01;31m\x1b[K>\x1b[m\x1b[K req,\n'}
+[5.782242] (vehicle_core) StderrLine: {'line': b'      |                                                              \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.782318] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:11:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid template-id\n'}
+[5.782393] (vehicle_core) StderrLine: {'line': b'   42 |     const \x1b[01;31m\x1b[Kstd\x1b[m\x1b[K::shared_ptr<vehicle_core::srv::Trigger::Request> req,\n'}
+[5.782463] (vehicle_core) StderrLine: {'line': b'      |           \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.782533] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.782609] (vehicle_core) StderrLine: {'line': b'   42 |     const std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Request> req,\n'}
+[5.782681] (vehicle_core) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.782751] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:42:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass template placeholder \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr\x1b[m\x1b[K\xe2\x80\x99 not permitted in this context\n'}
+[5.782826] (vehicle_core) StderrLine: {'line': b'   42 |     \x1b[01;31m\x1b[Kconst\x1b[m\x1b[K std::shared_ptr<vehicle_core::srv::Trigger::Request> req,\n'}
+[5.782898] (vehicle_core) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[5.782969] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:40:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.783044] (vehicle_core) StderrLine: {'line': b'   43 |     std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Response> res);\n'}
+[5.783114] (vehicle_core) StderrLine: {'line': b'      |                                        \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.783187] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.783259] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.783350] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.783433] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.783701] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.783782] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.783855] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.783928] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.784004] (vehicle_core) StderrLine: {'line': b'   43 |     std::shared_ptr<vehicle_core::srv::Trigger::Response\x1b[01;31m\x1b[K>\x1b[m\x1b[K res);\n'}
+[5.784081] (vehicle_core) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.784157] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:40:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.784239] (vehicle_core) StderrLine: {'line': b'   43 |     std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Response> res);\n'}
+[5.784314] (vehicle_core) StderrLine: {'line': b'      |                                        \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.784393] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.784463] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.784554] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.784628] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.784705] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.784777] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.784845] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.784917] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.785005] (vehicle_core) StderrLine: {'line': b'   43 |     std::shared_ptr<vehicle_core::srv::Trigger::Response\x1b[01;31m\x1b[K>\x1b[m\x1b[K res);\n'}
+[5.785081] (vehicle_core) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.785154] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:40:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.785239] (vehicle_core) StderrLine: {'line': b'   43 |     std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Response> res);\n'}
+[5.785333] (vehicle_core) StderrLine: {'line': b'      |                                        \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.785414] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.785488] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.785565] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.785637] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.785711] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.785780] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.785861] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.786119] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.786214] (vehicle_core) StderrLine: {'line': b'   43 |     std::shared_ptr<vehicle_core::srv::Trigger::Response\x1b[01;31m\x1b[K>\x1b[m\x1b[K res);\n'}
+[5.786289] (vehicle_core) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.786363] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid template-id\n'}
+[5.786455] (vehicle_core) StderrLine: {'line': b'   43 |     \x1b[01;31m\x1b[Kstd\x1b[m\x1b[K::shared_ptr<vehicle_core::srv::Trigger::Response> res);\n'}
+[5.786538] (vehicle_core) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.786610] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:40:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.786691] (vehicle_core) StderrLine: {'line': b'   43 |     std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Response> res);\n'}
+[5.786762] (vehicle_core) StderrLine: {'line': b'      |                                        \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.786835] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:43:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass template placeholder \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr\x1b[m\x1b[K\xe2\x80\x99 not permitted in this context\n'}
+[5.786913] (vehicle_core) StderrLine: {'line': b'   43 |     \x1b[01;31m\x1b[Kstd\x1b[m\x1b[K::shared_ptr<vehicle_core::srv::Trigger::Response> res);\n'}
+[5.786985] (vehicle_core) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.787058] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.787163] (vehicle_core) StderrLine: {'line': b'   45 |     const std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Request> req,\n'}
+[5.787240] (vehicle_core) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.787314] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.787386] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.787459] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.787541] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.787618] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.787689] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.787761] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.787832] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.787906] (vehicle_core) StderrLine: {'line': b'   45 |     const std::shared_ptr<vehicle_core::srv::Trigger::Request\x1b[01;31m\x1b[K>\x1b[m\x1b[K req,\n'}
+[5.787986] (vehicle_core) StderrLine: {'line': b'      |                                                              \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.788670] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.789188] (vehicle_core) StderrLine: {'line': b'   45 |     const std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Request> req,\n'}
+[5.789571] (vehicle_core) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.789941] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.790312] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.790896] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.791278] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.791664] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.792053] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.792429] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.792944] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.793398] (vehicle_core) StderrLine: {'line': b'   45 |     const std::shared_ptr<vehicle_core::srv::Trigger::Request\x1b[01;31m\x1b[K>\x1b[m\x1b[K req,\n'}
+[5.793811] (vehicle_core) StderrLine: {'line': b'      |                                                              \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.794182] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.794565] (vehicle_core) StderrLine: {'line': b'   45 |     const std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Request> req,\n'}
+[5.795027] (vehicle_core) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.795539] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.795926] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.796299] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.796670] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.797044] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.797574] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.797949] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.798321] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.798730] (vehicle_core) StderrLine: {'line': b'   45 |     const std::shared_ptr<vehicle_core::srv::Trigger::Request\x1b[01;31m\x1b[K>\x1b[m\x1b[K req,\n'}
+[5.799109] (vehicle_core) StderrLine: {'line': b'      |                                                              \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.799487] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:11:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid template-id\n'}
+[5.799861] (vehicle_core) StderrLine: {'line': b'   45 |     const \x1b[01;31m\x1b[Kstd\x1b[m\x1b[K::shared_ptr<vehicle_core::srv::Trigger::Request> req,\n'}
+[5.800230] (vehicle_core) StderrLine: {'line': b'      |           \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.800599] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.801038] (vehicle_core) StderrLine: {'line': b'   45 |     const std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Request> req,\n'}
+[5.801411] (vehicle_core) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.801821] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:45:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass template placeholder \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr\x1b[m\x1b[K\xe2\x80\x99 not permitted in this context\n'}
+[5.802246] (vehicle_core) StderrLine: {'line': b'   45 |     \x1b[01;31m\x1b[Kconst\x1b[m\x1b[K std::shared_ptr<vehicle_core::srv::Trigger::Request> req,\n'}
+[5.802628] (vehicle_core) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[5.802994] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:40:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.803420] (vehicle_core) StderrLine: {'line': b'   46 |     std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Response> res);\n'}
+[5.803796] (vehicle_core) StderrLine: {'line': b'      |                                        \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.804176] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.804548] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.804921] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.805316] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.805720] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.806096] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.806463] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.806836] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.807271] (vehicle_core) StderrLine: {'line': b'   46 |     std::shared_ptr<vehicle_core::srv::Trigger::Response\x1b[01;31m\x1b[K>\x1b[m\x1b[K res);\n'}
+[5.807646] (vehicle_core) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.808038] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:40:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.808428] (vehicle_core) StderrLine: {'line': b'   46 |     std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Response> res);\n'}
+[5.808855] (vehicle_core) StderrLine: {'line': b'      |                                        \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.808976] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.809064] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.809171] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.809253] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.809335] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.809411] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.809482] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.809556] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.809635] (vehicle_core) StderrLine: {'line': b'   46 |     std::shared_ptr<vehicle_core::srv::Trigger::Response\x1b[01;31m\x1b[K>\x1b[m\x1b[K res);\n'}
+[5.809709] (vehicle_core) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.809784] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:40:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.809868] (vehicle_core) StderrLine: {'line': b'   46 |     std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Response> res);\n'}
+[5.809941] (vehicle_core) StderrLine: {'line': b'      |                                        \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.810015] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.810099] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.810178] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.810252] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.810326] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.810397] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.810468] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.810540] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.810622] (vehicle_core) StderrLine: {'line': b'   46 |     std::shared_ptr<vehicle_core::srv::Trigger::Response\x1b[01;31m\x1b[K>\x1b[m\x1b[K res);\n'}
+[5.810694] (vehicle_core) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.810770] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid template-id\n'}
+[5.810852] (vehicle_core) StderrLine: {'line': b'   46 |     \x1b[01;31m\x1b[Kstd\x1b[m\x1b[K::shared_ptr<vehicle_core::srv::Trigger::Response> res);\n'}
+[5.810926] (vehicle_core) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.810996] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:40:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.811072] (vehicle_core) StderrLine: {'line': b'   46 |     std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Response> res);\n'}
+[5.811168] (vehicle_core) StderrLine: {'line': b'      |                                        \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.811242] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:46:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass template placeholder \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr\x1b[m\x1b[K\xe2\x80\x99 not permitted in this context\n'}
+[5.811319] (vehicle_core) StderrLine: {'line': b'   46 |     \x1b[01;31m\x1b[Kstd\x1b[m\x1b[K::shared_ptr<vehicle_core::srv::Trigger::Response> res);\n'}
+[5.811392] (vehicle_core) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.850398] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::AutopilotNode::AutopilotNode(const rclcpp::NodeOptions&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.851326] (-) TimerEvent: {}
+[5.851829] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:27:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcli_notify_ready_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[5.852991] (vehicle_core) StderrLine: {'line': b'   27 |         \x1b[01;31m\x1b[Kcli_notify_ready_\x1b[m\x1b[K = create_client<vehicle_core::srv::Trigger>(\n'}
+[5.853414] (vehicle_core) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.853781] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:27:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.854163] (vehicle_core) StderrLine: {'line': b'   27 |         cli_notify_ready_ = create_client<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K>(\n'}
+[5.854521] (vehicle_core) StderrLine: {'line': b'      |                                                              \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.854881] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.855239] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.855628] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.855990] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.856356] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.856711] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.857117] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:27:70:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::AutopilotNode::create_client<<expression error> >(const char [31])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.857481] (vehicle_core) StderrLine: {'line': b'   27 |         cli_notify_ready_ = \x1b[01;31m\x1b[Kcreate_client<vehicle_core::srv::Trigger>(\x1b[m\x1b[K\n'}
+[5.857839] (vehicle_core) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\x1b[m\x1b[K\n'}
+[5.858197] (vehicle_core) StderrLine: {'line': b'   28 | \x1b[01;31m\x1b[K            "/state_manager/mark_auto_ready")\x1b[m\x1b[K;\n'}
+[5.858555] (vehicle_core) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K                         \n'}
+[5.858972] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1321\x1b[m\x1b[K,\n'}
+[5.859334] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[5.859697] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[5.860059] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[5.860420] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:3\x1b[m\x1b[K,\n'}
+[5.860786] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.861150] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:125:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class ServiceT> typename rclcpp::Client<ServiceT>::SharedPtr rclcpp::Node::create_client(const string&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.861562] (vehicle_core) StderrLine: {'line': b'  125 | \x1b[01;36m\x1b[KNode\x1b[m\x1b[K::create_client(\n'}
+[5.861931] (vehicle_core) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[5.862334] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:125:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[5.862700] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:27:70:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.863096] (vehicle_core) StderrLine: {'line': b'   27 |         cli_notify_ready_ = \x1b[01;31m\x1b[Kcreate_client<vehicle_core::srv::Trigger>(\x1b[m\x1b[K\n'}
+[5.863454] (vehicle_core) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\x1b[m\x1b[K\n'}
+[5.863817] (vehicle_core) StderrLine: {'line': b'   28 | \x1b[01;31m\x1b[K            "/state_manager/mark_auto_ready")\x1b[m\x1b[K;\n'}
+[5.864176] (vehicle_core) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K                         \n'}
+[5.869127] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:31:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksrv_start_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kva_start\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.869599] (vehicle_core) StderrLine: {'line': b'   31 |         \x1b[01;31m\x1b[Ksrv_start_\x1b[m\x1b[K = create_service<vehicle_core::srv::Trigger>(\n'}
+[5.869731] (vehicle_core) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.869808] (vehicle_core) StderrLine: {'line': b'      |         \x1b[32m\x1b[Kva_start\x1b[m\x1b[K\n'}
+[5.871460] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:31:56:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.871595] (vehicle_core) StderrLine: {'line': b'   31 |         srv_start_ = create_service<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K>(\n'}
+[5.871673] (vehicle_core) StderrLine: {'line': b'      |                                                        \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.871746] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.871817] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.871891] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.871974] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.872054] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.872123] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.883037] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:31:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::AutopilotNode::create_service<<expression error> >(const char [17], std::_Bind_helper<false, void (vehicle_core::AutopilotNode::*)(...), vehicle_core::AutopilotNode*, const std::_Placeholder<1>&, const std::_Placeholder<2>&>::type)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.883714] (vehicle_core) StderrLine: {'line': b'   31 |         srv_start_ = \x1b[01;31m\x1b[Kcreate_service<vehicle_core::srv::Trigger>(\x1b[m\x1b[K\n'}
+[5.883854] (vehicle_core) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\x1b[m\x1b[K\n'}
+[5.883931] (vehicle_core) StderrLine: {'line': b'   32 | \x1b[01;31m\x1b[K            "/autopilot/start", std::bind(&AutopilotNode::handleStart, this, std::placeholders::_1, std::placeholders::_2))\x1b[m\x1b[K;\n'}
+[5.884009] (vehicle_core) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.884081] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[5.884155] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[5.884252] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[5.884328] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:3\x1b[m\x1b[K,\n'}
+[5.884402] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.884482] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:267:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class ServiceT, class CallbackT> typename rclcpp::Service<ServiceT>::SharedPtr rclcpp::Node::create_service(const string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.884567] (vehicle_core) StderrLine: {'line': b'  267 |   \x1b[01;36m\x1b[Kcreate_service\x1b[m\x1b[K(\n'}
+[5.884638] (vehicle_core) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.884708] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:267:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[5.884786] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:31:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.884860] (vehicle_core) StderrLine: {'line': b'   31 |         srv_start_ = \x1b[01;31m\x1b[Kcreate_service<vehicle_core::srv::Trigger>(\x1b[m\x1b[K\n'}
+[5.884932] (vehicle_core) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\x1b[m\x1b[K\n'}
+[5.885000] (vehicle_core) StderrLine: {'line': b'   32 | \x1b[01;31m\x1b[K            "/autopilot/start", std::bind(&AutopilotNode::handleStart, this, std::placeholders::_1, std::placeholders::_2))\x1b[m\x1b[K;\n'}
+[5.885070] (vehicle_core) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.900234] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:33:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksrv_cancel_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kcancel_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.900699] (vehicle_core) StderrLine: {'line': b'   33 |         \x1b[01;31m\x1b[Ksrv_cancel_\x1b[m\x1b[K = create_service<vehicle_core::srv::Trigger>(\n'}
+[5.900790] (vehicle_core) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.900865] (vehicle_core) StderrLine: {'line': b'      |         \x1b[32m\x1b[Kcancel_\x1b[m\x1b[K\n'}
+[5.902552] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:33:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.902753] (vehicle_core) StderrLine: {'line': b'   33 |         srv_cancel_ = create_service<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K>(\n'}
+[5.902981] (vehicle_core) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.903066] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.903141] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.903671] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.904048] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.904473] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.904836] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.905198] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:33:65:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::AutopilotNode::create_service<<expression error> >(const char [18], std::_Bind_helper<false, void (vehicle_core::AutopilotNode::*)(...), vehicle_core::AutopilotNode*, const std::_Placeholder<1>&, const std::_Placeholder<2>&>::type)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.905614] (vehicle_core) StderrLine: {'line': b'   33 |         srv_cancel_ = \x1b[01;31m\x1b[Kcreate_service<vehicle_core::srv::Trigger>(\x1b[m\x1b[K\n'}
+[5.905981] (vehicle_core) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\x1b[m\x1b[K\n'}
+[5.906346] (vehicle_core) StderrLine: {'line': b'   34 | \x1b[01;31m\x1b[K            "/autopilot/cancel", std::bind(&AutopilotNode::handleCancel, this, std::placeholders::_1, std::placeholders::_2))\x1b[m\x1b[K;\n'}
+[5.906716] (vehicle_core) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.907086] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[5.907456] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[5.907903] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[5.908272] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:3\x1b[m\x1b[K,\n'}
+[5.908661] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.909047] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:267:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class ServiceT, class CallbackT> typename rclcpp::Service<ServiceT>::SharedPtr rclcpp::Node::create_service(const string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.909513] (vehicle_core) StderrLine: {'line': b'  267 |   \x1b[01;36m\x1b[Kcreate_service\x1b[m\x1b[K(\n'}
+[5.909886] (vehicle_core) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.910252] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:267:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[5.910625] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:33:65:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.911004] (vehicle_core) StderrLine: {'line': b'   33 |         srv_cancel_ = \x1b[01;31m\x1b[Kcreate_service<vehicle_core::srv::Trigger>(\x1b[m\x1b[K\n'}
+[5.911375] (vehicle_core) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\x1b[m\x1b[K\n'}
+[5.911743] (vehicle_core) StderrLine: {'line': b'   34 | \x1b[01;31m\x1b[K            "/autopilot/cancel", std::bind(&AutopilotNode::handleCancel, this, std::placeholders::_1, std::placeholders::_2))\x1b[m\x1b[K;\n'}
+[5.912164] (vehicle_core) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.930077] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:\x1b[m\x1b[K At global scope:\n'}
+[5.931146] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:51:50:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.932180] (vehicle_core) StderrLine: {'line': b'   51 |         const std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Request> req,\n'}
+[5.932764] (vehicle_core) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.933252] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.933696] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.934492] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.934913] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.935341] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.935745] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.936493] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:51:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.936894] (vehicle_core) StderrLine: {'line': b'   51 |         const std::shared_ptr<vehicle_core::srv::Trigger::Request\x1b[01;31m\x1b[K>\x1b[m\x1b[K req,\n'}
+[5.937278] (vehicle_core) StderrLine: {'line': b'      |                                                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.937661] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:51:50:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.938300] (vehicle_core) StderrLine: {'line': b'   51 |         const std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Request> req,\n'}
+[5.938702] (vehicle_core) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.939091] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.939467] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.939842] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.940317] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.940755] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.941131] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.941496] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:51:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.942052] (vehicle_core) StderrLine: {'line': b'   51 |         const std::shared_ptr<vehicle_core::srv::Trigger::Request\x1b[01;31m\x1b[K>\x1b[m\x1b[K req,\n'}
+[5.942438] (vehicle_core) StderrLine: {'line': b'      |                                                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.942812] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:51:50:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.943249] (vehicle_core) StderrLine: {'line': b'   51 |         const std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Request> req,\n'}
+[5.943620] (vehicle_core) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.944282] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.944658] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.945031] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.945425] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.946114] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.946482] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.946850] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:51:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.947446] (vehicle_core) StderrLine: {'line': b'   51 |         const std::shared_ptr<vehicle_core::srv::Trigger::Request\x1b[01;31m\x1b[K>\x1b[m\x1b[K req,\n'}
+[5.947824] (vehicle_core) StderrLine: {'line': b'      |                                                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.948195] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:51:15:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid template-id\n'}
+[5.948570] (vehicle_core) StderrLine: {'line': b'   51 |         const \x1b[01;31m\x1b[Kstd\x1b[m\x1b[K::shared_ptr<vehicle_core::srv::Trigger::Request> req,\n'}
+[5.948967] (vehicle_core) StderrLine: {'line': b'      |               \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.949337] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:51:50:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.949722] (vehicle_core) StderrLine: {'line': b'   51 |         const std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Request> req,\n'}
+[5.950146] (vehicle_core) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.950519] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.950891] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.951264] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.951621] (-) TimerEvent: {}
+[5.952117] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.952517] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.952889] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.953258] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:50:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kvariable or field \xe2\x80\x98\x1b[01m\x1b[KhandleStart\x1b[m\x1b[K\xe2\x80\x99 declared void\n'}
+[5.953634] (vehicle_core) StderrLine: {'line': b'   50 |     void \x1b[01;31m\x1b[KAutopilotNode\x1b[m\x1b[K::handleStart(\n'}
+[5.954001] (vehicle_core) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.954367] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:51:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kconst\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.954740] (vehicle_core) StderrLine: {'line': b'   51 |         \x1b[01;31m\x1b[Kconst\x1b[m\x1b[K std::shared_ptr<vehicle_core::srv::Trigger::Request> req,\n'}
+[5.955111] (vehicle_core) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[5.955507] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:52:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.955900] (vehicle_core) StderrLine: {'line': b'   52 |         std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Response> res) {\n'}
+[5.956281] (vehicle_core) StderrLine: {'line': b'      |                                            \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.956651] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.957019] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.957459] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.957833] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.958210] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.958581] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.959021] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:52:61:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.959397] (vehicle_core) StderrLine: {'line': b'   52 |         std::shared_ptr<vehicle_core::srv::Trigger::Response\x1b[01;31m\x1b[K>\x1b[m\x1b[K res) {\n'}
+[5.959796] (vehicle_core) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.960172] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:63:50:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.960564] (vehicle_core) StderrLine: {'line': b'   63 |         const std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Request> req,\n'}
+[5.960938] (vehicle_core) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.961307] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.961675] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.962066] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.962448] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.962824] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.963190] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.963552] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:63:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.963925] (vehicle_core) StderrLine: {'line': b'   63 |         const std::shared_ptr<vehicle_core::srv::Trigger::Request\x1b[01;31m\x1b[K>\x1b[m\x1b[K req,\n'}
+[5.964290] (vehicle_core) StderrLine: {'line': b'      |                                                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.964657] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:63:50:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.965059] (vehicle_core) StderrLine: {'line': b'   63 |         const std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Request> req,\n'}
+[5.965450] (vehicle_core) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.965659] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.965746] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.965828] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.965925] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.966005] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.966081] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.966152] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:63:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.966228] (vehicle_core) StderrLine: {'line': b'   63 |         const std::shared_ptr<vehicle_core::srv::Trigger::Request\x1b[01;31m\x1b[K>\x1b[m\x1b[K req,\n'}
+[5.966300] (vehicle_core) StderrLine: {'line': b'      |                                                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.966371] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:63:50:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.966463] (vehicle_core) StderrLine: {'line': b'   63 |         const std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Request> req,\n'}
+[5.966548] (vehicle_core) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.966623] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.966700] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.966780] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.966853] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.966929] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.967002] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.967071] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:63:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.967141] (vehicle_core) StderrLine: {'line': b'   63 |         const std::shared_ptr<vehicle_core::srv::Trigger::Request\x1b[01;31m\x1b[K>\x1b[m\x1b[K req,\n'}
+[5.967218] (vehicle_core) StderrLine: {'line': b'      |                                                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.967292] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:63:15:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid template-id\n'}
+[5.967363] (vehicle_core) StderrLine: {'line': b'   63 |         const \x1b[01;31m\x1b[Kstd\x1b[m\x1b[K::shared_ptr<vehicle_core::srv::Trigger::Request> req,\n'}
+[5.967433] (vehicle_core) StderrLine: {'line': b'      |               \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.967503] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:63:50:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.967587] (vehicle_core) StderrLine: {'line': b'   63 |         const std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Request> req,\n'}
+[5.967657] (vehicle_core) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.967731] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.967802] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.967872] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.967944] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.968017] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.968088] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.968159] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:62:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kvariable or field \xe2\x80\x98\x1b[01m\x1b[KhandleCancel\x1b[m\x1b[K\xe2\x80\x99 declared void\n'}
+[5.968235] (vehicle_core) StderrLine: {'line': b'   62 |     void \x1b[01;31m\x1b[KAutopilotNode\x1b[m\x1b[K::handleCancel(\n'}
+[5.968304] (vehicle_core) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.968374] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:63:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kconst\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.968443] (vehicle_core) StderrLine: {'line': b'   63 |         \x1b[01;31m\x1b[Kconst\x1b[m\x1b[K std::shared_ptr<vehicle_core::srv::Trigger::Request> req,\n'}
+[5.968515] (vehicle_core) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[5.968586] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:64:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTrigger\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::srv\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.968681] (vehicle_core) StderrLine: {'line': b'   64 |         std::shared_ptr<vehicle_core::srv::\x1b[01;31m\x1b[KTrigger\x1b[m\x1b[K::Response> res) {\n'}
+[5.969219] (vehicle_core) StderrLine: {'line': b'      |                                            \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.969597] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:7\x1b[m\x1b[K,\n'}
+[5.969957] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/autopilot_node.hpp:5\x1b[m\x1b[K,\n'}
+[5.970314] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.970675] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:258:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_srvs::srv::Trigger\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.971113] (vehicle_core) StderrLine: {'line': b'  258 | struct \x1b[01;36m\x1b[KTrigger\x1b[m\x1b[K\n'}
+[5.971472] (vehicle_core) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[5.971900] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:64:61:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.972328] (vehicle_core) StderrLine: {'line': b'   64 |         std::shared_ptr<vehicle_core::srv::Trigger::Response\x1b[01;31m\x1b[K>\x1b[m\x1b[K res) {\n'}
+[5.972694] (vehicle_core) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.973057] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid vehicle_core::AutopilotNode::publishDrive(double, double)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.973454] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:191:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclass rclcpp::Time\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kto_msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.973823] (vehicle_core) StderrLine: {'line': b'  191 |         m.stamp = now().\x1b[01;31m\x1b[Kto_msg\x1b[m\x1b[K();\n'}
+[5.974182] (vehicle_core) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[6.051916] (-) TimerEvent: {}
+[6.152620] (-) TimerEvent: {}
+[6.253313] (-) TimerEvent: {}
+[6.353988] (-) TimerEvent: {}
+[6.454679] (-) TimerEvent: {}
+[6.555417] (-) TimerEvent: {}
+[6.656100] (-) TimerEvent: {}
+[6.756768] (-) TimerEvent: {}
+[6.857466] (-) TimerEvent: {}
+[6.958156] (-) TimerEvent: {}
+[7.058827] (-) TimerEvent: {}
+[7.159517] (-) TimerEvent: {}
+[7.260203] (-) TimerEvent: {}
+[7.360879] (-) TimerEvent: {}
+[7.461544] (-) TimerEvent: {}
+[7.562240] (-) TimerEvent: {}
+[7.662914] (-) TimerEvent: {}
+[7.763587] (-) TimerEvent: {}
+[7.864278] (-) TimerEvent: {}
+[7.964978] (-) TimerEvent: {}
+[8.065661] (-) TimerEvent: {}
+[8.166362] (-) TimerEvent: {}
+[8.267052] (-) TimerEvent: {}
+[8.367725] (-) TimerEvent: {}
+[8.468388] (-) TimerEvent: {}
+[8.569057] (-) TimerEvent: {}
+[8.669721] (-) TimerEvent: {}
+[8.770383] (-) TimerEvent: {}
+[8.871046] (-) TimerEvent: {}
+[8.971721] (-) TimerEvent: {}
+[9.072399] (-) TimerEvent: {}
+[9.173080] (-) TimerEvent: {}
+[9.273749] (-) TimerEvent: {}
+[9.374429] (-) TimerEvent: {}
+[9.475099] (-) TimerEvent: {}
+[9.575813] (-) TimerEvent: {}
+[9.676521] (-) TimerEvent: {}
+[9.777206] (-) TimerEvent: {}
+[9.877854] (-) TimerEvent: {}
+[9.978533] (-) TimerEvent: {}
+[10.079223] (-) TimerEvent: {}
+[10.179877] (-) TimerEvent: {}
+[10.280549] (-) TimerEvent: {}
+[10.381225] (-) TimerEvent: {}
+[10.481892] (-) TimerEvent: {}
+[10.582589] (-) TimerEvent: {}
+[10.683260] (-) TimerEvent: {}
+[10.783941] (-) TimerEvent: {}
+[10.884625] (-) TimerEvent: {}
+[10.985350] (-) TimerEvent: {}
+[11.086079] (-) TimerEvent: {}
+[11.186749] (-) TimerEvent: {}
+[11.287407] (-) TimerEvent: {}
+[11.388109] (-) TimerEvent: {}
+[11.478041] (vehicle_core) StdoutLine: {'line': b'[ 99%] \x1b[32m\x1b[1mLinking CXX shared library libgst_camera_component.so\x1b[0m\n'}
+[11.488321] (-) TimerEvent: {}
+[11.588999] (-) TimerEvent: {}
+[11.689686] (-) TimerEvent: {}
+[11.790393] (-) TimerEvent: {}
+[11.891108] (-) TimerEvent: {}
+[11.991858] (-) TimerEvent: {}
+[12.093017] (-) TimerEvent: {}
+[12.194960] (-) TimerEvent: {}
+[12.296593] (-) TimerEvent: {}
+[12.397604] (-) TimerEvent: {}
+[12.476864] (vehicle_core) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/autopilot_node_component.dir/build.make:76: CMakeFiles/autopilot_node_component.dir/src/autopilot_node.cpp.o] Error 1\n'}
+[12.478219] (vehicle_core) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:778: CMakeFiles/autopilot_node_component.dir/all] Error 2\n'}
+[12.478894] (vehicle_core) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[12.494531] (vehicle_core) StdoutLine: {'line': b'[ 99%] Built target gst_camera_component\n'}
+[12.497218] (vehicle_core) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[12.497819] (-) TimerEvent: {}
+[12.504625] (vehicle_core) CommandEnded: {'returncode': 2}
+[12.527306] (vehicle_core) JobEnded: {'identifier': 'vehicle_core', 'rc': 2}
+[12.538882] (-) EventReactorShutdown: {}

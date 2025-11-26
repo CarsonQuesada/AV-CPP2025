@@ -1,0 +1,90 @@
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rclcpp_components: 16.0.15 (/opt/ros/humble/share/rclcpp_components/cmake)
+-- Found std_srvs: 4.9.0 (/opt/ros/humble/share/std_srvs/cmake)
+-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+-- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found tf2: 0.25.16 (/opt/ros/humble/share/tf2/cmake)
+-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+-- Found robot_localization: 3.5.4 (/opt/ros/humble/share/robot_localization/cmake)
+-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core_container[0m
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_generator_c[0m
+[  0%] Built target vehicle_core__cpp
+[ 11%] Built target vehicle_core__rosidl_generator_c
+[ 11%] Built target ament_cmake_python_symlink_vehicle_core
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_introspection_cpp[0m
+[ 12%] Built target vehicle_core_container
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_fastrtps_cpp[0m
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_c[0m
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_cpp[0m
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_introspection_c[0m
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_fastrtps_c[0m
+[ 23%] Built target vehicle_core__rosidl_typesupport_c
+[ 34%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[ 62%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[ 65%] Built target vehicle_core__rosidl_typesupport_cpp
+[ 65%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[ 76%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[ 76%] Built target vehicle_core
+[35m[1mConsolidate compiler generated dependencies of target state_manager_node_component[0m
+[35m[1mConsolidate compiler generated dependencies of target gt_u7_gps_node_component[0m
+[35m[1mConsolidate compiler generated dependencies of target i2c_bridge_node[0m
+[35m[1mConsolidate compiler generated dependencies of target heading_calibrator_node_component[0m
+[35m[1mConsolidate compiler generated dependencies of target tcp_server_node_component[0m
+[35m[1mConsolidate compiler generated dependencies of target drive_arbiter_node_component[0m
+[ 77%] Built target state_manager_node_component
+[ 77%] [32mBuilding CXX object CMakeFiles/gt_u7_gps_node_component.dir/src/gt_u7_gps_node.cpp.o[0m
+[ 77%] Built target vehicle_core__py
+[ 78%] Built target drive_arbiter_node_component
+[35m[1mConsolidate compiler generated dependencies of target autopilot_node_component[0m
+[ 78%] [32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.o[0m
+[ 79%] [32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o[0m
+[35m[1mConsolidate compiler generated dependencies of target gst_camera_component[0m
+[ 80%] Built target heading_calibrator_node_component
+[ 81%] Built target tcp_server_node_component
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_generator_py[0m
+[ 82%] [32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.o[0m
+[ 83%] Built target gst_camera_component
+[ 84%] Built target autopilot_node_component
+[ 84%] [32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.o[0m
+[ 94%] Built target vehicle_core__rosidl_generator_py
+[ 94%] [32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.o[0m
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_fastrtps_c__pyext[0m
+running egg_info
+writing vehicle_core.egg-info/PKG-INFO
+writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+writing top-level names to vehicle_core.egg-info/top_level.txt
+[ 95%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_introspection_c__pyext[0m
+reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[ 96%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_c__pyext[0m
+[ 96%] Built target ament_cmake_python_build_vehicle_core_egg
+[ 97%] Built target vehicle_core__rosidl_typesupport_c__pyext
+[ 98%] [32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o[0m
+[ 98%] [32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.o[0m
+[ 99%] [32mBuilding CXX object CMakeFiles/gt_u7_gps_node_component.dir/src/Devices/GtU7Gps.cpp.o[0m
+[ 99%] [32m[1mLinking CXX shared library libgt_u7_gps_node_component.so[0m
+[ 99%] Built target gt_u7_gps_node_component

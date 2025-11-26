@@ -1,0 +1,25 @@
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:[m[K In constructor ‘[01m[Kvehicle_core::AutopilotNode::AutopilotNode(const rclcpp::NodeOptions&)[m[K’:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:25:17:[m[K [01;31m[Kerror: [m[K‘[01m[KClientOptions[m[K’ is not a member of ‘[01m[Krclcpp[m[K’; did you mean ‘[01m[KInitOptions[m[K’?
+   25 |         rclcpp::[01;31m[KClientOptions[m[K cli_opts;
+      |                 [01;31m[K^~~~~~~~~~~~~[m[K
+      |                 [32m[KInitOptions[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:26:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kcli_opts[m[K’ was not declared in this scope
+   26 |         [01;31m[Kcli_opts[m[K.callback_group = control_cb_group_;
+      |         [01;31m[K^~~~~~~~[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:[m[K In member function ‘[01m[Kbool vehicle_core::AutopilotNode::requestControl()[m[K’:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:154:22:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kload[m[K’ in ‘[01m[K((vehicle_core::AutopilotNode*)this)->vehicle_core::AutopilotNode::control_[m[K’, which is of non-class type ‘[01m[Kbool[m[K’
+  154 |         if (control_.[01;31m[Kload[m[K()) {
+      |                      [01;31m[K^~~~[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:178:22:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kstore[m[K’ in ‘[01m[K((vehicle_core::AutopilotNode*)this)->vehicle_core::AutopilotNode::control_[m[K’, which is of non-class type ‘[01m[Kbool[m[K’
+  178 |             control_.[01;31m[Kstore[m[K(true);
+      |                      [01;31m[K^~~~~[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:184:22:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kstore[m[K’ in ‘[01m[K((vehicle_core::AutopilotNode*)this)->vehicle_core::AutopilotNode::control_[m[K’, which is of non-class type ‘[01m[Kbool[m[K’
+  184 |             control_.[01;31m[Kstore[m[K(false);
+      |                      [01;31m[K^~~~~[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:187:25:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kload[m[K’ in ‘[01m[K((vehicle_core::AutopilotNode*)this)->vehicle_core::AutopilotNode::control_[m[K’, which is of non-class type ‘[01m[Kbool[m[K’
+  187 |         return control_.[01;31m[Kload[m[K();
+      |                         [01;31m[K^~~~[m[K
+gmake[2]: *** [CMakeFiles/autopilot_node_component.dir/build.make:76: CMakeFiles/autopilot_node_component.dir/src/autopilot_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:778: CMakeFiles/autopilot_node_component.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2

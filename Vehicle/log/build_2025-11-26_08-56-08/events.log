@@ -1,0 +1,436 @@
+[0.000000] (-) TimerEvent: {}
+[0.001597] (vehicle_core) JobQueued: {'identifier': 'vehicle_core', 'dependencies': OrderedDict()}
+[0.001808] (vehicle_core) JobStarted: {'identifier': 'vehicle_core'}
+[0.017549] (vehicle_core) JobProgress: {'identifier': 'vehicle_core', 'progress': 'cmake'}
+[0.019151] (vehicle_core) JobProgress: {'identifier': 'vehicle_core', 'progress': 'build'}
+[0.020887] (vehicle_core) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core', '--', '-j8', '-l8'], 'cwd': '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('UMS_MOUNTPOINT', '/mnt/ums'), ('GST_V4L2_PREFERRED_FOURCC', 'NV12:YU12:NV16:YUY2'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'avcpp'), ('SSH_CLIENT', '192.168.8.103 62622 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('USB_FUNCS', 'adb'), ('LD_LIBRARY_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/avcpp'), ('OLDPWD', '/home/avcpp/AV-CPP2025'), ('TERM_PROGRAM_VERSION', '1.106.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1001/vscode-ipc-30b71ba1-c494-4d50-8a40-c2475056f836.sock'), ('GST_INSPECT_NO_COLORS', '1'), ('GST_MPP_NO_RGA', '1'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1001/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install'), ('GST_V4L2SRC_MAX_RESOLUTION', '3840x2160'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'avcpp'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', '5'), ('GST_VIDEO_CONVERT_PREFERRED_FORMAT', 'NV12:NV16:I420:YUY2'), ('GST_V4L2SRC_RK_DEVICES', '_mainpath:_selfpath:_bypass:_scale'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/bin/remote-cli:/home/avcpp/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/bundled/scripts/noConfigScripts'), ('XDG_RUNTIME_DIR', '/run/user/1001'), ('GST_GL_PLATFORM', 'egl'), ('GST_DEBUG_NO_COLOR', '1'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('GST_V4L2SRC_DEFAULT_DEVICE', '/dev/video-camera0'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/.noConfigDebugAdapterEndpoints/endpoint-ef25f7e9429dbf34.txt'), ('LANG', 'en_US.UTF-8'), ('PYTHONSTARTUP', '/home/avcpp/.vscode-server/data/User/workspaceStorage/da628a90441345ac74af00bc07084975/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1001/vscode-git-c9ee365bab.sock'), ('TERM_PROGRAM', 'vscode'), ('GST_V4L2_USE_LIBV4L2', '1'), ('UMS_SIZE', '256M'), ('AMENT_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/opt/ros/humble'), ('LC_MESSAGES', 'en_US.UTF-8'), ('SHELL', '/bin/bash'), ('UMS_RO', '0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('UMS_FSTYPE', 'vfat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.8.103 62622 192.168.8.176 22'), ('PYTHONPATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('UMS_MOUNT', '0'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/opt/ros/humble'), ('UMS_FILE', '/userdata/ums_shared.img')]), 'shell': False}
+[0.099481] (-) TimerEvent: {}
+[0.200597] (-) TimerEvent: {}
+[0.239135] (vehicle_core) StdoutLine: {'line': b'[  1%] Built target vehicle_core__cpp\n'}
+[0.257569] (vehicle_core) StdoutLine: {'line': b'[  1%] Built target ament_cmake_python_symlink_vehicle_core\n'}
+[0.267536] (vehicle_core) StdoutLine: {'line': b'[  2%] Built target vehicle_core_container\n'}
+[0.297240] (vehicle_core) StdoutLine: {'line': b'[ 13%] Built target vehicle_core__rosidl_generator_c\n'}
+[0.298773] (vehicle_core) StdoutLine: {'line': b'[ 24%] Built target vehicle_core__rosidl_typesupport_introspection_cpp\n'}
+[0.300676] (-) TimerEvent: {}
+[0.335635] (vehicle_core) StdoutLine: {'line': b'[ 35%] Built target vehicle_core__rosidl_typesupport_cpp\n'}
+[0.371282] (vehicle_core) StdoutLine: {'line': b'[ 46%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp\n'}
+[0.384289] (vehicle_core) StdoutLine: {'line': b'[ 57%] Built target vehicle_core__rosidl_typesupport_introspection_c\n'}
+[0.388589] (vehicle_core) StdoutLine: {'line': b'[ 68%] Built target vehicle_core__rosidl_typesupport_c\n'}
+[0.392665] (vehicle_core) StdoutLine: {'line': b'[ 79%] Built target vehicle_core__rosidl_typesupport_fastrtps_c\n'}
+[0.400908] (-) TimerEvent: {}
+[0.453839] (vehicle_core) StdoutLine: {'line': b'[ 79%] Built target vehicle_core\n'}
+[0.501250] (-) TimerEvent: {}
+[0.516206] (vehicle_core) StdoutLine: {'line': b'[ 79%] \x1b[32mBuilding CXX object CMakeFiles/drive_arbiter_node_component.dir/src/drive_arbiter.cpp.o\x1b[0m\n'}
+[0.550640] (vehicle_core) StdoutLine: {'line': b'[ 81%] Built target state_manager_node_component\n'}
+[0.553668] (vehicle_core) StdoutLine: {'line': b'[ 81%] Built target vehicle_core__py\n'}
+[0.555001] (vehicle_core) StdoutLine: {'line': b'[ 81%] Built target tcp_server_node_component\n'}
+[0.565973] (vehicle_core) StdoutLine: {'line': b'[ 81%] Built target i2c_bridge_node\n'}
+[0.569656] (vehicle_core) StdoutLine: {'line': b'[ 82%] Built target gt_u7_gps_node_component\n'}
+[0.581118] (vehicle_core) StdoutLine: {'line': b'[ 83%] Built target heading_calibrator_node_component\n'}
+[0.601419] (-) TimerEvent: {}
+[0.606259] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target autopilot_node_component\x1b[0m\n'}
+[0.628807] (vehicle_core) StdoutLine: {'line': b'[ 84%] Built target gst_camera_component\n'}
+[0.657951] (vehicle_core) StdoutLine: {'line': b'[ 95%] Built target vehicle_core__rosidl_generator_py\n'}
+[0.658808] (vehicle_core) StdoutLine: {'line': b'running egg_info\n'}
+[0.665845] (vehicle_core) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding CXX object CMakeFiles/autopilot_node_component.dir/src/autopilot_node.cpp.o\x1b[0m\n'}
+[0.678441] (vehicle_core) StdoutLine: {'line': b'writing vehicle_core.egg-info/PKG-INFO\n'}
+[0.679921] (vehicle_core) StdoutLine: {'line': b'writing dependency_links to vehicle_core.egg-info/dependency_links.txt\n'}
+[0.681110] (vehicle_core) StdoutLine: {'line': b'writing top-level names to vehicle_core.egg-info/top_level.txt\n'}
+[0.701497] (-) TimerEvent: {}
+[0.714920] (vehicle_core) StdoutLine: {'line': b'[ 96%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext\n'}
+[0.725723] (vehicle_core) StdoutLine: {'line': b'[ 97%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.731932] (vehicle_core) StdoutLine: {'line': b'[ 98%] Built target vehicle_core__rosidl_typesupport_c__pyext\n'}
+[0.742268] (vehicle_core) StdoutLine: {'line': b"reading manifest file 'vehicle_core.egg-info/SOURCES.txt'\n"}
+[0.744939] (vehicle_core) StdoutLine: {'line': b"writing manifest file 'vehicle_core.egg-info/SOURCES.txt'\n"}
+[0.802041] (-) TimerEvent: {}
+[0.896789] (vehicle_core) StdoutLine: {'line': b'[ 98%] Built target ament_cmake_python_build_vehicle_core_egg\n'}
+[0.903795] (-) TimerEvent: {}
+[1.007176] (-) TimerEvent: {}
+[1.110482] (-) TimerEvent: {}
+[1.213820] (-) TimerEvent: {}
+[1.317132] (-) TimerEvent: {}
+[1.420450] (-) TimerEvent: {}
+[1.523786] (-) TimerEvent: {}
+[1.627124] (-) TimerEvent: {}
+[1.730468] (-) TimerEvent: {}
+[1.833795] (-) TimerEvent: {}
+[1.937120] (-) TimerEvent: {}
+[2.040472] (-) TimerEvent: {}
+[2.143781] (-) TimerEvent: {}
+[2.247108] (-) TimerEvent: {}
+[2.350459] (-) TimerEvent: {}
+[2.453788] (-) TimerEvent: {}
+[2.557133] (-) TimerEvent: {}
+[2.660470] (-) TimerEvent: {}
+[2.763782] (-) TimerEvent: {}
+[2.867113] (-) TimerEvent: {}
+[2.970470] (-) TimerEvent: {}
+[3.073350] (-) TimerEvent: {}
+[3.174909] (-) TimerEvent: {}
+[3.276319] (-) TimerEvent: {}
+[3.380112] (-) TimerEvent: {}
+[3.483796] (-) TimerEvent: {}
+[3.584887] (-) TimerEvent: {}
+[3.687115] (-) TimerEvent: {}
+[3.789193] (-) TimerEvent: {}
+[3.890451] (-) TimerEvent: {}
+[3.997141] (-) TimerEvent: {}
+[4.100480] (-) TimerEvent: {}
+[4.203161] (-) TimerEvent: {}
+[4.307147] (-) TimerEvent: {}
+[4.410476] (-) TimerEvent: {}
+[4.513796] (-) TimerEvent: {}
+[4.614868] (-) TimerEvent: {}
+[4.716581] (-) TimerEvent: {}
+[4.817646] (-) TimerEvent: {}
+[4.918720] (-) TimerEvent: {}
+[5.020448] (-) TimerEvent: {}
+[5.127151] (-) TimerEvent: {}
+[5.228333] (-) TimerEvent: {}
+[5.329470] (-) TimerEvent: {}
+[5.430488] (-) TimerEvent: {}
+[5.531763] (-) TimerEvent: {}
+[5.632740] (-) TimerEvent: {}
+[5.733776] (-) TimerEvent: {}
+[5.828102] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::AutopilotNode::AutopilotNode(const rclcpp::NodeOptions&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.828469] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:25:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KClientOptions\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Krclcpp\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[KInitOptions\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.828585] (vehicle_core) StderrLine: {'line': b'   25 |         rclcpp::\x1b[01;31m\x1b[KClientOptions\x1b[m\x1b[K cli_opts;\n'}
+[5.828670] (vehicle_core) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.828757] (vehicle_core) StderrLine: {'line': b'      |                 \x1b[32m\x1b[KInitOptions\x1b[m\x1b[K\n'}
+[5.834055] (-) TimerEvent: {}
+[5.843904] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:26:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcli_opts\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[5.847122] (vehicle_core) StderrLine: {'line': b'   26 |         \x1b[01;31m\x1b[Kcli_opts\x1b[m\x1b[K.callback_group = control_cb_group_;\n'}
+[5.847320] (vehicle_core) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.888855] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kbool vehicle_core::AutopilotNode::requestControl()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.890654] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:154:22:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Krequest for member \xe2\x80\x98\x1b[01m\x1b[Kload\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[K((vehicle_core::AutopilotNode*)this)->vehicle_core::AutopilotNode::control_\x1b[m\x1b[K\xe2\x80\x99, which is of non-class type \xe2\x80\x98\x1b[01m\x1b[Kbool\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.891864] (vehicle_core) StderrLine: {'line': b'  154 |         if (control_.\x1b[01;31m\x1b[Kload\x1b[m\x1b[K()) {\n'}
+[5.893166] (vehicle_core) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[5.900155] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:178:22:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Krequest for member \xe2\x80\x98\x1b[01m\x1b[Kstore\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[K((vehicle_core::AutopilotNode*)this)->vehicle_core::AutopilotNode::control_\x1b[m\x1b[K\xe2\x80\x99, which is of non-class type \xe2\x80\x98\x1b[01m\x1b[Kbool\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.901456] (vehicle_core) StderrLine: {'line': b'  178 |             control_.\x1b[01;31m\x1b[Kstore\x1b[m\x1b[K(true);\n'}
+[5.902393] (vehicle_core) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[5.905117] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:184:22:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Krequest for member \xe2\x80\x98\x1b[01m\x1b[Kstore\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[K((vehicle_core::AutopilotNode*)this)->vehicle_core::AutopilotNode::control_\x1b[m\x1b[K\xe2\x80\x99, which is of non-class type \xe2\x80\x98\x1b[01m\x1b[Kbool\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.906191] (vehicle_core) StderrLine: {'line': b'  184 |             control_.\x1b[01;31m\x1b[Kstore\x1b[m\x1b[K(false);\n'}
+[5.907159] (vehicle_core) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[5.908191] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:187:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Krequest for member \xe2\x80\x98\x1b[01m\x1b[Kload\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[K((vehicle_core::AutopilotNode*)this)->vehicle_core::AutopilotNode::control_\x1b[m\x1b[K\xe2\x80\x99, which is of non-class type \xe2\x80\x98\x1b[01m\x1b[Kbool\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.909041] (vehicle_core) StderrLine: {'line': b'  187 |         return control_.\x1b[01;31m\x1b[Kload\x1b[m\x1b[K();\n'}
+[5.909846] (vehicle_core) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[5.934149] (-) TimerEvent: {}
+[6.034662] (-) TimerEvent: {}
+[6.135349] (-) TimerEvent: {}
+[6.236397] (-) TimerEvent: {}
+[6.340455] (-) TimerEvent: {}
+[6.443805] (-) TimerEvent: {}
+[6.547107] (-) TimerEvent: {}
+[6.648142] (-) TimerEvent: {}
+[6.750453] (-) TimerEvent: {}
+[6.853761] (-) TimerEvent: {}
+[6.957135] (-) TimerEvent: {}
+[7.059429] (-) TimerEvent: {}
+[7.163782] (-) TimerEvent: {}
+[7.264894] (-) TimerEvent: {}
+[7.366071] (-) TimerEvent: {}
+[7.470453] (-) TimerEvent: {}
+[7.573793] (-) TimerEvent: {}
+[7.674843] (-) TimerEvent: {}
+[7.775896] (-) TimerEvent: {}
+[7.877110] (-) TimerEvent: {}
+[7.978121] (-) TimerEvent: {}
+[8.080463] (-) TimerEvent: {}
+[8.181589] (-) TimerEvent: {}
+[8.282568] (-) TimerEvent: {}
+[8.383700] (-) TimerEvent: {}
+[8.484680] (-) TimerEvent: {}
+[8.585618] (-) TimerEvent: {}
+[8.686726] (-) TimerEvent: {}
+[8.788196] (-) TimerEvent: {}
+[8.889694] (-) TimerEvent: {}
+[8.991308] (-) TimerEvent: {}
+[9.092756] (-) TimerEvent: {}
+[9.194258] (-) TimerEvent: {}
+[9.295738] (-) TimerEvent: {}
+[9.397278] (-) TimerEvent: {}
+[9.498757] (-) TimerEvent: {}
+[9.600594] (-) TimerEvent: {}
+[9.702243] (-) TimerEvent: {}
+[9.803834] (-) TimerEvent: {}
+[9.905402] (-) TimerEvent: {}
+[10.007052] (-) TimerEvent: {}
+[10.108587] (-) TimerEvent: {}
+[10.210258] (-) TimerEvent: {}
+[10.311768] (-) TimerEvent: {}
+[10.413346] (-) TimerEvent: {}
+[10.514991] (-) TimerEvent: {}
+[10.616609] (-) TimerEvent: {}
+[10.718205] (-) TimerEvent: {}
+[10.819658] (-) TimerEvent: {}
+[10.921339] (-) TimerEvent: {}
+[11.022900] (-) TimerEvent: {}
+[11.124529] (-) TimerEvent: {}
+[11.226024] (-) TimerEvent: {}
+[11.327657] (-) TimerEvent: {}
+[11.429111] (-) TimerEvent: {}
+[11.530649] (-) TimerEvent: {}
+[11.632272] (-) TimerEvent: {}
+[11.733888] (-) TimerEvent: {}
+[11.835466] (-) TimerEvent: {}
+[11.937102] (-) TimerEvent: {}
+[12.038773] (-) TimerEvent: {}
+[12.140485] (-) TimerEvent: {}
+[12.242140] (-) TimerEvent: {}
+[12.298280] (vehicle_core) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/autopilot_node_component.dir/build.make:76: CMakeFiles/autopilot_node_component.dir/src/autopilot_node.cpp.o] Error 1\n'}
+[12.299508] (vehicle_core) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:778: CMakeFiles/autopilot_node_component.dir/all] Error 2\n'}
+[12.299983] (vehicle_core) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[12.342412] (-) TimerEvent: {}
+[12.443793] (-) TimerEvent: {}
+[12.545113] (-) TimerEvent: {}
+[12.646404] (-) TimerEvent: {}
+[12.747759] (-) TimerEvent: {}
+[12.849303] (-) TimerEvent: {}
+[12.950659] (-) TimerEvent: {}
+[13.052095] (-) TimerEvent: {}
+[13.153506] (-) TimerEvent: {}
+[13.254897] (-) TimerEvent: {}
+[13.356287] (-) TimerEvent: {}
+[13.457702] (-) TimerEvent: {}
+[13.559056] (-) TimerEvent: {}
+[13.660470] (-) TimerEvent: {}
+[13.761807] (-) TimerEvent: {}
+[13.863129] (-) TimerEvent: {}
+[13.964546] (-) TimerEvent: {}
+[14.065874] (-) TimerEvent: {}
+[14.167189] (-) TimerEvent: {}
+[14.268511] (-) TimerEvent: {}
+[14.369893] (-) TimerEvent: {}
+[14.471269] (-) TimerEvent: {}
+[14.572604] (-) TimerEvent: {}
+[14.673995] (-) TimerEvent: {}
+[14.775358] (-) TimerEvent: {}
+[14.876727] (-) TimerEvent: {}
+[14.978107] (-) TimerEvent: {}
+[15.079461] (-) TimerEvent: {}
+[15.180835] (-) TimerEvent: {}
+[15.282209] (-) TimerEvent: {}
+[15.383599] (-) TimerEvent: {}
+[15.484946] (-) TimerEvent: {}
+[15.586316] (-) TimerEvent: {}
+[15.687689] (-) TimerEvent: {}
+[15.789068] (-) TimerEvent: {}
+[15.890454] (-) TimerEvent: {}
+[15.991877] (-) TimerEvent: {}
+[16.093227] (-) TimerEvent: {}
+[16.194649] (-) TimerEvent: {}
+[16.296011] (-) TimerEvent: {}
+[16.397395] (-) TimerEvent: {}
+[16.498676] (-) TimerEvent: {}
+[16.600018] (-) TimerEvent: {}
+[16.701300] (-) TimerEvent: {}
+[16.802680] (-) TimerEvent: {}
+[16.904164] (-) TimerEvent: {}
+[17.005520] (-) TimerEvent: {}
+[17.106901] (-) TimerEvent: {}
+[17.208327] (-) TimerEvent: {}
+[17.309710] (-) TimerEvent: {}
+[17.411012] (-) TimerEvent: {}
+[17.512372] (-) TimerEvent: {}
+[17.613660] (-) TimerEvent: {}
+[17.714863] (-) TimerEvent: {}
+[17.816132] (-) TimerEvent: {}
+[17.917443] (-) TimerEvent: {}
+[18.018785] (-) TimerEvent: {}
+[18.120119] (-) TimerEvent: {}
+[18.221470] (-) TimerEvent: {}
+[18.322805] (-) TimerEvent: {}
+[18.424088] (-) TimerEvent: {}
+[18.525351] (-) TimerEvent: {}
+[18.626635] (-) TimerEvent: {}
+[18.727996] (-) TimerEvent: {}
+[18.829331] (-) TimerEvent: {}
+[18.930738] (-) TimerEvent: {}
+[19.032121] (-) TimerEvent: {}
+[19.133482] (-) TimerEvent: {}
+[19.234959] (-) TimerEvent: {}
+[19.336369] (-) TimerEvent: {}
+[19.437887] (-) TimerEvent: {}
+[19.539180] (-) TimerEvent: {}
+[19.640533] (-) TimerEvent: {}
+[19.741845] (-) TimerEvent: {}
+[19.843152] (-) TimerEvent: {}
+[19.944611] (-) TimerEvent: {}
+[20.046138] (-) TimerEvent: {}
+[20.147435] (-) TimerEvent: {}
+[20.248763] (-) TimerEvent: {}
+[20.350130] (-) TimerEvent: {}
+[20.451727] (-) TimerEvent: {}
+[20.553301] (-) TimerEvent: {}
+[20.654744] (-) TimerEvent: {}
+[20.756221] (-) TimerEvent: {}
+[20.857758] (-) TimerEvent: {}
+[20.959402] (-) TimerEvent: {}
+[21.061109] (-) TimerEvent: {}
+[21.162616] (-) TimerEvent: {}
+[21.264058] (-) TimerEvent: {}
+[21.365427] (-) TimerEvent: {}
+[21.466814] (-) TimerEvent: {}
+[21.568127] (-) TimerEvent: {}
+[21.669443] (-) TimerEvent: {}
+[21.770749] (-) TimerEvent: {}
+[21.872131] (-) TimerEvent: {}
+[21.973582] (-) TimerEvent: {}
+[22.075010] (-) TimerEvent: {}
+[22.176377] (-) TimerEvent: {}
+[22.277839] (-) TimerEvent: {}
+[22.379215] (-) TimerEvent: {}
+[22.480567] (-) TimerEvent: {}
+[22.581936] (-) TimerEvent: {}
+[22.683284] (-) TimerEvent: {}
+[22.784655] (-) TimerEvent: {}
+[22.885996] (-) TimerEvent: {}
+[22.987394] (-) TimerEvent: {}
+[23.088766] (-) TimerEvent: {}
+[23.190130] (-) TimerEvent: {}
+[23.291510] (-) TimerEvent: {}
+[23.392866] (-) TimerEvent: {}
+[23.494188] (-) TimerEvent: {}
+[23.595556] (-) TimerEvent: {}
+[23.696943] (-) TimerEvent: {}
+[23.798330] (-) TimerEvent: {}
+[23.899688] (-) TimerEvent: {}
+[24.001080] (-) TimerEvent: {}
+[24.102357] (-) TimerEvent: {}
+[24.203742] (-) TimerEvent: {}
+[24.305076] (-) TimerEvent: {}
+[24.406468] (-) TimerEvent: {}
+[24.507850] (-) TimerEvent: {}
+[24.609197] (-) TimerEvent: {}
+[24.710555] (-) TimerEvent: {}
+[24.811938] (-) TimerEvent: {}
+[24.913316] (-) TimerEvent: {}
+[25.014737] (-) TimerEvent: {}
+[25.116074] (-) TimerEvent: {}
+[25.217476] (-) TimerEvent: {}
+[25.318870] (-) TimerEvent: {}
+[25.420287] (-) TimerEvent: {}
+[25.521547] (-) TimerEvent: {}
+[25.622849] (-) TimerEvent: {}
+[25.724240] (-) TimerEvent: {}
+[25.825680] (-) TimerEvent: {}
+[25.927121] (-) TimerEvent: {}
+[26.028397] (-) TimerEvent: {}
+[26.129700] (-) TimerEvent: {}
+[26.231104] (-) TimerEvent: {}
+[26.332385] (-) TimerEvent: {}
+[26.433745] (-) TimerEvent: {}
+[26.535020] (-) TimerEvent: {}
+[26.636435] (-) TimerEvent: {}
+[26.737821] (-) TimerEvent: {}
+[26.839182] (-) TimerEvent: {}
+[26.940527] (-) TimerEvent: {}
+[27.041925] (-) TimerEvent: {}
+[27.143319] (-) TimerEvent: {}
+[27.244733] (-) TimerEvent: {}
+[27.346085] (-) TimerEvent: {}
+[27.447397] (-) TimerEvent: {}
+[27.548735] (-) TimerEvent: {}
+[27.650163] (-) TimerEvent: {}
+[27.751713] (-) TimerEvent: {}
+[27.853213] (-) TimerEvent: {}
+[27.954764] (-) TimerEvent: {}
+[28.056128] (-) TimerEvent: {}
+[28.157575] (-) TimerEvent: {}
+[28.259032] (-) TimerEvent: {}
+[28.360430] (-) TimerEvent: {}
+[28.461800] (-) TimerEvent: {}
+[28.563173] (-) TimerEvent: {}
+[28.664493] (-) TimerEvent: {}
+[28.765837] (-) TimerEvent: {}
+[28.867212] (-) TimerEvent: {}
+[28.968528] (-) TimerEvent: {}
+[29.069901] (-) TimerEvent: {}
+[29.171307] (-) TimerEvent: {}
+[29.272683] (-) TimerEvent: {}
+[29.374083] (-) TimerEvent: {}
+[29.475466] (-) TimerEvent: {}
+[29.576835] (-) TimerEvent: {}
+[29.678232] (-) TimerEvent: {}
+[29.779613] (-) TimerEvent: {}
+[29.881003] (-) TimerEvent: {}
+[29.982364] (-) TimerEvent: {}
+[30.083809] (-) TimerEvent: {}
+[30.185164] (-) TimerEvent: {}
+[30.286520] (-) TimerEvent: {}
+[30.387946] (-) TimerEvent: {}
+[30.489332] (-) TimerEvent: {}
+[30.590771] (-) TimerEvent: {}
+[30.692170] (-) TimerEvent: {}
+[30.793551] (-) TimerEvent: {}
+[30.895004] (-) TimerEvent: {}
+[30.996443] (-) TimerEvent: {}
+[31.097743] (-) TimerEvent: {}
+[31.199048] (-) TimerEvent: {}
+[31.300393] (-) TimerEvent: {}
+[31.401832] (-) TimerEvent: {}
+[31.503191] (-) TimerEvent: {}
+[31.604476] (-) TimerEvent: {}
+[31.705754] (-) TimerEvent: {}
+[31.807165] (-) TimerEvent: {}
+[31.908419] (-) TimerEvent: {}
+[32.009769] (-) TimerEvent: {}
+[32.111292] (-) TimerEvent: {}
+[32.212609] (-) TimerEvent: {}
+[32.313906] (-) TimerEvent: {}
+[32.415226] (-) TimerEvent: {}
+[32.516582] (-) TimerEvent: {}
+[32.617837] (-) TimerEvent: {}
+[32.719056] (-) TimerEvent: {}
+[32.820341] (-) TimerEvent: {}
+[32.921679] (-) TimerEvent: {}
+[33.022968] (-) TimerEvent: {}
+[33.124631] (-) TimerEvent: {}
+[33.226406] (-) TimerEvent: {}
+[33.327946] (-) TimerEvent: {}
+[33.429336] (-) TimerEvent: {}
+[33.530666] (-) TimerEvent: {}
+[33.632088] (-) TimerEvent: {}
+[33.733417] (-) TimerEvent: {}
+[33.834939] (-) TimerEvent: {}
+[33.936464] (-) TimerEvent: {}
+[34.038148] (-) TimerEvent: {}
+[34.139367] (-) TimerEvent: {}
+[34.240062] (-) TimerEvent: {}
+[34.340720] (-) TimerEvent: {}
+[34.441382] (-) TimerEvent: {}
+[34.542004] (-) TimerEvent: {}
+[34.601807] (vehicle_core) StdoutLine: {'line': b'[ 99%] \x1b[32m\x1b[1mLinking CXX shared library libdrive_arbiter_node_component.so\x1b[0m\n'}
+[34.642201] (-) TimerEvent: {}
+[34.742902] (-) TimerEvent: {}
+[34.843602] (-) TimerEvent: {}
+[34.944326] (-) TimerEvent: {}
+[35.045027] (-) TimerEvent: {}
+[35.145508] (-) TimerEvent: {}
+[35.246051] (-) TimerEvent: {}
+[35.346607] (-) TimerEvent: {}
+[35.447094] (-) TimerEvent: {}
+[35.547607] (-) TimerEvent: {}
+[35.648100] (-) TimerEvent: {}
+[35.748597] (-) TimerEvent: {}
+[35.849217] (-) TimerEvent: {}
+[35.949893] (-) TimerEvent: {}
+[36.050534] (-) TimerEvent: {}
+[36.151242] (-) TimerEvent: {}
+[36.251875] (-) TimerEvent: {}
+[36.352473] (-) TimerEvent: {}
+[36.452923] (-) TimerEvent: {}
+[36.553782] (-) TimerEvent: {}
+[36.655136] (-) TimerEvent: {}
+[36.756488] (-) TimerEvent: {}
+[36.858127] (-) TimerEvent: {}
+[36.959737] (-) TimerEvent: {}
+[37.060900] (-) TimerEvent: {}
+[37.162236] (-) TimerEvent: {}
+[37.263854] (-) TimerEvent: {}
+[37.314267] (vehicle_core) StdoutLine: {'line': b'[ 99%] Built target drive_arbiter_node_component\n'}
+[37.315818] (vehicle_core) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[37.322494] (vehicle_core) CommandEnded: {'returncode': 2}
+[37.359252] (vehicle_core) JobEnded: {'identifier': 'vehicle_core', 'rc': 2}
+[37.363863] (-) TimerEvent: {}
+[37.369884] (-) EventReactorShutdown: {}

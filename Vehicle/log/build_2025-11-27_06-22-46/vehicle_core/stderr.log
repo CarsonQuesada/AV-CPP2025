@@ -1,0 +1,43 @@
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/tcp_server_node.hpp:3[m[K,
+                 from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:1[m[K:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:[m[K In lambda function:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:88:298:[m[K [01;31m[Kerror: [m[Kinvalid ‘[01m[Kstatic_cast[m[K’ from type ‘[01m[KStateMode[m[K’ to type ‘[01m[Kint[m[K’
+   88 |     if (hz_autopilot_>0.0)   timer_autopilot_ = this->create_wall_timer(std::chrono::milliseconds((int)(1000.0/hz_autopilot_)), [this]{ if (state_.load()==ConnState::Connected) { std::lock_guard<std::mutex> lk(cache_m_); if (cache_mode_)      {RCLCPP_DEBUG(get_logger(), "enqueing statemode: " << [01;31m[Kstatic_cast<int>(*cache_mode_)[m[K); enqueue_message(*cache_mode_,      MessageID::StateMode); }});
+      |                                                                                                                                                                                                                                                                                                          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:88:391:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+   88 |     if (hz_autopilot_>0.0)   timer_autopilot_ = this->create_wall_timer(std::chrono::milliseconds((int)(1000.0/hz_autopilot_)), [this]{ if (state_.load()==ConnState::Connected) { std::lock_guard<std::mutex> lk(cache_m_); if (cache_mode_)      {RCLCPP_DEBUG(get_logger(), "enqueing statemode: " << static_cast<int>(*cache_mode_)); enqueue_message(*cache_mode_,      MessageID::StateMode); }}[01;31m[K)[m[K;
+      |                                                                                                                                                                                                                                                                                                                                                                                                       [01;31m[K^[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:[m[K In constructor ‘[01m[Kvehicle_core::TcpServerNode::TcpServerNode(const rclcpp::NodeOptions&)[m[K’:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:92:4:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[KTcpServerNode[m[K’
+   92 |   }
+      |    [01;31m[K^[m[K
+      |    [32m[K)[m[K
+   93 | 
+   94 | [32m[KTcpServerNode[m[K::~TcpServerNode() {
+      | [32m[K~~~~~~~~~~~~~[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:88:72:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K([m[K’
+   88 |     if (hz_autopilot_>0.0)   timer_autopilot_ = this->create_wall_timer[01;36m[K([m[Kstd::chrono::milliseconds((int)(1000.0/hz_autopilot_)), [this]{ if (state_.load()==ConnState::Connected) { std::lock_guard<std::mutex> lk(cache_m_); if (cache_mode_)      {RCLCPP_DEBUG(get_logger(), "enqueing statemode: " << static_cast<int>(*cache_mode_)); enqueue_message(*cache_mode_,      MessageID::StateMode); }});
+      |                                                                        [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/humble/include/class_loader/class_loader/class_loader.hpp:56[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp:18[m[K,
+                 from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:625[m[K:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:626:1:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+  626 | [01;31m[KRCLCPP_COMPONENTS_REGISTER_NODE[m[K(vehicle_core::TcpServerNode)
+      | [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:32:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+   32 | [01;36m[K{[m[K
+      | [01;36m[K^[m[K
+gmake[2]: *** [CMakeFiles/tcp_server_node_component.dir/build.make:76: CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:722: CMakeFiles/tcp_server_node_component.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

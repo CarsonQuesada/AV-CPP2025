@@ -4,38 +4,31 @@
 #include <std_msgs/msg/bool.hpp>
 #include <std_msgs/msg/u_int8.hpp>
 #include <std_msgs/msg/u_int16.hpp>
+#include <sensor_msgs/msg/imu.hpp>
+#include <sensor_msgs/msg/magnetic_field.hpp>
+#include <geometry_msgs/msg/twist_with_covariance_stamped.hpp>
 
 #include "vehicle_core/msg/drive_target.hpp"
 #include "vehicle_core/msg/lights_command.hpp"
 #include "vehicle_core/msg/lights_status.hpp"
 #include "vehicle_core/msg/drive_status.hpp"
 #include "vehicle_core/msg/drive_feedback.hpp"
+#include "vehicle_core/msg/imu_status.hpp"
+#include "vehicle_core/msg/state_mode.hpp"
 
 #include <mutex>
 #include <atomic>
 #include <string>
 #include <cstdint>
 
-struct I2cDevice {
-  int fd{-1};
-  std::string path{"/dev/i2c-1"};
-  uint8_t addr{0x00};
-};
+#include "Devices/I2C/I2CDevice.hpp"
+#include "Devices/I2C/I2CBus.hpp"
+#include "Devices/DriveSubsys.hpp"
+#include "Devices/LightingSubsys.hpp"
+#include "Devices/BNO055.hpp"
 
-#pragma pack(push,1)
-struct DriveCommandWire {
-  uint8_t  flags;                  // bit0: enable, bit1: estop, bit2: reverse_ok
-  uint8_t  brake_percent;          // 0..100
-  int16_t  target_speed_mmps;      // signed mm/s
-  int16_t  target_steer_millirad;  // signed mrad
-};
-
-struct DriveStatusWire {
-  int16_t  measured_speed_mmps;     // signed mm/s
-  int16_t  measured_steer_millirad; // signed mrad
-  uint16_t fault_bits;              // 1=WATCHDOG,2=ESTOP,4=OVERCURR(placeholder)
-};
-#pragma pack(pop)
+#include <fstream>
+#include <iomanip>
 
 namespace vehicle_core {
 
@@ -46,15 +39,18 @@ public:
 private:
   // Params
   std::string i2c_path_;
-  uint8_t addr_lighting_{0x15}, addr_drive_{0x20};
+  uint8_t addr_lighting_{0x15}, addr_drive_{0x20}, addr_imu_{0x28};
   int drive_cmd_hz_{50};
   int drive_status_hz_{50};
+  int imu_data_hz_{50};
   int brake_light_threshold_{10};
   bool default_enable_{true};
 
   // I2C
-  I2cDevice i2c_drv_, i2c_lgt_;
-  std::mutex i2c_mtx_;
+  std::shared_ptr<I2CBus> i2cBus1;
+  DriveSubsys drive;
+  LightingSubsys lighting;
+  BNO055 imu;
 
   // State
   std::atomic_bool estop_{false};
@@ -76,7 +72,7 @@ private:
   std::mutex lights_mtx_;
 
   // ROS IO
-  rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr sub_estop_;
+  rclcpp::Subscription<vehicle_core::msg::StateMode>::SharedPtr sub_state_mode_;
   rclcpp::Subscription<vehicle_core::msg::DriveTarget>::SharedPtr sub_drive_target_;
   rclcpp::Subscription<vehicle_core::msg::LightsCommand>::SharedPtr sub_lights_;
   rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr sub_tcp_state_;
@@ -85,16 +81,15 @@ private:
   rclcpp::Publisher<vehicle_core::msg::DriveFeedback>::SharedPtr pub_drive_feedback_;
   rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr            pub_drive_fault_bits_;
   rclcpp::Publisher<vehicle_core::msg::LightsStatus>::SharedPtr  pub_lights_status_;
+  rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr            pub_imu_data_;
+  rclcpp::Publisher<sensor_msgs::msg::MagneticField>::SharedPtr  pub_imu_mag_;
+  rclcpp::Publisher<vehicle_core::msg::IMUStatus>::SharedPtr     pub_imu_status_;
+  rclcpp::Publisher<geometry_msgs::msg::TwistWithCovarianceStamped>::SharedPtr     pub_velocity_;
 
   // Timers
   rclcpp::TimerBase::SharedPtr t_drive_cmd_;
   rclcpp::TimerBase::SharedPtr t_drive_status_;
-
-  // I2C low-level
-  bool i2c_open(I2cDevice& dev, const char* what);
-  bool i2c_select(int fd, uint8_t addr);
-  bool i2c_write(int fd, const void* buf, size_t n);
-  bool i2c_read(int fd, void* buf, size_t n); // <-- plain read, no register
+  rclcpp::TimerBase::SharedPtr t_imu_data;
 
   static inline int16_t clamp_i16(int64_t v) {
     return static_cast<int16_t>(std::clamp<int64_t>(v, -32768, 32767));
@@ -104,7 +99,7 @@ private:
   DriveCommandWire build_drive_command();
 
   // Callbacks
-  void on_estop(const std_msgs::msg::Bool::SharedPtr);
+  void onStateMode(const vehicle_core::msg::StateMode::SharedPtr);
   void on_drive_target(const vehicle_core::msg::DriveTarget::SharedPtr);
   void on_lights(const vehicle_core::msg::LightsCommand::SharedPtr);
   void on_tcp_state(const std_msgs::msg::UInt8::SharedPtr);
@@ -112,6 +107,7 @@ private:
   // Periodic jobs
   void tick_drive_cmd();
   void tick_drive_status();
+  void tick_imu_data_();
 
   // Utilities
   void maybe_auto_brake_lights(uint8_t brake_percent);
@@ -120,6 +116,10 @@ private:
   uint8_t current_gear() const;
   bool current_braking(uint8_t brake_percent) const;
   rclcpp::QoS qos_transient_reliable(size_t depth=1) const;
+
+  // Debug logging
+  std::ofstream mag_csv_;
+  bool mag_csv_opened_ = false;
 };
 
 } // namespace vehicle_core

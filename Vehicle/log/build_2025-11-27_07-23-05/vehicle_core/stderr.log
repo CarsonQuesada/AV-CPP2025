@@ -1,0 +1,4 @@
+gmake[2]: *** Deleting file 'CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o'
+gmake[2]: *** [CMakeFiles/tcp_server_node_component.dir/build.make:76: CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:722: CMakeFiles/tcp_server_node_component.dir/all] Interrupt
+gmake: *** [Makefile:146: all] Interrupt

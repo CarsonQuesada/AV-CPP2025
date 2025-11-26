@@ -2,7 +2,7 @@
   "package_name": "vehicle_core",
   "non_idl_tuples": [
     "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core:msg/DriveTarget.msg",
-    "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core:msg/AutopilotDriveCommand.msg",
+    "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core:msg/InternalDriveCommand.msg",
     "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core:msg/ManualDriveCommand.msg",
     "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core:msg/LightsCommand.msg",
     "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core:msg/MaxSpeed.msg",
@@ -19,6 +19,9 @@
     "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core:msg/StateMode.msg",
     "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core:msg/StateEvent.msg",
     "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core:msg/DriveFeedback.msg",
+    "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core:msg/IMUStatus.msg",
+    "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core:srv/RequestInternalControl.srv",
+    "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core:srv/ReleaseInternalControl.srv",
     "/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core:srv/SetAutopilotProfile.srv"
   ]
 }

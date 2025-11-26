@@ -1,7 +1,7 @@
 state_manager_node:
   ros__parameters:
-    timeouts.autopilot_ms: 200
-    timeouts.arming_ms: 800
+    timeouts.autopilot_ms: 1000
+    timeouts.arming_ms: 5000
     status_hz: 5
     escalate_ap_stale_to_estop: false
 

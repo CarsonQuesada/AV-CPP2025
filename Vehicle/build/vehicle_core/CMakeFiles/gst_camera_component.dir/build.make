@@ -211,7 +211,6 @@ libgst_camera_component.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_ge
 libgst_camera_component.so: /usr/lib/aarch64-linux-gnu/libpython3.10.so
 libgst_camera_component.so: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_cpp.so
 libgst_camera_component.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
-libgst_camera_component.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
 libgst_camera_component.so: /usr/lib/aarch64-linux-gnu/libopencv_highgui.so.4.5.4d
 libgst_camera_component.so: /usr/lib/aarch64-linux-gnu/libopencv_datasets.so.4.5.4d
 libgst_camera_component.so: /usr/lib/aarch64-linux-gnu/libopencv_plot.so.4.5.4d
@@ -231,6 +230,7 @@ libgst_camera_component.so: /usr/lib/aarch64-linux-gnu/libopencv_flann.so.4.5.4d
 libgst_camera_component.so: /usr/lib/aarch64-linux-gnu/libopencv_photo.so.4.5.4d
 libgst_camera_component.so: /usr/lib/aarch64-linux-gnu/libopencv_imgproc.so.4.5.4d
 libgst_camera_component.so: /usr/lib/aarch64-linux-gnu/libopencv_core.so.4.5.4d
+libgst_camera_component.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
 libgst_camera_component.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
 libgst_camera_component.so: /opt/ros/humble/lib/librosidl_typesupport_cpp.so
 libgst_camera_component.so: /opt/ros/humble/lib/librosidl_typesupport_c.so

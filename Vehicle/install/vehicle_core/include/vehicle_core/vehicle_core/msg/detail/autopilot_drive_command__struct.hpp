@@ -1,1 +1,0 @@
-/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__struct.hpp

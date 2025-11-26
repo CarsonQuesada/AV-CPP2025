@@ -4,12 +4,12 @@ i2c_bridge_node:
       path: "/dev/i2c-1"
       addr_lighting: 0x15
       addr_drive: 0x20
-      addr_telemetry: 0x25
+      addr_imu: 0x28
     rates:
-      drive_cmd_hz: 50
-      drive_status_hz: 50
+      drive_cmd_hz: 20
+      drive_status_hz: 20
       lighting_heartbeat_hz: 1
-      telemetry_hz: 20
+      imu_hz: 20
     lighting:
       brake_threshold_percent: 10
     drive:

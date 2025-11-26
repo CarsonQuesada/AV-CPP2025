@@ -1,0 +1,54 @@
+[0.024s] Invoking command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8
+[0.230s] [  0%] Built target vehicle_core__cpp
+[0.244s] [  1%] Built target vehicle_core_container
+[0.252s] [ 12%] Built target vehicle_core__rosidl_generator_c
+[0.266s] [ 12%] Built target ament_cmake_python_symlink_vehicle_core
+[0.289s] [ 23%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[0.310s] [ 34%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[0.318s] [ 45%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[0.322s] [ 56%] Built target vehicle_core__rosidl_typesupport_c
+[0.322s] [ 66%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[0.334s] [ 76%] Built target vehicle_core__rosidl_typesupport_cpp
+[0.393s] [ 76%] Built target vehicle_core
+[0.432s] [ 76%] Built target vehicle_core__py
+[0.438s] [35m[1mConsolidate compiler generated dependencies of target tcp_server_node_component[0m
+[0.449s] [ 80%] Built target i2c_bridge_node
+[0.475s] [ 82%] Built target heading_calibrator_node_component
+[0.476s] [ 82%] Built target gt_u7_gps_node_component
+[0.477s] [ 83%] Built target state_manager_node_component
+[0.488s] [ 83%] [32mBuilding CXX object CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o[0m
+[0.491s] [ 84%] Built target drive_arbiter_node_component
+[0.514s] [ 85%] Built target autopilot_node_component
+[0.524s] [ 86%] Built target gst_camera_component
+[0.585s] running egg_info
+[0.586s] [ 96%] Built target vehicle_core__rosidl_generator_py
+[0.607s] writing vehicle_core.egg-info/PKG-INFO
+[0.611s] writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+[0.613s] writing top-level names to vehicle_core.egg-info/top_level.txt
+[0.653s] [ 97%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+[0.664s] [ 98%] Built target vehicle_core__rosidl_typesupport_c__pyext
+[0.669s] [ 99%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext
+[0.677s] reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[0.679s] writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[0.756s] [ 99%] Built target ament_cmake_python_build_vehicle_core_egg
+[5.536s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[5.537s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[5.537s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[5.538s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[5.538s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[5.538s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[5.539s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[5.539s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[5.540s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[5.540s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[5.540s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[5.541s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/tcp_server_node.hpp:3[m[K,
+[5.541s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:1[m[K:
+[5.541s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:[m[K In lambda function:
+[5.542s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:88:298:[m[K [01;31m[Kerror: [m[Kinvalid ‘[01m[Kstatic_cast[m[K’ from type ‘[01m[KStateMode[m[K’ to type ‘[01m[Kint[m[K’
+[5.542s]    88 |     if (hz_autopilot_>0.0)   timer_autopilot_ = this->create_wall_timer(std::chrono::milliseconds((int)(1000.0/hz_autopilot_)), [this]{ if (state_.load()==ConnState::Connected) { std::lock_guard<std::mutex> lk(cache_m_); if (cache_mode_)      {RCLCPP_DEBUG(get_logger(), "enqueing statemode: " << [01;31m[Kstatic_cast<int>(*cache_mode_)[m[K); enqueue_message(*cache_mode_,      MessageID::StateMode); }}});
+[5.542s]       |                                                                                                                                                                                                                                                                                                          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[22.154s] gmake[2]: *** [CMakeFiles/tcp_server_node_component.dir/build.make:76: CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o] Error 1
+[22.155s] gmake[1]: *** [CMakeFiles/Makefile2:722: CMakeFiles/tcp_server_node_component.dir/all] Error 2
+[22.156s] gmake: *** [Makefile:146: all] Error 2
+[22.161s] Invoked command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8

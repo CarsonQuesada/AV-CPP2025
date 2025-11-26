@@ -711,6 +711,11 @@ CMakeFiles/state_manager_node_component.dir/src/state_manager.cpp.o
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/empty__traits.hpp
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/empty__type_support.hpp
  /opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/u_int8.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8__struct.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8__builder.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8__traits.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8__type_support.hpp
  /opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp
  /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp
  /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__builder.hpp
@@ -723,11 +728,11 @@ CMakeFiles/state_manager_node_component.dir/src/state_manager.cpp.o
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__traits.hpp
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__type_support.hpp
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/rosidl_generator_cpp__visibility_control.hpp
- /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/autopilot_drive_command.hpp
- /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__struct.hpp
- /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__builder.hpp
- /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__traits.hpp
- /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.hpp
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/internal_drive_command.hpp
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__struct.hpp
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__builder.hpp
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__traits.hpp
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.hpp
  /opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp
  /opt/ros/humble/include/class_loader/class_loader/class_loader.hpp
  /usr/include/c++/11/cstddef

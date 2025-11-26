@@ -1,0 +1,46 @@
+[0.036s] Invoking command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8
+[0.259s] [  0%] Built target ament_cmake_python_symlink_vehicle_core
+[0.259s] [  1%] Built target vehicle_core__cpp
+[0.279s] [ 12%] Built target vehicle_core__rosidl_generator_c
+[0.284s] [ 13%] Built target vehicle_core_container
+[0.321s] [ 24%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[0.332s] [ 35%] Built target vehicle_core__rosidl_typesupport_c
+[0.343s] [ 46%] Built target vehicle_core__rosidl_typesupport_cpp
+[0.344s] [ 57%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[0.380s] [ 68%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[0.384s] [ 79%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[0.443s] [ 79%] Built target vehicle_core
+[0.493s] [ 79%] [32mBuilding CXX object CMakeFiles/gt_u7_gps_node_component.dir/src/gt_u7_gps_node.cpp.o[0m
+[0.495s] [ 80%] Built target state_manager_node_component
+[0.498s] [ 81%] Built target drive_arbiter_node_component
+[0.500s] [35m[1mConsolidate compiler generated dependencies of target i2c_bridge_node[0m
+[0.516s] [ 81%] Built target vehicle_core__py
+[0.517s] [35m[1mConsolidate compiler generated dependencies of target autopilot_node_component[0m
+[0.533s] [ 82%] Built target heading_calibrator_node_component
+[0.540s] [ 83%] Built target tcp_server_node_component
+[0.549s] [ 83%] [32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o[0m
+[0.559s] [ 84%] Built target autopilot_node_component
+[0.568s] [ 85%] Built target gst_camera_component
+[0.583s] running egg_info
+[0.603s] writing vehicle_core.egg-info/PKG-INFO
+[0.604s] writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+[0.605s] writing top-level names to vehicle_core.egg-info/top_level.txt
+[0.607s] [ 96%] Built target vehicle_core__rosidl_generator_py
+[0.644s] [ 97%] Built target vehicle_core__rosidl_typesupport_c__pyext
+[0.662s] reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[0.667s] writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[0.668s] [ 98%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+[0.678s] [ 99%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext
+[0.792s] [ 99%] Built target ament_cmake_python_build_vehicle_core_egg
+[0.918s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:1[m[K:
+[0.919s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/i2c_bridge_node.hpp:24:10:[m[K [01;31m[Kfatal error: [m[KDevices/I2CDevice.hpp: No such file or directory
+[0.919s]    24 | #include [01;31m[K"Devices/I2CDevice.hpp"[m[K
+[0.920s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.920s] compilation terminated.
+[0.923s] gmake[2]: *** [CMakeFiles/i2c_bridge_node.dir/build.make:76: CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o] Error 1
+[0.923s] gmake[1]: *** [CMakeFiles/Makefile2:750: CMakeFiles/i2c_bridge_node.dir/all] Error 2
+[0.924s] gmake[1]: *** Waiting for unfinished jobs....
+[8.878s] [100%] [32m[1mLinking CXX shared library libgt_u7_gps_node_component.so[0m
+[9.390s] [100%] Built target gt_u7_gps_node_component
+[9.392s] gmake: *** [Makefile:146: all] Error 2
+[9.399s] Invoked command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8

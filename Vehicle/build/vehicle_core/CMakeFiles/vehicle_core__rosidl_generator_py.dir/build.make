@@ -83,19 +83,19 @@ CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_cor
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_drive_target_s.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/msg/_drive_target_s.c -o CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_drive_target_s.c.s
 
-CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.o: CMakeFiles/vehicle_core__rosidl_generator_py.dir/flags.make
-CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.o: rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c
-CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.o: CMakeFiles/vehicle_core__rosidl_generator_py.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.o -MF CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.o.d -o CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.o -c /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.o: CMakeFiles/vehicle_core__rosidl_generator_py.dir/flags.make
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.o: rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.o: CMakeFiles/vehicle_core__rosidl_generator_py.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.o -MF CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.o.d -o CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.o -c /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c
 
-CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c > CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.i
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c > CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.i
 
-CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c -o CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.s
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c -o CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.s
 
 CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_manual_drive_command_s.c.o: CMakeFiles/vehicle_core__rosidl_generator_py.dir/flags.make
 CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_manual_drive_command_s.c.o: rosidl_generator_py/vehicle_core/msg/_manual_drive_command_s.c
@@ -321,10 +321,52 @@ CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_cor
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_drive_feedback_s.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/msg/_drive_feedback_s.c -o CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_drive_feedback_s.c.s
 
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.o: CMakeFiles/vehicle_core__rosidl_generator_py.dir/flags.make
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.o: rosidl_generator_py/vehicle_core/msg/_imu_status_s.c
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.o: CMakeFiles/vehicle_core__rosidl_generator_py.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.o -MF CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.o.d -o CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.o -c /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c
+
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c > CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.i
+
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c -o CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.s
+
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.o: CMakeFiles/vehicle_core__rosidl_generator_py.dir/flags.make
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.o: rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.o: CMakeFiles/vehicle_core__rosidl_generator_py.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.o -MF CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.o.d -o CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.o -c /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c
+
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c > CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.i
+
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c -o CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.s
+
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.o: CMakeFiles/vehicle_core__rosidl_generator_py.dir/flags.make
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.o: rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.o: CMakeFiles/vehicle_core__rosidl_generator_py.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.o -MF CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.o.d -o CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.o -c /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c
+
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c > CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.i
+
+CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c -o CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.s
+
 CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.c.o: CMakeFiles/vehicle_core__rosidl_generator_py.dir/flags.make
 CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.c.o: rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.c
 CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.c.o: CMakeFiles/vehicle_core__rosidl_generator_py.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.c.o -MF CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.c.o.d -o CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.c.o -c /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.c
 
 CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.c.i: cmake_force
@@ -338,7 +380,7 @@ CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_cor
 # Object files for target vehicle_core__rosidl_generator_py
 vehicle_core__rosidl_generator_py_OBJECTS = \
 "CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_drive_target_s.c.o" \
-"CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.o" \
+"CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.o" \
 "CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_manual_drive_command_s.c.o" \
 "CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_lights_command_s.c.o" \
 "CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_max_speed_s.c.o" \
@@ -355,13 +397,16 @@ vehicle_core__rosidl_generator_py_OBJECTS = \
 "CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_state_mode_s.c.o" \
 "CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_state_event_s.c.o" \
 "CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_drive_feedback_s.c.o" \
+"CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.o" \
+"CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.o" \
+"CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.o" \
 "CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.c.o"
 
 # External object files for target vehicle_core__rosidl_generator_py
 vehicle_core__rosidl_generator_py_EXTERNAL_OBJECTS =
 
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_drive_target_s.c.o
-rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.o
+rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.o
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_manual_drive_command_s.c.o
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_lights_command_s.c.o
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_max_speed_s.c.o
@@ -378,19 +423,25 @@ rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: CMakeF
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_state_mode_s.c.o
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_state_event_s.c.o
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_drive_feedback_s.c.o
+rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.o
+rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.o
+rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.o
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.c.o
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: /usr/lib/aarch64-linux-gnu/libpython3.10.so
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: libvehicle_core__rosidl_typesupport_c.so
-rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_py.so
+rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_py.so
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: libvehicle_core__rosidl_generator_c.so
+rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_py.so
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_c.so
+rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_c.so
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_c.so
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: /opt/ros/humble/lib/librcutils.so
 rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so: CMakeFiles/vehicle_core__rosidl_generator_py.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking C shared library rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking C shared library rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vehicle_core__rosidl_generator_py.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

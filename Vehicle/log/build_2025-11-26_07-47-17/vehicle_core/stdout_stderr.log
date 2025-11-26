@@ -1,0 +1,35 @@
+[  1%] Built target vehicle_core__cpp
+[  2%] Built target vehicle_core_container
+[  2%] Built target ament_cmake_python_symlink_vehicle_core
+[ 13%] Built target vehicle_core__rosidl_generator_c
+[ 24%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[ 38%] Built target vehicle_core__rosidl_typesupport_cpp
+[ 46%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[ 57%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[ 68%] Built target vehicle_core__rosidl_typesupport_c
+[ 79%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[ 79%] Built target vehicle_core
+[ 81%] Built target drive_arbiter_node_component
+[ 81%] Built target heading_calibrator_node_component
+[35m[1mConsolidate compiler generated dependencies of target state_manager_node_component[0m
+[ 81%] Built target i2c_bridge_node
+[ 82%] Built target tcp_server_node_component
+[ 82%] Built target vehicle_core__py
+[ 83%] Built target gt_u7_gps_node_component
+[ 84%] Built target autopilot_node_component
+[ 85%] Built target gst_camera_component
+[ 86%] [32mBuilding CXX object CMakeFiles/state_manager_node_component.dir/src/state_manager.cpp.o[0m
+[ 97%] Built target vehicle_core__rosidl_generator_py
+running egg_info
+writing vehicle_core.egg-info/PKG-INFO
+writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+writing top-level names to vehicle_core.egg-info/top_level.txt
+[ 98%] Built target vehicle_core__rosidl_typesupport_c__pyext
+[100%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext
+[100%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[100%] Built target ament_cmake_python_build_vehicle_core_egg
+gmake[2]: *** [CMakeFiles/state_manager_node_component.dir/build.make:76: CMakeFiles/state_manager_node_component.dir/src/state_manager.cpp.o] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:610: CMakeFiles/state_manager_node_component.dir/all] Interrupt
+gmake: *** [Makefile:146: all] Interrupt

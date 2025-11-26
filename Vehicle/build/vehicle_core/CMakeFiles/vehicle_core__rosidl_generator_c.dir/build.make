@@ -83,7 +83,7 @@ rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/rosidl
 rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/rosidl_generator_c/resource/msg__type_support.h.em
 rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/rosidl_generator_c/resource/srv__type_support.h.em
 rosidl_generator_c/vehicle_core/msg/drive_target.h: rosidl_adapter/vehicle_core/msg/DriveTarget.idl
-rosidl_generator_c/vehicle_core/msg/drive_target.h: rosidl_adapter/vehicle_core/msg/AutopilotDriveCommand.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: rosidl_adapter/vehicle_core/msg/InternalDriveCommand.idl
 rosidl_generator_c/vehicle_core/msg/drive_target.h: rosidl_adapter/vehicle_core/msg/ManualDriveCommand.idl
 rosidl_generator_c/vehicle_core/msg/drive_target.h: rosidl_adapter/vehicle_core/msg/LightsCommand.idl
 rosidl_generator_c/vehicle_core/msg/drive_target.h: rosidl_adapter/vehicle_core/msg/MaxSpeed.idl
@@ -100,9 +100,42 @@ rosidl_generator_c/vehicle_core/msg/drive_target.h: rosidl_adapter/vehicle_core/
 rosidl_generator_c/vehicle_core/msg/drive_target.h: rosidl_adapter/vehicle_core/msg/StateMode.idl
 rosidl_generator_c/vehicle_core/msg/drive_target.h: rosidl_adapter/vehicle_core/msg/StateEvent.idl
 rosidl_generator_c/vehicle_core/msg/drive_target.h: rosidl_adapter/vehicle_core/msg/DriveFeedback.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: rosidl_adapter/vehicle_core/msg/IMUStatus.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: rosidl_adapter/vehicle_core/srv/RequestInternalControl.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: rosidl_adapter/vehicle_core/srv/ReleaseInternalControl.idl
 rosidl_generator_c/vehicle_core/msg/drive_target.h: rosidl_adapter/vehicle_core/srv/SetAutopilotProfile.idl
 rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/builtin_interfaces/msg/Duration.idl
 rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/builtin_interfaces/msg/Time.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Bool.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Byte.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Char.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/ColorRGBA.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Empty.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Float32.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Float32MultiArray.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Float64.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Float64MultiArray.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Header.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Int16.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Int16MultiArray.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Int32.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Int32MultiArray.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Int64.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Int64MultiArray.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Int8.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/Int8MultiArray.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/MultiArrayDimension.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/MultiArrayLayout.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/String.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/UInt16.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/UInt16MultiArray.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/UInt32.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/UInt32MultiArray.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/UInt64.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/UInt64MultiArray.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/UInt8.idl
+rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/UInt8MultiArray.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C code for ROS interfaces"
 	/usr/bin/python3 /opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c --generator-arguments-file /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c__arguments.json
 
@@ -115,17 +148,17 @@ rosidl_generator_c/vehicle_core/msg/detail/drive_target__struct.h: rosidl_genera
 rosidl_generator_c/vehicle_core/msg/detail/drive_target__type_support.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/drive_target__type_support.h
 
-rosidl_generator_c/vehicle_core/msg/autopilot_drive_command.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/autopilot_drive_command.h
+rosidl_generator_c/vehicle_core/msg/internal_drive_command.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/internal_drive_command.h
 
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.h
+rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.h
 
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__struct.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__struct.h
+rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__struct.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__struct.h
 
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.h
+rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__type_support.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__type_support.h
 
 rosidl_generator_c/vehicle_core/msg/manual_drive_command.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/manual_drive_command.h
@@ -319,6 +352,42 @@ rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__struct.h: rosidl_gene
 rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__type_support.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__type_support.h
 
+rosidl_generator_c/vehicle_core/msg/imu_status.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/imu_status.h
+
+rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.h
+
+rosidl_generator_c/vehicle_core/msg/detail/imu_status__struct.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/imu_status__struct.h
+
+rosidl_generator_c/vehicle_core/msg/detail/imu_status__type_support.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/imu_status__type_support.h
+
+rosidl_generator_c/vehicle_core/srv/request_internal_control.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/srv/request_internal_control.h
+
+rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.h
+
+rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__struct.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__struct.h
+
+rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__type_support.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__type_support.h
+
+rosidl_generator_c/vehicle_core/srv/release_internal_control.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/srv/release_internal_control.h
+
+rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.h
+
+rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__struct.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__struct.h
+
+rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__type_support.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__type_support.h
+
 rosidl_generator_c/vehicle_core/srv/set_autopilot_profile.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/srv/set_autopilot_profile.h
 
@@ -334,8 +403,8 @@ rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__type_support.h
 rosidl_generator_c/vehicle_core/msg/detail/drive_target__functions.c: rosidl_generator_c/vehicle_core/msg/drive_target.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/drive_target__functions.c
 
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c: rosidl_generator_c/vehicle_core/msg/drive_target.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c
+rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c
 
 rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__functions.c: rosidl_generator_c/vehicle_core/msg/drive_target.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__functions.c
@@ -385,6 +454,15 @@ rosidl_generator_c/vehicle_core/msg/detail/state_event__functions.c: rosidl_gene
 rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__functions.c: rosidl_generator_c/vehicle_core/msg/drive_target.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__functions.c
 
+rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c
+
+rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c
+
+rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c: rosidl_generator_c/vehicle_core/msg/drive_target.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c
+
 rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c: rosidl_generator_c/vehicle_core/msg/drive_target.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c
 
@@ -402,19 +480,19 @@ CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/drive_target__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/drive_target__functions.c -o CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/drive_target__functions.c.s
 
-CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.o: CMakeFiles/vehicle_core__rosidl_generator_c.dir/flags.make
-CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.o: rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c
-CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.o: CMakeFiles/vehicle_core__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.o -MF CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.o.d -o CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.o -c /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.o: CMakeFiles/vehicle_core__rosidl_generator_c.dir/flags.make
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.o: rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.o: CMakeFiles/vehicle_core__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.o -MF CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.o.d -o CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.o -c /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c
 
-CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c > CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.i
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c > CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.i
 
-CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c -o CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.s
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c -o CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.s
 
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__functions.c.o: CMakeFiles/vehicle_core__rosidl_generator_c.dir/flags.make
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__functions.c.o: rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__functions.c
@@ -640,10 +718,52 @@ CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__functions.c -o CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__functions.c.s
 
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.o: CMakeFiles/vehicle_core__rosidl_generator_c.dir/flags.make
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.o: rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.o: CMakeFiles/vehicle_core__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.o -MF CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.o.d -o CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.o -c /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c
+
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c > CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.i
+
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c -o CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.s
+
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.o: CMakeFiles/vehicle_core__rosidl_generator_c.dir/flags.make
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.o: rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.o: CMakeFiles/vehicle_core__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.o -MF CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.o.d -o CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.o -c /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c
+
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c > CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.i
+
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c -o CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.s
+
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.o: CMakeFiles/vehicle_core__rosidl_generator_c.dir/flags.make
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.o: rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.o: CMakeFiles/vehicle_core__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.o -MF CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.o.d -o CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.o -c /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c
+
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c > CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.i
+
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c -o CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.s
+
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c.o: CMakeFiles/vehicle_core__rosidl_generator_c.dir/flags.make
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c.o: rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c.o: CMakeFiles/vehicle_core__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c.o -MF CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c.o.d -o CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c.o -c /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c
 
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c.i: cmake_force
@@ -657,7 +777,7 @@ CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/
 # Object files for target vehicle_core__rosidl_generator_c
 vehicle_core__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/drive_target__functions.c.o" \
-"CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.o" \
+"CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.o" \
 "CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__functions.c.o" \
 "CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/lights_command__functions.c.o" \
 "CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/max_speed__functions.c.o" \
@@ -674,13 +794,16 @@ vehicle_core__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/state_mode__functions.c.o" \
 "CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/state_event__functions.c.o" \
 "CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__functions.c.o" \
+"CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.o" \
+"CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.o" \
+"CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.o" \
 "CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c.o"
 
 # External object files for target vehicle_core__rosidl_generator_c
 vehicle_core__rosidl_generator_c_EXTERNAL_OBJECTS =
 
 libvehicle_core__rosidl_generator_c.so: CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/drive_target__functions.c.o
-libvehicle_core__rosidl_generator_c.so: CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.o
+libvehicle_core__rosidl_generator_c.so: CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.o
 libvehicle_core__rosidl_generator_c.so: CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__functions.c.o
 libvehicle_core__rosidl_generator_c.so: CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/lights_command__functions.c.o
 libvehicle_core__rosidl_generator_c.so: CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/max_speed__functions.c.o
@@ -697,13 +820,17 @@ libvehicle_core__rosidl_generator_c.so: CMakeFiles/vehicle_core__rosidl_generato
 libvehicle_core__rosidl_generator_c.so: CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/state_mode__functions.c.o
 libvehicle_core__rosidl_generator_c.so: CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/state_event__functions.c.o
 libvehicle_core__rosidl_generator_c.so: CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__functions.c.o
+libvehicle_core__rosidl_generator_c.so: CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.o
+libvehicle_core__rosidl_generator_c.so: CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.o
+libvehicle_core__rosidl_generator_c.so: CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.o
 libvehicle_core__rosidl_generator_c.so: CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c.o
 libvehicle_core__rosidl_generator_c.so: CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make
+libvehicle_core__rosidl_generator_c.so: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_c.so
 libvehicle_core__rosidl_generator_c.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so
 libvehicle_core__rosidl_generator_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libvehicle_core__rosidl_generator_c.so: /opt/ros/humble/lib/librcutils.so
 libvehicle_core__rosidl_generator_c.so: CMakeFiles/vehicle_core__rosidl_generator_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking C shared library libvehicle_core__rosidl_generator_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking C shared library libvehicle_core__rosidl_generator_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vehicle_core__rosidl_generator_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -716,7 +843,6 @@ CMakeFiles/vehicle_core__rosidl_generator_c.dir/clean:
 
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/autopilot_command.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/autopilot_config.h
-CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/autopilot_drive_command.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/autopilot_status.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/autopilot_command__functions.c
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/autopilot_command__functions.h
@@ -726,10 +852,6 @@ CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehic
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__functions.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__struct.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__type_support.h
-CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c
-CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.h
-CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__struct.h
-CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/autopilot_status__functions.c
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/autopilot_status__functions.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/autopilot_status__struct.h
@@ -754,6 +876,14 @@ CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehic
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/general_status__functions.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/general_status__struct.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/general_status__type_support.h
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.h
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/imu_status__struct.h
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/imu_status__type_support.h
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.h
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__struct.h
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__type_support.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/lights_command__functions.c
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/lights_command__functions.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/detail/lights_command__struct.h
@@ -795,6 +925,8 @@ CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehic
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/drive_target.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/error.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/general_status.h
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/imu_status.h
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/internal_drive_command.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/lights_command.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/lights_status.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/manual_drive_command.h
@@ -804,10 +936,20 @@ CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehic
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/state_event.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/state_mode.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/msg/telemetry_data.h
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.h
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__struct.h
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__type_support.h
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.h
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__struct.h
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__type_support.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__struct.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__type_support.h
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/srv/release_internal_control.h
+CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/srv/request_internal_control.h
 CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend: rosidl_generator_c/vehicle_core/srv/set_autopilot_profile.h
 	cd /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/vehicle_core__rosidl_generator_c.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/vehicle_core__rosidl_generator_c.dir/depend

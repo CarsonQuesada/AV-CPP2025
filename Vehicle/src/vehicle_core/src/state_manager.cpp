@@ -11,14 +11,14 @@ StateManagerNode::StateManagerNode(const rclcpp::NodeOptions& opts)
 {
   // ---- parameters ----
   ap_timeout_ms_              = this->declare_parameter<int>("timeouts.autopilot_ms", 200);
-  arming_timeout_ms_          = this->declare_parameter<int>("timeouts.arming_ms", 800);
+  arming_timeout_ms_          = this->declare_parameter<int>("timeouts.arming_ms", 5000);
   status_hz_                  = this->declare_parameter<int>("status_hz", 5);
   escalate_ap_stale_to_estop_ = this->declare_parameter<bool>("escalate_ap_stale_to_estop", false);
 
   // ---- pubs/subs ----
   // We subscribe to AP drive commands ONLY to treat them as a heartbeat for AUTO freshness.
-  sub_ap_cmd_ = this->create_subscription<msg::AutopilotDriveCommand>(
-      "/vehicle/autopilot_drive_cmd", rclcpp::QoS(10).best_effort(),
+  sub_ap_cmd_ = this->create_subscription<msg::InternalDriveCommand>(
+      "/vehicle/internal_drive_cmd", rclcpp::QoS(10).best_effort(),
       std::bind(&StateManagerNode::onAPDriveCmd, this, std::placeholders::_1));
 
   // The DriveArbiter publishes this event when manual input occurs while in AUTO.
@@ -26,8 +26,8 @@ StateManagerNode::StateManagerNode(const rclcpp::NodeOptions& opts)
       "/vehicle/events/manual_override", rclcpp::QoS(5).best_effort(),
       std::bind(&StateManagerNode::onManualOverride, this, std::placeholders::_1));
 
-  pub_state_ = this->create_publisher<StateMode>("/vehicle/state_mode",
-                  rclcpp::QoS(10).reliable().transient_local()); // make latest latched
+  pub_state_ = this->create_publisher<StateMode>(
+      "/vehicle/state_mode", rclcpp::QoS(10).reliable().transient_local()); // make latest latched
 
   // ---- services ----
   srv_request_manual_ = this->create_service<std_srvs::srv::Trigger>(
@@ -46,6 +46,13 @@ StateManagerNode::StateManagerNode(const rclcpp::NodeOptions& opts)
       "/state_manager/clear_estop",
       std::bind(&StateManagerNode::onClearEStop, this, std::placeholders::_1, std::placeholders::_2));
 
+  srv_mark_auto_ready_ = this->create_service<std_srvs::srv::Trigger>(
+      "/state_manager/mark_auto_ready",
+      std::bind(&StateManagerNode::onMarkAutoReady, this, std::placeholders::_1, std::placeholders::_2));
+
+  cli_start_auto_ = this->create_client<std_srvs::srv::Trigger>("/autopilot/start");
+  cli_stop_auto_ = this->create_client<std_srvs::srv::Trigger>("/autopilot/cancel");
+
   // ---- init state ----
   state_msg_.mode = MODE_INIT;
   publishState();
@@ -63,7 +70,7 @@ StateManagerNode::StateManagerNode(const rclcpp::NodeOptions& opts)
 
 // ============= Callbacks =============
 
-void StateManagerNode::onAPDriveCmd(const msg::AutopilotDriveCommand::SharedPtr) {
+void StateManagerNode::onAPDriveCmd(const msg::InternalDriveCommand::SharedPtr) {
   last_ap_rx_ = this->now();
 }
 
@@ -84,23 +91,19 @@ void StateManagerNode::onStatusTimer() {
       break;
 
     case MODE_ARMING:
-      if ((now - arming_enter_time_).nanoseconds() / 1e6 > arming_timeout_ms_) {
-        transitionTo(MODE_AUTO, "arming_timeout_reached");
+      if ((now - arming_enter_time_).seconds() * 1000.0 > arming_timeout_ms_) {
+        transitionTo(MODE_MANUAL, "Arming timed out, moving back to manual");
       }
       break;
 
     case MODE_AUTO: {
       // AP freshness check
-      if (last_ap_rx_.nanoseconds() == 0) {
-        // haven't seen any AP yet; treat as stale once timeout passes since entering AUTO
-        // Using the same check below will naturally handle it as stale.
-      }
       const double ms_since_ap = (now - last_ap_rx_).nanoseconds() / 1e6;
       if (ms_since_ap > ap_timeout_ms_) {
         if (escalate_ap_stale_to_estop_) {
-          transitionTo(MODE_ESTOP, "autopilot_stale_escalate_estop");
+          transitionTo(MODE_ESTOP, "autopilot stale escalate estop");
         } else {
-          transitionTo(MODE_MANUAL, "autopilot_stale_fallback_manual");
+          transitionTo(MODE_MANUAL, "autopilot stale fallback manual");
         }
       }
     } break;
@@ -135,10 +138,10 @@ void StateManagerNode::onReqAuto(const std::shared_ptr<std_srvs::srv::Trigger::R
     res->message = "Cannot enter AUTO: ESTOP latched";
     return;
   }
-  // Optional: require a brief ARMING phase before AUTO
+  // Require a brief ARMING phase before AUTO
   bool ok = transitionTo(MODE_ARMING, "svc_request_auto");
   res->success = ok;
-  res->message = ok ? "Entering ARMING (will transition to AUTO)" : "No change";
+  res->message = ok ? "Entering ARMING" : "No change";
 }
 
 void StateManagerNode::onReqEStop(const std::shared_ptr<std_srvs::srv::Trigger::Request>,
@@ -157,6 +160,23 @@ void StateManagerNode::onClearEStop(const std::shared_ptr<std_srvs::srv::Trigger
   res->message = "ESTOP cleared; MANUAL";
 }
 
+void StateManagerNode::onMarkAutoReady(const std::shared_ptr<std_srvs::srv::Trigger::Request>,
+                                       std::shared_ptr<std_srvs::srv::Trigger::Response> res) {
+  if (estop_latched_) {
+    res->success = false;
+    res->message = "Cannot enter AUTO: ESTOP latched";
+    return;
+  }
+  if (state_msg_.mode != MODE_ARMING) {
+    res->success = false;
+    res->message = "Not in ARMING";
+    return;
+  }
+  const bool ok = transitionTo(MODE_AUTO, "autopilot marked ready");
+  res->success = ok;
+  res->message = ok ? "Switched to AUTO" : "No change";
+}
+
 // ============= Internals =============
 
 bool StateManagerNode::transitionTo(uint8_t new_mode, const char* reason) {
@@ -166,25 +186,30 @@ bool StateManagerNode::transitionTo(uint8_t new_mode, const char* reason) {
     estop_latched_ = true;
   }
   if (estop_latched_ && new_mode != MODE_ESTOP && new_mode != MODE_MANUAL) {
-    // Only MANUAL is allowed after clearing via service; do not bypass latch.
     RCLCPP_WARN(get_logger(), "rejecting transition to %u while ESTOP latched", new_mode);
     return false;
   }
 
-  // enter-time side effects
+  // Start arming timer when we actually enter ARMING
   if (new_mode == MODE_ARMING) {
     arming_enter_time_ = this->now();
+    requestAutopilotStart();
+    RCLCPP_INFO(get_logger(), "Requested autopilot start");
   }
-  if (new_mode != MODE_AUTO) {
-    // reset AP freshness when leaving AUTO
-    last_ap_rx_ = rclcpp::Time(0,0,RCL_ROS_TIME);
+
+  if (new_mode == MODE_AUTO) {
+    // Give the AP up to ap_timeout_ms_ to publish a first heartbeat
+    last_ap_rx_ = this->now();
+  } else if (state_msg_.mode == MODE_AUTO) {
+    // leaving AUTO: clear AP freshness
+    last_ap_rx_ = rclcpp::Time(0, 0, RCL_ROS_TIME);
+    requestAutopilotStop();
   }
 
   uint8_t old = state_msg_.mode;
   state_msg_.mode = new_mode;
 
   RCLCPP_INFO(get_logger(), "MODE %u -> %u (%s)", old, new_mode, reason ? reason : "");
-
   publishState();
   return true;
 }
@@ -193,6 +218,53 @@ void StateManagerNode::publishState() {
   //state_msg_.header.stamp = this->now();
   pub_state_->publish(state_msg_);
 }
+
+bool StateManagerNode::requestAutopilotStart()
+{
+  if (!cli_start_auto_->wait_for_service(1s)) {
+    RCLCPP_WARN(get_logger(), "Autopilot start service not available");
+    return false;
+  }
+
+  auto req = std::make_shared<std_srvs::srv::Trigger::Request>();
+  auto future = cli_start_auto_->async_send_request(
+      req,
+      [this](rclcpp::Client<std_srvs::srv::Trigger>::SharedFuture f) {
+        auto res = f.get();
+        if (!res->success) {
+          RCLCPP_ERROR(get_logger(), "Autopilot failed to start: %s", res->message.c_str());
+        } else {
+          RCLCPP_INFO(get_logger(), "Autopilot start: %s", res->message.c_str());
+        }
+      });
+
+  (void)future; // we don't need it right now
+  return true;
+}
+
+bool StateManagerNode::requestAutopilotStop()
+{
+  if (!cli_stop_auto_->wait_for_service(1s)) {
+    RCLCPP_WARN(get_logger(), "Autopilot stop service not available");
+    return false;
+  }
+
+  auto req = std::make_shared<std_srvs::srv::Trigger::Request>();
+  auto future = cli_stop_auto_->async_send_request(
+      req,
+      [this](rclcpp::Client<std_srvs::srv::Trigger>::SharedFuture f) {
+        auto res = f.get();
+        if (!res->success) {
+          RCLCPP_ERROR(get_logger(), "Autopilot failed to stop: %s", res->message.c_str());
+        } else {
+          RCLCPP_INFO(get_logger(), "Autopilot stop: %s", res->message.c_str());
+        }
+      });
+
+  (void)future;
+  return true;
+}
+
 
 } // namespace vehicle_core
 

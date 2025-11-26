@@ -1,0 +1,418 @@
+[0.000000] (-) TimerEvent: {}
+[0.001121] (vehicle_core) JobQueued: {'identifier': 'vehicle_core', 'dependencies': OrderedDict()}
+[0.002556] (vehicle_core) JobStarted: {'identifier': 'vehicle_core'}
+[0.026780] (vehicle_core) JobProgress: {'identifier': 'vehicle_core', 'progress': 'cmake'}
+[0.027635] (vehicle_core) JobProgress: {'identifier': 'vehicle_core', 'progress': 'build'}
+[0.029051] (vehicle_core) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core', '--', '-j8', '-l8'], 'cwd': '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('UMS_MOUNTPOINT', '/mnt/ums'), ('GST_V4L2_PREFERRED_FOURCC', 'NV12:YU12:NV16:YUY2'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'avcpp'), ('SSH_CLIENT', '192.168.8.103 11960 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('USB_FUNCS', 'adb'), ('LD_LIBRARY_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/avcpp'), ('OLDPWD', '/home/avcpp/AV-CPP2025'), ('TERM_PROGRAM_VERSION', '1.106.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1001/vscode-ipc-636e580e-7306-4994-9308-f6018129df65.sock'), ('GST_INSPECT_NO_COLORS', '1'), ('GST_MPP_NO_RGA', '1'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1001/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install'), ('GST_V4L2SRC_MAX_RESOLUTION', '3840x2160'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'avcpp'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', '5'), ('GST_VIDEO_CONVERT_PREFERRED_FORMAT', 'NV12:NV16:I420:YUY2'), ('GST_V4L2SRC_RK_DEVICES', '_mainpath:_selfpath:_bypass:_scale'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/bin/remote-cli:/home/avcpp/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1001'), ('GST_GL_PLATFORM', 'egl'), ('GST_DEBUG_NO_COLOR', '1'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('GST_V4L2SRC_DEFAULT_DEVICE', '/dev/video-camera0'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1001/vscode-git-c9ee365bab.sock'), ('TERM_PROGRAM', 'vscode'), ('GST_V4L2_USE_LIBV4L2', '1'), ('UMS_SIZE', '256M'), ('AMENT_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/opt/ros/humble'), ('LC_MESSAGES', 'en_US.UTF-8'), ('SHELL', '/bin/bash'), ('UMS_RO', '0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('UMS_FSTYPE', 'vfat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.8.103 11960 192.168.8.176 22'), ('PYTHONPATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('UMS_MOUNT', '0'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/opt/ros/humble'), ('UMS_FILE', '/userdata/ums_shared.img')]), 'shell': False}
+[0.098420] (-) TimerEvent: {}
+[0.162241] (vehicle_core) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.198717] (-) TimerEvent: {}
+[0.299592] (-) TimerEvent: {}
+[0.400330] (-) TimerEvent: {}
+[0.441788] (vehicle_core) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.451352] (vehicle_core) StdoutLine: {'line': b'-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.489298] (vehicle_core) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.492693] (vehicle_core) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.500307] (vehicle_core) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.500643] (-) TimerEvent: {}
+[0.513259] (vehicle_core) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.530677] (vehicle_core) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.575633] (vehicle_core) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.577097] (vehicle_core) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.600934] (-) TimerEvent: {}
+[0.701882] (-) TimerEvent: {}
+[0.734232] (vehicle_core) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.801977] (-) TimerEvent: {}
+[0.806118] (vehicle_core) StdoutLine: {'line': b'-- Found rclcpp_components: 16.0.15 (/opt/ros/humble/share/rclcpp_components/cmake)\n'}
+[0.832145] (vehicle_core) StdoutLine: {'line': b'-- Found std_srvs: 4.9.0 (/opt/ros/humble/share/std_srvs/cmake)\n'}
+[0.844220] (vehicle_core) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.853084] (vehicle_core) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[0.871064] (vehicle_core) StdoutLine: {'line': b'-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[0.896272] (vehicle_core) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.902039] (-) TimerEvent: {}
+[0.921256] (vehicle_core) StdoutLine: {'line': b'-- Found tf2: 0.25.16 (/opt/ros/humble/share/tf2/cmake)\n'}
+[0.925610] (vehicle_core) StdoutLine: {'line': b'-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)\n'}
+[0.939235] (vehicle_core) StdoutLine: {'line': b'-- Found robot_localization: 3.5.4 (/opt/ros/humble/share/robot_localization/cmake)\n'}
+[1.002187] (-) TimerEvent: {}
+[1.102753] (-) TimerEvent: {}
+[1.203890] (-) TimerEvent: {}
+[1.304936] (-) TimerEvent: {}
+[1.405953] (-) TimerEvent: {}
+[1.506955] (-) TimerEvent: {}
+[1.607745] (-) TimerEvent: {}
+[1.708335] (-) TimerEvent: {}
+[1.771134] (vehicle_core) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[1.808446] (-) TimerEvent: {}
+[1.909026] (-) TimerEvent: {}
+[2.009811] (-) TimerEvent: {}
+[2.110746] (-) TimerEvent: {}
+[2.211567] (-) TimerEvent: {}
+[2.312449] (-) TimerEvent: {}
+[2.413057] (-) TimerEvent: {}
+[2.513700] (-) TimerEvent: {}
+[2.614435] (-) TimerEvent: {}
+[2.656321] (vehicle_core) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.714628] (-) TimerEvent: {}
+[2.815685] (-) TimerEvent: {}
+[2.916540] (-) TimerEvent: {}
+[2.997599] (vehicle_core) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[3.016833] (-) TimerEvent: {}
+[3.039899] (vehicle_core) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[3.077869] (vehicle_core) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[3.078724] (vehicle_core) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[3.079153] (vehicle_core) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so\n'}
+[3.117184] (-) TimerEvent: {}
+[3.130425] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[3.131569] (vehicle_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[3.131879] (vehicle_core) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[3.132142] (vehicle_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.132393] (vehicle_core) StderrLine: {'line': b'  CMakeLists.txt:145 (rosidl_target_interfaces)\n'}
+[3.132636] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.132874] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.135795] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[3.136223] (vehicle_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[3.136515] (vehicle_core) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[3.136798] (vehicle_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.137055] (vehicle_core) StderrLine: {'line': b'  CMakeLists.txt:160 (rosidl_target_interfaces)\n'}
+[3.137292] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.137525] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.138024] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[3.138404] (vehicle_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[3.138681] (vehicle_core) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[3.138933] (vehicle_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.139170] (vehicle_core) StderrLine: {'line': b'  CMakeLists.txt:175 (rosidl_target_interfaces)\n'}
+[3.139435] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.139849] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.140120] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[3.140376] (vehicle_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[3.140611] (vehicle_core) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[3.140846] (vehicle_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.141078] (vehicle_core) StderrLine: {'line': b'  CMakeLists.txt:196 (rosidl_target_interfaces)\n'}
+[3.141334] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.141568] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.142068] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[3.142454] (vehicle_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[3.142798] (vehicle_core) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[3.143147] (vehicle_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.143519] (vehicle_core) StderrLine: {'line': b'  CMakeLists.txt:215 (rosidl_target_interfaces)\n'}
+[3.143869] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.144215] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.144827] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[3.145190] (vehicle_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[3.145531] (vehicle_core) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[3.145878] (vehicle_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.146226] (vehicle_core) StderrLine: {'line': b'  CMakeLists.txt:241 (rosidl_target_interfaces)\n'}
+[3.146572] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.146950] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.149725] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[3.150140] (vehicle_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[3.150495] (vehicle_core) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[3.150838] (vehicle_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.151180] (vehicle_core) StderrLine: {'line': b'  CMakeLists.txt:262 (rosidl_target_interfaces)\n'}
+[3.151520] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.151859] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.152397] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[3.152741] (vehicle_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[3.153090] (vehicle_core) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[3.153451] (vehicle_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.153807] (vehicle_core) StderrLine: {'line': b'  CMakeLists.txt:287 (rosidl_target_interfaces)\n'}
+[3.154147] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.154483] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.163246] (vehicle_core) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.217234] (-) TimerEvent: {}
+[3.317915] (-) TimerEvent: {}
+[3.337400] (vehicle_core) StdoutLine: {'line': b'-- Generating done\n'}
+[3.387925] (vehicle_core) StdoutLine: {'line': b'-- Build files have been written to: /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core\n'}
+[3.418204] (-) TimerEvent: {}
+[3.506370] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core_container\x1b[0m\n'}
+[3.506941] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_generator_c\x1b[0m\n'}
+[3.518477] (-) TimerEvent: {}
+[3.533181] (vehicle_core) StdoutLine: {'line': b'[  0%] Built target vehicle_core__cpp\n'}
+[3.550429] (vehicle_core) StdoutLine: {'line': b'[ 11%] Built target vehicle_core__rosidl_generator_c\n'}
+[3.558292] (vehicle_core) StdoutLine: {'line': b'[ 11%] Built target ament_cmake_python_symlink_vehicle_core\n'}
+[3.562812] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[3.565967] (vehicle_core) StdoutLine: {'line': b'[ 12%] Built target vehicle_core_container\n'}
+[3.574299] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[3.585771] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_c\x1b[0m\n'}
+[3.594801] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_cpp\x1b[0m\n'}
+[3.612638] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[3.618815] (-) TimerEvent: {}
+[3.627847] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[3.640232] (vehicle_core) StdoutLine: {'line': b'[ 23%] Built target vehicle_core__rosidl_typesupport_c\n'}
+[3.641271] (vehicle_core) StdoutLine: {'line': b'[ 34%] Built target vehicle_core__rosidl_typesupport_introspection_cpp\n'}
+[3.672255] (vehicle_core) StdoutLine: {'line': b'[ 62%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp\n'}
+[3.672962] (vehicle_core) StdoutLine: {'line': b'[ 65%] Built target vehicle_core__rosidl_typesupport_cpp\n'}
+[3.673537] (vehicle_core) StdoutLine: {'line': b'[ 65%] Built target vehicle_core__rosidl_typesupport_introspection_c\n'}
+[3.681194] (vehicle_core) StdoutLine: {'line': b'[ 76%] Built target vehicle_core__rosidl_typesupport_fastrtps_c\n'}
+[3.719030] (-) TimerEvent: {}
+[3.738796] (vehicle_core) StdoutLine: {'line': b'[ 76%] Built target vehicle_core\n'}
+[3.756175] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target state_manager_node_component\x1b[0m\n'}
+[3.761509] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target gt_u7_gps_node_component\x1b[0m\n'}
+[3.775666] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target i2c_bridge_node\x1b[0m\n'}
+[3.779600] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target heading_calibrator_node_component\x1b[0m\n'}
+[3.780495] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target tcp_server_node_component\x1b[0m\n'}
+[3.789532] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target drive_arbiter_node_component\x1b[0m\n'}
+[3.800392] (vehicle_core) StdoutLine: {'line': b'[ 77%] Built target state_manager_node_component\n'}
+[3.802579] (vehicle_core) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding CXX object CMakeFiles/gt_u7_gps_node_component.dir/src/gt_u7_gps_node.cpp.o\x1b[0m\n'}
+[3.819334] (-) TimerEvent: {}
+[3.820770] (vehicle_core) StdoutLine: {'line': b'[ 77%] Built target vehicle_core__py\n'}
+[3.838830] (vehicle_core) StdoutLine: {'line': b'[ 78%] Built target drive_arbiter_node_component\n'}
+[3.845458] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target autopilot_node_component\x1b[0m\n'}
+[3.847155] (vehicle_core) StdoutLine: {'line': b'[ 78%] \x1b[32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.o\x1b[0m\n'}
+[3.853044] (vehicle_core) StdoutLine: {'line': b'[ 79%] \x1b[32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o\x1b[0m\n'}
+[3.862100] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target gst_camera_component\x1b[0m\n'}
+[3.862761] (vehicle_core) StdoutLine: {'line': b'[ 80%] Built target heading_calibrator_node_component\n'}
+[3.865213] (vehicle_core) StdoutLine: {'line': b'[ 81%] Built target tcp_server_node_component\n'}
+[3.887703] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_generator_py\x1b[0m\n'}
+[3.893132] (vehicle_core) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.o\x1b[0m\n'}
+[3.912102] (vehicle_core) StdoutLine: {'line': b'[ 83%] Built target gst_camera_component\n'}
+[3.919443] (-) TimerEvent: {}
+[3.927518] (vehicle_core) StdoutLine: {'line': b'[ 84%] Built target autopilot_node_component\n'}
+[3.940660] (vehicle_core) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.o\x1b[0m\n'}
+[3.945437] (vehicle_core) StdoutLine: {'line': b'[ 94%] Built target vehicle_core__rosidl_generator_py\n'}
+[3.951072] (vehicle_core) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.o\x1b[0m\n'}
+[3.959895] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[3.981043] (vehicle_core) StdoutLine: {'line': b'running egg_info\n'}
+[4.002218] (vehicle_core) StdoutLine: {'line': b'writing vehicle_core.egg-info/PKG-INFO\n'}
+[4.003525] (vehicle_core) StdoutLine: {'line': b'writing dependency_links to vehicle_core.egg-info/dependency_links.txt\n'}
+[4.004432] (vehicle_core) StdoutLine: {'line': b'writing top-level names to vehicle_core.egg-info/top_level.txt\n'}
+[4.016225] (vehicle_core) StdoutLine: {'line': b'[ 95%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext\n'}
+[4.019547] (-) TimerEvent: {}
+[4.087273] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[4.100197] (vehicle_core) StdoutLine: {'line': b"reading manifest file 'vehicle_core.egg-info/SOURCES.txt'\n"}
+[4.103989] (vehicle_core) StdoutLine: {'line': b"writing manifest file 'vehicle_core.egg-info/SOURCES.txt'\n"}
+[4.119787] (-) TimerEvent: {}
+[4.161549] (vehicle_core) StdoutLine: {'line': b'[ 96%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext\n'}
+[4.219921] (-) TimerEvent: {}
+[4.225458] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[4.250121] (vehicle_core) StdoutLine: {'line': b'[ 96%] Built target ament_cmake_python_build_vehicle_core_egg\n'}
+[4.261835] (vehicle_core) StdoutLine: {'line': b'[ 97%] Built target vehicle_core__rosidl_typesupport_c__pyext\n'}
+[4.273476] (vehicle_core) StdoutLine: {'line': b'[ 98%] \x1b[32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o\x1b[0m\n'}
+[4.285633] (vehicle_core) StdoutLine: {'line': b'[ 98%] \x1b[32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.o\x1b[0m\n'}
+[4.320061] (-) TimerEvent: {}
+[4.326131] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/LightingSubsys.cpp:1:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[KLightingSubsys.hpp: No such file or directory\n'}
+[4.326422] (vehicle_core) StderrLine: {'line': b'    1 | #include \x1b[01;31m\x1b[K"LightingSubsys.hpp"\x1b[m\x1b[K\n'}
+[4.326506] (vehicle_core) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.340346] (vehicle_core) StderrLine: {'line': b'compilation terminated.\n'}
+[4.341624] (vehicle_core) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/i2c_bridge_node.dir/build.make:160: CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.o] Error 1\n'}
+[4.341945] (vehicle_core) StderrLine: {'line': b'gmake[2]: *** Waiting for unfinished jobs....\n'}
+[4.391535] (vehicle_core) StdoutLine: {'line': b'[ 99%] \x1b[32mBuilding CXX object CMakeFiles/gt_u7_gps_node_component.dir/src/Devices/GtU7Gps.cpp.o\x1b[0m\n'}
+[4.420277] (-) TimerEvent: {}
+[4.521056] (-) TimerEvent: {}
+[4.621826] (-) TimerEvent: {}
+[4.722499] (-) TimerEvent: {}
+[4.822982] (-) TimerEvent: {}
+[4.923664] (-) TimerEvent: {}
+[5.024655] (-) TimerEvent: {}
+[5.125751] (-) TimerEvent: {}
+[5.226835] (-) TimerEvent: {}
+[5.327772] (-) TimerEvent: {}
+[5.428725] (-) TimerEvent: {}
+[5.482967] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBusRegistry.cpp:1\x1b[m\x1b[K:\n'}
+[5.483976] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/I2C/I2CBusRegistry.hpp:14:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[5.484664] (vehicle_core) StderrLine: {'line': b'   14 |     std::shared_ptr<I2CBus> \x1b[01;31m\x1b[Kg_\x1b[m\x1b[K\n'}
+[5.485376] (vehicle_core) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.485978] (vehicle_core) StderrLine: {'line': b'      |                               \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[5.486564] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBusRegistry.cpp:3:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kextra qualification \xe2\x80\x98\x1b[01m\x1b[KI2CBusRegistry::\x1b[m\x1b[K\xe2\x80\x99 on member \xe2\x80\x98\x1b[01m\x1b[KgetInstance\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.487240] (vehicle_core) StderrLine: {'line': b'    3 | I2CBusRegistry& \x1b[01;31m\x1b[KI2CBusRegistry\x1b[m\x1b[K::getInstance() {\n'}
+[5.487911] (vehicle_core) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.488506] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBusRegistry.cpp:3:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KI2CBusRegistry& I2CBusRegistry::getInstance()\x1b[m\x1b[K\xe2\x80\x99 cannot be overloaded with \xe2\x80\x98\x1b[01m\x1b[Kstatic I2CBusRegistry& I2CBusRegistry::getInstance()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.489109] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBusRegistry.cpp:1\x1b[m\x1b[K:\n'}
+[5.489670] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/I2C/I2CBusRegistry.hpp:12:28:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kprevious declaration \xe2\x80\x98\x1b[01m\x1b[Kstatic I2CBusRegistry& I2CBusRegistry::getInstance()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.490512] (vehicle_core) StderrLine: {'line': b'   12 |     static I2CBusRegistry& \x1b[01;36m\x1b[KgetInstance\x1b[m\x1b[K();\n'}
+[5.491038] (vehicle_core) StderrLine: {'line': b'      |                            \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.491525] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBusRegistry.cpp:8:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kextra qualification \xe2\x80\x98\x1b[01m\x1b[KI2CBusRegistry::\x1b[m\x1b[K\xe2\x80\x99 on member \xe2\x80\x98\x1b[01m\x1b[KgetOrOpen\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.492070] (vehicle_core) StderrLine: {'line': b'    8 | std::shared_ptr<I2CBus> \x1b[01;31m\x1b[KI2CBusRegistry\x1b[m\x1b[K::getOrOpen(const std::string& path,\n'}
+[5.492560] (vehicle_core) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.493060] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBusRegistry.cpp:31:2:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 at end of input\n'}
+[5.493602] (vehicle_core) StderrLine: {'line': b'   31 | }\n'}
+[5.494074] (vehicle_core) StderrLine: {'line': b'      |  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.494520] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBusRegistry.cpp:1\x1b[m\x1b[K:\n'}
+[5.494996] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/I2C/I2CBusRegistry.hpp:10:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kto match this \xe2\x80\x98\x1b[01m\x1b[K{\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.495428] (vehicle_core) StderrLine: {'line': b'   10 | class I2CBusRegistry \x1b[01;36m\x1b[K{\x1b[m\x1b[K\n'}
+[5.496034] (vehicle_core) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[5.496558] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBusRegistry.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<I2CBus> I2CBusRegistry::getOrOpen(const string&, std::string*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.497146] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBusRegistry.cpp:11:36:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmut_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[5.497543] (vehicle_core) StderrLine: {'line': b'   11 |     std::lock_guard<std::mutex> lk(\x1b[01;31m\x1b[Kmut_\x1b[m\x1b[K);\n'}
+[5.497914] (vehicle_core) StderrLine: {'line': b'      |                                    \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[5.498266] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBusRegistry.cpp:14:15:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kbuses_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[5.498619] (vehicle_core) StderrLine: {'line': b'   14 |     auto it = \x1b[01;31m\x1b[Kbuses_\x1b[m\x1b[K.find(path);\n'}
+[5.498961] (vehicle_core) StderrLine: {'line': b'      |               \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[5.499303] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBusRegistry.cpp:\x1b[m\x1b[K At global scope:\n'}
+[5.499651] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBusRegistry.cpp:31:2:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id at end of input\n'}
+[5.499999] (vehicle_core) StderrLine: {'line': b'   31 | }\n'}
+[5.500371] (vehicle_core) StderrLine: {'line': b'      |  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.529037] (-) TimerEvent: {}
+[5.568933] (vehicle_core) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/i2c_bridge_node.dir/build.make:104: CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.o] Error 1\n'}
+[5.629316] (-) TimerEvent: {}
+[5.730435] (-) TimerEvent: {}
+[5.831813] (-) TimerEvent: {}
+[5.933214] (-) TimerEvent: {}
+[6.034507] (-) TimerEvent: {}
+[6.135893] (-) TimerEvent: {}
+[6.237186] (-) TimerEvent: {}
+[6.338543] (-) TimerEvent: {}
+[6.439938] (-) TimerEvent: {}
+[6.541244] (-) TimerEvent: {}
+[6.642583] (-) TimerEvent: {}
+[6.743876] (-) TimerEvent: {}
+[6.845257] (-) TimerEvent: {}
+[6.946690] (-) TimerEvent: {}
+[7.048151] (-) TimerEvent: {}
+[7.149538] (-) TimerEvent: {}
+[7.250893] (-) TimerEvent: {}
+[7.352288] (-) TimerEvent: {}
+[7.453693] (-) TimerEvent: {}
+[7.554944] (-) TimerEvent: {}
+[7.656345] (-) TimerEvent: {}
+[7.757674] (-) TimerEvent: {}
+[7.859032] (-) TimerEvent: {}
+[7.960431] (-) TimerEvent: {}
+[8.061790] (-) TimerEvent: {}
+[8.163078] (-) TimerEvent: {}
+[8.264516] (-) TimerEvent: {}
+[8.365910] (-) TimerEvent: {}
+[8.467288] (-) TimerEvent: {}
+[8.568652] (-) TimerEvent: {}
+[8.670057] (-) TimerEvent: {}
+[8.771361] (-) TimerEvent: {}
+[8.872746] (-) TimerEvent: {}
+[8.974068] (-) TimerEvent: {}
+[9.075390] (-) TimerEvent: {}
+[9.176794] (-) TimerEvent: {}
+[9.278091] (-) TimerEvent: {}
+[9.379433] (-) TimerEvent: {}
+[9.480793] (-) TimerEvent: {}
+[9.582152] (-) TimerEvent: {}
+[9.594991] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:11\x1b[m\x1b[K:\n'}
+[9.596444] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/I2C/I2CBusRegistry.hpp:14:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[9.597126] (vehicle_core) StderrLine: {'line': b'   14 |     std::shared_ptr<I2CBus> \x1b[01;31m\x1b[Kg_\x1b[m\x1b[K\n'}
+[9.597498] (vehicle_core) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[9.597839] (vehicle_core) StderrLine: {'line': b'      |                               \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[9.598179] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:13:15:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kusing-declaration for non-member at class scope\n'}
+[9.598578] (vehicle_core) StderrLine: {'line': b'   13 | using rclcpp::\x1b[01;31m\x1b[KQoS\x1b[m\x1b[K;\n'}
+[9.598917] (vehicle_core) StderrLine: {'line': b'      |               \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[9.599254] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:14:15:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kusing-declaration for non-member at class scope\n'}
+[9.599594] (vehicle_core) StderrLine: {'line': b'   14 | using rclcpp::\x1b[01;31m\x1b[KKeepLast\x1b[m\x1b[K;\n'}
+[9.599931] (vehicle_core) StderrLine: {'line': b'      |               \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[9.600305] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:15:15:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kusing-declaration for non-member at class scope\n'}
+[9.600691] (vehicle_core) StderrLine: {'line': b'   15 | using rclcpp::\x1b[01;31m\x1b[KSensorDataQoS\x1b[m\x1b[K;\n'}
+[9.601028] (vehicle_core) StderrLine: {'line': b'      |               \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.601364] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:17:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Knamespace\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.601708] (vehicle_core) StderrLine: {'line': b'   17 | \x1b[01;31m\x1b[Knamespace\x1b[m\x1b[K vehicle_core {\n'}
+[9.602045] (vehicle_core) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[9.602382] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/class_loader.hpp:50\x1b[m\x1b[K,\n'}
+[9.602722] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp:18\x1b[m\x1b[K,\n'}
+[9.603065] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:461\x1b[m\x1b[K:\n'}
+[9.603465] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/console_bridge/console.h:82:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Knamespace\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.603819] (vehicle_core) StderrLine: {'line': b'   82 | \x1b[01;31m\x1b[Knamespace\x1b[m\x1b[K console_bridge\n'}
+[9.604155] (vehicle_core) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[9.604493] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp:56\x1b[m\x1b[K,\n'}
+[9.604834] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/class_loader.hpp:55\x1b[m\x1b[K,\n'}
+[9.605175] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp:18\x1b[m\x1b[K,\n'}
+[9.605553] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:461\x1b[m\x1b[K:\n'}
+[9.605891] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/exceptions.hpp:40:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Knamespace\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.606235] (vehicle_core) StderrLine: {'line': b'   40 | \x1b[01;31m\x1b[Knamespace\x1b[m\x1b[K class_loader\n'}
+[9.606572] (vehicle_core) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[9.606936] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp:57\x1b[m\x1b[K,\n'}
+[9.607281] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/class_loader.hpp:55\x1b[m\x1b[K,\n'}
+[9.607630] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp:18\x1b[m\x1b[K,\n'}
+[9.607972] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:461\x1b[m\x1b[K:\n'}
+[9.608310] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/meta_object.hpp:43:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Knamespace\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.608653] (vehicle_core) StderrLine: {'line': b'   43 | \x1b[01;31m\x1b[Knamespace\x1b[m\x1b[K class_loader\n'}
+[9.608995] (vehicle_core) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[9.609335] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/class_loader.hpp:55\x1b[m\x1b[K,\n'}
+[9.609678] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp:18\x1b[m\x1b[K,\n'}
+[9.610020] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:461\x1b[m\x1b[K:\n'}
+[9.610390] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp:67:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Knamespace\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.610737] (vehicle_core) StderrLine: {'line': b'   67 | \x1b[01;31m\x1b[Knamespace\x1b[m\x1b[K class_loader\n'}
+[9.611075] (vehicle_core) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[9.611410] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp:18\x1b[m\x1b[K,\n'}
+[9.611812] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:461\x1b[m\x1b[K:\n'}
+[9.612171] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/class_loader.hpp:59:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Knamespace\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.612517] (vehicle_core) StderrLine: {'line': b'   59 | \x1b[01;31m\x1b[Knamespace\x1b[m\x1b[K class_loader\n'}
+[9.612858] (vehicle_core) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[9.613196] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/node_factory.hpp:19\x1b[m\x1b[K,\n'}
+[9.613561] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/node_factory_template.hpp:21\x1b[m\x1b[K,\n'}
+[9.613911] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp:19\x1b[m\x1b[K,\n'}
+[9.614249] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:461\x1b[m\x1b[K:\n'}
+[9.614593] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/node_instance_wrapper.hpp:23:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Knamespace\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.614968] (vehicle_core) StderrLine: {'line': b'   23 | \x1b[01;31m\x1b[Knamespace\x1b[m\x1b[K rclcpp_components\n'}
+[9.615307] (vehicle_core) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[9.615641] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/node_factory_template.hpp:21\x1b[m\x1b[K,\n'}
+[9.615981] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp:19\x1b[m\x1b[K,\n'}
+[9.616325] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:461\x1b[m\x1b[K:\n'}
+[9.616687] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/node_factory.hpp:21:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Knamespace\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.617063] (vehicle_core) StderrLine: {'line': b'   21 | \x1b[01;31m\x1b[Knamespace\x1b[m\x1b[K rclcpp_components\n'}
+[9.617402] (vehicle_core) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[9.617737] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp:19\x1b[m\x1b[K,\n'}
+[9.618075] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:461\x1b[m\x1b[K:\n'}
+[9.618416] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/node_factory_template.hpp:23:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Knamespace\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.618764] (vehicle_core) StderrLine: {'line': b'   23 | \x1b[01;31m\x1b[Knamespace\x1b[m\x1b[K rclcpp_components\n'}
+[9.619100] (vehicle_core) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[9.619435] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/class_loader.hpp:56\x1b[m\x1b[K,\n'}
+[9.619844] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp:18\x1b[m\x1b[K,\n'}
+[9.620214] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:461\x1b[m\x1b[K:\n'}
+[9.620565] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:462:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Knamespace\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.620911] (vehicle_core) StderrLine: {'line': b'  462 | \x1b[01;31m\x1b[KRCLCPP_COMPONENTS_REGISTER_NODE\x1b[m\x1b[K(vehicle_core::I2cBridgeNode)\n'}
+[9.621252] (vehicle_core) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.621591] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:462:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 at end of input\n'}
+[9.621935] (vehicle_core) StderrLine: {'line': b'  462 | \x1b[01;31m\x1b[KRCLCPP_COMPONENTS_REGISTER_NODE\x1b[m\x1b[K(vehicle_core::I2cBridgeNode)\n'}
+[9.622274] (vehicle_core) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.622609] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:11\x1b[m\x1b[K:\n'}
+[9.622952] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/I2C/I2CBusRegistry.hpp:10:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kto match this \xe2\x80\x98\x1b[01m\x1b[K{\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.623293] (vehicle_core) StderrLine: {'line': b'   10 | class I2CBusRegistry \x1b[01;36m\x1b[K{\x1b[m\x1b[K\n'}
+[9.623664] (vehicle_core) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[9.624010] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/class_loader.hpp:56\x1b[m\x1b[K,\n'}
+[9.624350] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp:18\x1b[m\x1b[K,\n'}
+[9.624733] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:461\x1b[m\x1b[K:\n'}
+[9.625068] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:462:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id at end of input\n'}
+[9.625409] (vehicle_core) StderrLine: {'line': b'  462 | \x1b[01;31m\x1b[KRCLCPP_COMPONENTS_REGISTER_NODE\x1b[m\x1b[K(vehicle_core::I2cBridgeNode)\n'}
+[9.625746] (vehicle_core) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.682531] (-) TimerEvent: {}
+[9.783821] (-) TimerEvent: {}
+[9.885168] (-) TimerEvent: {}
+[9.986549] (-) TimerEvent: {}
+[10.087878] (-) TimerEvent: {}
+[10.189240] (-) TimerEvent: {}
+[10.290585] (-) TimerEvent: {}
+[10.391845] (-) TimerEvent: {}
+[10.443219] (vehicle_core) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/i2c_bridge_node.dir/build.make:76: CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o] Error 1\n'}
+[10.444296] (vehicle_core) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:750: CMakeFiles/i2c_bridge_node.dir/all] Error 2\n'}
+[10.444759] (vehicle_core) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[10.492186] (-) TimerEvent: {}
+[10.593456] (-) TimerEvent: {}
+[10.694677] (-) TimerEvent: {}
+[10.796021] (-) TimerEvent: {}
+[10.897343] (-) TimerEvent: {}
+[10.998831] (-) TimerEvent: {}
+[11.100437] (-) TimerEvent: {}
+[11.201730] (-) TimerEvent: {}
+[11.303040] (-) TimerEvent: {}
+[11.404307] (-) TimerEvent: {}
+[11.505550] (-) TimerEvent: {}
+[11.607028] (-) TimerEvent: {}
+[11.708365] (-) TimerEvent: {}
+[11.809769] (-) TimerEvent: {}
+[11.911148] (-) TimerEvent: {}
+[12.012557] (-) TimerEvent: {}
+[12.113907] (-) TimerEvent: {}
+[12.215288] (-) TimerEvent: {}
+[12.316682] (-) TimerEvent: {}
+[12.418049] (-) TimerEvent: {}
+[12.519382] (-) TimerEvent: {}
+[12.620778] (-) TimerEvent: {}
+[12.722157] (-) TimerEvent: {}
+[12.823570] (-) TimerEvent: {}
+[12.873613] (vehicle_core) StdoutLine: {'line': b'[ 99%] \x1b[32m\x1b[1mLinking CXX shared library libgt_u7_gps_node_component.so\x1b[0m\n'}
+[12.923914] (-) TimerEvent: {}
+[13.025344] (-) TimerEvent: {}
+[13.126987] (-) TimerEvent: {}
+[13.228576] (-) TimerEvent: {}
+[13.330114] (-) TimerEvent: {}
+[13.425044] (vehicle_core) StdoutLine: {'line': b'[ 99%] Built target gt_u7_gps_node_component\n'}
+[13.427906] (vehicle_core) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[13.430121] (-) TimerEvent: {}
+[13.432954] (vehicle_core) CommandEnded: {'returncode': 2}
+[13.457133] (vehicle_core) JobEnded: {'identifier': 'vehicle_core', 'rc': 2}
+[13.459650] (-) EventReactorShutdown: {}

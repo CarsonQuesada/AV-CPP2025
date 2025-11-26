@@ -1,8 +1,19 @@
 #pragma once
 
+// TcpServerNode.hpp
+// This class sends messages over tcp to a connected client
+//
+// Requirements:
+// Shared/Keys.h needs to be configured with the client's port and ip address
+//
+// Current issues:
+// - Does not send the state mode or telemetry data periodically
+// 
+
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/u_int8.hpp>
 #include <std_msgs/msg/u_int8_multi_array.hpp>
+#include <std_srvs/srv/trigger.hpp>
 
 #include <atomic>
 #include <condition_variable>
@@ -17,7 +28,7 @@
 
 // From the sibling shared/ folder (CMake adds the include path via SHARED_ROOT)
 #include "Message.h"
-#include "Keys.h"    // should define PORT
+#include "Keys.h"
 
 #include "vehicle_core/msg/manual_drive_command.hpp"
 #include "vehicle_core/msg/lights_command.hpp"
@@ -32,6 +43,8 @@
 #include "vehicle_core/msg/error.hpp"
 #include "vehicle_core/msg/server_init.hpp"
 #include "vehicle_core/msg/state_mode.hpp"
+
+#include "DebugHelpers.h"
 
 namespace vehicle_core {
 
@@ -70,6 +83,16 @@ private:
   void onTelemetry(const vehicle_core::msg::TelemetryData::SharedPtr m);
   void onError(const vehicle_core::msg::Error::SharedPtr m);
 
+  // Client helpers
+  void callTriggerAsync(
+    rclcpp::Client<std_srvs::srv::Trigger>::SharedPtr& client,
+    const char* action,                      // e.g. "ESTOP", "Manual", "Heading Start"
+    const char* reason = nullptr,            // optional
+    std::chrono::milliseconds wait = std::chrono::milliseconds(100),
+    std::chrono::milliseconds timeout = std::chrono::milliseconds(800));
+
+  // Other helpers
+  void changeState(ConnState st);
 
   // Parameters
   int         port_               { PORT };        // from Keys.h
@@ -89,9 +112,17 @@ private:
   rclcpp::Subscription<vehicle_core::msg::LightsStatus>::SharedPtr     sub_lights_status_;
   rclcpp::Subscription<vehicle_core::msg::GeneralStatus>::SharedPtr    sub_general_status_;
   rclcpp::Subscription<vehicle_core::msg::DriveStatus>::SharedPtr      sub_drive_status_;
-  rclcpp::Subscription<vehicle_core::msg::StateMode>::SharedPtr  sub_autopilot_status_;
+  rclcpp::Subscription<vehicle_core::msg::StateMode>::SharedPtr        sub_state_mode_;
   rclcpp::Subscription<vehicle_core::msg::TelemetryData>::SharedPtr    sub_telemetry_;
   rclcpp::Subscription<vehicle_core::msg::Error>::SharedPtr            sub_error_;
+
+  // === Client ===
+  rclcpp::Client<std_srvs::srv::Trigger>::SharedPtr cli_req_estop_;
+  rclcpp::Client<std_srvs::srv::Trigger>::SharedPtr cli_clear_estop_;
+  rclcpp::Client<std_srvs::srv::Trigger>::SharedPtr cli_req_manual_;
+  rclcpp::Client<std_srvs::srv::Trigger>::SharedPtr cli_req_auto_;
+  rclcpp::Client<std_srvs::srv::Trigger>::SharedPtr cli_heading_start_;
+  rclcpp::Client<std_srvs::srv::Trigger>::SharedPtr cli_heading_stop_;
 
   // === Timers for periodic sends ===
   rclcpp::TimerBase::SharedPtr timer_general_, timer_lights_, timer_drive_, timer_autopilot_, timer_telemetry_;
@@ -133,6 +164,12 @@ private:
   std::shared_mutex sock_mut_;
   int listen_fd_{-1};
   int client_fd_{-1};
+
+  inline void requestCleanup() {
+    stop_workers_.store(true);
+    { std::lock_guard<std::mutex> lk(tx_m_); tx_stop_ = true; }
+    tx_cv_.notify_all();
+  }
   
 };
 
@@ -146,6 +183,20 @@ inline void TcpServerNode::enqueue_message(const T& obj, MessageID id) {
     static_cast<uint32_t>(m.payload.size()),
     m.messageID
   };
+
+  // Before queing do checks to see if valid message
+  auto expect = expectedPayloadSize(id);
+  if (!expect.has_value()) {
+      RCLCPP_WARN(get_logger(), "[SRV] REFUSE to send id=%u (%s): not allowed on wire",
+                  (unsigned)id, msgName(id));
+      return; // drop
+  }
+  if (m.payload.size() != expect.value()) {
+      RCLCPP_WARN(get_logger(), "[SRV] BAD PAYLOAD for id=%u (%s): len=%zu expected=%zu — dropping",
+                  (unsigned)id, msgName(id),
+                  m.payload.size(), expect.value());
+      return;
+  }
 
   std::vector<uint8_t> flat(sizeof(MessageHeader) + m.payload.size());
   std::memcpy(flat.data(), &h, sizeof(h));

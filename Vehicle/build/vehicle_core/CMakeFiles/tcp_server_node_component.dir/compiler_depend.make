@@ -719,6 +719,12 @@ CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o: /home/avcpp/
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__traits.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__traits.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8_multi_array__type_support.hpp \
+  /opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp \
+  /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp \
+  /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__builder.hpp \
+  /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__traits.hpp \
+  /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__type_support.hpp \
+  /opt/ros/humble/include/std_srvs/std_srvs/msg/rosidl_generator_cpp__visibility_control.hpp \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
@@ -785,6 +791,7 @@ CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o: /home/avcpp/
   rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__builder.hpp \
   rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__traits.hpp \
   rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__type_support.hpp \
+  /home/avcpp/AV-CPP2025/Shared/DebugHelpers.h \
   /usr/include/arpa/inet.h \
   /usr/include/netinet/in.h \
   /usr/include/aarch64-linux-gnu/sys/socket.h \
@@ -844,6 +851,8 @@ CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o: /home/avcpp/
 /usr/include/aarch64-linux-gnu/bits/types/struct_iovec.h:
 
 /usr/include/arpa/inet.h:
+
+/home/avcpp/AV-CPP2025/Shared/DebugHelpers.h:
 
 rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__traits.hpp:
 
@@ -906,6 +915,10 @@ rosidl_generator_cpp/vehicle_core/msg/manual_drive_command.hpp:
 /usr/include/c++/11/bits/stl_deque.h:
 
 /usr/include/c++/11/deque:
+
+/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__type_support.hpp:
+
+/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__traits.hpp:
 
 /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__traits.hpp:
 
@@ -982,6 +995,8 @@ rosidl_generator_cpp/vehicle_core/msg/detail/error__traits.hpp:
 rosidl_generator_cpp/vehicle_core/msg/detail/server_init__struct.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/parameter_client.hpp:
+
+/opt/ros/humble/include/std_srvs/std_srvs/msg/rosidl_generator_cpp__visibility_control.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/executors/static_executor_entities_collector.hpp:
 
@@ -1222,6 +1237,8 @@ rosidl_generator_cpp/vehicle_core/msg/telemetry_data.hpp:
 /usr/include/c++/11/iomanip:
 
 /usr/include/c++/11/bits/stl_multimap.h:
+
+/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp:
 
 /usr/include/aarch64-linux-gnu/bits/types/error_t.h:
 
@@ -1663,6 +1680,8 @@ rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__type_support.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/allocator/allocator_deleter.hpp:
 
+/opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__builder.hpp:
+
 /opt/ros/humble/include/rcl/rcl/types.h:
 
 rosidl_generator_cpp/vehicle_core/msg/detail/drive_status__builder.hpp:
@@ -1808,6 +1827,8 @@ rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_command__struct.hpp:
 /usr/include/aarch64-linux-gnu/bits/wctype-wchar.h:
 
 /usr/include/c++/11/cwchar:
+
+/opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp:
 
 /usr/include/asm-generic/int-ll64.h:
 

@@ -26,6 +26,7 @@
   <depend>tf2</depend>
   <depend>pluginlib</depend>
   <depend>cv_bridge</depend>
+  <depend>robot_localization</depend>
 
   <!-- Launch files -->
   <exec_depend>launch</exec_depend>

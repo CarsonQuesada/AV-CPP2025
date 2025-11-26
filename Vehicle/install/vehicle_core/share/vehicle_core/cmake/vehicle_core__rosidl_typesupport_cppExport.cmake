@@ -54,7 +54,7 @@ endif()
 add_library(vehicle_core::vehicle_core__rosidl_typesupport_cpp SHARED IMPORTED)
 
 set_target_properties(vehicle_core::vehicle_core__rosidl_typesupport_cpp PROPERTIES
-  INTERFACE_LINK_LIBRARIES "vehicle_core::vehicle_core__rosidl_generator_cpp;builtin_interfaces::builtin_interfaces__rosidl_typesupport_cpp"
+  INTERFACE_LINK_LIBRARIES "vehicle_core::vehicle_core__rosidl_generator_cpp;builtin_interfaces::builtin_interfaces__rosidl_typesupport_cpp;std_msgs::std_msgs__rosidl_typesupport_cpp"
 )
 
 if(CMAKE_VERSION VERSION_LESS 2.8.12)

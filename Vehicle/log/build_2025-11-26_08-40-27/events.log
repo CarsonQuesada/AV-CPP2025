@@ -1,0 +1,786 @@
+[0.000000] (-) TimerEvent: {}
+[0.001117] (vehicle_core) JobQueued: {'identifier': 'vehicle_core', 'dependencies': OrderedDict()}
+[0.001597] (vehicle_core) JobStarted: {'identifier': 'vehicle_core'}
+[0.015530] (vehicle_core) JobProgress: {'identifier': 'vehicle_core', 'progress': 'cmake'}
+[0.017067] (vehicle_core) JobProgress: {'identifier': 'vehicle_core', 'progress': 'build'}
+[0.019050] (vehicle_core) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core', '--', '-j8', '-l8'], 'cwd': '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('UMS_MOUNTPOINT', '/mnt/ums'), ('GST_V4L2_PREFERRED_FOURCC', 'NV12:YU12:NV16:YUY2'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'avcpp'), ('SSH_CLIENT', '192.168.8.103 62622 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('USB_FUNCS', 'adb'), ('LD_LIBRARY_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/avcpp'), ('OLDPWD', '/home/avcpp/AV-CPP2025'), ('TERM_PROGRAM_VERSION', '1.106.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1001/vscode-ipc-30b71ba1-c494-4d50-8a40-c2475056f836.sock'), ('GST_INSPECT_NO_COLORS', '1'), ('GST_MPP_NO_RGA', '1'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1001/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install'), ('GST_V4L2SRC_MAX_RESOLUTION', '3840x2160'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'avcpp'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', '5'), ('GST_VIDEO_CONVERT_PREFERRED_FORMAT', 'NV12:NV16:I420:YUY2'), ('GST_V4L2SRC_RK_DEVICES', '_mainpath:_selfpath:_bypass:_scale'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/bin/remote-cli:/home/avcpp/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/bundled/scripts/noConfigScripts'), ('XDG_RUNTIME_DIR', '/run/user/1001'), ('GST_GL_PLATFORM', 'egl'), ('GST_DEBUG_NO_COLOR', '1'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('GST_V4L2SRC_DEFAULT_DEVICE', '/dev/video-camera0'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/.noConfigDebugAdapterEndpoints/endpoint-ef25f7e9429dbf34.txt'), ('LANG', 'en_US.UTF-8'), ('PYTHONSTARTUP', '/home/avcpp/.vscode-server/data/User/workspaceStorage/da628a90441345ac74af00bc07084975/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1001/vscode-git-c9ee365bab.sock'), ('TERM_PROGRAM', 'vscode'), ('GST_V4L2_USE_LIBV4L2', '1'), ('UMS_SIZE', '256M'), ('AMENT_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/opt/ros/humble'), ('LC_MESSAGES', 'en_US.UTF-8'), ('SHELL', '/bin/bash'), ('UMS_RO', '0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('UMS_FSTYPE', 'vfat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.8.103 62622 192.168.8.176 22'), ('PYTHONPATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('UMS_MOUNT', '0'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/opt/ros/humble'), ('UMS_FILE', '/userdata/ums_shared.img')]), 'shell': False}
+[0.098384] (-) TimerEvent: {}
+[0.199629] (-) TimerEvent: {}
+[0.254130] (vehicle_core) StdoutLine: {'line': b'[  0%] Built target ament_cmake_python_symlink_vehicle_core\n'}
+[0.263310] (vehicle_core) StdoutLine: {'line': b'[ 11%] Built target vehicle_core__rosidl_generator_c\n'}
+[0.268838] (vehicle_core) StdoutLine: {'line': b'[ 12%] Built target vehicle_core__cpp\n'}
+[0.279429] (vehicle_core) StdoutLine: {'line': b'[ 13%] Built target vehicle_core_container\n'}
+[0.299650] (-) TimerEvent: {}
+[0.314279] (vehicle_core) StdoutLine: {'line': b'[ 24%] Built target vehicle_core__rosidl_typesupport_c\n'}
+[0.317470] (vehicle_core) StdoutLine: {'line': b'[ 35%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp\n'}
+[0.324536] (vehicle_core) StdoutLine: {'line': b'[ 46%] Built target vehicle_core__rosidl_typesupport_introspection_c\n'}
+[0.330210] (vehicle_core) StdoutLine: {'line': b'[ 57%] Built target vehicle_core__rosidl_typesupport_fastrtps_c\n'}
+[0.350036] (vehicle_core) StdoutLine: {'line': b'[ 68%] Built target vehicle_core__rosidl_typesupport_introspection_cpp\n'}
+[0.370969] (vehicle_core) StdoutLine: {'line': b'[ 79%] Built target vehicle_core__rosidl_typesupport_cpp\n'}
+[0.399900] (-) TimerEvent: {}
+[0.417456] (vehicle_core) StdoutLine: {'line': b'[ 79%] Built target vehicle_core\n'}
+[0.479676] (vehicle_core) StdoutLine: {'line': b'[ 80%] Built target tcp_server_node_component\n'}
+[0.482091] (vehicle_core) StdoutLine: {'line': b'[ 81%] Built target heading_calibrator_node_component\n'}
+[0.484067] (vehicle_core) StdoutLine: {'line': b'[ 81%] Built target i2c_bridge_node\n'}
+[0.500005] (-) TimerEvent: {}
+[0.503005] (vehicle_core) StdoutLine: {'line': b'[ 82%] Built target gt_u7_gps_node_component\n'}
+[0.516447] (vehicle_core) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target autopilot_node_component\x1b[0m\n'}
+[0.516775] (vehicle_core) StdoutLine: {'line': b'[ 82%] Built target vehicle_core__py\n'}
+[0.520719] (vehicle_core) StdoutLine: {'line': b'[ 84%] Built target state_manager_node_component\n'}
+[0.521129] (vehicle_core) StdoutLine: {'line': b'[ 84%] Built target drive_arbiter_node_component\n'}
+[0.554937] (vehicle_core) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding CXX object CMakeFiles/autopilot_node_component.dir/src/autopilot_node.cpp.o\x1b[0m\n'}
+[0.575675] (vehicle_core) StdoutLine: {'line': b'[ 85%] Built target gst_camera_component\n'}
+[0.591401] (vehicle_core) StdoutLine: {'line': b'[ 96%] Built target vehicle_core__rosidl_generator_py\n'}
+[0.605578] (-) TimerEvent: {}
+[0.611989] (vehicle_core) StdoutLine: {'line': b'running egg_info\n'}
+[0.631165] (vehicle_core) StdoutLine: {'line': b'[ 97%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.635452] (vehicle_core) StdoutLine: {'line': b'writing vehicle_core.egg-info/PKG-INFO\n'}
+[0.637154] (vehicle_core) StdoutLine: {'line': b'[ 98%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext\n'}
+[0.638787] (vehicle_core) StdoutLine: {'line': b'writing dependency_links to vehicle_core.egg-info/dependency_links.txt\n'}
+[0.640051] (vehicle_core) StdoutLine: {'line': b'writing top-level names to vehicle_core.egg-info/top_level.txt\n'}
+[0.666750] (vehicle_core) StdoutLine: {'line': b'[ 99%] Built target vehicle_core__rosidl_typesupport_c__pyext\n'}
+[0.695633] (vehicle_core) StdoutLine: {'line': b"reading manifest file 'vehicle_core.egg-info/SOURCES.txt'\n"}
+[0.697627] (vehicle_core) StdoutLine: {'line': b"writing manifest file 'vehicle_core.egg-info/SOURCES.txt'\n"}
+[0.705873] (-) TimerEvent: {}
+[0.807183] (-) TimerEvent: {}
+[0.828658] (vehicle_core) StdoutLine: {'line': b'[ 99%] Built target ament_cmake_python_build_vehicle_core_egg\n'}
+[0.907552] (-) TimerEvent: {}
+[1.009147] (-) TimerEvent: {}
+[1.110247] (-) TimerEvent: {}
+[1.211412] (-) TimerEvent: {}
+[1.313117] (-) TimerEvent: {}
+[1.414133] (-) TimerEvent: {}
+[1.515188] (-) TimerEvent: {}
+[1.616383] (-) TimerEvent: {}
+[1.717343] (-) TimerEvent: {}
+[1.818360] (-) TimerEvent: {}
+[1.919505] (-) TimerEvent: {}
+[2.020585] (-) TimerEvent: {}
+[2.121712] (-) TimerEvent: {}
+[2.222704] (-) TimerEvent: {}
+[2.323823] (-) TimerEvent: {}
+[2.424941] (-) TimerEvent: {}
+[2.526028] (-) TimerEvent: {}
+[2.626989] (-) TimerEvent: {}
+[2.727475] (-) TimerEvent: {}
+[2.827979] (-) TimerEvent: {}
+[2.928453] (-) TimerEvent: {}
+[3.028960] (-) TimerEvent: {}
+[3.129567] (-) TimerEvent: {}
+[3.230579] (-) TimerEvent: {}
+[3.331730] (-) TimerEvent: {}
+[3.432877] (-) TimerEvent: {}
+[3.534136] (-) TimerEvent: {}
+[3.635282] (-) TimerEvent: {}
+[3.736358] (-) TimerEvent: {}
+[3.837515] (-) TimerEvent: {}
+[3.938667] (-) TimerEvent: {}
+[4.039723] (-) TimerEvent: {}
+[4.140765] (-) TimerEvent: {}
+[4.241978] (-) TimerEvent: {}
+[4.343091] (-) TimerEvent: {}
+[4.444190] (-) TimerEvent: {}
+[4.545202] (-) TimerEvent: {}
+[4.646338] (-) TimerEvent: {}
+[4.747567] (-) TimerEvent: {}
+[4.848702] (-) TimerEvent: {}
+[4.949826] (-) TimerEvent: {}
+[5.050843] (-) TimerEvent: {}
+[5.151925] (-) TimerEvent: {}
+[5.252891] (-) TimerEvent: {}
+[5.353936] (-) TimerEvent: {}
+[5.455062] (-) TimerEvent: {}
+[5.556110] (-) TimerEvent: {}
+[5.657212] (-) TimerEvent: {}
+[5.758342] (-) TimerEvent: {}
+[5.859261] (-) TimerEvent: {}
+[5.960228] (-) TimerEvent: {}
+[6.061199] (-) TimerEvent: {}
+[6.162141] (-) TimerEvent: {}
+[6.263168] (-) TimerEvent: {}
+[6.364151] (-) TimerEvent: {}
+[6.465305] (-) TimerEvent: {}
+[6.567117] (-) TimerEvent: {}
+[6.668655] (-) TimerEvent: {}
+[6.770190] (-) TimerEvent: {}
+[6.871997] (-) TimerEvent: {}
+[6.974006] (-) TimerEvent: {}
+[7.075134] (-) TimerEvent: {}
+[7.176443] (-) TimerEvent: {}
+[7.277895] (-) TimerEvent: {}
+[7.379267] (-) TimerEvent: {}
+[7.480660] (-) TimerEvent: {}
+[7.582086] (-) TimerEvent: {}
+[7.683451] (-) TimerEvent: {}
+[7.784814] (-) TimerEvent: {}
+[7.886133] (-) TimerEvent: {}
+[7.987510] (-) TimerEvent: {}
+[8.088898] (-) TimerEvent: {}
+[8.190296] (-) TimerEvent: {}
+[8.291753] (-) TimerEvent: {}
+[8.393132] (-) TimerEvent: {}
+[8.494565] (-) TimerEvent: {}
+[8.595921] (-) TimerEvent: {}
+[8.697283] (-) TimerEvent: {}
+[8.798688] (-) TimerEvent: {}
+[8.900067] (-) TimerEvent: {}
+[9.001481] (-) TimerEvent: {}
+[9.102883] (-) TimerEvent: {}
+[9.204229] (-) TimerEvent: {}
+[9.305609] (-) TimerEvent: {}
+[9.406962] (-) TimerEvent: {}
+[9.508301] (-) TimerEvent: {}
+[9.609643] (-) TimerEvent: {}
+[9.711065] (-) TimerEvent: {}
+[9.812391] (-) TimerEvent: {}
+[9.913797] (-) TimerEvent: {}
+[10.015192] (-) TimerEvent: {}
+[10.116554] (-) TimerEvent: {}
+[10.217951] (-) TimerEvent: {}
+[10.319337] (-) TimerEvent: {}
+[10.420697] (-) TimerEvent: {}
+[10.522082] (-) TimerEvent: {}
+[10.623449] (-) TimerEvent: {}
+[10.724821] (-) TimerEvent: {}
+[10.826240] (-) TimerEvent: {}
+[10.927635] (-) TimerEvent: {}
+[11.029024] (-) TimerEvent: {}
+[11.130389] (-) TimerEvent: {}
+[11.231806] (-) TimerEvent: {}
+[11.333136] (-) TimerEvent: {}
+[11.434443] (-) TimerEvent: {}
+[11.535734] (-) TimerEvent: {}
+[11.637005] (-) TimerEvent: {}
+[11.738274] (-) TimerEvent: {}
+[11.839596] (-) TimerEvent: {}
+[11.940941] (-) TimerEvent: {}
+[12.042328] (-) TimerEvent: {}
+[12.143674] (-) TimerEvent: {}
+[12.245050] (-) TimerEvent: {}
+[12.346533] (-) TimerEvent: {}
+[12.447958] (-) TimerEvent: {}
+[12.549260] (-) TimerEvent: {}
+[12.650572] (-) TimerEvent: {}
+[12.751929] (-) TimerEvent: {}
+[12.853275] (-) TimerEvent: {}
+[12.954726] (-) TimerEvent: {}
+[13.056340] (-) TimerEvent: {}
+[13.157999] (-) TimerEvent: {}
+[13.259407] (-) TimerEvent: {}
+[13.360844] (-) TimerEvent: {}
+[13.462118] (-) TimerEvent: {}
+[13.563491] (-) TimerEvent: {}
+[13.664962] (-) TimerEvent: {}
+[13.766334] (-) TimerEvent: {}
+[13.867714] (-) TimerEvent: {}
+[13.969069] (-) TimerEvent: {}
+[14.070452] (-) TimerEvent: {}
+[14.171915] (-) TimerEvent: {}
+[14.273391] (-) TimerEvent: {}
+[14.374766] (-) TimerEvent: {}
+[14.476209] (-) TimerEvent: {}
+[14.577594] (-) TimerEvent: {}
+[14.678956] (-) TimerEvent: {}
+[14.780282] (-) TimerEvent: {}
+[14.881745] (-) TimerEvent: {}
+[14.983149] (-) TimerEvent: {}
+[15.084596] (-) TimerEvent: {}
+[15.185962] (-) TimerEvent: {}
+[15.287365] (-) TimerEvent: {}
+[15.388736] (-) TimerEvent: {}
+[15.490160] (-) TimerEvent: {}
+[15.591585] (-) TimerEvent: {}
+[15.692996] (-) TimerEvent: {}
+[15.794381] (-) TimerEvent: {}
+[15.895777] (-) TimerEvent: {}
+[15.997159] (-) TimerEvent: {}
+[16.098552] (-) TimerEvent: {}
+[16.199933] (-) TimerEvent: {}
+[16.301185] (-) TimerEvent: {}
+[16.401835] (-) TimerEvent: {}
+[16.502497] (-) TimerEvent: {}
+[16.603151] (-) TimerEvent: {}
+[16.703793] (-) TimerEvent: {}
+[16.804459] (-) TimerEvent: {}
+[16.905116] (-) TimerEvent: {}
+[17.005774] (-) TimerEvent: {}
+[17.106469] (-) TimerEvent: {}
+[17.207130] (-) TimerEvent: {}
+[17.307794] (-) TimerEvent: {}
+[17.408445] (-) TimerEvent: {}
+[17.509104] (-) TimerEvent: {}
+[17.609703] (-) TimerEvent: {}
+[17.710239] (-) TimerEvent: {}
+[17.810903] (-) TimerEvent: {}
+[17.911589] (-) TimerEvent: {}
+[18.012262] (-) TimerEvent: {}
+[18.112942] (-) TimerEvent: {}
+[18.213623] (-) TimerEvent: {}
+[18.314283] (-) TimerEvent: {}
+[18.414963] (-) TimerEvent: {}
+[18.515638] (-) TimerEvent: {}
+[18.616243] (-) TimerEvent: {}
+[18.716833] (-) TimerEvent: {}
+[18.817490] (-) TimerEvent: {}
+[18.918154] (-) TimerEvent: {}
+[19.018817] (-) TimerEvent: {}
+[19.119470] (-) TimerEvent: {}
+[19.220121] (-) TimerEvent: {}
+[19.320763] (-) TimerEvent: {}
+[19.421442] (-) TimerEvent: {}
+[19.522092] (-) TimerEvent: {}
+[19.622764] (-) TimerEvent: {}
+[19.723411] (-) TimerEvent: {}
+[19.824068] (-) TimerEvent: {}
+[19.924733] (-) TimerEvent: {}
+[20.025377] (-) TimerEvent: {}
+[20.126023] (-) TimerEvent: {}
+[20.226658] (-) TimerEvent: {}
+[20.327314] (-) TimerEvent: {}
+[20.428001] (-) TimerEvent: {}
+[20.528746] (-) TimerEvent: {}
+[20.629567] (-) TimerEvent: {}
+[20.730408] (-) TimerEvent: {}
+[20.831560] (-) TimerEvent: {}
+[20.932472] (-) TimerEvent: {}
+[21.033631] (-) TimerEvent: {}
+[21.134813] (-) TimerEvent: {}
+[21.235784] (-) TimerEvent: {}
+[21.336736] (-) TimerEvent: {}
+[21.437881] (-) TimerEvent: {}
+[21.539100] (-) TimerEvent: {}
+[21.640344] (-) TimerEvent: {}
+[21.741736] (-) TimerEvent: {}
+[21.843120] (-) TimerEvent: {}
+[21.944368] (-) TimerEvent: {}
+[22.045536] (-) TimerEvent: {}
+[22.146685] (-) TimerEvent: {}
+[22.247854] (-) TimerEvent: {}
+[22.348865] (-) TimerEvent: {}
+[22.449523] (-) TimerEvent: {}
+[22.454710] (vehicle_core) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library libautopilot_node_component.so\x1b[0m\n'}
+[22.549979] (-) TimerEvent: {}
+[22.651573] (-) TimerEvent: {}
+[22.752870] (-) TimerEvent: {}
+[22.854175] (-) TimerEvent: {}
+[22.955283] (-) TimerEvent: {}
+[23.056358] (-) TimerEvent: {}
+[23.157399] (-) TimerEvent: {}
+[23.258330] (-) TimerEvent: {}
+[23.359224] (-) TimerEvent: {}
+[23.460173] (-) TimerEvent: {}
+[23.561134] (-) TimerEvent: {}
+[23.662213] (-) TimerEvent: {}
+[23.763294] (-) TimerEvent: {}
+[23.864430] (-) TimerEvent: {}
+[23.965590] (-) TimerEvent: {}
+[24.066784] (-) TimerEvent: {}
+[24.167929] (-) TimerEvent: {}
+[24.269043] (-) TimerEvent: {}
+[24.299068] (vehicle_core) StdoutLine: {'line': b'[100%] Built target autopilot_node_component\n'}
+[24.324243] (vehicle_core) CommandEnded: {'returncode': 0}
+[24.325642] (vehicle_core) JobProgress: {'identifier': 'vehicle_core', 'progress': 'install'}
+[24.351104] (vehicle_core) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core'], 'cwd': '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('UMS_MOUNTPOINT', '/mnt/ums'), ('GST_V4L2_PREFERRED_FOURCC', 'NV12:YU12:NV16:YUY2'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'avcpp'), ('SSH_CLIENT', '192.168.8.103 62622 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('USB_FUNCS', 'adb'), ('LD_LIBRARY_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/avcpp'), ('OLDPWD', '/home/avcpp/AV-CPP2025'), ('TERM_PROGRAM_VERSION', '1.106.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1001/vscode-ipc-30b71ba1-c494-4d50-8a40-c2475056f836.sock'), ('GST_INSPECT_NO_COLORS', '1'), ('GST_MPP_NO_RGA', '1'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1001/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install'), ('GST_V4L2SRC_MAX_RESOLUTION', '3840x2160'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'avcpp'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', '5'), ('GST_VIDEO_CONVERT_PREFERRED_FORMAT', 'NV12:NV16:I420:YUY2'), ('GST_V4L2SRC_RK_DEVICES', '_mainpath:_selfpath:_bypass:_scale'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/bin/remote-cli:/home/avcpp/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/bundled/scripts/noConfigScripts'), ('XDG_RUNTIME_DIR', '/run/user/1001'), ('GST_GL_PLATFORM', 'egl'), ('GST_DEBUG_NO_COLOR', '1'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('GST_V4L2SRC_DEFAULT_DEVICE', '/dev/video-camera0'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/.noConfigDebugAdapterEndpoints/endpoint-ef25f7e9429dbf34.txt'), ('LANG', 'en_US.UTF-8'), ('PYTHONSTARTUP', '/home/avcpp/.vscode-server/data/User/workspaceStorage/da628a90441345ac74af00bc07084975/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1001/vscode-git-c9ee365bab.sock'), ('TERM_PROGRAM', 'vscode'), ('GST_V4L2_USE_LIBV4L2', '1'), ('UMS_SIZE', '256M'), ('AMENT_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/opt/ros/humble'), ('LC_MESSAGES', 'en_US.UTF-8'), ('SHELL', '/bin/bash'), ('UMS_RO', '0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('UMS_FSTYPE', 'vfat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.8.103 62622 192.168.8.176 22'), ('PYTHONPATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('UMS_MOUNT', '0'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/opt/ros/humble'), ('UMS_FILE', '/userdata/ums_shared.img')]), 'shell': False}
+[24.369410] (-) TimerEvent: {}
+[24.370615] (vehicle_core) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[24.371559] (vehicle_core) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[24.372153] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/ament_index/resource_index/rosidl_interfaces/vehicle_core\n'}
+[24.373499] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/autopilot_command.h\n'}
+[24.373722] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/autopilot_config.h\n'}
+[24.373823] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/autopilot_status.h\n'}
+[24.373966] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_command__functions.h\n'}
+[24.374107] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_command__struct.h\n'}
+[24.374240] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_command__type_support.h\n'}
+[24.374583] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_config__functions.h\n'}
+[24.374762] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_config__struct.h\n'}
+[24.374849] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_config__type_support.h\n'}
+[24.375018] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_status__functions.h\n'}
+[24.375102] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_status__struct.h\n'}
+[24.375227] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_status__type_support.h\n'}
+[24.375357] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_feedback__functions.h\n'}
+[24.375443] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_feedback__struct.h\n'}
+[24.375993] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_feedback__type_support.h\n'}
+[24.376697] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_status__functions.h\n'}
+[24.377143] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_status__struct.h\n'}
+[24.377533] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_status__type_support.h\n'}
+[24.378010] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_target__functions.h\n'}
+[24.378419] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_target__struct.h\n'}
+[24.378815] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_target__type_support.h\n'}
+[24.379209] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/error__functions.h\n'}
+[24.379632] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/error__struct.h\n'}
+[24.380032] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/error__type_support.h\n'}
+[24.380453] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/general_status__functions.h\n'}
+[24.380870] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/general_status__struct.h\n'}
+[24.381297] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/general_status__type_support.h\n'}
+[24.381675] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/imu_status__functions.h\n'}
+[24.382056] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/imu_status__struct.h\n'}
+[24.382433] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/imu_status__type_support.h\n'}
+[24.382808] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/internal_drive_command__functions.h\n'}
+[24.383187] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/internal_drive_command__struct.h\n'}
+[24.383561] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/internal_drive_command__type_support.h\n'}
+[24.383959] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_command__functions.h\n'}
+[24.384349] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_command__struct.h\n'}
+[24.384732] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_command__type_support.h\n'}
+[24.385102] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_status__functions.h\n'}
+[24.385474] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_status__struct.h\n'}
+[24.385848] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_status__type_support.h\n'}
+[24.386224] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/manual_drive_command__functions.h\n'}
+[24.386599] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/manual_drive_command__struct.h\n'}
+[24.386972] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/manual_drive_command__type_support.h\n'}
+[24.387387] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/max_speed__functions.h\n'}
+[24.387982] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/max_speed__struct.h\n'}
+[24.388653] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/max_speed__type_support.h\n'}
+[24.389027] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/perception_profile__functions.h\n'}
+[24.389398] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/perception_profile__struct.h\n'}
+[24.389779] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/perception_profile__type_support.h\n'}
+[24.390154] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/server_init__functions.h\n'}
+[24.390724] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/server_init__struct.h\n'}
+[24.391232] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/server_init__type_support.h\n'}
+[24.391871] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_event__functions.h\n'}
+[24.392420] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_event__struct.h\n'}
+[24.392982] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_event__type_support.h\n'}
+[24.393537] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_mode__functions.h\n'}
+[24.394048] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_mode__struct.h\n'}
+[24.394632] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_mode__type_support.h\n'}
+[24.395189] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/telemetry_data__functions.h\n'}
+[24.395744] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/telemetry_data__struct.h\n'}
+[24.396250] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/telemetry_data__type_support.h\n'}
+[24.396803] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/drive_feedback.h\n'}
+[24.397314] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/drive_status.h\n'}
+[24.397847] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/drive_target.h\n'}
+[24.398300] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/error.h\n'}
+[24.398883] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/general_status.h\n'}
+[24.399421] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/imu_status.h\n'}
+[24.399938] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/internal_drive_command.h\n'}
+[24.400489] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/lights_command.h\n'}
+[24.401047] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/lights_status.h\n'}
+[24.401540] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/manual_drive_command.h\n'}
+[24.402077] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/max_speed.h\n'}
+[24.402686] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/perception_profile.h\n'}
+[24.403250] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/rosidl_generator_c__visibility_control.h\n'}
+[24.403660] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/server_init.h\n'}
+[24.404028] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/state_event.h\n'}
+[24.404408] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/state_mode.h\n'}
+[24.404826] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/telemetry_data.h\n'}
+[24.405400] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/release_internal_control__functions.h\n'}
+[24.405972] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/release_internal_control__struct.h\n'}
+[24.406493] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/release_internal_control__type_support.h\n'}
+[24.407048] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/request_internal_control__functions.h\n'}
+[24.407526] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/request_internal_control__struct.h\n'}
+[24.407930] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/request_internal_control__type_support.h\n'}
+[24.408391] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/set_autopilot_profile__functions.h\n'}
+[24.408921] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/set_autopilot_profile__struct.h\n'}
+[24.409514] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/set_autopilot_profile__type_support.h\n'}
+[24.410021] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/release_internal_control.h\n'}
+[24.410569] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/request_internal_control.h\n'}
+[24.411031] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/set_autopilot_profile.h\n'}
+[24.411411] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/environment/library_path.sh\n'}
+[24.411893] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/environment/library_path.dsv\n'}
+[24.412458] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_command__rosidl_typesupport_fastrtps_c.h\n'}
+[24.412973] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_config__rosidl_typesupport_fastrtps_c.h\n'}
+[24.413516] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_status__rosidl_typesupport_fastrtps_c.h\n'}
+[24.414071] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_feedback__rosidl_typesupport_fastrtps_c.h\n'}
+[24.414539] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_status__rosidl_typesupport_fastrtps_c.h\n'}
+[24.415020] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_target__rosidl_typesupport_fastrtps_c.h\n'}
+[24.415429] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/error__rosidl_typesupport_fastrtps_c.h\n'}
+[24.415827] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/general_status__rosidl_typesupport_fastrtps_c.h\n'}
+[24.416194] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/imu_status__rosidl_typesupport_fastrtps_c.h\n'}
+[24.416680] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/internal_drive_command__rosidl_typesupport_fastrtps_c.h\n'}
+[24.417264] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_command__rosidl_typesupport_fastrtps_c.h\n'}
+[24.417836] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_status__rosidl_typesupport_fastrtps_c.h\n'}
+[24.418405] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/manual_drive_command__rosidl_typesupport_fastrtps_c.h\n'}
+[24.418956] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/max_speed__rosidl_typesupport_fastrtps_c.h\n'}
+[24.419508] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/perception_profile__rosidl_typesupport_fastrtps_c.h\n'}
+[24.420022] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/server_init__rosidl_typesupport_fastrtps_c.h\n'}
+[24.420572] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_event__rosidl_typesupport_fastrtps_c.h\n'}
+[24.421142] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_mode__rosidl_typesupport_fastrtps_c.h\n'}
+[24.421665] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/telemetry_data__rosidl_typesupport_fastrtps_c.h\n'}
+[24.422226] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[24.422705] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/release_internal_control__rosidl_typesupport_fastrtps_c.h\n'}
+[24.423148] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/request_internal_control__rosidl_typesupport_fastrtps_c.h\n'}
+[24.423610] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/set_autopilot_profile__rosidl_typesupport_fastrtps_c.h\n'}
+[24.424079] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/autopilot_command.hpp\n'}
+[24.424650] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/autopilot_config.hpp\n'}
+[24.425147] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/autopilot_status.hpp\n'}
+[24.425647] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_command__builder.hpp\n'}
+[24.426148] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_command__struct.hpp\n'}
+[24.426643] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_command__traits.hpp\n'}
+[24.427142] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_command__type_support.hpp\n'}
+[24.427564] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_config__builder.hpp\n'}
+[24.428022] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_config__struct.hpp\n'}
+[24.428396] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_config__traits.hpp\n'}
+[24.429065] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_config__type_support.hpp\n'}
+[24.429671] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_status__builder.hpp\n'}
+[24.430232] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_status__struct.hpp\n'}
+[24.430740] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_status__traits.hpp\n'}
+[24.431422] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_status__type_support.hpp\n'}
+[24.431837] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_feedback__builder.hpp\n'}
+[24.432364] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_feedback__struct.hpp\n'}
+[24.432894] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_feedback__traits.hpp\n'}
+[24.433466] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_feedback__type_support.hpp\n'}
+[24.433960] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_status__builder.hpp\n'}
+[24.434444] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_status__struct.hpp\n'}
+[24.434877] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_status__traits.hpp\n'}
+[24.435342] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_status__type_support.hpp\n'}
+[24.435816] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_target__builder.hpp\n'}
+[24.436290] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_target__struct.hpp\n'}
+[24.436765] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_target__traits.hpp\n'}
+[24.437151] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_target__type_support.hpp\n'}
+[24.437814] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/error__builder.hpp\n'}
+[24.438277] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/error__struct.hpp\n'}
+[24.438788] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/error__traits.hpp\n'}
+[24.439292] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/error__type_support.hpp\n'}
+[24.439778] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/general_status__builder.hpp\n'}
+[24.440171] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/general_status__struct.hpp\n'}
+[24.440551] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/general_status__traits.hpp\n'}
+[24.440940] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/general_status__type_support.hpp\n'}
+[24.441352] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/imu_status__builder.hpp\n'}
+[24.441731] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/imu_status__struct.hpp\n'}
+[24.442105] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/imu_status__traits.hpp\n'}
+[24.442530] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/imu_status__type_support.hpp\n'}
+[24.442902] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/internal_drive_command__builder.hpp\n'}
+[24.443277] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/internal_drive_command__struct.hpp\n'}
+[24.443650] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/internal_drive_command__traits.hpp\n'}
+[24.444023] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/internal_drive_command__type_support.hpp\n'}
+[24.444451] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_command__builder.hpp\n'}
+[24.445050] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_command__struct.hpp\n'}
+[24.445430] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_command__traits.hpp\n'}
+[24.445807] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_command__type_support.hpp\n'}
+[24.446180] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_status__builder.hpp\n'}
+[24.446589] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_status__struct.hpp\n'}
+[24.446962] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_status__traits.hpp\n'}
+[24.447333] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_status__type_support.hpp\n'}
+[24.447794] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/manual_drive_command__builder.hpp\n'}
+[24.448176] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/manual_drive_command__struct.hpp\n'}
+[24.448550] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/manual_drive_command__traits.hpp\n'}
+[24.448921] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/manual_drive_command__type_support.hpp\n'}
+[24.449294] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/max_speed__builder.hpp\n'}
+[24.449666] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/max_speed__struct.hpp\n'}
+[24.450037] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/max_speed__traits.hpp\n'}
+[24.450405] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/max_speed__type_support.hpp\n'}
+[24.450774] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/perception_profile__builder.hpp\n'}
+[24.451168] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/perception_profile__struct.hpp\n'}
+[24.451544] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/perception_profile__traits.hpp\n'}
+[24.451913] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/perception_profile__type_support.hpp\n'}
+[24.452284] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/server_init__builder.hpp\n'}
+[24.452654] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/server_init__struct.hpp\n'}
+[24.453081] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/server_init__traits.hpp\n'}
+[24.453452] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/server_init__type_support.hpp\n'}
+[24.453822] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_event__builder.hpp\n'}
+[24.454189] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_event__struct.hpp\n'}
+[24.454583] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_event__traits.hpp\n'}
+[24.454955] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_event__type_support.hpp\n'}
+[24.455351] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_mode__builder.hpp\n'}
+[24.455671] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_mode__struct.hpp\n'}
+[24.455777] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_mode__traits.hpp\n'}
+[24.455877] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_mode__type_support.hpp\n'}
+[24.455962] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/telemetry_data__builder.hpp\n'}
+[24.456039] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/telemetry_data__struct.hpp\n'}
+[24.456114] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/telemetry_data__traits.hpp\n'}
+[24.456191] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/telemetry_data__type_support.hpp\n'}
+[24.456266] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/drive_feedback.hpp\n'}
+[24.456343] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/drive_status.hpp\n'}
+[24.456416] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/drive_target.hpp\n'}
+[24.456490] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/error.hpp\n'}
+[24.456566] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/general_status.hpp\n'}
+[24.456641] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/imu_status.hpp\n'}
+[24.456716] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/internal_drive_command.hpp\n'}
+[24.456792] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/lights_command.hpp\n'}
+[24.456865] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/lights_status.hpp\n'}
+[24.456939] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/manual_drive_command.hpp\n'}
+[24.457013] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/max_speed.hpp\n'}
+[24.457087] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/perception_profile.hpp\n'}
+[24.457161] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[24.457235] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/server_init.hpp\n'}
+[24.457320] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/state_event.hpp\n'}
+[24.457395] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/state_mode.hpp\n'}
+[24.457482] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/telemetry_data.hpp\n'}
+[24.457556] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/release_internal_control__builder.hpp\n'}
+[24.457630] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/release_internal_control__struct.hpp\n'}
+[24.457789] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/release_internal_control__traits.hpp\n'}
+[24.457867] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/release_internal_control__type_support.hpp\n'}
+[24.457943] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/request_internal_control__builder.hpp\n'}
+[24.458027] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/request_internal_control__struct.hpp\n'}
+[24.458102] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/request_internal_control__traits.hpp\n'}
+[24.458176] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/request_internal_control__type_support.hpp\n'}
+[24.458250] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/set_autopilot_profile__builder.hpp\n'}
+[24.458323] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/set_autopilot_profile__struct.hpp\n'}
+[24.458396] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/set_autopilot_profile__traits.hpp\n'}
+[24.458469] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/set_autopilot_profile__type_support.hpp\n'}
+[24.458543] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/release_internal_control.hpp\n'}
+[24.458617] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/request_internal_control.hpp\n'}
+[24.458691] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/set_autopilot_profile.hpp\n'}
+[24.458765] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_command__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.458842] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_config__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.458928] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.459002] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_feedback__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.459076] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.459150] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_target__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.459223] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/error__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.459296] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/general_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.459373] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/imu_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.459460] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/internal_drive_command__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.459539] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_command__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.459615] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.459693] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/manual_drive_command__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.459776] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/max_speed__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.459854] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/perception_profile__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.459929] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/server_init__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.460006] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_event__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.460078] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_mode__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.460153] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/telemetry_data__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.460228] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[24.460312] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/release_internal_control__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.460389] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/request_internal_control__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.460465] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/set_autopilot_profile__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[24.460540] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_command__rosidl_typesupport_introspection_c.h\n'}
+[24.460615] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_config__rosidl_typesupport_introspection_c.h\n'}
+[24.460690] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_status__rosidl_typesupport_introspection_c.h\n'}
+[24.460767] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_feedback__rosidl_typesupport_introspection_c.h\n'}
+[24.460841] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_status__rosidl_typesupport_introspection_c.h\n'}
+[24.460916] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_target__rosidl_typesupport_introspection_c.h\n'}
+[24.461006] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/error__rosidl_typesupport_introspection_c.h\n'}
+[24.461087] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/general_status__rosidl_typesupport_introspection_c.h\n'}
+[24.461162] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/imu_status__rosidl_typesupport_introspection_c.h\n'}
+[24.461237] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/internal_drive_command__rosidl_typesupport_introspection_c.h\n'}
+[24.461321] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_command__rosidl_typesupport_introspection_c.h\n'}
+[24.461398] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_status__rosidl_typesupport_introspection_c.h\n'}
+[24.461473] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/manual_drive_command__rosidl_typesupport_introspection_c.h\n'}
+[24.461556] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/max_speed__rosidl_typesupport_introspection_c.h\n'}
+[24.461634] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/perception_profile__rosidl_typesupport_introspection_c.h\n'}
+[24.461716] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/server_init__rosidl_typesupport_introspection_c.h\n'}
+[24.461791] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_event__rosidl_typesupport_introspection_c.h\n'}
+[24.461866] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_mode__rosidl_typesupport_introspection_c.h\n'}
+[24.461939] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/telemetry_data__rosidl_typesupport_introspection_c.h\n'}
+[24.462015] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[24.462089] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/release_internal_control__rosidl_typesupport_introspection_c.h\n'}
+[24.462165] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/request_internal_control__rosidl_typesupport_introspection_c.h\n'}
+[24.462241] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/set_autopilot_profile__rosidl_typesupport_introspection_c.h\n'}
+[24.462316] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_command__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.462392] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_config__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.462466] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/autopilot_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.462540] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_feedback__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.462616] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.462691] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/drive_target__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.462765] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/error__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.462842] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/general_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.462917] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/imu_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.462992] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/internal_drive_command__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.463102] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_command__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.463178] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/lights_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.463261] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/manual_drive_command__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.463337] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/max_speed__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.463412] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/perception_profile__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.463489] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/server_init__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.463565] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_event__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.463641] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/state_mode__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.463716] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/msg/detail/telemetry_data__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.463790] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/release_internal_control__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.463867] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/request_internal_control__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.463943] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/vehicle_core/srv/detail/set_autopilot_profile__rosidl_typesupport_introspection_cpp.hpp\n'}
+[24.464018] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/environment/pythonpath.sh\n'}
+[24.464096] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/environment/pythonpath.dsv\n'}
+[24.464171] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[24.464248] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[24.464329] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[24.464406] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[24.464491] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/__init__.py\n'}
+[24.464569] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/_vehicle_core_s.ep.rosidl_typesupport_c.c\n'}
+[24.464646] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/_vehicle_core_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[24.464723] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/_vehicle_core_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[24.464799] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/libvehicle_core__rosidl_generator_py.so\n'}
+[24.464874] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/__init__.py\n'}
+[24.464950] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_autopilot_command.py\n'}
+[24.465040] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_autopilot_command_s.c\n'}
+[24.465117] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_autopilot_config.py\n'}
+[24.465191] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_autopilot_config_s.c\n'}
+[24.465265] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_autopilot_status.py\n'}
+[24.465339] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_autopilot_status_s.c\n'}
+[24.465412] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_drive_feedback.py\n'}
+[24.465485] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_drive_feedback_s.c\n'}
+[24.465557] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_drive_status.py\n'}
+[24.465632] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_drive_status_s.c\n'}
+[24.465706] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_drive_target.py\n'}
+[24.465778] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_drive_target_s.c\n'}
+[24.465850] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_error.py\n'}
+[24.465922] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_error_s.c\n'}
+[24.466001] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_general_status.py\n'}
+[24.466075] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_general_status_s.c\n'}
+[24.466148] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_imu_status.py\n'}
+[24.466223] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_imu_status_s.c\n'}
+[24.466298] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_internal_drive_command.py\n'}
+[24.466373] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_internal_drive_command_s.c\n'}
+[24.466450] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_lights_command.py\n'}
+[24.466522] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_lights_command_s.c\n'}
+[24.466600] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_lights_status.py\n'}
+[24.466677] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_lights_status_s.c\n'}
+[24.466751] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_manual_drive_command.py\n'}
+[24.466827] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_manual_drive_command_s.c\n'}
+[24.466901] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_max_speed.py\n'}
+[24.466975] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_max_speed_s.c\n'}
+[24.467055] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_perception_profile.py\n'}
+[24.467138] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_perception_profile_s.c\n'}
+[24.467213] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_server_init.py\n'}
+[24.467289] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_server_init_s.c\n'}
+[24.467364] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_state_event.py\n'}
+[24.467439] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_state_event_s.c\n'}
+[24.467519] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_state_mode.py\n'}
+[24.467593] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_state_mode_s.c\n'}
+[24.467683] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_telemetry_data.py\n'}
+[24.467761] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg/_telemetry_data_s.c\n'}
+[24.467834] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/srv/__init__.py\n'}
+[24.467906] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/srv/_release_internal_control.py\n'}
+[24.467979] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/srv/_release_internal_control_s.c\n'}
+[24.468052] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/srv/_request_internal_control.py\n'}
+[24.468125] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/srv/_request_internal_control_s.c\n'}
+[24.468196] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/srv/_set_autopilot_profile.py\n'}
+[24.468269] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/srv/_set_autopilot_profile_s.c\n'}
+[24.468341] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/vehicle_core_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[24.468418] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/vehicle_core_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[24.468492] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/vehicle_core_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[24.468568] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/vehicle_core_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[24.468643] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/vehicle_core_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[24.468717] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/vehicle_core_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[24.468799] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/DriveTarget.idl\n'}
+[24.468876] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/InternalDriveCommand.idl\n'}
+[24.468955] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/ManualDriveCommand.idl\n'}
+[24.469027] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/LightsCommand.idl\n'}
+[24.469109] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/MaxSpeed.idl\n'}
+[24.469182] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/AutopilotCommand.idl\n'}
+[24.469253] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/LightsStatus.idl\n'}
+[24.469324] (-) TimerEvent: {}
+[24.469532] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/GeneralStatus.idl\n'}
+[24.469625] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/DriveStatus.idl\n'}
+[24.469701] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/AutopilotStatus.idl\n'}
+[24.469775] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/TelemetryData.idl\n'}
+[24.469848] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/Error.idl\n'}
+[24.469921] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/ServerInit.idl\n'}
+[24.469993] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/AutopilotConfig.idl\n'}
+[24.470067] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/PerceptionProfile.idl\n'}
+[24.470139] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/StateMode.idl\n'}
+[24.470211] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/StateEvent.idl\n'}
+[24.470282] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/DriveFeedback.idl\n'}
+[24.470355] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/IMUStatus.idl\n'}
+[24.470427] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/srv/RequestInternalControl.idl\n'}
+[24.470501] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/srv/ReleaseInternalControl.idl\n'}
+[24.470573] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/srv/SetAutopilotProfile.idl\n'}
+[24.470645] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/DriveTarget.msg\n'}
+[24.470717] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/InternalDriveCommand.msg\n'}
+[24.470788] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/ManualDriveCommand.msg\n'}
+[24.470860] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/LightsCommand.msg\n'}
+[24.470941] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/MaxSpeed.msg\n'}
+[24.471026] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/AutopilotCommand.msg\n'}
+[24.471101] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/LightsStatus.msg\n'}
+[24.471177] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/GeneralStatus.msg\n'}
+[24.471252] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/DriveStatus.msg\n'}
+[24.471326] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/AutopilotStatus.msg\n'}
+[24.471401] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/TelemetryData.msg\n'}
+[24.471482] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/Error.msg\n'}
+[24.471557] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/ServerInit.msg\n'}
+[24.471634] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/AutopilotConfig.msg\n'}
+[24.471708] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/PerceptionProfile.msg\n'}
+[24.471783] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/StateMode.msg\n'}
+[24.471857] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/StateEvent.msg\n'}
+[24.471931] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/DriveFeedback.msg\n'}
+[24.472017] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/msg/IMUStatus.msg\n'}
+[24.472090] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/srv/RequestInternalControl.srv\n'}
+[24.472165] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/srv/RequestInternalControl_Request.msg\n'}
+[24.472239] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/srv/RequestInternalControl_Response.msg\n'}
+[24.472313] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/srv/ReleaseInternalControl.srv\n'}
+[24.472388] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/srv/ReleaseInternalControl_Request.msg\n'}
+[24.472462] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/srv/ReleaseInternalControl_Response.msg\n'}
+[24.472535] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/srv/SetAutopilotProfile.srv\n'}
+[24.472611] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/srv/SetAutopilotProfile_Request.msg\n'}
+[24.472685] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/srv/SetAutopilotProfile_Response.msg\n'}
+[24.472765] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/I2C/BNO055.hpp\n'}
+[24.472839] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/I2C/DriveSubsys.hpp\n'}
+[24.472911] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/I2C/I2CBus.hpp\n'}
+[24.472989] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/I2C/I2CBusRegistry.hpp\n'}
+[24.473063] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/I2C/I2CDevice.hpp\n'}
+[24.473142] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/I2C/LightingSubsys.hpp\n'}
+[24.473219] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/KmlPathLoader.hpp\n'}
+[24.473294] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/PurePursuit.hpp\n'}
+[24.473368] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/UART/GtU7Gps.hpp\n'}
+[24.473444] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/autopilot_node.hpp\n'}
+[24.473518] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/drive_arbiter_node.hpp\n'}
+[24.473594] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/gst_camera_node.hpp\n'}
+[24.473668] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/gt_u7_gps_node.hpp\n'}
+[24.473742] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/heading_calibrator_node.hpp\n'}
+[24.473816] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/i2c_bridge_node.hpp\n'}
+[24.473898] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/state_manager.hpp\n'}
+[24.473972] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/include/vehicle_core/tcp_server_node.hpp\n'}
+[24.474048] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/data/Vehicle_Path.kml\n'}
+[24.474120] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/libstate_manager_node_component.so\n'}
+[24.474195] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/libheading_calibrator_node_component.so\n'}
+[24.474269] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/libdrive_arbiter_node_component.so\n'}
+[24.474353] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/libgt_u7_gps_node_component.so\n'}
+[24.474432] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/libtcp_server_node_component.so\n'}
+[24.474506] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/libi2c_bridge_node.so\n'}
+[24.474581] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/libautopilot_node_component.so\n'}
+[24.474671] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/libgst_camera_component.so\n'}
+[24.474744] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/vehicle_core/vehicle_core_container\n'}
+[24.474819] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cfg/autopilot.yaml\n'}
+[24.474893] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cfg/camera_gscam.yaml\n'}
+[24.474967] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cfg/drive_arbiter.yaml\n'}
+[24.475042] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cfg/ekf.yaml\n'}
+[24.475116] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cfg/gt_u7_gps.yaml\n'}
+[24.475189] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cfg/heading_calib.yaml\n'}
+[24.475262] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cfg/i2c_bridge.yaml\n'}
+[24.475334] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cfg/navsat.yaml\n'}
+[24.475410] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cfg/state_manager.yaml\n'}
+[24.475869] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/launch/bringup.launch.py\n'}
+[24.476407] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/ament_index/resource_index/package_run_dependencies/vehicle_core\n'}
+[24.476911] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/ament_index/resource_index/parent_prefix_path/vehicle_core\n'}
+[24.477705] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/environment/ament_prefix_path.sh\n'}
+[24.478183] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/environment/ament_prefix_path.dsv\n'}
+[24.478640] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/environment/path.sh\n'}
+[24.479045] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/environment/path.dsv\n'}
+[24.479502] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/local_setup.bash\n'}
+[24.479924] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/local_setup.sh\n'}
+[24.480295] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/local_setup.zsh\n'}
+[24.480607] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/local_setup.dsv\n'}
+[24.480706] (vehicle_core) StdoutLine: {'line': b'-- Symlinking: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/package.dsv\n'}
+[24.480808] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/ament_index/resource_index/packages/vehicle_core\n'}
+[24.480895] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/ament_index/resource_index/rclcpp_components/vehicle_core\n'}
+[24.480971] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/rosidl_cmake-extras.cmake\n'}
+[24.481061] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[24.481140] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[24.481215] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[24.481289] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[24.481364] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[24.481436] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[24.481510] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/vehicle_coreConfig.cmake\n'}
+[24.481582] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/vehicle_coreConfig-version.cmake\n'}
+[24.481667] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/package.xml\n'}
+[24.481741] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/libvehicle_core__rosidl_generator_c.so\n'}
+[24.481813] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/libvehicle_core__rosidl_typesupport_fastrtps_c.so\n'}
+[24.481886] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/libvehicle_core__rosidl_typesupport_fastrtps_cpp.so\n'}
+[24.481959] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/libvehicle_core__rosidl_typesupport_introspection_c.so\n'}
+[24.482032] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/libvehicle_core__rosidl_typesupport_c.so\n'}
+[24.482103] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/libvehicle_core__rosidl_typesupport_introspection_cpp.so\n'}
+[24.482176] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/libvehicle_core__rosidl_typesupport_cpp.so\n'}
+[24.550874] (vehicle_core) StdoutLine: {'line': b"Listing '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core'...\n"}
+[24.551367] (vehicle_core) StdoutLine: {'line': b"Listing '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/msg'...\n"}
+[24.551470] (vehicle_core) StdoutLine: {'line': b"Listing '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core/srv'...\n"}
+[24.565530] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/libvehicle_core__rosidl_generator_py.so\n'}
+[24.566858] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/export_vehicle_core__rosidl_generator_cExport.cmake\n'}
+[24.567296] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/export_vehicle_core__rosidl_generator_cExport-noconfig.cmake\n'}
+[24.567688] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/export_vehicle_core__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[24.568068] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/export_vehicle_core__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[24.568435] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/export_vehicle_core__rosidl_generator_cppExport.cmake\n'}
+[24.568671] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/export_vehicle_core__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[24.568778] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/export_vehicle_core__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[24.568864] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/vehicle_core__rosidl_typesupport_introspection_cExport.cmake\n'}
+[24.568941] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/vehicle_core__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[24.569051] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/vehicle_core__rosidl_typesupport_cExport.cmake\n'}
+[24.569132] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/vehicle_core__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[24.569211] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/vehicle_core__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[24.569290] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/vehicle_core__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[24.569366] (-) TimerEvent: {}
+[24.569583] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/vehicle_core__rosidl_typesupport_cppExport.cmake\n'}
+[24.569676] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/vehicle_core__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[24.569757] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/export_vehicle_core__rosidl_generator_pyExport.cmake\n'}
+[24.569834] (vehicle_core) StdoutLine: {'line': b'-- Up-to-date: /home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/share/vehicle_core/cmake/export_vehicle_core__rosidl_generator_pyExport-noconfig.cmake\n'}
+[24.572266] (vehicle_core) CommandEnded: {'returncode': 0}
+[24.651815] (vehicle_core) JobEnded: {'identifier': 'vehicle_core', 'rc': 0}
+[24.653146] (-) EventReactorShutdown: {}

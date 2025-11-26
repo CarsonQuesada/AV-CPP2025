@@ -1,1 +1,0 @@
-/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__rosidl_typesupport_introspection_cpp.hpp

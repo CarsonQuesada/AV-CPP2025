@@ -55,7 +55,7 @@ add_library(vehicle_core::vehicle_core__rosidl_generator_c SHARED IMPORTED)
 
 set_target_properties(vehicle_core::vehicle_core__rosidl_generator_c PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include/vehicle_core"
-  INTERFACE_LINK_LIBRARIES "builtin_interfaces::builtin_interfaces__rosidl_generator_c;rosidl_runtime_c::rosidl_runtime_c;rosidl_typesupport_interface::rosidl_typesupport_interface;rcutils::rcutils"
+  INTERFACE_LINK_LIBRARIES "builtin_interfaces::builtin_interfaces__rosidl_generator_c;std_msgs::std_msgs__rosidl_generator_c;rosidl_runtime_c::rosidl_runtime_c;rosidl_typesupport_interface::rosidl_typesupport_interface;rcutils::rcutils"
 )
 
 if(CMAKE_VERSION VERSION_LESS 2.8.12)

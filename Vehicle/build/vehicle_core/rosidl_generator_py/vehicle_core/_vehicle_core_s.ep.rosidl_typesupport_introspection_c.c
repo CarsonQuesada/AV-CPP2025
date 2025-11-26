@@ -163,39 +163,39 @@ _register_msg_type__msg__drive_target(PyObject * pymodule)
 // #include "rosidl_runtime_c/service_type_support_struct.h"
 // already included above
 // #include "rosidl_runtime_c/action_type_support_struct.h"
-#include "vehicle_core/msg/detail/autopilot_drive_command__type_support.h"
-#include "vehicle_core/msg/detail/autopilot_drive_command__struct.h"
-#include "vehicle_core/msg/detail/autopilot_drive_command__functions.h"
+#include "vehicle_core/msg/detail/internal_drive_command__type_support.h"
+#include "vehicle_core/msg/detail/internal_drive_command__struct.h"
+#include "vehicle_core/msg/detail/internal_drive_command__functions.h"
 
-static void * vehicle_core__msg__autopilot_drive_command__create_ros_message(void)
+static void * vehicle_core__msg__internal_drive_command__create_ros_message(void)
 {
-  return vehicle_core__msg__AutopilotDriveCommand__create();
+  return vehicle_core__msg__InternalDriveCommand__create();
 }
 
-static void vehicle_core__msg__autopilot_drive_command__destroy_ros_message(void * raw_ros_message)
+static void vehicle_core__msg__internal_drive_command__destroy_ros_message(void * raw_ros_message)
 {
-  vehicle_core__msg__AutopilotDriveCommand * ros_message = (vehicle_core__msg__AutopilotDriveCommand *)raw_ros_message;
-  vehicle_core__msg__AutopilotDriveCommand__destroy(ros_message);
+  vehicle_core__msg__InternalDriveCommand * ros_message = (vehicle_core__msg__InternalDriveCommand *)raw_ros_message;
+  vehicle_core__msg__InternalDriveCommand__destroy(ros_message);
 }
 
 ROSIDL_GENERATOR_C_IMPORT
-bool vehicle_core__msg__autopilot_drive_command__convert_from_py(PyObject * _pymsg, void * ros_message);
+bool vehicle_core__msg__internal_drive_command__convert_from_py(PyObject * _pymsg, void * ros_message);
 ROSIDL_GENERATOR_C_IMPORT
-PyObject * vehicle_core__msg__autopilot_drive_command__convert_to_py(void * raw_ros_message);
+PyObject * vehicle_core__msg__internal_drive_command__convert_to_py(void * raw_ros_message);
 
 
 ROSIDL_GENERATOR_C_IMPORT
 const rosidl_message_type_support_t *
-ROSIDL_GET_MSG_TYPE_SUPPORT(vehicle_core, msg, AutopilotDriveCommand);
+ROSIDL_GET_MSG_TYPE_SUPPORT(vehicle_core, msg, InternalDriveCommand);
 
 int8_t
-_register_msg_type__msg__autopilot_drive_command(PyObject * pymodule)
+_register_msg_type__msg__internal_drive_command(PyObject * pymodule)
 {
   int8_t err;
 
   PyObject * pyobject_create_ros_message = NULL;
   pyobject_create_ros_message = PyCapsule_New(
-    (void *)&vehicle_core__msg__autopilot_drive_command__create_ros_message,
+    (void *)&vehicle_core__msg__internal_drive_command__create_ros_message,
     NULL, NULL);
   if (!pyobject_create_ros_message) {
     // previously added objects will be removed when the module is destroyed
@@ -203,7 +203,7 @@ _register_msg_type__msg__autopilot_drive_command(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "create_ros_message_msg__msg__autopilot_drive_command",
+    "create_ros_message_msg__msg__internal_drive_command",
     pyobject_create_ros_message);
   if (err) {
     // the created capsule needs to be decremented
@@ -214,7 +214,7 @@ _register_msg_type__msg__autopilot_drive_command(PyObject * pymodule)
 
   PyObject * pyobject_destroy_ros_message = NULL;
   pyobject_destroy_ros_message = PyCapsule_New(
-    (void *)&vehicle_core__msg__autopilot_drive_command__destroy_ros_message,
+    (void *)&vehicle_core__msg__internal_drive_command__destroy_ros_message,
     NULL, NULL);
   if (!pyobject_destroy_ros_message) {
     // previously added objects will be removed when the module is destroyed
@@ -222,7 +222,7 @@ _register_msg_type__msg__autopilot_drive_command(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "destroy_ros_message_msg__msg__autopilot_drive_command",
+    "destroy_ros_message_msg__msg__internal_drive_command",
     pyobject_destroy_ros_message);
   if (err) {
     // the created capsule needs to be decremented
@@ -233,7 +233,7 @@ _register_msg_type__msg__autopilot_drive_command(PyObject * pymodule)
 
   PyObject * pyobject_convert_from_py = NULL;
   pyobject_convert_from_py = PyCapsule_New(
-    (void *)&vehicle_core__msg__autopilot_drive_command__convert_from_py,
+    (void *)&vehicle_core__msg__internal_drive_command__convert_from_py,
     NULL, NULL);
   if (!pyobject_convert_from_py) {
     // previously added objects will be removed when the module is destroyed
@@ -241,7 +241,7 @@ _register_msg_type__msg__autopilot_drive_command(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "convert_from_py_msg__msg__autopilot_drive_command",
+    "convert_from_py_msg__msg__internal_drive_command",
     pyobject_convert_from_py);
   if (err) {
     // the created capsule needs to be decremented
@@ -252,7 +252,7 @@ _register_msg_type__msg__autopilot_drive_command(PyObject * pymodule)
 
   PyObject * pyobject_convert_to_py = NULL;
   pyobject_convert_to_py = PyCapsule_New(
-    (void *)&vehicle_core__msg__autopilot_drive_command__convert_to_py,
+    (void *)&vehicle_core__msg__internal_drive_command__convert_to_py,
     NULL, NULL);
   if (!pyobject_convert_to_py) {
     // previously added objects will be removed when the module is destroyed
@@ -260,7 +260,7 @@ _register_msg_type__msg__autopilot_drive_command(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "convert_to_py_msg__msg__autopilot_drive_command",
+    "convert_to_py_msg__msg__internal_drive_command",
     pyobject_convert_to_py);
   if (err) {
     // the created capsule needs to be decremented
@@ -271,7 +271,7 @@ _register_msg_type__msg__autopilot_drive_command(PyObject * pymodule)
 
   PyObject * pyobject_type_support = NULL;
   pyobject_type_support = PyCapsule_New(
-    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(vehicle_core, msg, AutopilotDriveCommand),
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(vehicle_core, msg, InternalDriveCommand),
     NULL, NULL);
   if (!pyobject_type_support) {
     // previously added objects will be removed when the module is destroyed
@@ -279,7 +279,7 @@ _register_msg_type__msg__autopilot_drive_command(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "type_support_msg__msg__autopilot_drive_command",
+    "type_support_msg__msg__internal_drive_command",
     pyobject_type_support);
   if (err) {
     // the created capsule needs to be decremented
@@ -2526,6 +2526,765 @@ _register_msg_type__msg__drive_feedback(PyObject * pymodule)
 // #include "rosidl_runtime_c/service_type_support_struct.h"
 // already included above
 // #include "rosidl_runtime_c/action_type_support_struct.h"
+#include "vehicle_core/msg/detail/imu_status__type_support.h"
+#include "vehicle_core/msg/detail/imu_status__struct.h"
+#include "vehicle_core/msg/detail/imu_status__functions.h"
+
+static void * vehicle_core__msg__imu_status__create_ros_message(void)
+{
+  return vehicle_core__msg__IMUStatus__create();
+}
+
+static void vehicle_core__msg__imu_status__destroy_ros_message(void * raw_ros_message)
+{
+  vehicle_core__msg__IMUStatus * ros_message = (vehicle_core__msg__IMUStatus *)raw_ros_message;
+  vehicle_core__msg__IMUStatus__destroy(ros_message);
+}
+
+ROSIDL_GENERATOR_C_IMPORT
+bool vehicle_core__msg__imu_status__convert_from_py(PyObject * _pymsg, void * ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * vehicle_core__msg__imu_status__convert_to_py(void * raw_ros_message);
+
+
+ROSIDL_GENERATOR_C_IMPORT
+const rosidl_message_type_support_t *
+ROSIDL_GET_MSG_TYPE_SUPPORT(vehicle_core, msg, IMUStatus);
+
+int8_t
+_register_msg_type__msg__imu_status(PyObject * pymodule)
+{
+  int8_t err;
+
+  PyObject * pyobject_create_ros_message = NULL;
+  pyobject_create_ros_message = PyCapsule_New(
+    (void *)&vehicle_core__msg__imu_status__create_ros_message,
+    NULL, NULL);
+  if (!pyobject_create_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "create_ros_message_msg__msg__imu_status",
+    pyobject_create_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_create_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_destroy_ros_message = NULL;
+  pyobject_destroy_ros_message = PyCapsule_New(
+    (void *)&vehicle_core__msg__imu_status__destroy_ros_message,
+    NULL, NULL);
+  if (!pyobject_destroy_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "destroy_ros_message_msg__msg__imu_status",
+    pyobject_destroy_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_destroy_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_from_py = NULL;
+  pyobject_convert_from_py = PyCapsule_New(
+    (void *)&vehicle_core__msg__imu_status__convert_from_py,
+    NULL, NULL);
+  if (!pyobject_convert_from_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_from_py_msg__msg__imu_status",
+    pyobject_convert_from_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_from_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_to_py = NULL;
+  pyobject_convert_to_py = PyCapsule_New(
+    (void *)&vehicle_core__msg__imu_status__convert_to_py,
+    NULL, NULL);
+  if (!pyobject_convert_to_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_to_py_msg__msg__imu_status",
+    pyobject_convert_to_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_to_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(vehicle_core, msg, IMUStatus),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_msg__msg__imu_status",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+// already included above
+// #include <stdbool.h>
+// already included above
+// #include <stdint.h>
+// already included above
+// #include "rosidl_runtime_c/visibility_control.h"
+// already included above
+// #include "rosidl_runtime_c/message_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/service_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/action_type_support_struct.h"
+#include "vehicle_core/srv/detail/request_internal_control__type_support.h"
+#include "vehicle_core/srv/detail/request_internal_control__struct.h"
+#include "vehicle_core/srv/detail/request_internal_control__functions.h"
+
+static void * vehicle_core__srv__request_internal_control__request__create_ros_message(void)
+{
+  return vehicle_core__srv__RequestInternalControl_Request__create();
+}
+
+static void vehicle_core__srv__request_internal_control__request__destroy_ros_message(void * raw_ros_message)
+{
+  vehicle_core__srv__RequestInternalControl_Request * ros_message = (vehicle_core__srv__RequestInternalControl_Request *)raw_ros_message;
+  vehicle_core__srv__RequestInternalControl_Request__destroy(ros_message);
+}
+
+ROSIDL_GENERATOR_C_IMPORT
+bool vehicle_core__srv__request_internal_control__request__convert_from_py(PyObject * _pymsg, void * ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * vehicle_core__srv__request_internal_control__request__convert_to_py(void * raw_ros_message);
+
+
+ROSIDL_GENERATOR_C_IMPORT
+const rosidl_message_type_support_t *
+ROSIDL_GET_MSG_TYPE_SUPPORT(vehicle_core, srv, RequestInternalControl_Request);
+
+int8_t
+_register_msg_type__srv__request_internal_control__request(PyObject * pymodule)
+{
+  int8_t err;
+
+  PyObject * pyobject_create_ros_message = NULL;
+  pyobject_create_ros_message = PyCapsule_New(
+    (void *)&vehicle_core__srv__request_internal_control__request__create_ros_message,
+    NULL, NULL);
+  if (!pyobject_create_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "create_ros_message_msg__srv__request_internal_control__request",
+    pyobject_create_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_create_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_destroy_ros_message = NULL;
+  pyobject_destroy_ros_message = PyCapsule_New(
+    (void *)&vehicle_core__srv__request_internal_control__request__destroy_ros_message,
+    NULL, NULL);
+  if (!pyobject_destroy_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "destroy_ros_message_msg__srv__request_internal_control__request",
+    pyobject_destroy_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_destroy_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_from_py = NULL;
+  pyobject_convert_from_py = PyCapsule_New(
+    (void *)&vehicle_core__srv__request_internal_control__request__convert_from_py,
+    NULL, NULL);
+  if (!pyobject_convert_from_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_from_py_msg__srv__request_internal_control__request",
+    pyobject_convert_from_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_from_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_to_py = NULL;
+  pyobject_convert_to_py = PyCapsule_New(
+    (void *)&vehicle_core__srv__request_internal_control__request__convert_to_py,
+    NULL, NULL);
+  if (!pyobject_convert_to_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_to_py_msg__srv__request_internal_control__request",
+    pyobject_convert_to_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_to_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(vehicle_core, srv, RequestInternalControl_Request),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_msg__srv__request_internal_control__request",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+// already included above
+// #include <stdbool.h>
+// already included above
+// #include <stdint.h>
+// already included above
+// #include "rosidl_runtime_c/visibility_control.h"
+// already included above
+// #include "rosidl_runtime_c/message_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/service_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/action_type_support_struct.h"
+// already included above
+// #include "vehicle_core/srv/detail/request_internal_control__type_support.h"
+// already included above
+// #include "vehicle_core/srv/detail/request_internal_control__struct.h"
+// already included above
+// #include "vehicle_core/srv/detail/request_internal_control__functions.h"
+
+static void * vehicle_core__srv__request_internal_control__response__create_ros_message(void)
+{
+  return vehicle_core__srv__RequestInternalControl_Response__create();
+}
+
+static void vehicle_core__srv__request_internal_control__response__destroy_ros_message(void * raw_ros_message)
+{
+  vehicle_core__srv__RequestInternalControl_Response * ros_message = (vehicle_core__srv__RequestInternalControl_Response *)raw_ros_message;
+  vehicle_core__srv__RequestInternalControl_Response__destroy(ros_message);
+}
+
+ROSIDL_GENERATOR_C_IMPORT
+bool vehicle_core__srv__request_internal_control__response__convert_from_py(PyObject * _pymsg, void * ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * vehicle_core__srv__request_internal_control__response__convert_to_py(void * raw_ros_message);
+
+
+ROSIDL_GENERATOR_C_IMPORT
+const rosidl_message_type_support_t *
+ROSIDL_GET_MSG_TYPE_SUPPORT(vehicle_core, srv, RequestInternalControl_Response);
+
+int8_t
+_register_msg_type__srv__request_internal_control__response(PyObject * pymodule)
+{
+  int8_t err;
+
+  PyObject * pyobject_create_ros_message = NULL;
+  pyobject_create_ros_message = PyCapsule_New(
+    (void *)&vehicle_core__srv__request_internal_control__response__create_ros_message,
+    NULL, NULL);
+  if (!pyobject_create_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "create_ros_message_msg__srv__request_internal_control__response",
+    pyobject_create_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_create_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_destroy_ros_message = NULL;
+  pyobject_destroy_ros_message = PyCapsule_New(
+    (void *)&vehicle_core__srv__request_internal_control__response__destroy_ros_message,
+    NULL, NULL);
+  if (!pyobject_destroy_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "destroy_ros_message_msg__srv__request_internal_control__response",
+    pyobject_destroy_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_destroy_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_from_py = NULL;
+  pyobject_convert_from_py = PyCapsule_New(
+    (void *)&vehicle_core__srv__request_internal_control__response__convert_from_py,
+    NULL, NULL);
+  if (!pyobject_convert_from_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_from_py_msg__srv__request_internal_control__response",
+    pyobject_convert_from_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_from_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_to_py = NULL;
+  pyobject_convert_to_py = PyCapsule_New(
+    (void *)&vehicle_core__srv__request_internal_control__response__convert_to_py,
+    NULL, NULL);
+  if (!pyobject_convert_to_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_to_py_msg__srv__request_internal_control__response",
+    pyobject_convert_to_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_to_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(vehicle_core, srv, RequestInternalControl_Response),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_msg__srv__request_internal_control__response",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+ROSIDL_GENERATOR_C_IMPORT
+const rosidl_service_type_support_t *
+ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(rosidl_typesupport_c, vehicle_core, srv, RequestInternalControl)();
+
+int8_t
+_register_srv_type__srv__request_internal_control(PyObject * pymodule)
+{
+  int8_t err;
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(rosidl_typesupport_c, vehicle_core, srv, RequestInternalControl)(),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_srv__srv__request_internal_control",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+// already included above
+// #include <stdbool.h>
+// already included above
+// #include <stdint.h>
+// already included above
+// #include "rosidl_runtime_c/visibility_control.h"
+// already included above
+// #include "rosidl_runtime_c/message_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/service_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/action_type_support_struct.h"
+#include "vehicle_core/srv/detail/release_internal_control__type_support.h"
+#include "vehicle_core/srv/detail/release_internal_control__struct.h"
+#include "vehicle_core/srv/detail/release_internal_control__functions.h"
+
+static void * vehicle_core__srv__release_internal_control__request__create_ros_message(void)
+{
+  return vehicle_core__srv__ReleaseInternalControl_Request__create();
+}
+
+static void vehicle_core__srv__release_internal_control__request__destroy_ros_message(void * raw_ros_message)
+{
+  vehicle_core__srv__ReleaseInternalControl_Request * ros_message = (vehicle_core__srv__ReleaseInternalControl_Request *)raw_ros_message;
+  vehicle_core__srv__ReleaseInternalControl_Request__destroy(ros_message);
+}
+
+ROSIDL_GENERATOR_C_IMPORT
+bool vehicle_core__srv__release_internal_control__request__convert_from_py(PyObject * _pymsg, void * ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * vehicle_core__srv__release_internal_control__request__convert_to_py(void * raw_ros_message);
+
+
+ROSIDL_GENERATOR_C_IMPORT
+const rosidl_message_type_support_t *
+ROSIDL_GET_MSG_TYPE_SUPPORT(vehicle_core, srv, ReleaseInternalControl_Request);
+
+int8_t
+_register_msg_type__srv__release_internal_control__request(PyObject * pymodule)
+{
+  int8_t err;
+
+  PyObject * pyobject_create_ros_message = NULL;
+  pyobject_create_ros_message = PyCapsule_New(
+    (void *)&vehicle_core__srv__release_internal_control__request__create_ros_message,
+    NULL, NULL);
+  if (!pyobject_create_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "create_ros_message_msg__srv__release_internal_control__request",
+    pyobject_create_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_create_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_destroy_ros_message = NULL;
+  pyobject_destroy_ros_message = PyCapsule_New(
+    (void *)&vehicle_core__srv__release_internal_control__request__destroy_ros_message,
+    NULL, NULL);
+  if (!pyobject_destroy_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "destroy_ros_message_msg__srv__release_internal_control__request",
+    pyobject_destroy_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_destroy_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_from_py = NULL;
+  pyobject_convert_from_py = PyCapsule_New(
+    (void *)&vehicle_core__srv__release_internal_control__request__convert_from_py,
+    NULL, NULL);
+  if (!pyobject_convert_from_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_from_py_msg__srv__release_internal_control__request",
+    pyobject_convert_from_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_from_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_to_py = NULL;
+  pyobject_convert_to_py = PyCapsule_New(
+    (void *)&vehicle_core__srv__release_internal_control__request__convert_to_py,
+    NULL, NULL);
+  if (!pyobject_convert_to_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_to_py_msg__srv__release_internal_control__request",
+    pyobject_convert_to_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_to_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(vehicle_core, srv, ReleaseInternalControl_Request),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_msg__srv__release_internal_control__request",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+// already included above
+// #include <stdbool.h>
+// already included above
+// #include <stdint.h>
+// already included above
+// #include "rosidl_runtime_c/visibility_control.h"
+// already included above
+// #include "rosidl_runtime_c/message_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/service_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/action_type_support_struct.h"
+// already included above
+// #include "vehicle_core/srv/detail/release_internal_control__type_support.h"
+// already included above
+// #include "vehicle_core/srv/detail/release_internal_control__struct.h"
+// already included above
+// #include "vehicle_core/srv/detail/release_internal_control__functions.h"
+
+static void * vehicle_core__srv__release_internal_control__response__create_ros_message(void)
+{
+  return vehicle_core__srv__ReleaseInternalControl_Response__create();
+}
+
+static void vehicle_core__srv__release_internal_control__response__destroy_ros_message(void * raw_ros_message)
+{
+  vehicle_core__srv__ReleaseInternalControl_Response * ros_message = (vehicle_core__srv__ReleaseInternalControl_Response *)raw_ros_message;
+  vehicle_core__srv__ReleaseInternalControl_Response__destroy(ros_message);
+}
+
+ROSIDL_GENERATOR_C_IMPORT
+bool vehicle_core__srv__release_internal_control__response__convert_from_py(PyObject * _pymsg, void * ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * vehicle_core__srv__release_internal_control__response__convert_to_py(void * raw_ros_message);
+
+
+ROSIDL_GENERATOR_C_IMPORT
+const rosidl_message_type_support_t *
+ROSIDL_GET_MSG_TYPE_SUPPORT(vehicle_core, srv, ReleaseInternalControl_Response);
+
+int8_t
+_register_msg_type__srv__release_internal_control__response(PyObject * pymodule)
+{
+  int8_t err;
+
+  PyObject * pyobject_create_ros_message = NULL;
+  pyobject_create_ros_message = PyCapsule_New(
+    (void *)&vehicle_core__srv__release_internal_control__response__create_ros_message,
+    NULL, NULL);
+  if (!pyobject_create_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "create_ros_message_msg__srv__release_internal_control__response",
+    pyobject_create_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_create_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_destroy_ros_message = NULL;
+  pyobject_destroy_ros_message = PyCapsule_New(
+    (void *)&vehicle_core__srv__release_internal_control__response__destroy_ros_message,
+    NULL, NULL);
+  if (!pyobject_destroy_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "destroy_ros_message_msg__srv__release_internal_control__response",
+    pyobject_destroy_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_destroy_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_from_py = NULL;
+  pyobject_convert_from_py = PyCapsule_New(
+    (void *)&vehicle_core__srv__release_internal_control__response__convert_from_py,
+    NULL, NULL);
+  if (!pyobject_convert_from_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_from_py_msg__srv__release_internal_control__response",
+    pyobject_convert_from_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_from_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_to_py = NULL;
+  pyobject_convert_to_py = PyCapsule_New(
+    (void *)&vehicle_core__srv__release_internal_control__response__convert_to_py,
+    NULL, NULL);
+  if (!pyobject_convert_to_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_to_py_msg__srv__release_internal_control__response",
+    pyobject_convert_to_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_to_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(vehicle_core, srv, ReleaseInternalControl_Response),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_msg__srv__release_internal_control__response",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+ROSIDL_GENERATOR_C_IMPORT
+const rosidl_service_type_support_t *
+ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(rosidl_typesupport_c, vehicle_core, srv, ReleaseInternalControl)();
+
+int8_t
+_register_srv_type__srv__release_internal_control(PyObject * pymodule)
+{
+  int8_t err;
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(rosidl_typesupport_c, vehicle_core, srv, ReleaseInternalControl)(),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_srv__srv__release_internal_control",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+// already included above
+// #include <stdbool.h>
+// already included above
+// #include <stdint.h>
+// already included above
+// #include "rosidl_runtime_c/visibility_control.h"
+// already included above
+// #include "rosidl_runtime_c/message_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/service_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/action_type_support_struct.h"
 #include "vehicle_core/srv/detail/set_autopilot_profile__type_support.h"
 #include "vehicle_core/srv/detail/set_autopilot_profile__struct.h"
 #include "vehicle_core/srv/detail/set_autopilot_profile__functions.h"
@@ -2840,7 +3599,7 @@ PyInit_vehicle_core_s__rosidl_typesupport_introspection_c(void)
     return NULL;
   }
 
-  err = _register_msg_type__msg__autopilot_drive_command(pymodule);
+  err = _register_msg_type__msg__internal_drive_command(pymodule);
   if (err) {
     Py_XDECREF(pymodule);
     return NULL;
@@ -2937,6 +3696,48 @@ PyInit_vehicle_core_s__rosidl_typesupport_introspection_c(void)
   }
 
   err = _register_msg_type__msg__drive_feedback(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_msg_type__msg__imu_status(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_msg_type__srv__request_internal_control__request(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_msg_type__srv__request_internal_control__response(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_srv_type__srv__request_internal_control(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_msg_type__srv__release_internal_control__request(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_msg_type__srv__release_internal_control__response(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_srv_type__srv__release_internal_control(pymodule);
   if (err) {
     Py_XDECREF(pymodule);
     return NULL;

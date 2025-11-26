@@ -3,17 +3,22 @@ from launch_ros.actions import ComposableNodeContainer, Node
 from launch_ros.descriptions import ComposableNode
 from ament_index_python.packages import get_package_share_directory
 from os.path import join as path_join
-import os
+from launch.substitutions import PathJoinSubstitution
+from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
     pkg_share = get_package_share_directory('vehicle_core')
     cfg_sm   = path_join(pkg_share, 'cfg', 'state_manager.yaml')
     cfg_da   = path_join(pkg_share, 'cfg', 'drive_arbiter.yaml')
     cfg_i2c  = path_join(pkg_share, 'cfg', 'i2c_bridge.yaml')
-    cfg_cam  = path_join(pkg_share, 'cfg', 'camera_gscam.yaml')   # <-- NEW
+    cfg_cam  = path_join(pkg_share, 'cfg', 'camera_gscam.yaml')
+    cfg_gps  = path_join(pkg_share, 'cfg', 'gt_u7_gps.yaml')
+    cfg_hdc  = path_join(pkg_share, 'cfg', 'heading_calib.yaml')
+    cfg_atp  = path_join(pkg_share, 'cfg', 'autopilot.yaml')
 
-    # If you want to bind web_video_server to Tailscale only, set this env var
-    tailscale_ip = os.environ.get("TAILSCALE_IP", "")  # e.g. export TAILSCALE_IP=100.x.x.x
+    ekf_params    = PathJoinSubstitution([pkg_share,  'cfg', 'ekf.yaml'])
+    navsat_params = PathJoinSubstitution([pkg_share,  'cfg', 'navsat.yaml'])
+    path_file     = PathJoinSubstitution([pkg_share, 'data', 'Vehicle_Path.kml'])
 
     container = ComposableNodeContainer(
         name='vehicle_core_container',
@@ -59,25 +64,69 @@ def generate_launch_description():
                     "queue_depth": 5,
                 }],
             ),
+            ComposableNode(
+                package='vehicle_core',
+                plugin='vehicle_core::GtU7GpsNode',
+                name='gt_u7_gps_node',
+                parameters=[cfg_gps],
+            ),
+            ComposableNode(
+                package='vehicle_core',
+                plugin='vehicle_core::HeadingCalibratorNode',
+                name='heading_calibrator_node',
+            ),
+            ComposableNode(
+                package="vehicle_core",
+                plugin="vehicle_core::AutopilotNode",
+                name="autopilot_node",
+                parameters=[{"path_file": path_file}, cfg_atp],
+            ),
         ],
         emulate_tty=True,
     )
 
-    # --- NEW: MJPEG server for remote viewing over Tailscale ---
-    wvs_params = {}
-    if tailscale_ip:
-        wvs_params["address"] = tailscale_ip  # bind only to tailnet interface
-    # wvs_params["port"] = 8080               # change if you need a custom port
+    # navsat_transform_node: converts /fix -> /filtered/gps/pose (ENU)
+    navsat = Node(
+        package='robot_localization',
+        executable='navsat_transform_node',
+        name='navsat_transform_node',
+        output='screen',
+        parameters=[navsat_params],
+        remappings=[
+            ('/imu/data', '/vehicle/imu/data'),
+            ('/gps/fix',  '/fix'),
+            # publishes /filtered/gps/pose by default
+        ],
+    )
 
+    # ekf_localization_node: fuses IMU wz + /vehicle/velocity + /filtered/gps/pose
+    ekf = Node(
+        package='robot_localization',
+        executable='ekf_node',
+        name='ekf_localization_node',
+        output='screen',
+        parameters=[ekf_params],
+    )
+
+    wvs_params = {
+        "address": "0.0.0.0",
+        "port": 8080,
+        "jpeg_quality": 45,
+        "queue_size": 1,
+        "server_threads": 2
+    }
     web_video = Node(
         package="web_video_server",
         executable="web_video_server",
         name="web_video_server",
-        parameters=[wvs_params] if wvs_params else [],
+        parameters=[wvs_params],
         output="screen"
     )
 
     return LaunchDescription([
         container,
-        web_video
+        navsat,
+        ekf,
+        # imu_tf,  # uncomment if you need the static transform
+        web_video,
     ])

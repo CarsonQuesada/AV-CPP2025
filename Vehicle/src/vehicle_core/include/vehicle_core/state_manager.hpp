@@ -2,10 +2,11 @@
 
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/empty.hpp>
+#include <std_msgs/msg/u_int8.hpp>
 #include <std_srvs/srv/trigger.hpp>
 
 #include "vehicle_core/msg/state_mode.hpp"
-#include "vehicle_core/msg/autopilot_drive_command.hpp"  // used only for freshness (AP heartbeat)
+#include "vehicle_core/msg/internal_drive_command.hpp"
 
 namespace vehicle_core {
 
@@ -15,7 +16,7 @@ public:
 
 private:
   // ====== Callbacks ======
-  void onAPDriveCmd(const msg::AutopilotDriveCommand::SharedPtr); // heartbeat only
+  void onAPDriveCmd(const msg::InternalDriveCommand::SharedPtr); // heartbeat only
   void onManualOverride(const std_msgs::msg::Empty::SharedPtr);
   void onStatusTimer();
   // services
@@ -27,6 +28,8 @@ private:
                   std::shared_ptr<std_srvs::srv::Trigger::Response>);
   void onClearEStop(const std::shared_ptr<std_srvs::srv::Trigger::Request>,
                     std::shared_ptr<std_srvs::srv::Trigger::Response>);
+  void onMarkAutoReady(const std::shared_ptr<std_srvs::srv::Trigger::Request>,
+                     std::shared_ptr<std_srvs::srv::Trigger::Response>);
 
   // ====== Mode machine ======
   enum : uint8_t {
@@ -40,6 +43,8 @@ private:
 
   bool transitionTo(uint8_t new_mode, const char* reason);
   void publishState();
+  bool requestAutopilotStart();
+  bool requestAutopilotStop();
 
   // ====== Params ======
   int  ap_timeout_ms_;               // time without AP cmds before stale
@@ -55,7 +60,7 @@ private:
   rclcpp::Time arming_enter_time_{0,0,RCL_ROS_TIME};
 
   // ====== ROS I/O ======
-  rclcpp::Subscription<vehicle_core::msg::AutopilotDriveCommand>::SharedPtr sub_ap_cmd_; // heartbeat only
+  rclcpp::Subscription<vehicle_core::msg::InternalDriveCommand>::SharedPtr sub_ap_cmd_; // heartbeat only
   rclcpp::Subscription<std_msgs::msg::Empty>::SharedPtr sub_manual_override_;
 
   rclcpp::Publisher<vehicle_core::msg::StateMode>::SharedPtr pub_state_;
@@ -64,6 +69,10 @@ private:
   rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr srv_request_auto_;
   rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr srv_request_estop_;
   rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr srv_clear_estop_;
+  rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr srv_mark_auto_ready_;
+
+  rclcpp::Client<std_srvs::srv::Trigger>::SharedPtr cli_start_auto_;
+  rclcpp::Client<std_srvs::srv::Trigger>::SharedPtr cli_stop_auto_;
 
   rclcpp::TimerBase::SharedPtr status_timer_;
 };

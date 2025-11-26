@@ -1,0 +1,44 @@
+[  0%] Built target ament_cmake_python_symlink_vehicle_core
+[  1%] Built target vehicle_core__cpp
+[ 12%] Built target vehicle_core__rosidl_generator_c
+[ 13%] Built target vehicle_core_container
+[ 24%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[ 35%] Built target vehicle_core__rosidl_typesupport_c
+[ 46%] Built target vehicle_core__rosidl_typesupport_cpp
+[ 57%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[ 68%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[ 79%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[ 79%] Built target vehicle_core
+[ 79%] [32mBuilding CXX object CMakeFiles/gt_u7_gps_node_component.dir/src/gt_u7_gps_node.cpp.o[0m
+[ 80%] Built target state_manager_node_component
+[ 81%] Built target drive_arbiter_node_component
+[35m[1mConsolidate compiler generated dependencies of target i2c_bridge_node[0m
+[ 81%] Built target vehicle_core__py
+[35m[1mConsolidate compiler generated dependencies of target autopilot_node_component[0m
+[ 82%] Built target heading_calibrator_node_component
+[ 83%] Built target tcp_server_node_component
+[ 83%] [32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o[0m
+[ 84%] Built target autopilot_node_component
+[ 85%] Built target gst_camera_component
+running egg_info
+writing vehicle_core.egg-info/PKG-INFO
+writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+writing top-level names to vehicle_core.egg-info/top_level.txt
+[ 96%] Built target vehicle_core__rosidl_generator_py
+[ 97%] Built target vehicle_core__rosidl_typesupport_c__pyext
+reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[ 98%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+[ 99%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext
+[ 99%] Built target ament_cmake_python_build_vehicle_core_egg
+In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:1[m[K:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/i2c_bridge_node.hpp:24:10:[m[K [01;31m[Kfatal error: [m[KDevices/I2CDevice.hpp: No such file or directory
+   24 | #include [01;31m[K"Devices/I2CDevice.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/i2c_bridge_node.dir/build.make:76: CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:750: CMakeFiles/i2c_bridge_node.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[100%] [32m[1mLinking CXX shared library libgt_u7_gps_node_component.so[0m
+[100%] Built target gt_u7_gps_node_component
+gmake: *** [Makefile:146: all] Error 2

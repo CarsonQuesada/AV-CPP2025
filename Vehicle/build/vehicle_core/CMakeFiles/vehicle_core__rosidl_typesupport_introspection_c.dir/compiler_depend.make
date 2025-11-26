@@ -133,70 +133,6 @@ CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesuppo
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h
 
-CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.c.o: rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.c \
-  /usr/include/stdc-predef.h \
-  /usr/lib/gcc/aarch64-linux-gnu/11/include/stddef.h \
-  rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__rosidl_typesupport_introspection_c.h \
-  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
-  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
-  /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
-  rosidl_typesupport_introspection_c/vehicle_core/msg/rosidl_typesupport_introspection_c__visibility_control.h \
-  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/field_types.h \
-  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h \
-  /usr/include/stdint.h \
-  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
-  /usr/include/features.h \
-  /usr/include/features-time64.h \
-  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
-  /usr/include/aarch64-linux-gnu/bits/timesize.h \
-  /usr/include/aarch64-linux-gnu/sys/cdefs.h \
-  /usr/include/aarch64-linux-gnu/bits/long-double.h \
-  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
-  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
-  /usr/include/aarch64-linux-gnu/bits/types.h \
-  /usr/include/aarch64-linux-gnu/bits/typesizes.h \
-  /usr/include/aarch64-linux-gnu/bits/time64.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar.h \
-  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
-  /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \
-  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/identifier.h \
-  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/visibility_control.h \
-  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/message_introspection.h \
-  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdbool.h \
-  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h \
-  rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.h \
-  /usr/include/stdlib.h \
-  /usr/include/aarch64-linux-gnu/bits/waitflags.h \
-  /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
-  /usr/include/aarch64-linux-gnu/bits/floatn.h \
-  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
-  /usr/include/aarch64-linux-gnu/sys/types.h \
-  /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/time_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/timer_t.h \
-  /usr/include/endian.h \
-  /usr/include/aarch64-linux-gnu/bits/endian.h \
-  /usr/include/aarch64-linux-gnu/bits/endianness.h \
-  /usr/include/aarch64-linux-gnu/bits/byteswap.h \
-  /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
-  /usr/include/aarch64-linux-gnu/sys/select.h \
-  /usr/include/aarch64-linux-gnu/bits/select.h \
-  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
-  /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
-  /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
-  /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
-  /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
-  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
-  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
-  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
-  /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  rosidl_generator_c/vehicle_core/msg/rosidl_generator_c__visibility_control.h \
-  rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__struct.h
-
 CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_status__type_support.c.o: rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_status__type_support.c \
   /usr/include/stdc-predef.h \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/stddef.h \
@@ -580,6 +516,154 @@ CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesuppo
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
   rosidl_generator_c/vehicle_core/msg/rosidl_generator_c__visibility_control.h \
   rosidl_generator_c/vehicle_core/msg/detail/general_status__struct.h
+
+CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.c.o: rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.c \
+  /usr/include/stdc-predef.h \
+  /usr/lib/gcc/aarch64-linux-gnu/11/include/stddef.h \
+  rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__rosidl_typesupport_introspection_c.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
+  /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
+  rosidl_typesupport_introspection_c/vehicle_core/msg/rosidl_typesupport_introspection_c__visibility_control.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/field_types.h \
+  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/features.h \
+  /usr/include/features-time64.h \
+  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
+  /usr/include/aarch64-linux-gnu/bits/timesize.h \
+  /usr/include/aarch64-linux-gnu/sys/cdefs.h \
+  /usr/include/aarch64-linux-gnu/bits/long-double.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
+  /usr/include/aarch64-linux-gnu/bits/types.h \
+  /usr/include/aarch64-linux-gnu/bits/typesizes.h \
+  /usr/include/aarch64-linux-gnu/bits/time64.h \
+  /usr/include/aarch64-linux-gnu/bits/wchar.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/identifier.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/visibility_control.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/message_introspection.h \
+  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdbool.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h \
+  rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.h \
+  /usr/include/stdlib.h \
+  /usr/include/aarch64-linux-gnu/bits/waitflags.h \
+  /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
+  /usr/include/aarch64-linux-gnu/sys/types.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/time_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/endian.h \
+  /usr/include/aarch64-linux-gnu/bits/endian.h \
+  /usr/include/aarch64-linux-gnu/bits/endianness.h \
+  /usr/include/aarch64-linux-gnu/bits/byteswap.h \
+  /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/aarch64-linux-gnu/sys/select.h \
+  /usr/include/aarch64-linux-gnu/bits/select.h \
+  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/alloca.h \
+  /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+  rosidl_generator_c/vehicle_core/msg/rosidl_generator_c__visibility_control.h \
+  rosidl_generator_c/vehicle_core/msg/detail/imu_status__struct.h \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.h \
+  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/header.h \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__functions.h \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_generator_c__visibility_control.h \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__type_support.h \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__rosidl_typesupport_introspection_c.h \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+
+CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.c.o: rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.c \
+  /usr/include/stdc-predef.h \
+  /usr/lib/gcc/aarch64-linux-gnu/11/include/stddef.h \
+  rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__rosidl_typesupport_introspection_c.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
+  /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
+  rosidl_typesupport_introspection_c/vehicle_core/msg/rosidl_typesupport_introspection_c__visibility_control.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/field_types.h \
+  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/features.h \
+  /usr/include/features-time64.h \
+  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
+  /usr/include/aarch64-linux-gnu/bits/timesize.h \
+  /usr/include/aarch64-linux-gnu/sys/cdefs.h \
+  /usr/include/aarch64-linux-gnu/bits/long-double.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
+  /usr/include/aarch64-linux-gnu/bits/types.h \
+  /usr/include/aarch64-linux-gnu/bits/typesizes.h \
+  /usr/include/aarch64-linux-gnu/bits/time64.h \
+  /usr/include/aarch64-linux-gnu/bits/wchar.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/identifier.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/visibility_control.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/message_introspection.h \
+  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdbool.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h \
+  rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.h \
+  /usr/include/stdlib.h \
+  /usr/include/aarch64-linux-gnu/bits/waitflags.h \
+  /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
+  /usr/include/aarch64-linux-gnu/sys/types.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/time_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/endian.h \
+  /usr/include/aarch64-linux-gnu/bits/endian.h \
+  /usr/include/aarch64-linux-gnu/bits/endianness.h \
+  /usr/include/aarch64-linux-gnu/bits/byteswap.h \
+  /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/aarch64-linux-gnu/sys/select.h \
+  /usr/include/aarch64-linux-gnu/bits/select.h \
+  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/alloca.h \
+  /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+  rosidl_generator_c/vehicle_core/msg/rosidl_generator_c__visibility_control.h \
+  rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__struct.h \
+  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
+  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/time.h \
+  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__functions.h \
+  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/rosidl_generator_c__visibility_control.h \
+  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__type_support.h \
+  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__rosidl_typesupport_introspection_c.h \
+  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h
 
 CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/lights_command__type_support.c.o: rosidl_typesupport_introspection_c/vehicle_core/msg/detail/lights_command__type_support.c \
   /usr/include/stdc-predef.h \
@@ -1187,6 +1271,144 @@ CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesuppo
   rosidl_generator_c/vehicle_core/msg/rosidl_generator_c__visibility_control.h \
   rosidl_generator_c/vehicle_core/msg/detail/telemetry_data__struct.h
 
+CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.c.o: rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.c \
+  /usr/include/stdc-predef.h \
+  /usr/lib/gcc/aarch64-linux-gnu/11/include/stddef.h \
+  rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__rosidl_typesupport_introspection_c.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
+  /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
+  rosidl_typesupport_introspection_c/vehicle_core/msg/rosidl_typesupport_introspection_c__visibility_control.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/field_types.h \
+  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/features.h \
+  /usr/include/features-time64.h \
+  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
+  /usr/include/aarch64-linux-gnu/bits/timesize.h \
+  /usr/include/aarch64-linux-gnu/sys/cdefs.h \
+  /usr/include/aarch64-linux-gnu/bits/long-double.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
+  /usr/include/aarch64-linux-gnu/bits/types.h \
+  /usr/include/aarch64-linux-gnu/bits/typesizes.h \
+  /usr/include/aarch64-linux-gnu/bits/time64.h \
+  /usr/include/aarch64-linux-gnu/bits/wchar.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/identifier.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/visibility_control.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/message_introspection.h \
+  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdbool.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h \
+  rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.h \
+  /usr/include/stdlib.h \
+  /usr/include/aarch64-linux-gnu/bits/waitflags.h \
+  /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
+  /usr/include/aarch64-linux-gnu/sys/types.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/time_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/endian.h \
+  /usr/include/aarch64-linux-gnu/bits/endian.h \
+  /usr/include/aarch64-linux-gnu/bits/endianness.h \
+  /usr/include/aarch64-linux-gnu/bits/byteswap.h \
+  /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/aarch64-linux-gnu/sys/select.h \
+  /usr/include/aarch64-linux-gnu/bits/select.h \
+  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/alloca.h \
+  /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+  rosidl_generator_c/vehicle_core/msg/rosidl_generator_c__visibility_control.h \
+  rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__struct.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/service_introspection.h
+
+CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.c.o: rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.c \
+  /usr/include/stdc-predef.h \
+  /usr/lib/gcc/aarch64-linux-gnu/11/include/stddef.h \
+  rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__rosidl_typesupport_introspection_c.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
+  /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
+  rosidl_typesupport_introspection_c/vehicle_core/msg/rosidl_typesupport_introspection_c__visibility_control.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/field_types.h \
+  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/features.h \
+  /usr/include/features-time64.h \
+  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
+  /usr/include/aarch64-linux-gnu/bits/timesize.h \
+  /usr/include/aarch64-linux-gnu/sys/cdefs.h \
+  /usr/include/aarch64-linux-gnu/bits/long-double.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
+  /usr/include/aarch64-linux-gnu/bits/types.h \
+  /usr/include/aarch64-linux-gnu/bits/typesizes.h \
+  /usr/include/aarch64-linux-gnu/bits/time64.h \
+  /usr/include/aarch64-linux-gnu/bits/wchar.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/identifier.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/visibility_control.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/message_introspection.h \
+  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdbool.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h \
+  rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.h \
+  /usr/include/stdlib.h \
+  /usr/include/aarch64-linux-gnu/bits/waitflags.h \
+  /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
+  /usr/include/aarch64-linux-gnu/sys/types.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/time_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/endian.h \
+  /usr/include/aarch64-linux-gnu/bits/endian.h \
+  /usr/include/aarch64-linux-gnu/bits/endianness.h \
+  /usr/include/aarch64-linux-gnu/bits/byteswap.h \
+  /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/aarch64-linux-gnu/sys/select.h \
+  /usr/include/aarch64-linux-gnu/bits/select.h \
+  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/alloca.h \
+  /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+  rosidl_generator_c/vehicle_core/msg/rosidl_generator_c__visibility_control.h \
+  rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__struct.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h \
+  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/service_introspection.h
+
 CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/srv/detail/set_autopilot_profile__type_support.c.o: rosidl_typesupport_introspection_c/vehicle_core/srv/detail/set_autopilot_profile__type_support.c \
   /usr/include/stdc-predef.h \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/stddef.h \
@@ -1260,33 +1482,21 @@ CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesuppo
 
 rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__struct.h:
 
-rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.h:
+rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__struct.h:
+
+rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.h:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h:
 
-rosidl_generator_c/vehicle_core/msg/detail/telemetry_data__struct.h:
-
 rosidl_generator_c/vehicle_core/msg/detail/telemetry_data__functions.h:
+
+rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/state_mode__struct.h:
 
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/telemetry_data__type_support.c:
 
 rosidl_generator_c/vehicle_core/msg/detail/state_mode__functions.h:
-
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/state_mode__type_support.c:
-
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h:
-
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__rosidl_typesupport_introspection_c.h:
-
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__type_support.h:
-
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__functions.h:
-
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/time.h:
-
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/state_event__struct.h:
 
@@ -1300,13 +1510,41 @@ rosidl_generator_c/vehicle_core/msg/detail/autopilot_status__type_support.h:
 
 rosidl_generator_c/vehicle_core/msg/autopilot_status.h:
 
+rosidl_generator_c/vehicle_core/msg/detail/lights_status__type_support.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/general_status__type_support.h:
+
+rosidl_generator_c/vehicle_core/msg/general_status.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/server_init__struct.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/server_init__functions.h:
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/server_init__type_support.c:
+
+rosidl_generator_c/vehicle_core/msg/detail/perception_profile__functions.h:
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/perception_profile__type_support.c:
+
+rosidl_generator_c/vehicle_core/msg/detail/max_speed__struct.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/max_speed__functions.h:
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/max_speed__rosidl_typesupport_introspection_c.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/drive_status__type_support.h:
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/max_speed__type_support.c:
+
+rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__struct.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__functions.h:
+
 /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h:
-
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h:
 
@@ -1316,6 +1554,8 @@ rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.h:
 
 /usr/include/aarch64-linux-gnu/sys/cdefs.h:
 
+rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__rosidl_typesupport_introspection_c.h:
+
 /usr/include/aarch64-linux-gnu/bits/byteswap.h:
 
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/drive_status__type_support.c:
@@ -1324,11 +1564,9 @@ rosidl_typesupport_introspection_c/vehicle_core/msg/detail/drive_status__type_su
 
 /usr/include/endian.h:
 
+rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.h:
+
 /usr/include/aarch64-linux-gnu/bits/types/time_t.h:
-
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/rosidl_generator_c__visibility_control.h:
-
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/manual_drive_command__rosidl_typesupport_introspection_c.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h:
 
@@ -1342,15 +1580,13 @@ rosidl_typesupport_introspection_c/vehicle_core/msg/detail/telemetry_data__rosid
 
 /usr/include/aarch64-linux-gnu/bits/floatn-common.h:
 
+rosidl_generator_c/vehicle_core/msg/detail/perception_profile__struct.h:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.h:
+
 /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/field_types.h:
 
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/general_status__rosidl_typesupport_introspection_c.h:
-
-rosidl_generator_c/vehicle_core/msg/detail/lights_status__type_support.h:
-
 /usr/include/aarch64-linux-gnu/bits/wchar.h:
-
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.c:
 
 /usr/include/aarch64-linux-gnu/bits/libc-header-start.h:
 
@@ -1360,15 +1596,17 @@ rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_comma
 
 /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h:
 
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__type_support.h:
+
 /usr/include/aarch64-linux-gnu/bits/types/clock_t.h:
 
 /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h:
 
-/opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/identifier.h:
-
 /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/timer_t.h:
+
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__functions.h:
 
 /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h:
 
@@ -1379,8 +1617,6 @@ rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_comma
 /usr/include/aarch64-linux-gnu/bits/select.h:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h:
-
-rosidl_generator_c/vehicle_core/msg/detail/max_speed__struct.h:
 
 /usr/include/aarch64-linux-gnu/bits/waitstatus.h:
 
@@ -1394,11 +1630,11 @@ rosidl_generator_c/vehicle_core/msg/detail/max_speed__struct.h:
 
 /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h:
 
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__rosidl_typesupport_introspection_c.h:
-
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h:
 
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_command__rosidl_typesupport_introspection_c.h:
+
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h:
 
 rosidl_typesupport_introspection_c/vehicle_core/srv/detail/set_autopilot_profile__type_support.c:
 
@@ -1432,6 +1668,8 @@ rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_command__ty
 
 rosidl_generator_c/vehicle_core/msg/detail/drive_target__struct.h:
 
+rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__rosidl_typesupport_introspection_c.h:
+
 rosidl_generator_c/vehicle_core/msg/detail/autopilot_command__functions.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/drive_status__struct.h:
@@ -1440,11 +1678,11 @@ rosidl_generator_c/vehicle_core/msg/detail/drive_status__struct.h:
 
 /usr/include/aarch64-linux-gnu/bits/struct_mutex.h:
 
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.c:
+
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/lights_status__type_support.c:
 
-rosidl_generator_c/vehicle_core/msg/detail/drive_status__type_support.h:
-
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/max_speed__type_support.c:
+rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__struct.h:
 
 rosidl_typesupport_introspection_c/vehicle_core/msg/rosidl_typesupport_introspection_c__visibility_control.h:
 
@@ -1454,15 +1692,23 @@ rosidl_typesupport_introspection_c/vehicle_core/msg/rosidl_typesupport_introspec
 
 /usr/include/aarch64-linux-gnu/bits/stdlib-float.h:
 
+/opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/identifier.h:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h:
+
+rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.c:
+
 rosidl_generator_c/vehicle_core/msg/detail/autopilot_command__struct.h:
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__rosidl_typesupport_introspection_c.h:
 
 /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h:
 
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_config__type_support.c:
 
-rosidl_generator_c/vehicle_core/msg/detail/server_init__struct.h:
-
 /usr/lib/gcc/aarch64-linux-gnu/11/include/stdbool.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.h:
 
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_config__rosidl_typesupport_introspection_c.h:
 
@@ -1484,11 +1730,17 @@ rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_status__typ
 
 rosidl_generator_c/vehicle_core/msg/detail/autopilot_status__struct.h:
 
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__struct.h:
-
 rosidl_generator_c/vehicle_core/msg/detail/autopilot_status__functions.h:
 
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/drive_feedback__type_support.c:
+
+rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.h:
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__rosidl_typesupport_introspection_c.h:
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/perception_profile__rosidl_typesupport_introspection_c.h:
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/drive_feedback__rosidl_typesupport_introspection_c.h:
 
 /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h:
 
@@ -1500,21 +1752,21 @@ rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__struct.h:
 
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/drive_status__rosidl_typesupport_introspection_c.h:
 
-rosidl_generator_c/vehicle_core/msg/detail/perception_profile__struct.h:
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/general_status__rosidl_typesupport_introspection_c.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/imu_status__struct.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/drive_status__functions.h:
 
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/drive_target__rosidl_typesupport_introspection_c.h:
+
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__rosidl_typesupport_introspection_c.h:
 
 /usr/include/aarch64-linux-gnu/bits/endian.h:
 
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/drive_target__type_support.c:
 
 rosidl_generator_c/vehicle_core/msg/detail/drive_target__functions.h:
-
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/max_speed__rosidl_typesupport_introspection_c.h:
-
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/perception_profile__type_support.c:
 
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/error__rosidl_typesupport_introspection_c.h:
 
@@ -1526,6 +1778,8 @@ rosidl_generator_c/vehicle_core/msg/detail/error__struct.h:
 
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/general_status__type_support.c:
 
+rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.c:
+
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/state_mode__rosidl_typesupport_introspection_c.h:
 
 rosidl_generator_c/vehicle_core/msg/lights_status.h:
@@ -1534,38 +1788,44 @@ rosidl_generator_c/vehicle_core/msg/detail/lights_command__functions.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/general_status__functions.h:
 
-rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__struct.h:
+/opt/ros/humble/include/std_msgs/std_msgs/msg/header.h:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__functions.h:
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/state_mode__type_support.c:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_generator_c__visibility_control.h:
+
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/time.h:
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/manual_drive_command__type_support.c:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__rosidl_typesupport_introspection_c.h:
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.c:
+
+rosidl_generator_c/vehicle_core/msg/detail/telemetry_data__struct.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__struct.h:
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/manual_drive_command__rosidl_typesupport_introspection_c.h:
+
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/rosidl_generator_c__visibility_control.h:
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/lights_command__rosidl_typesupport_introspection_c.h:
+
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__type_support.h:
+
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h:
 
 /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/service_introspection.h:
 
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/lights_command__type_support.c:
-
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/server_init__rosidl_typesupport_introspection_c.h:
 
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/lights_command__rosidl_typesupport_introspection_c.h:
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/lights_command__type_support.c:
 
 rosidl_generator_c/vehicle_core/msg/detail/lights_command__struct.h:
 
 /usr/include/aarch64-linux-gnu/bits/long-double.h:
 
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/lights_status__rosidl_typesupport_introspection_c.h:
-
-rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__functions.h:
-
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/manual_drive_command__type_support.c:
-
-rosidl_generator_c/vehicle_core/msg/detail/max_speed__functions.h:
-
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/drive_feedback__rosidl_typesupport_introspection_c.h:
-
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/perception_profile__rosidl_typesupport_introspection_c.h:
-
-rosidl_generator_c/vehicle_core/msg/detail/perception_profile__functions.h:
-
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/server_init__type_support.c:
-
-rosidl_generator_c/vehicle_core/msg/detail/server_init__functions.h:
-
-rosidl_generator_c/vehicle_core/msg/general_status.h:
-
-rosidl_generator_c/vehicle_core/msg/detail/general_status__type_support.h:

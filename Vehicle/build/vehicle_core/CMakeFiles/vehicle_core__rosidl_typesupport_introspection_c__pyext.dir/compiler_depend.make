@@ -245,9 +245,12 @@ CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c__pyext.dir/rosidl_ge
   rosidl_generator_c/vehicle_core/msg/rosidl_generator_c__visibility_control.h \
   rosidl_generator_c/vehicle_core/msg/detail/drive_target__struct.h \
   rosidl_generator_c/vehicle_core/msg/detail/drive_target__functions.h \
-  rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.h \
-  rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__struct.h \
-  rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.h \
+  rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__type_support.h \
+  rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__struct.h \
+  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
+  rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.h \
   rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__type_support.h \
   rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__struct.h \
   rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__functions.h \
@@ -283,8 +286,6 @@ CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c__pyext.dir/rosidl_ge
   rosidl_generator_c/vehicle_core/msg/detail/server_init__functions.h \
   rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__type_support.h \
   rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__struct.h \
-  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
-  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
   rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__functions.h \
   rosidl_generator_c/vehicle_core/msg/detail/perception_profile__type_support.h \
   rosidl_generator_c/vehicle_core/msg/detail/perception_profile__struct.h \
@@ -294,11 +295,20 @@ CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c__pyext.dir/rosidl_ge
   rosidl_generator_c/vehicle_core/msg/detail/state_mode__functions.h \
   rosidl_generator_c/vehicle_core/msg/detail/state_event__type_support.h \
   rosidl_generator_c/vehicle_core/msg/detail/state_event__struct.h \
-  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h \
   rosidl_generator_c/vehicle_core/msg/detail/state_event__functions.h \
   rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__type_support.h \
   rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__struct.h \
   rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__functions.h \
+  rosidl_generator_c/vehicle_core/msg/detail/imu_status__type_support.h \
+  rosidl_generator_c/vehicle_core/msg/detail/imu_status__struct.h \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.h \
+  rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.h \
+  rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__type_support.h \
+  rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__struct.h \
+  rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.h \
+  rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__type_support.h \
+  rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__struct.h \
+  rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.h \
   rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__type_support.h \
   rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__struct.h \
   rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.h
@@ -308,13 +318,29 @@ rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.h:
 
 rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__type_support.h:
 
+rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.h:
+
+rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__struct.h:
+
+rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.h:
+
+rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__struct.h:
+
+rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__type_support.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.h:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/imu_status__struct.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/imu_status__type_support.h:
+
 rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__functions.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__struct.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/state_event__functions.h:
-
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/state_event__struct.h:
 
@@ -327,8 +353,6 @@ rosidl_generator_c/vehicle_core/msg/detail/perception_profile__functions.h:
 rosidl_generator_c/vehicle_core/msg/detail/perception_profile__struct.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__functions.h:
-
-/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__struct.h:
 
@@ -361,6 +385,10 @@ rosidl_generator_c/vehicle_core/msg/detail/lights_status__type_support.h:
 rosidl_generator_c/vehicle_core/msg/detail/autopilot_command__functions.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/autopilot_command__struct.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/lights_status__struct.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/max_speed__functions.h:
 
 /usr/include/asm-generic/posix_types.h:
 
@@ -402,10 +430,6 @@ rosidl_generator_c/vehicle_core/msg/rosidl_generator_c__visibility_control.h:
 
 /usr/include/aarch64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
-rosidl_generator_c/vehicle_core/msg/detail/lights_status__struct.h:
-
-rosidl_generator_c/vehicle_core/msg/detail/max_speed__functions.h:
-
 /usr/include/python3.10/weakrefobject.h:
 
 /usr/include/inttypes.h:
@@ -417,6 +441,10 @@ rosidl_generator_c/vehicle_core/msg/detail/state_mode__struct.h:
 /usr/include/aarch64-linux-gnu/bits/unistd_ext.h:
 
 /usr/include/aarch64-linux-gnu/bits/byteswap.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/max_speed__struct.h:
+
+/usr/include/python3.10/cpython/listobject.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/general_status__type_support.h:
 
@@ -536,15 +564,15 @@ rosidl_generator_py/vehicle_core/_vehicle_core_s.ep.rosidl_typesupport_introspec
 
 /usr/include/unistd.h:
 
-/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h:
-
-/usr/include/python3.10/cpython/dictobject.h:
-
 /usr/include/aarch64-linux-gnu/asm/errno.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__type_support.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__functions.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/autopilot_command__type_support.h:
+
+/usr/include/aarch64-linux-gnu/bits/uintn-identity.h:
 
 rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__struct.h:
 
@@ -568,11 +596,9 @@ rosidl_generator_c/vehicle_core/msg/detail/state_mode__type_support.h:
 
 /usr/include/asm-generic/types.h:
 
+rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__type_support.h:
+
 /usr/include/aarch64-linux-gnu/bits/wordsize.h:
-
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_status__struct.h:
-
-/usr/include/asm-generic/errno-base.h:
 
 /usr/include/aarch64-linux-gnu/bits/stdint-intn.h:
 
@@ -622,6 +648,10 @@ rosidl_generator_c/vehicle_core/msg/detail/lights_status__functions.h:
 
 /usr/include/aarch64-linux-gnu/bits/waitflags.h:
 
+/usr/include/python3.10/cpython/dictobject.h:
+
+/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h:
+
 /usr/include/errno.h:
 
 /usr/include/python3.10/cpython/fileutils.h:
@@ -650,11 +680,13 @@ rosidl_generator_c/vehicle_core/msg/detail/perception_profile__type_support.h:
 
 /usr/include/aarch64-linux-gnu/bits/long-double.h:
 
-/usr/include/aarch64-linux-gnu/bits/libc-header-start.h:
-
 /usr/include/assert.h:
 
 /usr/include/python3.10/structseq.h:
+
+/usr/include/aarch64-linux-gnu/bits/libc-header-start.h:
+
+rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.h:
 
 /usr/include/python3.10/bltinmodule.h:
 
@@ -802,6 +834,8 @@ rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__type_support.h:
 
 /usr/include/python3.10/cpython/code.h:
 
+rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__struct.h:
+
 /usr/include/python3.10/cpython/traceback.h:
 
 /usr/include/string.h:
@@ -817,6 +851,8 @@ rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__type_support.h:
 /usr/include/python3.10/cpython/abstract.h:
 
 /usr/include/python3.10/descrobject.h:
+
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/server_init__struct.h:
 
@@ -847,8 +883,6 @@ rosidl_generator_c/vehicle_core/msg/detail/error__type_support.h:
 /usr/include/python3.10/cpython/object.h:
 
 /usr/include/aarch64-linux-gnu/bits/sched.h:
-
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__struct.h:
 
 /usr/include/python3.10/context.h:
 
@@ -888,20 +922,16 @@ rosidl_generator_c/vehicle_core/msg/detail/drive_target__type_support.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/drive_target__functions.h:
 
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.h:
+rosidl_generator_c/vehicle_core/msg/detail/autopilot_status__struct.h:
 
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.h:
+/usr/include/asm-generic/errno-base.h:
 
-rosidl_generator_c/vehicle_core/msg/detail/max_speed__type_support.h:
+rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__type_support.h:
+
+/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__struct.h:
 
 rosidl_generator_c/vehicle_core/msg/detail/lights_command__functions.h:
 
-/usr/include/python3.10/cpython/listobject.h:
-
-rosidl_generator_c/vehicle_core/msg/detail/max_speed__struct.h:
-
-/usr/include/aarch64-linux-gnu/bits/uintn-identity.h:
-
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_command__type_support.h:
+rosidl_generator_c/vehicle_core/msg/detail/max_speed__type_support.h:

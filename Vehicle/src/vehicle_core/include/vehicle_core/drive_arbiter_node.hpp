@@ -1,15 +1,26 @@
 #pragma once
+
+// DriveArbiterNode.hpp
+// This class arbitrates between internal autopilot commands and manual driver commands
+// to produce a final DriveTarget command for the vehicle to follow.
+//
+// Issues:
+// - No obstacle detection yet
+//
+
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/empty.hpp>
 #include <std_srvs/srv/trigger.hpp>
 
-#include "vehicle_core/msg/autopilot_drive_command.hpp"
+#include "vehicle_core/msg/internal_drive_command.hpp"
 #include "vehicle_core/msg/manual_drive_command.hpp"
 #include "vehicle_core/msg/drive_target.hpp"
 #include "vehicle_core/msg/max_speed.hpp"
 #include "vehicle_core/msg/state_mode.hpp"
+#include "vehicle_core/srv/request_internal_control.hpp"
+#include "vehicle_core/srv/release_internal_control.hpp"
 
-#include <cstdint>
+//#include <std_msgs/msg/bool.hpp>
 
 namespace vehicle_core {
 
@@ -18,54 +29,58 @@ public:
   explicit DriveArbiterNode(const rclcpp::NodeOptions& opts = rclcpp::NodeOptions());
 
 private:
-  // Callbacks
+  // ---- Callbacks ----
   void onStateMode(const msg::StateMode::SharedPtr m);
-  void onAP(const msg::AutopilotDriveCommand::SharedPtr m);
+  void onInternal(const msg::InternalDriveCommand::SharedPtr m);
   void onManual(const msg::ManualDriveCommand::SharedPtr m);
   void onMaxSpeed(const msg::MaxSpeed::SharedPtr m);
+  //void onObstacleDetected(const std_msgs::msg::Bool::SharedPtr msg);
 
-  // Core
-  void maybePublish();                 // decide source & emit DriveTarget
+  // ---- Core ----
+  void maybePublish();                           // decide source & emit DriveTarget
   bool manualIsMeaningful(const msg::ManualDriveCommand& m) const;
+  //void triggerEmergencyStop();
 
-  // Mapping & clamp helpers
-  uint16_t clampSpeedToCap_mmps(float speed_mmps) const;
-  int32_t  clampSteer_mrad(int32_t steer_mrad) const;
-
-  int32_t percentSteerToMrad(uint8_t steer_percent) const;
-  uint16_t manualSpeedPercentToMmps(uint8_t speed_percent) const;
-
-  // Params/state
-  double top_speed_mps_;        // YAML param
-  double steer_max_rad_;        // YAML param
-  uint8_t override_deadband_;   // YAML param [percent]
-  bool publish_when_inactive_;  // YAML param
-
-  uint8_t max_speed_percent_{100}; // runtime cap from MaxSpeed topic
-  msg::StateMode::SharedPtr last_mode_;
-
-  msg::AutopilotDriveCommand::SharedPtr last_ap_;
-  msg::ManualDriveCommand::SharedPtr    last_manual_;
-
-  // ROS I/O
-  rclcpp::Subscription<msg::StateMode>::SharedPtr sub_mode_;
-  rclcpp::Subscription<msg::AutopilotDriveCommand>::SharedPtr sub_ap_;
-  rclcpp::Subscription<msg::ManualDriveCommand>::SharedPtr sub_manual_;
-  rclcpp::Subscription<msg::MaxSpeed>::SharedPtr sub_max_;
-
-  rclcpp::Publisher<msg::DriveTarget>::SharedPtr pub_target_;
-  rclcpp::Publisher<std_msgs::msg::Empty>::SharedPtr pub_override_evt_;
-
-  rclcpp::Client<std_srvs::srv::Trigger>::SharedPtr req_mode_client_;
-
-  // QoS
-  rclcpp::QoS qos_best_effort_{rclcpp::QoS(10).best_effort().durability_volatile()};
-
-  // Helpers
+  // ---- Mapping & clamp helpers ----
   int16_t capSpeedMmpsSigned(double mmps_signed) const;
   int16_t capSteerMradSigned(double mrad_signed) const;
   int16_t manualPercentToMmpsSigned(uint8_t speed_percent, uint8_t gear) const;
   int16_t percentSteerToMradSigned(uint8_t steer_percent) const;
+
+  // ---- Params ----
+  double top_speed_mps_;        // YAML param
+  double steer_max_rad_;        // YAML param
+  uint8_t override_deadband_;   // YAML param [percent]
+  bool publish_when_inactive_;  // YAML param
+  uint8_t max_speed_percent_{100}; // runtime cap from MaxSpeed topic
+  std::string grant_owner_;
+
+  // ---- State ----
+  msg::StateMode::SharedPtr last_mode_;
+  msg::InternalDriveCommand::SharedPtr last_internal_;
+  msg::ManualDriveCommand::SharedPtr   last_manual_;
+
+  bool internal_control_{true};   // always allowed by default
+  bool manual_active_{false};
+  // bool obstacle_detected_{false};
+
+  // ---- ROS I/O ----
+  rclcpp::Subscription<msg::StateMode>::SharedPtr sub_mode_;
+  rclcpp::Subscription<msg::InternalDriveCommand>::SharedPtr sub_internal_;
+  rclcpp::Subscription<msg::ManualDriveCommand>::SharedPtr sub_manual_;
+  rclcpp::Subscription<msg::MaxSpeed>::SharedPtr sub_max_;
+  //rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr sub_obstacle_;
+
+
+  rclcpp::Publisher<msg::DriveTarget>::SharedPtr pub_target_;
+  rclcpp::Publisher<std_msgs::msg::Empty>::SharedPtr pub_override_evt_;
+  //rclcpp::Publisher<std_msgs::msg::Empty>::SharedPtr pub_emergency_stop_evt_;
+
+  rclcpp::Service<vehicle_core::srv::RequestInternalControl>::SharedPtr srv_req_internal_ctrl_;
+  rclcpp::Service<vehicle_core::srv::ReleaseInternalControl>::SharedPtr srv_rel_internal_ctrl_;
+  
+  rclcpp::Client<std_srvs::srv::Trigger>::SharedPtr req_mode_client_;
+  rclcpp::Client<std_srvs::srv::Trigger>::SharedPtr cli_heading_stop_;
 };
 
 } // namespace vehicle_core

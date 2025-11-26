@@ -1,0 +1,61 @@
+[0.027s] Invoking command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8
+[0.238s] [  1%] Built target vehicle_core__cpp
+[0.258s] [  1%] Built target ament_cmake_python_symlink_vehicle_core
+[0.266s] [  2%] Built target vehicle_core_container
+[0.296s] [ 13%] Built target vehicle_core__rosidl_generator_c
+[0.297s] [ 24%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[0.334s] [ 35%] Built target vehicle_core__rosidl_typesupport_cpp
+[0.370s] [ 46%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[0.383s] [ 57%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[0.387s] [ 68%] Built target vehicle_core__rosidl_typesupport_c
+[0.391s] [ 79%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[0.453s] [ 79%] Built target vehicle_core
+[0.519s] [ 79%] [32mBuilding CXX object CMakeFiles/drive_arbiter_node_component.dir/src/drive_arbiter.cpp.o[0m
+[0.549s] [ 81%] Built target state_manager_node_component
+[0.553s] [ 81%] Built target vehicle_core__py
+[0.554s] [ 81%] Built target tcp_server_node_component
+[0.565s] [ 81%] Built target i2c_bridge_node
+[0.568s] [ 82%] Built target gt_u7_gps_node_component
+[0.580s] [ 83%] Built target heading_calibrator_node_component
+[0.605s] [35m[1mConsolidate compiler generated dependencies of target autopilot_node_component[0m
+[0.627s] [ 84%] Built target gst_camera_component
+[0.656s] [ 95%] Built target vehicle_core__rosidl_generator_py
+[0.657s] running egg_info
+[0.664s] [ 95%] [32mBuilding CXX object CMakeFiles/autopilot_node_component.dir/src/autopilot_node.cpp.o[0m
+[0.677s] writing vehicle_core.egg-info/PKG-INFO
+[0.678s] writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+[0.679s] writing top-level names to vehicle_core.egg-info/top_level.txt
+[0.714s] [ 96%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+[0.725s] [ 97%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext
+[0.731s] [ 98%] Built target vehicle_core__rosidl_typesupport_c__pyext
+[0.741s] reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[0.743s] writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[0.896s] [ 98%] Built target ament_cmake_python_build_vehicle_core_egg
+[5.826s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:[m[K In constructor ‘[01m[Kvehicle_core::AutopilotNode::AutopilotNode(const rclcpp::NodeOptions&)[m[K’:
+[5.827s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:25:17:[m[K [01;31m[Kerror: [m[K‘[01m[KClientOptions[m[K’ is not a member of ‘[01m[Krclcpp[m[K’; did you mean ‘[01m[KInitOptions[m[K’?
+[5.827s]    25 |         rclcpp::[01;31m[KClientOptions[m[K cli_opts;
+[5.827s]       |                 [01;31m[K^~~~~~~~~~~~~[m[K
+[5.827s]       |                 [32m[KInitOptions[m[K
+[5.845s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:26:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kcli_opts[m[K’ was not declared in this scope
+[5.845s]    26 |         [01;31m[Kcli_opts[m[K.callback_group = control_cb_group_;
+[5.845s]       |         [01;31m[K^~~~~~~~[m[K
+[5.888s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:[m[K In member function ‘[01m[Kbool vehicle_core::AutopilotNode::requestControl()[m[K’:
+[5.889s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:154:22:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kload[m[K’ in ‘[01m[K((vehicle_core::AutopilotNode*)this)->vehicle_core::AutopilotNode::control_[m[K’, which is of non-class type ‘[01m[Kbool[m[K’
+[5.890s]   154 |         if (control_.[01;31m[Kload[m[K()) {
+[5.891s]       |                      [01;31m[K^~~~[m[K
+[5.899s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:178:22:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kstore[m[K’ in ‘[01m[K((vehicle_core::AutopilotNode*)this)->vehicle_core::AutopilotNode::control_[m[K’, which is of non-class type ‘[01m[Kbool[m[K’
+[5.900s]   178 |             control_.[01;31m[Kstore[m[K(true);
+[5.901s]       |                      [01;31m[K^~~~~[m[K
+[5.903s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:184:22:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kstore[m[K’ in ‘[01m[K((vehicle_core::AutopilotNode*)this)->vehicle_core::AutopilotNode::control_[m[K’, which is of non-class type ‘[01m[Kbool[m[K’
+[5.904s]   184 |             control_.[01;31m[Kstore[m[K(false);
+[5.905s]       |                      [01;31m[K^~~~~[m[K
+[5.906s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/autopilot_node.cpp:187:25:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kload[m[K’ in ‘[01m[K((vehicle_core::AutopilotNode*)this)->vehicle_core::AutopilotNode::control_[m[K’, which is of non-class type ‘[01m[Kbool[m[K’
+[5.907s]   187 |         return control_.[01;31m[Kload[m[K();
+[5.908s]       |                         [01;31m[K^~~~[m[K
+[12.297s] gmake[2]: *** [CMakeFiles/autopilot_node_component.dir/build.make:76: CMakeFiles/autopilot_node_component.dir/src/autopilot_node.cpp.o] Error 1
+[12.298s] gmake[1]: *** [CMakeFiles/Makefile2:778: CMakeFiles/autopilot_node_component.dir/all] Error 2
+[12.298s] gmake[1]: *** Waiting for unfinished jobs....
+[34.600s] [ 99%] [32m[1mLinking CXX shared library libdrive_arbiter_node_component.so[0m
+[37.313s] [ 99%] Built target drive_arbiter_node_component
+[37.314s] gmake: *** [Makefile:146: all] Error 2
+[37.321s] Invoked command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8

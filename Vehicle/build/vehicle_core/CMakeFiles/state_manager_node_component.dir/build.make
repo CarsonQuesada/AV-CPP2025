@@ -97,7 +97,6 @@ libstate_manager_node_component.so: /opt/ros/humble/lib/libstd_msgs__rosidl_type
 libstate_manager_node_component.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_cpp.so
 libstate_manager_node_component.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
 libstate_manager_node_component.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_cpp.so
-libstate_manager_node_component.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
 libstate_manager_node_component.so: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_py.so
 libstate_manager_node_component.so: /opt/ros/humble/lib/libstd_srvs__rosidl_typesupport_fastrtps_c.so
 libstate_manager_node_component.so: /opt/ros/humble/lib/libstd_srvs__rosidl_typesupport_introspection_c.so
@@ -168,6 +167,7 @@ libstate_manager_node_component.so: /opt/ros/humble/lib/librosidl_typesupport_in
 libstate_manager_node_component.so: /opt/ros/humble/lib/libstd_srvs__rosidl_typesupport_c.so
 libstate_manager_node_component.so: /opt/ros/humble/lib/libstd_srvs__rosidl_generator_c.so
 libstate_manager_node_component.so: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+libstate_manager_node_component.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
 libstate_manager_node_component.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
 libstate_manager_node_component.so: /opt/ros/humble/lib/librosidl_typesupport_cpp.so
 libstate_manager_node_component.so: /opt/ros/humble/lib/librosidl_typesupport_c.so

@@ -1,0 +1,114 @@
+[0.039s] Invoking command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8
+[0.168s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.449s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.458s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[0.494s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.497s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.504s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.517s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.533s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.577s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.578s] -- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.727s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.800s] -- Found rclcpp_components: 16.0.15 (/opt/ros/humble/share/rclcpp_components/cmake)
+[0.826s] -- Found std_srvs: 4.9.0 (/opt/ros/humble/share/std_srvs/cmake)
+[0.838s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.847s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.866s] -- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.890s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.915s] -- Found tf2: 0.25.16 (/opt/ros/humble/share/tf2/cmake)
+[0.920s] -- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+[0.934s] -- Found robot_localization: 3.5.4 (/opt/ros/humble/share/robot_localization/cmake)
+[1.727s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[2.584s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.879s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.943s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[2.996s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[2.996s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[2.997s] -- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+[3.054s] [0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):
+[3.054s]   Use rosidl_get_typesupport_target() and target_link_libraries() instead of
+[3.055s]   rosidl_target_interfaces()
+[3.055s] Call Stack (most recent call first):
+[3.056s]   CMakeLists.txt:145 (rosidl_target_interfaces)
+[3.056s] 
+[3.056s] [0m
+[3.058s] [0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):
+[3.059s]   Use rosidl_get_typesupport_target() and target_link_libraries() instead of
+[3.059s]   rosidl_target_interfaces()
+[3.060s] Call Stack (most recent call first):
+[3.060s]   CMakeLists.txt:160 (rosidl_target_interfaces)
+[3.060s] 
+[3.061s] [0m
+[3.061s] [0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):
+[3.062s]   Use rosidl_get_typesupport_target() and target_link_libraries() instead of
+[3.062s]   rosidl_target_interfaces()
+[3.062s] Call Stack (most recent call first):
+[3.063s]   CMakeLists.txt:175 (rosidl_target_interfaces)
+[3.063s] 
+[3.064s] [0m
+[3.064s] [0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):
+[3.065s]   Use rosidl_get_typesupport_target() and target_link_libraries() instead of
+[3.065s]   rosidl_target_interfaces()
+[3.065s] Call Stack (most recent call first):
+[3.066s]   CMakeLists.txt:196 (rosidl_target_interfaces)
+[3.066s] 
+[3.067s] [0m
+[3.068s] [0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):
+[3.068s]   Use rosidl_get_typesupport_target() and target_link_libraries() instead of
+[3.069s]   rosidl_target_interfaces()
+[3.069s] Call Stack (most recent call first):
+[3.069s]   CMakeLists.txt:215 (rosidl_target_interfaces)
+[3.069s] 
+[3.069s] [0m
+[3.069s] [0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):
+[3.069s]   Use rosidl_get_typesupport_target() and target_link_libraries() instead of
+[3.069s]   rosidl_target_interfaces()
+[3.069s] Call Stack (most recent call first):
+[3.069s]   CMakeLists.txt:241 (rosidl_target_interfaces)
+[3.069s] 
+[3.070s] [0m
+[3.072s] [0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):
+[3.072s]   Use rosidl_get_typesupport_target() and target_link_libraries() instead of
+[3.072s]   rosidl_target_interfaces()
+[3.072s] Call Stack (most recent call first):
+[3.072s]   CMakeLists.txt:262 (rosidl_target_interfaces)
+[3.072s] 
+[3.072s] [0m
+[3.074s] [0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):
+[3.074s]   Use rosidl_get_typesupport_target() and target_link_libraries() instead of
+[3.074s]   rosidl_target_interfaces()
+[3.074s] Call Stack (most recent call first):
+[3.074s]   CMakeLists.txt:287 (rosidl_target_interfaces)
+[3.074s] 
+[3.074s] [0m
+[3.086s] -- Configuring done
+[3.102s] [31mCMake Error at CMakeLists.txt:184 (add_library):
+[3.102s]   Cannot find source file:
+[3.102s] 
+[3.102s]     src/Devices/GtU7Gps.cpp
+[3.102s] 
+[3.103s]   Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+[3.103s]   .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+[3.103s] 
+[3.103s] [0m
+[3.103s] [31mCMake Error at CMakeLists.txt:226 (add_library):
+[3.103s]   Cannot find source file:
+[3.103s] 
+[3.103s]     src/Devices/I2C/I2CBus.cpp
+[3.103s] 
+[3.103s]   Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+[3.103s]   .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+[3.104s] 
+[3.104s] [0m
+[3.120s] [31mCMake Error at CMakeLists.txt:184 (add_library):
+[3.120s]   No SOURCES given to target: gt_u7_gps_node_component
+[3.120s] 
+[3.120s] [0m
+[3.120s] [31mCMake Error at CMakeLists.txt:226 (add_library):
+[3.120s]   No SOURCES given to target: i2c_bridge_node
+[3.120s] 
+[3.120s] [0m
+[3.120s] [0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m
+[3.148s] gmake: *** [Makefile:5706: cmake_check_build_system] Error 1
+[3.152s] Invoked command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8

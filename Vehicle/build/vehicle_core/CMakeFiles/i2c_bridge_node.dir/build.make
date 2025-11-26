@@ -83,14 +83,110 @@ CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp -o CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.s
 
+CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.o: CMakeFiles/i2c_bridge_node.dir/flags.make
+CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.o: /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBus.cpp
+CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.o: CMakeFiles/i2c_bridge_node.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.o -MF CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.o.d -o CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.o -c /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBus.cpp
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBus.cpp > CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.i
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBus.cpp -o CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.s
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.o: CMakeFiles/i2c_bridge_node.dir/flags.make
+CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.o: /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBusRegistry.cpp
+CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.o: CMakeFiles/i2c_bridge_node.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.o -MF CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.o.d -o CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.o -c /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBusRegistry.cpp
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBusRegistry.cpp > CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.i
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CBusRegistry.cpp -o CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.s
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.o: CMakeFiles/i2c_bridge_node.dir/flags.make
+CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.o: /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CDevice.cpp
+CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.o: CMakeFiles/i2c_bridge_node.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.o -MF CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.o.d -o CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.o -c /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CDevice.cpp
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CDevice.cpp > CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.i
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/I2C/I2CDevice.cpp -o CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.s
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.o: CMakeFiles/i2c_bridge_node.dir/flags.make
+CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.o: /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/BNO055.cpp
+CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.o: CMakeFiles/i2c_bridge_node.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.o -MF CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.o.d -o CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.o -c /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/BNO055.cpp
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/BNO055.cpp > CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.i
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/BNO055.cpp -o CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.s
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o: CMakeFiles/i2c_bridge_node.dir/flags.make
+CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o: /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp
+CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o: CMakeFiles/i2c_bridge_node.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o -MF CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o.d -o CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o -c /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp > CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.i
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp -o CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.s
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.o: CMakeFiles/i2c_bridge_node.dir/flags.make
+CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.o: /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/LightingSubsys.cpp
+CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.o: CMakeFiles/i2c_bridge_node.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.o -MF CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.o.d -o CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.o -c /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/LightingSubsys.cpp
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/LightingSubsys.cpp > CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.i
+
+CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/LightingSubsys.cpp -o CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.s
+
 # Object files for target i2c_bridge_node
 i2c_bridge_node_OBJECTS = \
-"CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o"
+"CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o" \
+"CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.o" \
+"CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.o" \
+"CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.o" \
+"CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.o" \
+"CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o" \
+"CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.o"
 
 # External object files for target i2c_bridge_node
 i2c_bridge_node_EXTERNAL_OBJECTS =
 
 libi2c_bridge_node.so: CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o
+libi2c_bridge_node.so: CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.o
+libi2c_bridge_node.so: CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.o
+libi2c_bridge_node.so: CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.o
+libi2c_bridge_node.so: CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.o
+libi2c_bridge_node.so: CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o
+libi2c_bridge_node.so: CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.o
 libi2c_bridge_node.so: CMakeFiles/i2c_bridge_node.dir/build.make
 libi2c_bridge_node.so: /opt/ros/humble/lib/libcomponent_manager.so
 libi2c_bridge_node.so: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_fastrtps_c.so
@@ -173,7 +269,6 @@ libi2c_bridge_node.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesup
 libi2c_bridge_node.so: /opt/ros/humble/lib/librosidl_typesupport_introspection_cpp.so
 libi2c_bridge_node.so: /opt/ros/humble/lib/librosidl_typesupport_introspection_c.so
 libi2c_bridge_node.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
-libi2c_bridge_node.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
 libi2c_bridge_node.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_generator_py.so
 libi2c_bridge_node.so: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_py.so
 libi2c_bridge_node.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_py.so
@@ -185,6 +280,7 @@ libi2c_bridge_node.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_generator_c.
 libi2c_bridge_node.so: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_c.so
 libi2c_bridge_node.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so
 libi2c_bridge_node.so: /usr/lib/aarch64-linux-gnu/libconsole_bridge.so.1.0
+libi2c_bridge_node.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
 libi2c_bridge_node.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
 libi2c_bridge_node.so: /opt/ros/humble/lib/librosidl_typesupport_cpp.so
 libi2c_bridge_node.so: /opt/ros/humble/lib/librosidl_typesupport_c.so
@@ -192,7 +288,7 @@ libi2c_bridge_node.so: /opt/ros/humble/lib/librcpputils.so
 libi2c_bridge_node.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libi2c_bridge_node.so: /opt/ros/humble/lib/librcutils.so
 libi2c_bridge_node.so: CMakeFiles/i2c_bridge_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libi2c_bridge_node.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX shared library libi2c_bridge_node.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/i2c_bridge_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

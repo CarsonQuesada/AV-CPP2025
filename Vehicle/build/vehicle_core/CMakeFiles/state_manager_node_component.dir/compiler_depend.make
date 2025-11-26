@@ -710,6 +710,11 @@ CMakeFiles/state_manager_node_component.dir/src/state_manager.cpp.o: /home/avcpp
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/empty__traits.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/empty__type_support.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/u_int8.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8__struct.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8__builder.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8__traits.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8__type_support.hpp \
   /opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp \
   /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp \
   /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__builder.hpp \
@@ -722,11 +727,11 @@ CMakeFiles/state_manager_node_component.dir/src/state_manager.cpp.o: /home/avcpp
   rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__traits.hpp \
   rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__type_support.hpp \
   rosidl_generator_cpp/vehicle_core/msg/rosidl_generator_cpp__visibility_control.hpp \
-  rosidl_generator_cpp/vehicle_core/msg/autopilot_drive_command.hpp \
-  rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__struct.hpp \
-  rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__builder.hpp \
-  rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__traits.hpp \
-  rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.hpp \
+  rosidl_generator_cpp/vehicle_core/msg/internal_drive_command.hpp \
+  rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__struct.hpp \
+  rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__builder.hpp \
+  rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__traits.hpp \
+  rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.hpp \
   /opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp \
   /opt/ros/humble/include/class_loader/class_loader/class_loader.hpp \
   /usr/include/c++/11/cstddef \
@@ -754,7 +759,9 @@ CMakeFiles/state_manager_node_component.dir/src/state_manager.cpp.o: /home/avcpp
 
 /usr/include/c++/11/cstddef:
 
-rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__builder.hpp:
+rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__builder.hpp:
+
+rosidl_generator_cpp/vehicle_core/msg/internal_drive_command.hpp:
 
 rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__traits.hpp:
 
@@ -763,6 +770,12 @@ rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__builder.hpp:
 /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__type_support.hpp:
 
 /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__traits.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8__type_support.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8__traits.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8__struct.hpp:
 
 /opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
 
@@ -935,6 +948,8 @@ rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__builder.hpp:
 /opt/ros/humble/include/rclcpp/rclcpp/get_message_type_support_handle.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/u_int8.hpp:
 
 /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/metric_details_interface.hpp:
 
@@ -1256,6 +1271,8 @@ rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__struct.hpp:
 
 /usr/include/unistd.h:
 
+rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__struct.hpp:
+
 rosidl_generator_cpp/vehicle_core/msg/state_mode.hpp:
 
 /usr/include/c++/11/bits/stl_algobase.h:
@@ -1490,8 +1507,6 @@ rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__type_support.hpp:
 
 /usr/include/aarch64-linux-gnu/bits/fp-logb.h:
 
-rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__struct.hpp:
-
 /usr/include/c++/11/pstl/pstl_config.h:
 
 /usr/include/aarch64-linux-gnu/bits/pthread_stack_min-dynamic.h:
@@ -1535,6 +1550,8 @@ rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__struct.hpp
 /usr/include/aarch64-linux-gnu/bits/environments.h:
 
 /opt/ros/humble/include/rcl/rcl/guard_condition.h:
+
+rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__traits.hpp:
 
 /usr/include/c++/11/system_error:
 
@@ -1774,8 +1791,6 @@ rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__struct.hpp
 
 /usr/include/c++/11/bits/streambuf_iterator.h:
 
-rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__traits.hpp:
-
 /usr/include/c++/11/istream:
 
 /usr/include/aarch64-linux-gnu/bits/cpu-set.h:
@@ -1815,6 +1830,8 @@ rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__traits.hpp
 /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/visibility_control.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/network_flow_endpoint.hpp:
+
+rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.hpp:
 
 /opt/ros/humble/include/rmw/rmw/init_options.h:
 
@@ -1922,8 +1939,6 @@ rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__traits.hpp
 
 /opt/ros/humble/include/rcl/rcl/client.h:
 
-rosidl_generator_cpp/vehicle_core/msg/autopilot_drive_command.hpp:
-
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/get_parameters.hpp:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h:
@@ -1999,6 +2014,8 @@ rosidl_generator_cpp/vehicle_core/msg/autopilot_drive_command.hpp:
 /opt/ros/humble/include/rcl/rcl/event_callback.h:
 
 /opt/ros/humble/include/tracetools/tracetools/tracetools.h:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8__builder.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__builder.hpp:
 
@@ -2119,8 +2136,6 @@ rosidl_generator_cpp/vehicle_core/msg/autopilot_drive_command.hpp:
 /opt/ros/humble/include/rmw/rmw/events_statuses/liveliness_changed.h:
 
 /opt/ros/humble/include/tracetools/tracetools/visibility_control.hpp:
-
-rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.hpp:
 
 /usr/include/aarch64-linux-gnu/bits/procfs-id.h:
 

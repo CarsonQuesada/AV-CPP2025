@@ -246,9 +246,12 @@ CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generat
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/rosidl_generator_c__visibility_control.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/drive_target__struct.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/drive_target__functions.h
- /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.h
- /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__struct.h
- /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.h
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__type_support.h
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__struct.h
+ /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h
+ /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h
+ /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__type_support.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__struct.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/manual_drive_command__functions.h
@@ -284,8 +287,6 @@ CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generat
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/server_init__functions.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__type_support.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__struct.h
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__functions.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/perception_profile__type_support.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/perception_profile__struct.h
@@ -295,11 +296,20 @@ CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generat
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/state_mode__functions.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/state_event__type_support.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/state_event__struct.h
- /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/state_event__functions.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__type_support.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__struct.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/drive_feedback__functions.h
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/imu_status__type_support.h
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/imu_status__struct.h
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.h
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.h
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__type_support.h
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__struct.h
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.h
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__type_support.h
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__struct.h
+ /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__type_support.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__struct.h
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.h

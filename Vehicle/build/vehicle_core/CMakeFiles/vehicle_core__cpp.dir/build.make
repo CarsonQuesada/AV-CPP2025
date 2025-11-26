@@ -71,11 +71,11 @@ CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/drive
 CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/drive_target__struct.hpp
 CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/drive_target__traits.hpp
 CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/drive_target__type_support.hpp
-CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/autopilot_drive_command.hpp
-CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__builder.hpp
-CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__struct.hpp
-CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__traits.hpp
-CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/internal_drive_command.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__builder.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__struct.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__traits.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.hpp
 CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/manual_drive_command.hpp
 CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/manual_drive_command__builder.hpp
 CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/manual_drive_command__struct.hpp
@@ -156,6 +156,21 @@ CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/drive
 CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/drive_feedback__struct.hpp
 CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/drive_feedback__traits.hpp
 CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/drive_feedback__type_support.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/imu_status.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__builder.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__struct.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__traits.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__type_support.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/request_internal_control.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__builder.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__struct.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__traits.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__type_support.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/release_internal_control.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__builder.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__struct.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__traits.hpp
+CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__type_support.hpp
 CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/set_autopilot_profile.hpp
 CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/set_autopilot_profile__builder.hpp
 CMakeFiles/vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/set_autopilot_profile__struct.hpp
@@ -179,7 +194,7 @@ rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/ro
 rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__struct.hpp.em
 rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__traits.hpp.em
 rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: rosidl_adapter/vehicle_core/msg/DriveTarget.idl
-rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: rosidl_adapter/vehicle_core/msg/AutopilotDriveCommand.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: rosidl_adapter/vehicle_core/msg/InternalDriveCommand.idl
 rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: rosidl_adapter/vehicle_core/msg/ManualDriveCommand.idl
 rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: rosidl_adapter/vehicle_core/msg/LightsCommand.idl
 rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: rosidl_adapter/vehicle_core/msg/MaxSpeed.idl
@@ -196,9 +211,42 @@ rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: rosidl_adapter/vehicle_c
 rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: rosidl_adapter/vehicle_core/msg/StateMode.idl
 rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: rosidl_adapter/vehicle_core/msg/StateEvent.idl
 rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: rosidl_adapter/vehicle_core/msg/DriveFeedback.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: rosidl_adapter/vehicle_core/msg/IMUStatus.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: rosidl_adapter/vehicle_core/srv/RequestInternalControl.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: rosidl_adapter/vehicle_core/srv/ReleaseInternalControl.idl
 rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: rosidl_adapter/vehicle_core/srv/SetAutopilotProfile.idl
 rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/builtin_interfaces/msg/Duration.idl
 rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/builtin_interfaces/msg/Time.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Bool.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Byte.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Char.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/ColorRGBA.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Empty.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Float32.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Float32MultiArray.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Float64.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Float64MultiArray.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Header.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Int16.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Int16MultiArray.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Int32.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Int32MultiArray.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Int64.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Int64MultiArray.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Int8.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/Int8MultiArray.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/MultiArrayDimension.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/MultiArrayLayout.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/String.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/UInt16.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/UInt16MultiArray.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/UInt32.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/UInt32MultiArray.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/UInt64.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/UInt64MultiArray.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/UInt8.idl
+rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp: /opt/ros/humble/share/std_msgs/msg/UInt8MultiArray.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
 	/usr/bin/python3 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp__arguments.json
 
@@ -214,20 +262,20 @@ rosidl_generator_cpp/vehicle_core/msg/detail/drive_target__traits.hpp: rosidl_ge
 rosidl_generator_cpp/vehicle_core/msg/detail/drive_target__type_support.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/detail/drive_target__type_support.hpp
 
-rosidl_generator_cpp/vehicle_core/msg/autopilot_drive_command.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/autopilot_drive_command.hpp
+rosidl_generator_cpp/vehicle_core/msg/internal_drive_command.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/internal_drive_command.hpp
 
-rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__builder.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__builder.hpp
+rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__builder.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__builder.hpp
 
-rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__struct.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__struct.hpp
+rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__struct.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__struct.hpp
 
-rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__traits.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__traits.hpp
+rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__traits.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__traits.hpp
 
-rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.hpp
+rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.hpp
 
 rosidl_generator_cpp/vehicle_core/msg/manual_drive_command.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/manual_drive_command.hpp
@@ -469,6 +517,51 @@ rosidl_generator_cpp/vehicle_core/msg/detail/drive_feedback__traits.hpp: rosidl_
 rosidl_generator_cpp/vehicle_core/msg/detail/drive_feedback__type_support.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/detail/drive_feedback__type_support.hpp
 
+rosidl_generator_cpp/vehicle_core/msg/imu_status.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/imu_status.hpp
+
+rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__builder.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__builder.hpp
+
+rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__struct.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__struct.hpp
+
+rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__traits.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__traits.hpp
+
+rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__type_support.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__type_support.hpp
+
+rosidl_generator_cpp/vehicle_core/srv/request_internal_control.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/srv/request_internal_control.hpp
+
+rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__builder.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__builder.hpp
+
+rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__struct.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__struct.hpp
+
+rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__traits.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__traits.hpp
+
+rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__type_support.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__type_support.hpp
+
+rosidl_generator_cpp/vehicle_core/srv/release_internal_control.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/srv/release_internal_control.hpp
+
+rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__builder.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__builder.hpp
+
+rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__struct.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__struct.hpp
+
+rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__traits.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__traits.hpp
+
+rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__type_support.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__type_support.hpp
+
 rosidl_generator_cpp/vehicle_core/srv/set_autopilot_profile.hpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vehicle_core/srv/set_autopilot_profile.hpp
 
@@ -487,7 +580,6 @@ rosidl_generator_cpp/vehicle_core/srv/detail/set_autopilot_profile__type_support
 vehicle_core__cpp: CMakeFiles/vehicle_core__cpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/autopilot_command.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/autopilot_config.hpp
-vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/autopilot_drive_command.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/autopilot_status.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_command__builder.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_command__struct.hpp
@@ -497,10 +589,6 @@ vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_config
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_config__struct.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_config__traits.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_config__type_support.hpp
-vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__builder.hpp
-vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__struct.hpp
-vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__traits.hpp
-vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_status__builder.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_status__struct.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/autopilot_status__traits.hpp
@@ -525,6 +613,14 @@ vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/general_status__
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/general_status__struct.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/general_status__traits.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/general_status__type_support.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__builder.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__struct.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__traits.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__type_support.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__builder.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__struct.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__traits.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/lights_command__builder.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/lights_command__struct.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/detail/lights_command__traits.hpp
@@ -566,6 +662,8 @@ vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/drive_status.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/drive_target.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/error.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/general_status.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/imu_status.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/internal_drive_command.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/lights_command.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/lights_status.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/manual_drive_command.hpp
@@ -575,10 +673,20 @@ vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/server_init.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/state_event.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/state_mode.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/msg/telemetry_data.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__builder.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__struct.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__traits.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__type_support.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__builder.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__struct.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__traits.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__type_support.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/set_autopilot_profile__builder.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/set_autopilot_profile__struct.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/set_autopilot_profile__traits.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/detail/set_autopilot_profile__type_support.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/release_internal_control.hpp
+vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/request_internal_control.hpp
 vehicle_core__cpp: rosidl_generator_cpp/vehicle_core/srv/set_autopilot_profile.hpp
 vehicle_core__cpp: CMakeFiles/vehicle_core__cpp.dir/build.make
 .PHONY : vehicle_core__cpp

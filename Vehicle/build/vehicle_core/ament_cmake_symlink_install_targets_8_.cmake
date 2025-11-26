@@ -1,1 +1,1 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/vehicle_core_container" "TARGETS" "vehicle_core_container" "RUNTIME_DESTINATION" "lib/vehicle_core")
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/libi2c_bridge_node.so" "TARGETS" "i2c_bridge_node" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

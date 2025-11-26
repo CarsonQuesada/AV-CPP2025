@@ -1,0 +1,152 @@
+[0.000000] (-) TimerEvent: {}
+[0.000292] (vehicle_core) JobQueued: {'identifier': 'vehicle_core', 'dependencies': OrderedDict()}
+[0.001003] (vehicle_core) JobStarted: {'identifier': 'vehicle_core'}
+[0.031329] (vehicle_core) JobProgress: {'identifier': 'vehicle_core', 'progress': 'cmake'}
+[0.033134] (vehicle_core) JobProgress: {'identifier': 'vehicle_core', 'progress': 'build'}
+[0.033271] (vehicle_core) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core', '--', '-j8', '-l8'], 'cwd': '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('UMS_MOUNTPOINT', '/mnt/ums'), ('GST_V4L2_PREFERRED_FOURCC', 'NV12:YU12:NV16:YUY2'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'avcpp'), ('SSH_CLIENT', '192.168.8.103 11960 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('USB_FUNCS', 'adb'), ('LD_LIBRARY_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/avcpp'), ('OLDPWD', '/home/avcpp/AV-CPP2025'), ('TERM_PROGRAM_VERSION', '1.106.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1001/vscode-ipc-636e580e-7306-4994-9308-f6018129df65.sock'), ('GST_INSPECT_NO_COLORS', '1'), ('GST_MPP_NO_RGA', '1'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1001/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install'), ('GST_V4L2SRC_MAX_RESOLUTION', '3840x2160'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'avcpp'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', '5'), ('GST_VIDEO_CONVERT_PREFERRED_FORMAT', 'NV12:NV16:I420:YUY2'), ('GST_V4L2SRC_RK_DEVICES', '_mainpath:_selfpath:_bypass:_scale'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/avcpp/.vscode-server/cli/servers/Stable-1e3c50d64110be466c0b4a45222e81d2c9352888/server/bin/remote-cli:/home/avcpp/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1001'), ('GST_GL_PLATFORM', 'egl'), ('GST_DEBUG_NO_COLOR', '1'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('GST_V4L2SRC_DEFAULT_DEVICE', '/dev/video-camera0'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1001/vscode-git-c9ee365bab.sock'), ('TERM_PROGRAM', 'vscode'), ('GST_V4L2_USE_LIBV4L2', '1'), ('UMS_SIZE', '256M'), ('AMENT_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/opt/ros/humble'), ('LC_MESSAGES', 'en_US.UTF-8'), ('SHELL', '/bin/bash'), ('UMS_RO', '0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('UMS_FSTYPE', 'vfat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.8.103 11960 192.168.8.176 22'), ('PYTHONPATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('UMS_MOUNT', '0'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/opt/ros/humble'), ('UMS_FILE', '/userdata/ums_shared.img')]), 'shell': False}
+[0.097795] (-) TimerEvent: {}
+[0.167995] (vehicle_core) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.197930] (-) TimerEvent: {}
+[0.298710] (-) TimerEvent: {}
+[0.399749] (-) TimerEvent: {}
+[0.449731] (vehicle_core) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.458982] (vehicle_core) StdoutLine: {'line': b'-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.494302] (vehicle_core) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.497539] (vehicle_core) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.499888] (-) TimerEvent: {}
+[0.505091] (vehicle_core) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.517800] (vehicle_core) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.533996] (vehicle_core) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.577121] (vehicle_core) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.578728] (vehicle_core) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.600269] (-) TimerEvent: {}
+[0.701160] (-) TimerEvent: {}
+[0.727299] (vehicle_core) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.800772] (vehicle_core) StdoutLine: {'line': b'-- Found rclcpp_components: 16.0.15 (/opt/ros/humble/share/rclcpp_components/cmake)\n'}
+[0.801636] (-) TimerEvent: {}
+[0.826775] (vehicle_core) StdoutLine: {'line': b'-- Found std_srvs: 4.9.0 (/opt/ros/humble/share/std_srvs/cmake)\n'}
+[0.838704] (vehicle_core) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.847657] (vehicle_core) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[0.865873] (vehicle_core) StdoutLine: {'line': b'-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[0.890828] (vehicle_core) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.901867] (-) TimerEvent: {}
+[0.915980] (vehicle_core) StdoutLine: {'line': b'-- Found tf2: 0.25.16 (/opt/ros/humble/share/tf2/cmake)\n'}
+[0.920464] (vehicle_core) StdoutLine: {'line': b'-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)\n'}
+[0.934128] (vehicle_core) StdoutLine: {'line': b'-- Found robot_localization: 3.5.4 (/opt/ros/humble/share/robot_localization/cmake)\n'}
+[1.002231] (-) TimerEvent: {}
+[1.103313] (-) TimerEvent: {}
+[1.204254] (-) TimerEvent: {}
+[1.305242] (-) TimerEvent: {}
+[1.406319] (-) TimerEvent: {}
+[1.507385] (-) TimerEvent: {}
+[1.608458] (-) TimerEvent: {}
+[1.709512] (-) TimerEvent: {}
+[1.727863] (vehicle_core) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[1.809866] (-) TimerEvent: {}
+[1.910763] (-) TimerEvent: {}
+[2.011343] (-) TimerEvent: {}
+[2.111956] (-) TimerEvent: {}
+[2.212778] (-) TimerEvent: {}
+[2.313845] (-) TimerEvent: {}
+[2.414686] (-) TimerEvent: {}
+[2.515527] (-) TimerEvent: {}
+[2.584338] (vehicle_core) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.615682] (-) TimerEvent: {}
+[2.716458] (-) TimerEvent: {}
+[2.817141] (-) TimerEvent: {}
+[2.879513] (vehicle_core) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.917280] (-) TimerEvent: {}
+[2.943909] (vehicle_core) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[2.996706] (vehicle_core) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[2.997292] (vehicle_core) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[2.997605] (vehicle_core) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so\n'}
+[3.017424] (-) TimerEvent: {}
+[3.054196] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[3.055084] (vehicle_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[3.055528] (vehicle_core) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[3.055910] (vehicle_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.056319] (vehicle_core) StderrLine: {'line': b'  CMakeLists.txt:145 (rosidl_target_interfaces)\n'}
+[3.056710] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.057067] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.058771] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[3.059433] (vehicle_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[3.059912] (vehicle_core) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[3.060298] (vehicle_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.060652] (vehicle_core) StderrLine: {'line': b'  CMakeLists.txt:160 (rosidl_target_interfaces)\n'}
+[3.061111] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.061465] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.061809] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[3.062163] (vehicle_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[3.062690] (vehicle_core) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[3.063121] (vehicle_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.063516] (vehicle_core) StderrLine: {'line': b'  CMakeLists.txt:175 (rosidl_target_interfaces)\n'}
+[3.063873] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.064300] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.064765] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[3.065163] (vehicle_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[3.065726] (vehicle_core) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[3.066128] (vehicle_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.066552] (vehicle_core) StderrLine: {'line': b'  CMakeLists.txt:196 (rosidl_target_interfaces)\n'}
+[3.066976] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.067389] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.068276] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[3.068868] (vehicle_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[3.069304] (vehicle_core) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[3.069717] (vehicle_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.069808] (vehicle_core) StderrLine: {'line': b'  CMakeLists.txt:215 (rosidl_target_interfaces)\n'}
+[3.069890] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.069970] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.070048] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[3.070128] (vehicle_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[3.070208] (vehicle_core) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[3.070286] (vehicle_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.070365] (vehicle_core) StderrLine: {'line': b'  CMakeLists.txt:241 (rosidl_target_interfaces)\n'}
+[3.070444] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.070521] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.072445] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[3.072627] (vehicle_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[3.072720] (vehicle_core) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[3.072804] (vehicle_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.072885] (vehicle_core) StderrLine: {'line': b'  CMakeLists.txt:262 (rosidl_target_interfaces)\n'}
+[3.072980] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.073061] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.074702] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[3.074856] (vehicle_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[3.074947] (vehicle_core) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[3.075030] (vehicle_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.075113] (vehicle_core) StderrLine: {'line': b'  CMakeLists.txt:287 (rosidl_target_interfaces)\n'}
+[3.075190] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.075267] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.086286] (vehicle_core) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.102136] (vehicle_core) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:184 (add_library):\n'}
+[3.103016] (vehicle_core) StderrLine: {'line': b'  Cannot find source file:\n'}
+[3.103258] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.103360] (vehicle_core) StderrLine: {'line': b'    src/Devices/GtU7Gps.cpp\n'}
+[3.103456] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.103544] (vehicle_core) StderrLine: {'line': b'  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h\n'}
+[3.103666] (vehicle_core) StderrLine: {'line': b'  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc\n'}
+[3.103758] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.103844] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.103933] (vehicle_core) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:226 (add_library):\n'}
+[3.104021] (vehicle_core) StderrLine: {'line': b'  Cannot find source file:\n'}
+[3.104106] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.104191] (vehicle_core) StderrLine: {'line': b'    src/Devices/I2C/I2CBus.cpp\n'}
+[3.104277] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.104363] (vehicle_core) StderrLine: {'line': b'  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h\n'}
+[3.104450] (vehicle_core) StderrLine: {'line': b'  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc\n'}
+[3.104536] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.104621] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.117570] (-) TimerEvent: {}
+[3.120297] (vehicle_core) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:184 (add_library):\n'}
+[3.120659] (vehicle_core) StderrLine: {'line': b'  No SOURCES given to target: gt_u7_gps_node_component\n'}
+[3.120751] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.120823] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.120893] (vehicle_core) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:226 (add_library):\n'}
+[3.120959] (vehicle_core) StderrLine: {'line': b'  No SOURCES given to target: i2c_bridge_node\n'}
+[3.121024] (vehicle_core) StderrLine: {'line': b'\n'}
+[3.121086] (vehicle_core) StderrLine: {'line': b'\x1b[0m\n'}
+[3.121148] (vehicle_core) StderrLine: {'line': b'\x1b[0mCMake Generate step failed.  Build files cannot be regenerated correctly.\x1b[0m\n'}
+[3.149004] (vehicle_core) StderrLine: {'line': b'gmake: *** [Makefile:5706: cmake_check_build_system] Error 1\n'}
+[3.152827] (vehicle_core) CommandEnded: {'returncode': 2}
+[3.174733] (vehicle_core) JobEnded: {'identifier': 'vehicle_core', 'rc': 2}
+[3.185596] (-) EventReactorShutdown: {}

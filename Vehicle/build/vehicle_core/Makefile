@@ -406,6 +406,19 @@ state_manager_node_component/fast:
 .PHONY : state_manager_node_component/fast
 
 #=============================================================================
+# Target rules for targets named heading_calibrator_node_component
+
+# Build rule for target.
+heading_calibrator_node_component: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 heading_calibrator_node_component
+.PHONY : heading_calibrator_node_component
+
+# fast build rule for target.
+heading_calibrator_node_component/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/heading_calibrator_node_component.dir/build.make CMakeFiles/heading_calibrator_node_component.dir/build
+.PHONY : heading_calibrator_node_component/fast
+
+#=============================================================================
 # Target rules for targets named drive_arbiter_node_component
 
 # Build rule for target.
@@ -417,6 +430,19 @@ drive_arbiter_node_component: cmake_check_build_system
 drive_arbiter_node_component/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/drive_arbiter_node_component.dir/build.make CMakeFiles/drive_arbiter_node_component.dir/build
 .PHONY : drive_arbiter_node_component/fast
+
+#=============================================================================
+# Target rules for targets named gt_u7_gps_node_component
+
+# Build rule for target.
+gt_u7_gps_node_component: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gt_u7_gps_node_component
+.PHONY : gt_u7_gps_node_component
+
+# fast build rule for target.
+gt_u7_gps_node_component/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gt_u7_gps_node_component.dir/build.make CMakeFiles/gt_u7_gps_node_component.dir/build
+.PHONY : gt_u7_gps_node_component/fast
 
 #=============================================================================
 # Target rules for targets named tcp_server_node_component
@@ -443,6 +469,19 @@ i2c_bridge_node: cmake_check_build_system
 i2c_bridge_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/build
 .PHONY : i2c_bridge_node/fast
+
+#=============================================================================
+# Target rules for targets named autopilot_node_component
+
+# Build rule for target.
+autopilot_node_component: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 autopilot_node_component
+.PHONY : autopilot_node_component
+
+# fast build rule for target.
+autopilot_node_component/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/autopilot_node_component.dir/build.make CMakeFiles/autopilot_node_component.dir/build
+.PHONY : autopilot_node_component/fast
 
 #=============================================================================
 # Target rules for targets named gst_camera_component
@@ -530,30 +569,6 @@ rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__functions.s: rosidl
 rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__functions.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__functions.c.s
 .PHONY : rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__functions.c.s
-
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.o: rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.o
-.PHONY : rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.o
-
-# target to build an object file
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.o
-.PHONY : rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.o
-
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.i: rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.i
-.PHONY : rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.i
-
-# target to preprocess a source file
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.i
-.PHONY : rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.i
-
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.s: rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.s
-.PHONY : rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.s
-
-# target to generate assembly for a file
-rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.s
-.PHONY : rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.c.s
 
 rosidl_generator_c/vehicle_core/msg/detail/autopilot_status__functions.o: rosidl_generator_c/vehicle_core/msg/detail/autopilot_status__functions.c.o
 .PHONY : rosidl_generator_c/vehicle_core/msg/detail/autopilot_status__functions.o
@@ -698,6 +713,54 @@ rosidl_generator_c/vehicle_core/msg/detail/general_status__functions.s: rosidl_g
 rosidl_generator_c/vehicle_core/msg/detail/general_status__functions.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/general_status__functions.c.s
 .PHONY : rosidl_generator_c/vehicle_core/msg/detail/general_status__functions.c.s
+
+rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.o: rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.o
+.PHONY : rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.o
+
+# target to build an object file
+rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.o
+.PHONY : rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.o
+
+rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.i: rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.i
+.PHONY : rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.i
+
+# target to preprocess a source file
+rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.i
+.PHONY : rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.i
+
+rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.s: rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.s
+.PHONY : rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.s
+
+# target to generate assembly for a file
+rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.s
+.PHONY : rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.c.s
+
+rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.o: rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.o
+.PHONY : rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.o
+
+# target to build an object file
+rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.o
+.PHONY : rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.o
+
+rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.i: rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.i
+.PHONY : rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.i
+
+# target to preprocess a source file
+rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.i
+.PHONY : rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.i
+
+rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.s: rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.s
+.PHONY : rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.s
+
+# target to generate assembly for a file
+rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.s
+.PHONY : rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.c.s
 
 rosidl_generator_c/vehicle_core/msg/detail/lights_command__functions.o: rosidl_generator_c/vehicle_core/msg/detail/lights_command__functions.c.o
 .PHONY : rosidl_generator_c/vehicle_core/msg/detail/lights_command__functions.o
@@ -915,6 +978,54 @@ rosidl_generator_c/vehicle_core/msg/detail/telemetry_data__functions.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/msg/detail/telemetry_data__functions.c.s
 .PHONY : rosidl_generator_c/vehicle_core/msg/detail/telemetry_data__functions.c.s
 
+rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.o: rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.o
+.PHONY : rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.o
+
+# target to build an object file
+rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.o
+.PHONY : rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.o
+
+rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.i: rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.i
+.PHONY : rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.i
+
+# target to preprocess a source file
+rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.i
+.PHONY : rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.i
+
+rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.s: rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.s
+.PHONY : rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.s
+
+# target to generate assembly for a file
+rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.s
+.PHONY : rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.c.s
+
+rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.o: rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.o
+.PHONY : rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.o
+
+# target to build an object file
+rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.o
+.PHONY : rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.o
+
+rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.i: rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.i
+.PHONY : rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.i
+
+# target to preprocess a source file
+rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.i
+.PHONY : rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.i
+
+rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.s: rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.s
+.PHONY : rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.s
+
+# target to generate assembly for a file
+rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_c.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_c.dir/rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.s
+.PHONY : rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.c.s
+
 rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.o: rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.c.o
 .PHONY : rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.o
 
@@ -1059,30 +1170,6 @@ rosidl_generator_py/vehicle_core/msg/_autopilot_config_s.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_config_s.c.s
 .PHONY : rosidl_generator_py/vehicle_core/msg/_autopilot_config_s.c.s
 
-rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.o: rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.o
-.PHONY : rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.o
-
-# target to build an object file
-rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.o
-.PHONY : rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.o
-
-rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.i: rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.i
-.PHONY : rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.i
-
-# target to preprocess a source file
-rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.i
-.PHONY : rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.i
-
-rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.s: rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.s
-.PHONY : rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.s
-
-# target to generate assembly for a file
-rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.s
-.PHONY : rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.c.s
-
 rosidl_generator_py/vehicle_core/msg/_autopilot_status_s.o: rosidl_generator_py/vehicle_core/msg/_autopilot_status_s.c.o
 .PHONY : rosidl_generator_py/vehicle_core/msg/_autopilot_status_s.o
 
@@ -1226,6 +1313,54 @@ rosidl_generator_py/vehicle_core/msg/_general_status_s.s: rosidl_generator_py/ve
 rosidl_generator_py/vehicle_core/msg/_general_status_s.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_general_status_s.c.s
 .PHONY : rosidl_generator_py/vehicle_core/msg/_general_status_s.c.s
+
+rosidl_generator_py/vehicle_core/msg/_imu_status_s.o: rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.o
+.PHONY : rosidl_generator_py/vehicle_core/msg/_imu_status_s.o
+
+# target to build an object file
+rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.o
+.PHONY : rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.o
+
+rosidl_generator_py/vehicle_core/msg/_imu_status_s.i: rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.i
+.PHONY : rosidl_generator_py/vehicle_core/msg/_imu_status_s.i
+
+# target to preprocess a source file
+rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.i
+.PHONY : rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.i
+
+rosidl_generator_py/vehicle_core/msg/_imu_status_s.s: rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.s
+.PHONY : rosidl_generator_py/vehicle_core/msg/_imu_status_s.s
+
+# target to generate assembly for a file
+rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.s
+.PHONY : rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.s
+
+rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.o: rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.o
+.PHONY : rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.o
+
+# target to build an object file
+rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.o
+.PHONY : rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.o
+
+rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.i: rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.i
+.PHONY : rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.i
+
+# target to preprocess a source file
+rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.i
+.PHONY : rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.i
+
+rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.s: rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.s
+.PHONY : rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.s
+
+# target to generate assembly for a file
+rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.s
+.PHONY : rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.s
 
 rosidl_generator_py/vehicle_core/msg/_lights_command_s.o: rosidl_generator_py/vehicle_core/msg/_lights_command_s.c.o
 .PHONY : rosidl_generator_py/vehicle_core/msg/_lights_command_s.o
@@ -1443,6 +1578,54 @@ rosidl_generator_py/vehicle_core/msg/_telemetry_data_s.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_telemetry_data_s.c.s
 .PHONY : rosidl_generator_py/vehicle_core/msg/_telemetry_data_s.c.s
 
+rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.o: rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.o
+.PHONY : rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.o
+
+# target to build an object file
+rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.o
+.PHONY : rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.o
+
+rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.i: rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.i
+.PHONY : rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.i
+
+# target to preprocess a source file
+rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.i
+.PHONY : rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.i
+
+rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.s: rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.s
+.PHONY : rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.s
+
+# target to generate assembly for a file
+rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.s
+.PHONY : rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.s
+
+rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.o: rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.o
+.PHONY : rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.o
+
+# target to build an object file
+rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.o
+.PHONY : rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.o
+
+rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.i: rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.i
+.PHONY : rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.i
+
+# target to preprocess a source file
+rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.i
+.PHONY : rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.i
+
+rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.s: rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.s
+.PHONY : rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.s
+
+# target to generate assembly for a file
+rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_generator_py.dir/build.make CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.s
+.PHONY : rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.s
+
 rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.o: rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.c.o
 .PHONY : rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.o
 
@@ -1514,30 +1697,6 @@ rosidl_typesupport_c/vehicle_core/msg/autopilot_config__type_support.s: rosidl_t
 rosidl_typesupport_c/vehicle_core/msg/autopilot_config__type_support.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/msg/autopilot_config__type_support.cpp.s
 .PHONY : rosidl_typesupport_c/vehicle_core/msg/autopilot_config__type_support.cpp.s
-
-rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.o: rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.cpp.o
-.PHONY : rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.o
-
-# target to build an object file
-rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.cpp.o
-.PHONY : rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.cpp.o
-
-rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.i: rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.cpp.i
-.PHONY : rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.i
-
-# target to preprocess a source file
-rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.cpp.i
-.PHONY : rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.cpp.i
-
-rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.s: rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.cpp.s
-.PHONY : rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.s
-
-# target to generate assembly for a file
-rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.cpp.s
-.PHONY : rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.cpp.s
 
 rosidl_typesupport_c/vehicle_core/msg/autopilot_status__type_support.o: rosidl_typesupport_c/vehicle_core/msg/autopilot_status__type_support.cpp.o
 .PHONY : rosidl_typesupport_c/vehicle_core/msg/autopilot_status__type_support.o
@@ -1682,6 +1841,54 @@ rosidl_typesupport_c/vehicle_core/msg/general_status__type_support.s: rosidl_typ
 rosidl_typesupport_c/vehicle_core/msg/general_status__type_support.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/msg/general_status__type_support.cpp.s
 .PHONY : rosidl_typesupport_c/vehicle_core/msg/general_status__type_support.cpp.s
+
+rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.o: rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.cpp.o
+.PHONY : rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.o
+
+# target to build an object file
+rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.cpp.o
+.PHONY : rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.cpp.o
+
+rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.i: rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.cpp.i
+.PHONY : rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.cpp.i
+.PHONY : rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.cpp.i
+
+rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.s: rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.cpp.s
+.PHONY : rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.cpp.s
+.PHONY : rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.cpp.s
+
+rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.o: rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.cpp.o
+.PHONY : rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.o
+
+# target to build an object file
+rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.cpp.o
+.PHONY : rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.cpp.o
+
+rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.i: rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.cpp.i
+.PHONY : rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.cpp.i
+.PHONY : rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.cpp.i
+
+rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.s: rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.cpp.s
+.PHONY : rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.cpp.s
+.PHONY : rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.cpp.s
 
 rosidl_typesupport_c/vehicle_core/msg/lights_command__type_support.o: rosidl_typesupport_c/vehicle_core/msg/lights_command__type_support.cpp.o
 .PHONY : rosidl_typesupport_c/vehicle_core/msg/lights_command__type_support.o
@@ -1899,6 +2106,54 @@ rosidl_typesupport_c/vehicle_core/msg/telemetry_data__type_support.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/msg/telemetry_data__type_support.cpp.s
 .PHONY : rosidl_typesupport_c/vehicle_core/msg/telemetry_data__type_support.cpp.s
 
+rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.o: rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.cpp.o
+.PHONY : rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.o
+
+# target to build an object file
+rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.cpp.o
+.PHONY : rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.cpp.o
+
+rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.i: rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.cpp.i
+.PHONY : rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.cpp.i
+.PHONY : rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.cpp.i
+
+rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.s: rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.cpp.s
+.PHONY : rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.cpp.s
+.PHONY : rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.cpp.s
+
+rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.o: rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.cpp.o
+.PHONY : rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.o
+
+# target to build an object file
+rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.cpp.o
+.PHONY : rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.cpp.o
+
+rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.i: rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.cpp.i
+.PHONY : rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.cpp.i
+.PHONY : rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.cpp.i
+
+rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.s: rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.cpp.s
+.PHONY : rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.cpp.s
+.PHONY : rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.cpp.s
+
 rosidl_typesupport_c/vehicle_core/srv/set_autopilot_profile__type_support.o: rosidl_typesupport_c/vehicle_core/srv/set_autopilot_profile__type_support.cpp.o
 .PHONY : rosidl_typesupport_c/vehicle_core/srv/set_autopilot_profile__type_support.o
 
@@ -1970,30 +2225,6 @@ rosidl_typesupport_cpp/vehicle_core/msg/autopilot_config__type_support.s: rosidl
 rosidl_typesupport_cpp/vehicle_core/msg/autopilot_config__type_support.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/msg/autopilot_config__type_support.cpp.s
 .PHONY : rosidl_typesupport_cpp/vehicle_core/msg/autopilot_config__type_support.cpp.s
-
-rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.o: rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.cpp.o
-.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.o
-
-# target to build an object file
-rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.cpp.o
-.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.cpp.o
-
-rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.i: rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.cpp.i
-.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.i
-
-# target to preprocess a source file
-rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.cpp.i
-.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.cpp.i
-
-rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.s: rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.cpp.s
-.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.s
-
-# target to generate assembly for a file
-rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.cpp.s
-.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.cpp.s
 
 rosidl_typesupport_cpp/vehicle_core/msg/autopilot_status__type_support.o: rosidl_typesupport_cpp/vehicle_core/msg/autopilot_status__type_support.cpp.o
 .PHONY : rosidl_typesupport_cpp/vehicle_core/msg/autopilot_status__type_support.o
@@ -2138,6 +2369,54 @@ rosidl_typesupport_cpp/vehicle_core/msg/general_status__type_support.s: rosidl_t
 rosidl_typesupport_cpp/vehicle_core/msg/general_status__type_support.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/msg/general_status__type_support.cpp.s
 .PHONY : rosidl_typesupport_cpp/vehicle_core/msg/general_status__type_support.cpp.s
+
+rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.o: rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.cpp.o
+.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.o
+
+# target to build an object file
+rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.cpp.o
+.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.cpp.o
+
+rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.i: rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.cpp.i
+.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.cpp.i
+.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.cpp.i
+
+rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.s: rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.cpp.s
+.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.cpp.s
+.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.cpp.s
+
+rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.o: rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.cpp.o
+.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.o
+
+# target to build an object file
+rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.cpp.o
+.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.cpp.o
+
+rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.i: rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.cpp.i
+.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.cpp.i
+.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.cpp.i
+
+rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.s: rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.cpp.s
+.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.cpp.s
+.PHONY : rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.cpp.s
 
 rosidl_typesupport_cpp/vehicle_core/msg/lights_command__type_support.o: rosidl_typesupport_cpp/vehicle_core/msg/lights_command__type_support.cpp.o
 .PHONY : rosidl_typesupport_cpp/vehicle_core/msg/lights_command__type_support.o
@@ -2355,6 +2634,54 @@ rosidl_typesupport_cpp/vehicle_core/msg/telemetry_data__type_support.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/msg/telemetry_data__type_support.cpp.s
 .PHONY : rosidl_typesupport_cpp/vehicle_core/msg/telemetry_data__type_support.cpp.s
 
+rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.o: rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.cpp.o
+.PHONY : rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.o
+
+# target to build an object file
+rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.cpp.o
+.PHONY : rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.cpp.o
+
+rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.i: rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.cpp.i
+.PHONY : rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.cpp.i
+.PHONY : rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.cpp.i
+
+rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.s: rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.cpp.s
+.PHONY : rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.cpp.s
+.PHONY : rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.cpp.s
+
+rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.o: rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.cpp.o
+.PHONY : rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.o
+
+# target to build an object file
+rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.cpp.o
+.PHONY : rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.cpp.o
+
+rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.i: rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.cpp.i
+.PHONY : rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.cpp.i
+.PHONY : rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.cpp.i
+
+rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.s: rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.cpp.s
+.PHONY : rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.cpp.s
+.PHONY : rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.cpp.s
+
 rosidl_typesupport_cpp/vehicle_core/srv/set_autopilot_profile__type_support.o: rosidl_typesupport_cpp/vehicle_core/srv/set_autopilot_profile__type_support.cpp.o
 .PHONY : rosidl_typesupport_cpp/vehicle_core/srv/set_autopilot_profile__type_support.o
 
@@ -2426,30 +2753,6 @@ rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_config__type_sup
 rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_config__type_support_c.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_config__type_support_c.cpp.s
 .PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_config__type_support_c.cpp.s
-
-rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.o: rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.cpp.o
-.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.o
-
-# target to build an object file
-rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.cpp.o
-.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.cpp.o
-
-rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.i: rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.cpp.i
-.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.i
-
-# target to preprocess a source file
-rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.cpp.i
-.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.cpp.i
-
-rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.s: rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.cpp.s
-.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.s
-
-# target to generate assembly for a file
-rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.cpp.s
-.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.cpp.s
 
 rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_status__type_support_c.o: rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_status__type_support_c.cpp.o
 .PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_status__type_support_c.o
@@ -2594,6 +2897,54 @@ rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/general_status__type_suppo
 rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/general_status__type_support_c.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/general_status__type_support_c.cpp.s
 .PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/general_status__type_support_c.cpp.s
+
+rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.o: rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.o
+
+# target to build an object file
+rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.cpp.o
+
+rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.i: rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.i
+
+# target to preprocess a source file
+rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.cpp.i
+
+rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.s: rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.s
+
+# target to generate assembly for a file
+rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.cpp.s
+
+rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.o: rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.o
+
+# target to build an object file
+rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.cpp.o
+
+rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.i: rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.i
+
+# target to preprocess a source file
+rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.cpp.i
+
+rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.s: rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.s
+
+# target to generate assembly for a file
+rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.cpp.s
 
 rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/lights_command__type_support_c.o: rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/lights_command__type_support_c.cpp.o
 .PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/lights_command__type_support_c.o
@@ -2811,6 +3162,54 @@ rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/telemetry_data__type_suppo
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/telemetry_data__type_support_c.cpp.s
 .PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/telemetry_data__type_support_c.cpp.s
 
+rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.o: rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.o
+
+# target to build an object file
+rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.cpp.o
+
+rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.i: rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.i
+
+# target to preprocess a source file
+rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.cpp.i
+
+rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.s: rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.s
+
+# target to generate assembly for a file
+rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.cpp.s
+
+rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.o: rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.o
+
+# target to build an object file
+rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.cpp.o
+
+rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.i: rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.i
+
+# target to preprocess a source file
+rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.cpp.i
+
+rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.s: rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.s
+
+# target to generate assembly for a file
+rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.cpp.s
+
 rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/set_autopilot_profile__type_support_c.o: rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/set_autopilot_profile__type_support_c.cpp.o
 .PHONY : rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/set_autopilot_profile__type_support_c.o
 
@@ -2882,30 +3281,6 @@ rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_c
 rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_config__type_support.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_config__type_support.cpp.s
 .PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_config__type_support.cpp.s
-
-rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.o: rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.cpp.o
-.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.o
-
-# target to build an object file
-rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.cpp.o
-.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.cpp.o
-
-rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.i: rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.cpp.i
-.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.i
-
-# target to preprocess a source file
-rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.cpp.i
-.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.cpp.i
-
-rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.s: rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.cpp.s
-.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.s
-
-# target to generate assembly for a file
-rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.cpp.s
-.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.cpp.s
 
 rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_status__type_support.o: rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_status__type_support.cpp.o
 .PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_status__type_support.o
@@ -3050,6 +3425,54 @@ rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/general_sta
 rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/general_status__type_support.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/general_status__type_support.cpp.s
 .PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/general_status__type_support.cpp.s
+
+rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.o: rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.o
+
+# target to build an object file
+rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.cpp.o
+
+rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.i: rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.cpp.i
+
+rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.s: rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.cpp.s
+
+rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.o: rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.o
+
+# target to build an object file
+rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.cpp.o
+
+rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.i: rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.cpp.i
+
+rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.s: rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.cpp.s
 
 rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/lights_command__type_support.o: rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/lights_command__type_support.cpp.o
 .PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/lights_command__type_support.o
@@ -3267,6 +3690,54 @@ rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/telemetry_d
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/telemetry_data__type_support.cpp.s
 .PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/telemetry_data__type_support.cpp.s
 
+rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.o: rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.o
+
+# target to build an object file
+rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.cpp.o
+
+rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.i: rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.cpp.i
+
+rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.s: rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.cpp.s
+
+rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.o: rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.o
+
+# target to build an object file
+rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.cpp.o
+
+rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.i: rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.cpp.i
+
+rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.s: rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.cpp.s
+
 rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/set_autopilot_profile__type_support.o: rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/set_autopilot_profile__type_support.cpp.o
 .PHONY : rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/set_autopilot_profile__type_support.o
 
@@ -3338,30 +3809,6 @@ rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_config__typ
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_config__type_support.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_config__type_support.c.s
 .PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_config__type_support.c.s
-
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.o: rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.c.o
-.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.o
-
-# target to build an object file
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.c.o
-.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.c.o
-
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.i: rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.c.i
-.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.i
-
-# target to preprocess a source file
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.c.i
-.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.c.i
-
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.s: rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.c.s
-.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.s
-
-# target to generate assembly for a file
-rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.c.s
-.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.c.s
 
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_status__type_support.o: rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_status__type_support.c.o
 .PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_status__type_support.o
@@ -3506,6 +3953,54 @@ rosidl_typesupport_introspection_c/vehicle_core/msg/detail/general_status__type_
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/general_status__type_support.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/general_status__type_support.c.s
 .PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/general_status__type_support.c.s
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.o: rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.c.o
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.o
+
+# target to build an object file
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.c.o
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.c.o
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.i: rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.c.i
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.c.i
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.c.i
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.s: rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.c.s
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.c.s
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.c.s
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.o: rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.c.o
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.o
+
+# target to build an object file
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.c.o
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.c.o
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.i: rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.c.i
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.c.i
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.c.i
+
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.s: rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.c.s
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.c.s
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.c.s
 
 rosidl_typesupport_introspection_c/vehicle_core/msg/detail/lights_command__type_support.o: rosidl_typesupport_introspection_c/vehicle_core/msg/detail/lights_command__type_support.c.o
 .PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/lights_command__type_support.o
@@ -3723,6 +4218,54 @@ rosidl_typesupport_introspection_c/vehicle_core/msg/detail/telemetry_data__type_
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/msg/detail/telemetry_data__type_support.c.s
 .PHONY : rosidl_typesupport_introspection_c/vehicle_core/msg/detail/telemetry_data__type_support.c.s
 
+rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.o: rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.c.o
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.o
+
+# target to build an object file
+rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.c.o
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.c.o
+
+rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.i: rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.c.i
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.c.i
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.c.i
+
+rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.s: rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.c.s
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.c.s
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.c.s
+
+rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.o: rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.c.o
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.o
+
+# target to build an object file
+rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.c.o
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.c.o
+
+rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.i: rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.c.i
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.c.i
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.c.i
+
+rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.s: rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.c.s
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.c.s
+.PHONY : rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.c.s
+
 rosidl_typesupport_introspection_c/vehicle_core/srv/detail/set_autopilot_profile__type_support.o: rosidl_typesupport_introspection_c/vehicle_core/srv/detail/set_autopilot_profile__type_support.c.o
 .PHONY : rosidl_typesupport_introspection_c/vehicle_core/srv/detail/set_autopilot_profile__type_support.o
 
@@ -3794,30 +4337,6 @@ rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_config__t
 rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_config__type_support.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_config__type_support.cpp.s
 .PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_config__type_support.cpp.s
-
-rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.o: rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.cpp.o
-.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.o
-
-# target to build an object file
-rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.cpp.o
-.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.cpp.o
-
-rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.i: rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.cpp.i
-.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.i
-
-# target to preprocess a source file
-rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.cpp.i
-.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.cpp.i
-
-rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.s: rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.cpp.s
-.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.s
-
-# target to generate assembly for a file
-rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.cpp.s
-.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.cpp.s
 
 rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_status__type_support.o: rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_status__type_support.cpp.o
 .PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_status__type_support.o
@@ -3962,6 +4481,54 @@ rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/general_status__typ
 rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/general_status__type_support.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/general_status__type_support.cpp.s
 .PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/general_status__type_support.cpp.s
+
+rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.o: rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.cpp.o
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.o
+
+# target to build an object file
+rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.cpp.o
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.cpp.o
+
+rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.i: rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.cpp.i
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.cpp.i
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.cpp.i
+
+rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.s: rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.cpp.s
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.cpp.s
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.cpp.s
+
+rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.o: rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.cpp.o
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.o
+
+# target to build an object file
+rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.cpp.o
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.cpp.o
+
+rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.i: rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.cpp.i
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.cpp.i
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.cpp.i
+
+rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.s: rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.cpp.s
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.cpp.s
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.cpp.s
 
 rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/lights_command__type_support.o: rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/lights_command__type_support.cpp.o
 .PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/lights_command__type_support.o
@@ -4179,6 +4746,54 @@ rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/telemetry_data__typ
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/telemetry_data__type_support.cpp.s
 .PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/telemetry_data__type_support.cpp.s
 
+rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.o: rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.cpp.o
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.o
+
+# target to build an object file
+rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.cpp.o
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.cpp.o
+
+rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.i: rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.cpp.i
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.cpp.i
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.cpp.i
+
+rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.s: rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.cpp.s
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.cpp.s
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.cpp.s
+
+rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.o: rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.cpp.o
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.o
+
+# target to build an object file
+rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.cpp.o
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.cpp.o
+
+rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.i: rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.cpp.i
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.cpp.i
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.cpp.i
+
+rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.s: rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.cpp.s
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.cpp.s
+.PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.cpp.s
+
 rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/set_autopilot_profile__type_support.o: rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/set_autopilot_profile__type_support.cpp.o
 .PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/set_autopilot_profile__type_support.o
 
@@ -4202,6 +4817,246 @@ rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/set_autopilot_profi
 rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/set_autopilot_profile__type_support.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/set_autopilot_profile__type_support.cpp.s
 .PHONY : rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/set_autopilot_profile__type_support.cpp.s
+
+src/Autopilot/KmlPathLoader.o: src/Autopilot/KmlPathLoader.cpp.o
+.PHONY : src/Autopilot/KmlPathLoader.o
+
+# target to build an object file
+src/Autopilot/KmlPathLoader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/autopilot_node_component.dir/build.make CMakeFiles/autopilot_node_component.dir/src/Autopilot/KmlPathLoader.cpp.o
+.PHONY : src/Autopilot/KmlPathLoader.cpp.o
+
+src/Autopilot/KmlPathLoader.i: src/Autopilot/KmlPathLoader.cpp.i
+.PHONY : src/Autopilot/KmlPathLoader.i
+
+# target to preprocess a source file
+src/Autopilot/KmlPathLoader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/autopilot_node_component.dir/build.make CMakeFiles/autopilot_node_component.dir/src/Autopilot/KmlPathLoader.cpp.i
+.PHONY : src/Autopilot/KmlPathLoader.cpp.i
+
+src/Autopilot/KmlPathLoader.s: src/Autopilot/KmlPathLoader.cpp.s
+.PHONY : src/Autopilot/KmlPathLoader.s
+
+# target to generate assembly for a file
+src/Autopilot/KmlPathLoader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/autopilot_node_component.dir/build.make CMakeFiles/autopilot_node_component.dir/src/Autopilot/KmlPathLoader.cpp.s
+.PHONY : src/Autopilot/KmlPathLoader.cpp.s
+
+src/Autopilot/PurePursuit.o: src/Autopilot/PurePursuit.cpp.o
+.PHONY : src/Autopilot/PurePursuit.o
+
+# target to build an object file
+src/Autopilot/PurePursuit.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/autopilot_node_component.dir/build.make CMakeFiles/autopilot_node_component.dir/src/Autopilot/PurePursuit.cpp.o
+.PHONY : src/Autopilot/PurePursuit.cpp.o
+
+src/Autopilot/PurePursuit.i: src/Autopilot/PurePursuit.cpp.i
+.PHONY : src/Autopilot/PurePursuit.i
+
+# target to preprocess a source file
+src/Autopilot/PurePursuit.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/autopilot_node_component.dir/build.make CMakeFiles/autopilot_node_component.dir/src/Autopilot/PurePursuit.cpp.i
+.PHONY : src/Autopilot/PurePursuit.cpp.i
+
+src/Autopilot/PurePursuit.s: src/Autopilot/PurePursuit.cpp.s
+.PHONY : src/Autopilot/PurePursuit.s
+
+# target to generate assembly for a file
+src/Autopilot/PurePursuit.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/autopilot_node_component.dir/build.make CMakeFiles/autopilot_node_component.dir/src/Autopilot/PurePursuit.cpp.s
+.PHONY : src/Autopilot/PurePursuit.cpp.s
+
+src/Autopilot/autopilot_node.o: src/Autopilot/autopilot_node.cpp.o
+.PHONY : src/Autopilot/autopilot_node.o
+
+# target to build an object file
+src/Autopilot/autopilot_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/autopilot_node_component.dir/build.make CMakeFiles/autopilot_node_component.dir/src/Autopilot/autopilot_node.cpp.o
+.PHONY : src/Autopilot/autopilot_node.cpp.o
+
+src/Autopilot/autopilot_node.i: src/Autopilot/autopilot_node.cpp.i
+.PHONY : src/Autopilot/autopilot_node.i
+
+# target to preprocess a source file
+src/Autopilot/autopilot_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/autopilot_node_component.dir/build.make CMakeFiles/autopilot_node_component.dir/src/Autopilot/autopilot_node.cpp.i
+.PHONY : src/Autopilot/autopilot_node.cpp.i
+
+src/Autopilot/autopilot_node.s: src/Autopilot/autopilot_node.cpp.s
+.PHONY : src/Autopilot/autopilot_node.s
+
+# target to generate assembly for a file
+src/Autopilot/autopilot_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/autopilot_node_component.dir/build.make CMakeFiles/autopilot_node_component.dir/src/Autopilot/autopilot_node.cpp.s
+.PHONY : src/Autopilot/autopilot_node.cpp.s
+
+src/Devices/BNO055.o: src/Devices/BNO055.cpp.o
+.PHONY : src/Devices/BNO055.o
+
+# target to build an object file
+src/Devices/BNO055.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.o
+.PHONY : src/Devices/BNO055.cpp.o
+
+src/Devices/BNO055.i: src/Devices/BNO055.cpp.i
+.PHONY : src/Devices/BNO055.i
+
+# target to preprocess a source file
+src/Devices/BNO055.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.i
+.PHONY : src/Devices/BNO055.cpp.i
+
+src/Devices/BNO055.s: src/Devices/BNO055.cpp.s
+.PHONY : src/Devices/BNO055.s
+
+# target to generate assembly for a file
+src/Devices/BNO055.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/BNO055.cpp.s
+.PHONY : src/Devices/BNO055.cpp.s
+
+src/Devices/DriveSubsys.o: src/Devices/DriveSubsys.cpp.o
+.PHONY : src/Devices/DriveSubsys.o
+
+# target to build an object file
+src/Devices/DriveSubsys.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o
+.PHONY : src/Devices/DriveSubsys.cpp.o
+
+src/Devices/DriveSubsys.i: src/Devices/DriveSubsys.cpp.i
+.PHONY : src/Devices/DriveSubsys.i
+
+# target to preprocess a source file
+src/Devices/DriveSubsys.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.i
+.PHONY : src/Devices/DriveSubsys.cpp.i
+
+src/Devices/DriveSubsys.s: src/Devices/DriveSubsys.cpp.s
+.PHONY : src/Devices/DriveSubsys.s
+
+# target to generate assembly for a file
+src/Devices/DriveSubsys.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.s
+.PHONY : src/Devices/DriveSubsys.cpp.s
+
+src/Devices/GtU7Gps.o: src/Devices/GtU7Gps.cpp.o
+.PHONY : src/Devices/GtU7Gps.o
+
+# target to build an object file
+src/Devices/GtU7Gps.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gt_u7_gps_node_component.dir/build.make CMakeFiles/gt_u7_gps_node_component.dir/src/Devices/GtU7Gps.cpp.o
+.PHONY : src/Devices/GtU7Gps.cpp.o
+
+src/Devices/GtU7Gps.i: src/Devices/GtU7Gps.cpp.i
+.PHONY : src/Devices/GtU7Gps.i
+
+# target to preprocess a source file
+src/Devices/GtU7Gps.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gt_u7_gps_node_component.dir/build.make CMakeFiles/gt_u7_gps_node_component.dir/src/Devices/GtU7Gps.cpp.i
+.PHONY : src/Devices/GtU7Gps.cpp.i
+
+src/Devices/GtU7Gps.s: src/Devices/GtU7Gps.cpp.s
+.PHONY : src/Devices/GtU7Gps.s
+
+# target to generate assembly for a file
+src/Devices/GtU7Gps.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gt_u7_gps_node_component.dir/build.make CMakeFiles/gt_u7_gps_node_component.dir/src/Devices/GtU7Gps.cpp.s
+.PHONY : src/Devices/GtU7Gps.cpp.s
+
+src/Devices/I2C/I2CBus.o: src/Devices/I2C/I2CBus.cpp.o
+.PHONY : src/Devices/I2C/I2CBus.o
+
+# target to build an object file
+src/Devices/I2C/I2CBus.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.o
+.PHONY : src/Devices/I2C/I2CBus.cpp.o
+
+src/Devices/I2C/I2CBus.i: src/Devices/I2C/I2CBus.cpp.i
+.PHONY : src/Devices/I2C/I2CBus.i
+
+# target to preprocess a source file
+src/Devices/I2C/I2CBus.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.i
+.PHONY : src/Devices/I2C/I2CBus.cpp.i
+
+src/Devices/I2C/I2CBus.s: src/Devices/I2C/I2CBus.cpp.s
+.PHONY : src/Devices/I2C/I2CBus.s
+
+# target to generate assembly for a file
+src/Devices/I2C/I2CBus.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBus.cpp.s
+.PHONY : src/Devices/I2C/I2CBus.cpp.s
+
+src/Devices/I2C/I2CBusRegistry.o: src/Devices/I2C/I2CBusRegistry.cpp.o
+.PHONY : src/Devices/I2C/I2CBusRegistry.o
+
+# target to build an object file
+src/Devices/I2C/I2CBusRegistry.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.o
+.PHONY : src/Devices/I2C/I2CBusRegistry.cpp.o
+
+src/Devices/I2C/I2CBusRegistry.i: src/Devices/I2C/I2CBusRegistry.cpp.i
+.PHONY : src/Devices/I2C/I2CBusRegistry.i
+
+# target to preprocess a source file
+src/Devices/I2C/I2CBusRegistry.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.i
+.PHONY : src/Devices/I2C/I2CBusRegistry.cpp.i
+
+src/Devices/I2C/I2CBusRegistry.s: src/Devices/I2C/I2CBusRegistry.cpp.s
+.PHONY : src/Devices/I2C/I2CBusRegistry.s
+
+# target to generate assembly for a file
+src/Devices/I2C/I2CBusRegistry.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CBusRegistry.cpp.s
+.PHONY : src/Devices/I2C/I2CBusRegistry.cpp.s
+
+src/Devices/I2C/I2CDevice.o: src/Devices/I2C/I2CDevice.cpp.o
+.PHONY : src/Devices/I2C/I2CDevice.o
+
+# target to build an object file
+src/Devices/I2C/I2CDevice.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.o
+.PHONY : src/Devices/I2C/I2CDevice.cpp.o
+
+src/Devices/I2C/I2CDevice.i: src/Devices/I2C/I2CDevice.cpp.i
+.PHONY : src/Devices/I2C/I2CDevice.i
+
+# target to preprocess a source file
+src/Devices/I2C/I2CDevice.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.i
+.PHONY : src/Devices/I2C/I2CDevice.cpp.i
+
+src/Devices/I2C/I2CDevice.s: src/Devices/I2C/I2CDevice.cpp.s
+.PHONY : src/Devices/I2C/I2CDevice.s
+
+# target to generate assembly for a file
+src/Devices/I2C/I2CDevice.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/I2C/I2CDevice.cpp.s
+.PHONY : src/Devices/I2C/I2CDevice.cpp.s
+
+src/Devices/LightingSubsys.o: src/Devices/LightingSubsys.cpp.o
+.PHONY : src/Devices/LightingSubsys.o
+
+# target to build an object file
+src/Devices/LightingSubsys.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.o
+.PHONY : src/Devices/LightingSubsys.cpp.o
+
+src/Devices/LightingSubsys.i: src/Devices/LightingSubsys.cpp.i
+.PHONY : src/Devices/LightingSubsys.i
+
+# target to preprocess a source file
+src/Devices/LightingSubsys.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.i
+.PHONY : src/Devices/LightingSubsys.cpp.i
+
+src/Devices/LightingSubsys.s: src/Devices/LightingSubsys.cpp.s
+.PHONY : src/Devices/LightingSubsys.s
+
+# target to generate assembly for a file
+src/Devices/LightingSubsys.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/Devices/LightingSubsys.cpp.s
+.PHONY : src/Devices/LightingSubsys.cpp.s
 
 src/drive_arbiter.o: src/drive_arbiter.cpp.o
 .PHONY : src/drive_arbiter.o
@@ -4250,6 +5105,54 @@ src/gst_camera_node.s: src/gst_camera_node.cpp.s
 src/gst_camera_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gst_camera_component.dir/build.make CMakeFiles/gst_camera_component.dir/src/gst_camera_node.cpp.s
 .PHONY : src/gst_camera_node.cpp.s
+
+src/gt_u7_gps_node.o: src/gt_u7_gps_node.cpp.o
+.PHONY : src/gt_u7_gps_node.o
+
+# target to build an object file
+src/gt_u7_gps_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gt_u7_gps_node_component.dir/build.make CMakeFiles/gt_u7_gps_node_component.dir/src/gt_u7_gps_node.cpp.o
+.PHONY : src/gt_u7_gps_node.cpp.o
+
+src/gt_u7_gps_node.i: src/gt_u7_gps_node.cpp.i
+.PHONY : src/gt_u7_gps_node.i
+
+# target to preprocess a source file
+src/gt_u7_gps_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gt_u7_gps_node_component.dir/build.make CMakeFiles/gt_u7_gps_node_component.dir/src/gt_u7_gps_node.cpp.i
+.PHONY : src/gt_u7_gps_node.cpp.i
+
+src/gt_u7_gps_node.s: src/gt_u7_gps_node.cpp.s
+.PHONY : src/gt_u7_gps_node.s
+
+# target to generate assembly for a file
+src/gt_u7_gps_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gt_u7_gps_node_component.dir/build.make CMakeFiles/gt_u7_gps_node_component.dir/src/gt_u7_gps_node.cpp.s
+.PHONY : src/gt_u7_gps_node.cpp.s
+
+src/heading_calibrator_node.o: src/heading_calibrator_node.cpp.o
+.PHONY : src/heading_calibrator_node.o
+
+# target to build an object file
+src/heading_calibrator_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/heading_calibrator_node_component.dir/build.make CMakeFiles/heading_calibrator_node_component.dir/src/heading_calibrator_node.cpp.o
+.PHONY : src/heading_calibrator_node.cpp.o
+
+src/heading_calibrator_node.i: src/heading_calibrator_node.cpp.i
+.PHONY : src/heading_calibrator_node.i
+
+# target to preprocess a source file
+src/heading_calibrator_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/heading_calibrator_node_component.dir/build.make CMakeFiles/heading_calibrator_node_component.dir/src/heading_calibrator_node.cpp.i
+.PHONY : src/heading_calibrator_node.cpp.i
+
+src/heading_calibrator_node.s: src/heading_calibrator_node.cpp.s
+.PHONY : src/heading_calibrator_node.s
+
+# target to generate assembly for a file
+src/heading_calibrator_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/heading_calibrator_node_component.dir/build.make CMakeFiles/heading_calibrator_node_component.dir/src/heading_calibrator_node.cpp.s
+.PHONY : src/heading_calibrator_node.cpp.s
 
 src/i2c_bridge_node.o: src/i2c_bridge_node.cpp.o
 .PHONY : src/i2c_bridge_node.o
@@ -4367,8 +5270,11 @@ help:
 	@echo "... vehicle_core__cpp"
 	@echo "... vehicle_core__py"
 	@echo "... vehicle_core_uninstall"
+	@echo "... autopilot_node_component"
 	@echo "... drive_arbiter_node_component"
 	@echo "... gst_camera_component"
+	@echo "... gt_u7_gps_node_component"
+	@echo "... heading_calibrator_node_component"
 	@echo "... i2c_bridge_node"
 	@echo "... state_manager_node_component"
 	@echo "... tcp_server_node_component"
@@ -4390,9 +5296,6 @@ help:
 	@echo "... rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__functions.o"
 	@echo "... rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__functions.i"
 	@echo "... rosidl_generator_c/vehicle_core/msg/detail/autopilot_config__functions.s"
-	@echo "... rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.o"
-	@echo "... rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.i"
-	@echo "... rosidl_generator_c/vehicle_core/msg/detail/autopilot_drive_command__functions.s"
 	@echo "... rosidl_generator_c/vehicle_core/msg/detail/autopilot_status__functions.o"
 	@echo "... rosidl_generator_c/vehicle_core/msg/detail/autopilot_status__functions.i"
 	@echo "... rosidl_generator_c/vehicle_core/msg/detail/autopilot_status__functions.s"
@@ -4411,6 +5314,12 @@ help:
 	@echo "... rosidl_generator_c/vehicle_core/msg/detail/general_status__functions.o"
 	@echo "... rosidl_generator_c/vehicle_core/msg/detail/general_status__functions.i"
 	@echo "... rosidl_generator_c/vehicle_core/msg/detail/general_status__functions.s"
+	@echo "... rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.o"
+	@echo "... rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.i"
+	@echo "... rosidl_generator_c/vehicle_core/msg/detail/imu_status__functions.s"
+	@echo "... rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.o"
+	@echo "... rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.i"
+	@echo "... rosidl_generator_c/vehicle_core/msg/detail/internal_drive_command__functions.s"
 	@echo "... rosidl_generator_c/vehicle_core/msg/detail/lights_command__functions.o"
 	@echo "... rosidl_generator_c/vehicle_core/msg/detail/lights_command__functions.i"
 	@echo "... rosidl_generator_c/vehicle_core/msg/detail/lights_command__functions.s"
@@ -4438,6 +5347,12 @@ help:
 	@echo "... rosidl_generator_c/vehicle_core/msg/detail/telemetry_data__functions.o"
 	@echo "... rosidl_generator_c/vehicle_core/msg/detail/telemetry_data__functions.i"
 	@echo "... rosidl_generator_c/vehicle_core/msg/detail/telemetry_data__functions.s"
+	@echo "... rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.o"
+	@echo "... rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.i"
+	@echo "... rosidl_generator_c/vehicle_core/srv/detail/release_internal_control__functions.s"
+	@echo "... rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.o"
+	@echo "... rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.i"
+	@echo "... rosidl_generator_c/vehicle_core/srv/detail/request_internal_control__functions.s"
 	@echo "... rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.o"
 	@echo "... rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.i"
 	@echo "... rosidl_generator_c/vehicle_core/srv/detail/set_autopilot_profile__functions.s"
@@ -4456,9 +5371,6 @@ help:
 	@echo "... rosidl_generator_py/vehicle_core/msg/_autopilot_config_s.o"
 	@echo "... rosidl_generator_py/vehicle_core/msg/_autopilot_config_s.i"
 	@echo "... rosidl_generator_py/vehicle_core/msg/_autopilot_config_s.s"
-	@echo "... rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.o"
-	@echo "... rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.i"
-	@echo "... rosidl_generator_py/vehicle_core/msg/_autopilot_drive_command_s.s"
 	@echo "... rosidl_generator_py/vehicle_core/msg/_autopilot_status_s.o"
 	@echo "... rosidl_generator_py/vehicle_core/msg/_autopilot_status_s.i"
 	@echo "... rosidl_generator_py/vehicle_core/msg/_autopilot_status_s.s"
@@ -4477,6 +5389,12 @@ help:
 	@echo "... rosidl_generator_py/vehicle_core/msg/_general_status_s.o"
 	@echo "... rosidl_generator_py/vehicle_core/msg/_general_status_s.i"
 	@echo "... rosidl_generator_py/vehicle_core/msg/_general_status_s.s"
+	@echo "... rosidl_generator_py/vehicle_core/msg/_imu_status_s.o"
+	@echo "... rosidl_generator_py/vehicle_core/msg/_imu_status_s.i"
+	@echo "... rosidl_generator_py/vehicle_core/msg/_imu_status_s.s"
+	@echo "... rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.o"
+	@echo "... rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.i"
+	@echo "... rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.s"
 	@echo "... rosidl_generator_py/vehicle_core/msg/_lights_command_s.o"
 	@echo "... rosidl_generator_py/vehicle_core/msg/_lights_command_s.i"
 	@echo "... rosidl_generator_py/vehicle_core/msg/_lights_command_s.s"
@@ -4504,6 +5422,12 @@ help:
 	@echo "... rosidl_generator_py/vehicle_core/msg/_telemetry_data_s.o"
 	@echo "... rosidl_generator_py/vehicle_core/msg/_telemetry_data_s.i"
 	@echo "... rosidl_generator_py/vehicle_core/msg/_telemetry_data_s.s"
+	@echo "... rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.o"
+	@echo "... rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.i"
+	@echo "... rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.s"
+	@echo "... rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.o"
+	@echo "... rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.i"
+	@echo "... rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.s"
 	@echo "... rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.o"
 	@echo "... rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.i"
 	@echo "... rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.s"
@@ -4513,9 +5437,6 @@ help:
 	@echo "... rosidl_typesupport_c/vehicle_core/msg/autopilot_config__type_support.o"
 	@echo "... rosidl_typesupport_c/vehicle_core/msg/autopilot_config__type_support.i"
 	@echo "... rosidl_typesupport_c/vehicle_core/msg/autopilot_config__type_support.s"
-	@echo "... rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.o"
-	@echo "... rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.i"
-	@echo "... rosidl_typesupport_c/vehicle_core/msg/autopilot_drive_command__type_support.s"
 	@echo "... rosidl_typesupport_c/vehicle_core/msg/autopilot_status__type_support.o"
 	@echo "... rosidl_typesupport_c/vehicle_core/msg/autopilot_status__type_support.i"
 	@echo "... rosidl_typesupport_c/vehicle_core/msg/autopilot_status__type_support.s"
@@ -4534,6 +5455,12 @@ help:
 	@echo "... rosidl_typesupport_c/vehicle_core/msg/general_status__type_support.o"
 	@echo "... rosidl_typesupport_c/vehicle_core/msg/general_status__type_support.i"
 	@echo "... rosidl_typesupport_c/vehicle_core/msg/general_status__type_support.s"
+	@echo "... rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.o"
+	@echo "... rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.i"
+	@echo "... rosidl_typesupport_c/vehicle_core/msg/imu_status__type_support.s"
+	@echo "... rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.o"
+	@echo "... rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.i"
+	@echo "... rosidl_typesupport_c/vehicle_core/msg/internal_drive_command__type_support.s"
 	@echo "... rosidl_typesupport_c/vehicle_core/msg/lights_command__type_support.o"
 	@echo "... rosidl_typesupport_c/vehicle_core/msg/lights_command__type_support.i"
 	@echo "... rosidl_typesupport_c/vehicle_core/msg/lights_command__type_support.s"
@@ -4561,6 +5488,12 @@ help:
 	@echo "... rosidl_typesupport_c/vehicle_core/msg/telemetry_data__type_support.o"
 	@echo "... rosidl_typesupport_c/vehicle_core/msg/telemetry_data__type_support.i"
 	@echo "... rosidl_typesupport_c/vehicle_core/msg/telemetry_data__type_support.s"
+	@echo "... rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.o"
+	@echo "... rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.i"
+	@echo "... rosidl_typesupport_c/vehicle_core/srv/release_internal_control__type_support.s"
+	@echo "... rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.o"
+	@echo "... rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.i"
+	@echo "... rosidl_typesupport_c/vehicle_core/srv/request_internal_control__type_support.s"
 	@echo "... rosidl_typesupport_c/vehicle_core/srv/set_autopilot_profile__type_support.o"
 	@echo "... rosidl_typesupport_c/vehicle_core/srv/set_autopilot_profile__type_support.i"
 	@echo "... rosidl_typesupport_c/vehicle_core/srv/set_autopilot_profile__type_support.s"
@@ -4570,9 +5503,6 @@ help:
 	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/autopilot_config__type_support.o"
 	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/autopilot_config__type_support.i"
 	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/autopilot_config__type_support.s"
-	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.o"
-	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.i"
-	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/autopilot_drive_command__type_support.s"
 	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/autopilot_status__type_support.o"
 	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/autopilot_status__type_support.i"
 	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/autopilot_status__type_support.s"
@@ -4591,6 +5521,12 @@ help:
 	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/general_status__type_support.o"
 	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/general_status__type_support.i"
 	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/general_status__type_support.s"
+	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.o"
+	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.i"
+	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/imu_status__type_support.s"
+	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.o"
+	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.i"
+	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/internal_drive_command__type_support.s"
 	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/lights_command__type_support.o"
 	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/lights_command__type_support.i"
 	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/lights_command__type_support.s"
@@ -4618,6 +5554,12 @@ help:
 	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/telemetry_data__type_support.o"
 	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/telemetry_data__type_support.i"
 	@echo "... rosidl_typesupport_cpp/vehicle_core/msg/telemetry_data__type_support.s"
+	@echo "... rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.o"
+	@echo "... rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.i"
+	@echo "... rosidl_typesupport_cpp/vehicle_core/srv/release_internal_control__type_support.s"
+	@echo "... rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.o"
+	@echo "... rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.i"
+	@echo "... rosidl_typesupport_cpp/vehicle_core/srv/request_internal_control__type_support.s"
 	@echo "... rosidl_typesupport_cpp/vehicle_core/srv/set_autopilot_profile__type_support.o"
 	@echo "... rosidl_typesupport_cpp/vehicle_core/srv/set_autopilot_profile__type_support.i"
 	@echo "... rosidl_typesupport_cpp/vehicle_core/srv/set_autopilot_profile__type_support.s"
@@ -4627,9 +5569,6 @@ help:
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_config__type_support_c.o"
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_config__type_support_c.i"
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_config__type_support_c.s"
-	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.o"
-	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.i"
-	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_drive_command__type_support_c.s"
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_status__type_support_c.o"
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_status__type_support_c.i"
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/autopilot_status__type_support_c.s"
@@ -4648,6 +5587,12 @@ help:
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/general_status__type_support_c.o"
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/general_status__type_support_c.i"
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/general_status__type_support_c.s"
+	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.o"
+	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.i"
+	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/imu_status__type_support_c.s"
+	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.o"
+	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.i"
+	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/internal_drive_command__type_support_c.s"
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/lights_command__type_support_c.o"
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/lights_command__type_support_c.i"
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/lights_command__type_support_c.s"
@@ -4675,6 +5620,12 @@ help:
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/telemetry_data__type_support_c.o"
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/telemetry_data__type_support_c.i"
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/telemetry_data__type_support_c.s"
+	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.o"
+	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.i"
+	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/release_internal_control__type_support_c.s"
+	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.o"
+	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.i"
+	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/request_internal_control__type_support_c.s"
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/set_autopilot_profile__type_support_c.o"
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/set_autopilot_profile__type_support_c.i"
 	@echo "... rosidl_typesupport_fastrtps_c/vehicle_core/srv/detail/set_autopilot_profile__type_support_c.s"
@@ -4684,9 +5635,6 @@ help:
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_config__type_support.o"
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_config__type_support.i"
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_config__type_support.s"
-	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.o"
-	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.i"
-	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_drive_command__type_support.s"
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_status__type_support.o"
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_status__type_support.i"
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/autopilot_status__type_support.s"
@@ -4705,6 +5653,12 @@ help:
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/general_status__type_support.o"
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/general_status__type_support.i"
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/general_status__type_support.s"
+	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.o"
+	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.i"
+	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/imu_status__type_support.s"
+	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.o"
+	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.i"
+	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/internal_drive_command__type_support.s"
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/lights_command__type_support.o"
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/lights_command__type_support.i"
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/lights_command__type_support.s"
@@ -4732,6 +5686,12 @@ help:
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/telemetry_data__type_support.o"
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/telemetry_data__type_support.i"
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/msg/detail/dds_fastrtps/telemetry_data__type_support.s"
+	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.o"
+	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.i"
+	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/release_internal_control__type_support.s"
+	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.o"
+	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.i"
+	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/request_internal_control__type_support.s"
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/set_autopilot_profile__type_support.o"
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/set_autopilot_profile__type_support.i"
 	@echo "... rosidl_typesupport_fastrtps_cpp/vehicle_core/srv/detail/dds_fastrtps/set_autopilot_profile__type_support.s"
@@ -4741,9 +5701,6 @@ help:
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_config__type_support.o"
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_config__type_support.i"
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_config__type_support.s"
-	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.o"
-	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.i"
-	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_drive_command__type_support.s"
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_status__type_support.o"
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_status__type_support.i"
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/autopilot_status__type_support.s"
@@ -4762,6 +5719,12 @@ help:
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/general_status__type_support.o"
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/general_status__type_support.i"
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/general_status__type_support.s"
+	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.o"
+	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.i"
+	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/imu_status__type_support.s"
+	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.o"
+	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.i"
+	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/internal_drive_command__type_support.s"
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/lights_command__type_support.o"
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/lights_command__type_support.i"
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/lights_command__type_support.s"
@@ -4789,6 +5752,12 @@ help:
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/telemetry_data__type_support.o"
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/telemetry_data__type_support.i"
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/msg/detail/telemetry_data__type_support.s"
+	@echo "... rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.o"
+	@echo "... rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.i"
+	@echo "... rosidl_typesupport_introspection_c/vehicle_core/srv/detail/release_internal_control__type_support.s"
+	@echo "... rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.o"
+	@echo "... rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.i"
+	@echo "... rosidl_typesupport_introspection_c/vehicle_core/srv/detail/request_internal_control__type_support.s"
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/srv/detail/set_autopilot_profile__type_support.o"
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/srv/detail/set_autopilot_profile__type_support.i"
 	@echo "... rosidl_typesupport_introspection_c/vehicle_core/srv/detail/set_autopilot_profile__type_support.s"
@@ -4798,9 +5767,6 @@ help:
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_config__type_support.o"
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_config__type_support.i"
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_config__type_support.s"
-	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.o"
-	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.i"
-	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_drive_command__type_support.s"
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_status__type_support.o"
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_status__type_support.i"
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/autopilot_status__type_support.s"
@@ -4819,6 +5785,12 @@ help:
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/general_status__type_support.o"
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/general_status__type_support.i"
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/general_status__type_support.s"
+	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.o"
+	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.i"
+	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/imu_status__type_support.s"
+	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.o"
+	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.i"
+	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/internal_drive_command__type_support.s"
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/lights_command__type_support.o"
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/lights_command__type_support.i"
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/lights_command__type_support.s"
@@ -4846,15 +5818,57 @@ help:
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/telemetry_data__type_support.o"
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/telemetry_data__type_support.i"
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/msg/detail/telemetry_data__type_support.s"
+	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.o"
+	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.i"
+	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/release_internal_control__type_support.s"
+	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.o"
+	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.i"
+	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/request_internal_control__type_support.s"
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/set_autopilot_profile__type_support.o"
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/set_autopilot_profile__type_support.i"
 	@echo "... rosidl_typesupport_introspection_cpp/vehicle_core/srv/detail/set_autopilot_profile__type_support.s"
+	@echo "... src/Autopilot/KmlPathLoader.o"
+	@echo "... src/Autopilot/KmlPathLoader.i"
+	@echo "... src/Autopilot/KmlPathLoader.s"
+	@echo "... src/Autopilot/PurePursuit.o"
+	@echo "... src/Autopilot/PurePursuit.i"
+	@echo "... src/Autopilot/PurePursuit.s"
+	@echo "... src/Autopilot/autopilot_node.o"
+	@echo "... src/Autopilot/autopilot_node.i"
+	@echo "... src/Autopilot/autopilot_node.s"
+	@echo "... src/Devices/BNO055.o"
+	@echo "... src/Devices/BNO055.i"
+	@echo "... src/Devices/BNO055.s"
+	@echo "... src/Devices/DriveSubsys.o"
+	@echo "... src/Devices/DriveSubsys.i"
+	@echo "... src/Devices/DriveSubsys.s"
+	@echo "... src/Devices/GtU7Gps.o"
+	@echo "... src/Devices/GtU7Gps.i"
+	@echo "... src/Devices/GtU7Gps.s"
+	@echo "... src/Devices/I2C/I2CBus.o"
+	@echo "... src/Devices/I2C/I2CBus.i"
+	@echo "... src/Devices/I2C/I2CBus.s"
+	@echo "... src/Devices/I2C/I2CBusRegistry.o"
+	@echo "... src/Devices/I2C/I2CBusRegistry.i"
+	@echo "... src/Devices/I2C/I2CBusRegistry.s"
+	@echo "... src/Devices/I2C/I2CDevice.o"
+	@echo "... src/Devices/I2C/I2CDevice.i"
+	@echo "... src/Devices/I2C/I2CDevice.s"
+	@echo "... src/Devices/LightingSubsys.o"
+	@echo "... src/Devices/LightingSubsys.i"
+	@echo "... src/Devices/LightingSubsys.s"
 	@echo "... src/drive_arbiter.o"
 	@echo "... src/drive_arbiter.i"
 	@echo "... src/drive_arbiter.s"
 	@echo "... src/gst_camera_node.o"
 	@echo "... src/gst_camera_node.i"
 	@echo "... src/gst_camera_node.s"
+	@echo "... src/gt_u7_gps_node.o"
+	@echo "... src/gt_u7_gps_node.i"
+	@echo "... src/gt_u7_gps_node.s"
+	@echo "... src/heading_calibrator_node.o"
+	@echo "... src/heading_calibrator_node.i"
+	@echo "... src/heading_calibrator_node.s"
 	@echo "... src/i2c_bridge_node.o"
 	@echo "... src/i2c_bridge_node.i"
 	@echo "... src/i2c_bridge_node.s"

@@ -2,8 +2,6 @@ msg/AutopilotCommand.idl
 msg/AutopilotCommand.msg
 msg/AutopilotConfig.idl
 msg/AutopilotConfig.msg
-msg/AutopilotDriveCommand.idl
-msg/AutopilotDriveCommand.msg
 msg/AutopilotStatus.idl
 msg/AutopilotStatus.msg
 msg/DriveFeedback.idl
@@ -16,6 +14,10 @@ msg/Error.idl
 msg/Error.msg
 msg/GeneralStatus.idl
 msg/GeneralStatus.msg
+msg/IMUStatus.idl
+msg/IMUStatus.msg
+msg/InternalDriveCommand.idl
+msg/InternalDriveCommand.msg
 msg/LightsCommand.idl
 msg/LightsCommand.msg
 msg/LightsStatus.idl
@@ -34,6 +36,14 @@ msg/StateMode.idl
 msg/StateMode.msg
 msg/TelemetryData.idl
 msg/TelemetryData.msg
+srv/ReleaseInternalControl.idl
+srv/ReleaseInternalControl.srv
+srv/ReleaseInternalControl_Request.msg
+srv/ReleaseInternalControl_Response.msg
+srv/RequestInternalControl.idl
+srv/RequestInternalControl.srv
+srv/RequestInternalControl_Request.msg
+srv/RequestInternalControl_Response.msg
 srv/SetAutopilotProfile.idl
 srv/SetAutopilotProfile.srv
 srv/SetAutopilotProfile_Request.msg

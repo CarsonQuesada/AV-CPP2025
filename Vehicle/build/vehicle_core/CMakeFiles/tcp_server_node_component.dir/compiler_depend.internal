@@ -720,6 +720,12 @@ CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__traits.hpp
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__traits.hpp
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8_multi_array__type_support.hpp
+ /opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp
+ /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp
+ /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__builder.hpp
+ /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__traits.hpp
+ /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__type_support.hpp
+ /opt/ros/humble/include/std_srvs/std_srvs/msg/rosidl_generator_cpp__visibility_control.hpp
  /usr/include/c++/11/deque
  /usr/include/c++/11/bits/stl_deque.h
  /usr/include/c++/11/bits/deque.tcc
@@ -786,6 +792,7 @@ CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__builder.hpp
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__traits.hpp
  /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__type_support.hpp
+ /home/avcpp/AV-CPP2025/Shared/DebugHelpers.h
  /usr/include/arpa/inet.h
  /usr/include/netinet/in.h
  /usr/include/aarch64-linux-gnu/sys/socket.h

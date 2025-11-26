@@ -1,0 +1,42 @@
+[0.026s] Invoking command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8
+[0.187s] [  1%] Built target vehicle_core_container
+[0.198s] [  1%] Built target ament_cmake_python_symlink_vehicle_core
+[0.202s] [  1%] Built target vehicle_core__cpp
+[0.244s] [ 12%] Built target vehicle_core__rosidl_generator_c
+[0.276s] [ 22%] Built target vehicle_core__rosidl_typesupport_cpp
+[0.278s] [ 32%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[0.298s] [ 43%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[0.309s] [ 54%] Built target vehicle_core__rosidl_typesupport_c
+[0.316s] [ 65%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[0.356s] [ 76%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[0.413s] [ 76%] Built target vehicle_core
+[0.445s] [35m[1mConsolidate compiler generated dependencies of target tcp_server_node_component[0m
+[0.461s] [35m[1mConsolidate compiler generated dependencies of target drive_arbiter_node_component[0m
+[0.484s] [ 76%] [32mBuilding CXX object CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o[0m
+[0.485s] [ 80%] Built target i2c_bridge_node
+[0.487s] [ 81%] Built target gt_u7_gps_node_component
+[0.492s] [ 82%] Built target heading_calibrator_node_component
+[0.494s] [ 82%] Built target vehicle_core__py
+[0.506s] [ 83%] Built target drive_arbiter_node_component
+[0.516s] [ 84%] Built target state_manager_node_component
+[0.521s] [35m[1mConsolidate compiler generated dependencies of target autopilot_node_component[0m
+[0.526s] [ 85%] Built target gst_camera_component
+[0.535s] running egg_info
+[0.554s] writing vehicle_core.egg-info/PKG-INFO
+[0.554s] writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+[0.555s] writing top-level names to vehicle_core.egg-info/top_level.txt
+[0.584s] [ 85%] [32mBuilding CXX object CMakeFiles/autopilot_node_component.dir/src/Autopilot/autopilot_node.cpp.o[0m
+[0.605s] [ 95%] Built target vehicle_core__rosidl_generator_py
+[0.612s] reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[0.614s] writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[0.661s] [ 96%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+[0.693s] [ 98%] Built target vehicle_core__rosidl_typesupport_c__pyext
+[0.694s] [ 98%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext
+[0.728s] [ 98%] Built target ament_cmake_python_build_vehicle_core_egg
+[23.928s] [ 98%] [32m[1mLinking CXX shared library libautopilot_node_component.so[0m
+[25.627s] [ 99%] Built target autopilot_node_component
+[46.257s] gmake[2]: *** Deleting file 'CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o'
+[46.289s] gmake[2]: *** [CMakeFiles/tcp_server_node_component.dir/build.make:76: CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o] Interrupt
+[46.290s] gmake[1]: *** [CMakeFiles/Makefile2:722: CMakeFiles/tcp_server_node_component.dir/all] Interrupt
+[46.290s] gmake: *** [Makefile:146: all] Interrupt
+[46.309s] Invoked command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core' returned '-2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8

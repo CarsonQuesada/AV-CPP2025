@@ -1,0 +1,43 @@
+[0.024s] Invoking command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8
+[0.219s] [  1%] Built target vehicle_core__cpp
+[0.220s] [  1%] Built target ament_cmake_python_symlink_vehicle_core
+[0.221s] [  2%] Built target vehicle_core_container
+[0.249s] [ 13%] Built target vehicle_core__rosidl_generator_c
+[0.290s] [ 24%] Built target vehicle_core__rosidl_typesupport_cpp
+[0.292s] [ 35%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[0.293s] [ 46%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[0.306s] [ 57%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[0.308s] [ 68%] Built target vehicle_core__rosidl_typesupport_c
+[0.316s] [ 79%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[0.356s] [ 79%] Built target vehicle_core
+[0.395s] [ 80%] Built target gt_u7_gps_node_component
+[0.400s] [ 82%] Built target tcp_server_node_component
+[0.401s] [ 82%] Built target drive_arbiter_node_component
+[0.420s] [35m[1mConsolidate compiler generated dependencies of target autopilot_node_component[0m
+[0.428s] [ 83%] Built target heading_calibrator_node_component
+[0.430s] [ 83%] Built target vehicle_core__py
+[0.443s] [ 83%] Built target i2c_bridge_node
+[0.460s] [ 84%] Built target state_manager_node_component
+[0.480s] [ 84%] [32mBuilding CXX object CMakeFiles/autopilot_node_component.dir/src/KmlPathLoader.cpp.o[0m
+[0.492s] [ 85%] Built target gst_camera_component
+[0.507s] [ 96%] Built target vehicle_core__rosidl_generator_py
+[0.562s] [ 97%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+[0.563s] [ 98%] Built target vehicle_core__rosidl_typesupport_c__pyext
+[0.577s] [ 99%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext
+[0.599s] running egg_info
+[0.620s] writing vehicle_core.egg-info/PKG-INFO
+[0.620s] writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+[0.621s] writing top-level names to vehicle_core.egg-info/top_level.txt
+[0.681s] reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[0.684s] writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[0.814s] [ 99%] Built target ament_cmake_python_build_vehicle_core_egg
+[0.959s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/KmlPathLoader.hpp:6[m[K,
+[0.959s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/KmlPathLoader.cpp:1[m[K:
+[0.959s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/PurePursuit.hpp:[m[K In member function ‘[01m[KCommand PurePursuit::update(const Pose2D&, double)[m[K’:
+[0.960s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/PurePursuit.hpp:25:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kclamp[m[K’ is not a member of ‘[01m[Kstd[m[K’
+[0.960s]    25 |     const double Ld = std::[01;31m[Kclamp[m[K(Ld_min_ + k_ * speed, Ld_min_, Ld_max_);
+[0.960s]       |                            [01;31m[K^~~~~[m[K
+[1.447s] gmake[2]: *** [CMakeFiles/autopilot_node_component.dir/build.make:90: CMakeFiles/autopilot_node_component.dir/src/KmlPathLoader.cpp.o] Error 1
+[1.448s] gmake[1]: *** [CMakeFiles/Makefile2:778: CMakeFiles/autopilot_node_component.dir/all] Error 2
+[1.449s] gmake: *** [Makefile:146: all] Error 2
+[1.454s] Invoked command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8

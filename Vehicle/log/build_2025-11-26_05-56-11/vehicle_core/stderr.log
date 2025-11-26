@@ -1,0 +1,10 @@
+In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/KmlPathLoader.hpp:6[m[K,
+                 from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/KmlPathLoader.cpp:1[m[K:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/PurePursuit.hpp:[m[K In member function ‘[01m[KCommand PurePursuit::update(const Pose2D&, double)[m[K’:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/PurePursuit.hpp:25:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kclamp[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   25 |     const double Ld = std::[01;31m[Kclamp[m[K(Ld_min_ + k_ * speed, Ld_min_, Ld_max_);
+      |                            [01;31m[K^~~~~[m[K
+gmake[2]: *** [CMakeFiles/autopilot_node_component.dir/build.make:90: CMakeFiles/autopilot_node_component.dir/src/KmlPathLoader.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:778: CMakeFiles/autopilot_node_component.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
