@@ -15,7 +15,7 @@
 
 #include "VehicleState.h"
 #include "VehicleController.h"
-#include "Communication/VehicleClient.h"
+#include "VehicleClient.h"
 #include "UI/UI.h"
 
 /*

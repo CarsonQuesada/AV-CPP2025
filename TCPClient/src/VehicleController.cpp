@@ -104,11 +104,13 @@ std::vector<Message> VehicleController::generateCommands(bool connected, bool au
     }
 
     // SET MAX SPEED COMMAND
-    if (connected) {
+    if (true/*connected*/) {
         SetMaxSpeedCommand setMaxSpeed;
-        if (slider(SliderID::MaxSpeed).changed()) {
-            setMaxSpeed.maxSpeed = slider(SliderID::MaxSpeed).value;
-            msgs.push_back(makeMessageFrom(setMaxSpeed));
+        int intermediateValue;
+        if (slider(SliderID::MaxSpeed).consume(intermediateValue)) {
+            setMaxSpeed.maxSpeed = intermediateValue;
+            //msgs.push_back(makeMessageFrom(setMaxSpeed));
+            std::cout << "Slider used. Value: " << static_cast<int>(setMaxSpeed.maxSpeed) << std::endl;
         }
     }
 

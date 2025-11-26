@@ -96,10 +96,10 @@ struct LightsStatus {
 };
 
 struct GeneralStatus {
-    uint32_t speed; // mm/s
-    uint32_t batteryPercent; // 0-100% doesn't work right now
+    uint32_t speed;          // mm/s
+    uint32_t batteryPercent; // 0-100%
     uint8_t gpsOnline;       // 1 = true, 0 = false
-    // Add feilds as needed (max speed maybe)
+    // Add fields as needed (max speed maybe)
 };
 
 struct DriveStatus {

@@ -14,7 +14,7 @@
 #include "Panels/ControllsPanel.h"
 #include "Panels/MessagePanel.h"
 #include "Panels/VehiclePanel.h"
-#include "Communication/VehicleClient.h"
+#include "VehicleClient.h"
 #include "VehicleController.h"
 #include "UIContext.h"
 
@@ -47,7 +47,5 @@ private:
     std::vector<std::unique_ptr<UIPanel>> panels;
     StatusOverview statusOverview;
     Dockspace dockspace;
-    FrameProcessor frameProcessor;
-    MJPEGClient videoStream;
     UIContext uiContext;
 };

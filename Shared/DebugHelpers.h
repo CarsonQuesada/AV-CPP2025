@@ -37,22 +37,20 @@ inline const char* msgName(MessageID id){
 // For your current protocol all are fixed-size; adjust if any become variable.
 inline std::optional<size_t> expectedPayloadSize(MessageID id){
     switch(id){
-        case MessageID::Ping:              return sizeof(Ping);
-        case MessageID::Drive:             return sizeof(DriveCommand);
-        case MessageID::ToggleLights:      return sizeof(LightsCommand);
-        case MessageID::SetMaxSpeed:       return sizeof(SetMaxSpeedCommand);
-        case MessageID::ClientInit:        return sizeof(ClientInit);
-        case MessageID::StartAutopilot:    return sizeof(StartAutopilotCommand);
-        case MessageID::StopAutopilot:     return sizeof(StopAutopilotCommand);
-        case MessageID::StartHeadingCalib: return sizeof(StartHeadingCalib);
-        case MessageID::StopHeadingCalib:  return sizeof(StopHeadingCalib);
-        case MessageID::TelemetryData:     return sizeof(TelemetryData);
-        case MessageID::LightsStatus:      return sizeof(LightsStatus);
-        case MessageID::GeneralStatus:     return sizeof(GeneralStatus);
-        case MessageID::DriveStatus:       return sizeof(DriveStatus);
-        case MessageID::StateMode:         return sizeof(StateMode);
-        case MessageID::ServerInit:        return sizeof(ServerInit);
-        case MessageID::Error:             return sizeof(ErrorMessage);
-        default:                           return std::nullopt; // unknown/invalid/not on wire
+        case MessageID::Ping:            return sizeof(Ping);
+        case MessageID::Drive:           return sizeof(DriveCommand);
+        case MessageID::ToggleLights:    return sizeof(LightsCommand);
+        case MessageID::SetMaxSpeed:     return sizeof(SetMaxSpeedCommand);
+        case MessageID::ClientInit:      return sizeof(ClientInit);
+        case MessageID::StartAutopilot:  return sizeof(StartAutopilotCommand);
+        case MessageID::StopAutopilot:   return sizeof(StopAutopilotCommand);
+        case MessageID::TelemetryData:   return sizeof(TelemetryData);
+        case MessageID::LightsStatus:    return sizeof(LightsStatus);
+        case MessageID::GeneralStatus:   return sizeof(GeneralStatus);
+        case MessageID::DriveStatus:     return sizeof(DriveStatus);
+        case MessageID::StateMode:       return sizeof(StateMode);
+        case MessageID::ServerInit:      return sizeof(ServerInit);
+        case MessageID::Error:           return sizeof(ErrorMessage);
+        default:                         return std::nullopt; // unknown/invalid/not on wire
     }
 }

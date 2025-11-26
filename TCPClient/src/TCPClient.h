@@ -25,4 +25,5 @@ private:
     std::atomic<bool> connected{false};
     std::atomic<bool> reconnecting{false};
     std::shared_mutex sockMut;
+    std::mutex transmitMut;
 };

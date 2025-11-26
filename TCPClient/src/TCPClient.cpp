@@ -178,6 +178,7 @@ int TCPClient::receiveAll(void* buffer, int length, int maxWait)
 
 int TCPClient::transmitAll(const void* data, int length)
 {
+    std::lock_guard<std::mutex> lk(transmitMut);
     if (!connected.load(std::memory_order_acquire))
         return -2;
 

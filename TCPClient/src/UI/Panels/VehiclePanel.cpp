@@ -48,19 +48,32 @@ void VehiclePanel::onUpdate()
     ImGui::Text("Max Speed Control");
 
     // Set fixed width for the slider
-    ImGui::PushItemWidth(200); // Width in pixels (adjust as needed)
-    ImGui::SliderInt("Speed (%)", &maxSpeed, 0, 100);
+    ImGui::PushItemWidth(200);
+    if (ImGui::SliderInt("Speed (%)", &maxSpeed, 0, 100)) {
+        uiContext.controller->updateUISliderInt(SliderID::MaxSpeed, maxSpeed);
+    }
     ImGui::PopItemWidth();
 
     ImGui::SameLine();
 
     // Set fixed width for the input box
-    ImGui::PushItemWidth(85);  // Enough for 3 digits
-    if (ImGui::InputInt("##SpeedInput", &maxSpeed)) {
-        if (maxSpeed < 0) maxSpeed = 0;
-        if (maxSpeed > 100) maxSpeed = 100;
+    ImGui::PushItemWidth(85);
+
+    // step = 1 means +/- buttons appear, step_fast = 5 means shift+click or right-click goes faster
+    bool edited = ImGui::InputInt(
+        "##SpeedInput",
+        &maxSpeed,
+        1, 5,                            // step, step_fast
+        ImGuiInputTextFlags_EnterReturnsTrue | ImGuiInputTextFlags_AutoSelectAll
+    );
+
+    // Commit on press of enter key
+    if (edited) {
+        maxSpeed = std::clamp(maxSpeed, 0, 100);
         uiContext.controller->updateUISliderInt(SliderID::MaxSpeed, maxSpeed);
+        lastSentSpeed = maxSpeed;
     }
+
     ImGui::PopItemWidth();
 
     ImGui::End();

@@ -26,7 +26,7 @@ void StatusOverview::onUpdate()
 
     ImGui::SetCursorPos(ImVec2(2.5f, (layout.statusOverviewHeight - FontManager::GetInstance().GetRegularFontLarge().size) / 2.0));
     ImGui::Text("Battery: %i%", VehicleState::getInstance().genStatus.batteryPercent); ImGui::SameLine();
-    ImGui::Text("Speed: %.2f km/h", VehicleState::getInstance().genStatus.speed); ImGui::SameLine();
+    ImGui::Text("Speed: %.2f m/s", VehicleState::getInstance().genStatus.speed / 1000.0f); ImGui::SameLine();
     ImGui::Text("Connection: "); ImGui::SameLine();
     switch (uiContext.client->getConnectionState())
     {
