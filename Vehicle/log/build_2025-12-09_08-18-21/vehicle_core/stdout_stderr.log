@@ -1,0 +1,49 @@
+[  0%] Built target ament_cmake_python_symlink_vehicle_core
+[ 11%] Built target vehicle_core__rosidl_generator_c
+[ 12%] Built target vehicle_core_container
+[ 12%] Built target vehicle_core__cpp
+[ 23%] Built target vehicle_core__rosidl_typesupport_c
+[ 34%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[ 45%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[ 55%] Built target vehicle_core__rosidl_typesupport_cpp
+[ 65%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[ 76%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[ 76%] Built target vehicle_core
+[35m[1mConsolidate compiler generated dependencies of target drive_arbiter_node_component[0m
+[ 78%] Built target tcp_server_node_component
+[ 78%] [32mBuilding CXX object CMakeFiles/drive_arbiter_node_component.dir/src/drive_arbiter.cpp.o[0m
+[ 78%] Built target vehicle_core__py
+[ 82%] Built target i2c_bridge_node
+[ 83%] Built target gt_u7_gps_node_component
+[ 84%] Built target state_manager_node_component
+[ 85%] Built target heading_calibrator_node_component
+[ 86%] Built target autopilot_node_component
+running egg_info
+writing vehicle_core.egg-info/PKG-INFO
+writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+writing top-level names to vehicle_core.egg-info/top_level.txt
+reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[ 87%] Built target gst_camera_component
+[ 97%] Built target vehicle_core__rosidl_generator_py
+[ 97%] Built target ament_cmake_python_build_vehicle_core_egg
+[ 98%] Built target vehicle_core__rosidl_typesupport_c__pyext
+[ 99%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+[100%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:[m[K In member function ‘[01m[Kvoid vehicle_core::DriveArbiterNode::onObstacleDistance(std_msgs::msg::Float32_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:180:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kclosest_object_distance_[m[K’ was not declared in this scope; did you mean ‘[01m[Kclosest_object_distance[m[K’?
+  180 |   [01;31m[Kclosest_object_distance_[m[K = msg->data;
+      |   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |   [32m[Kclosest_object_distance[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:[m[K In member function ‘[01m[Kvoid vehicle_core::DriveArbiterNode::maybePublish()[m[K’:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:331:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kclosest_object_distance_[m[K’ was not declared in this scope; did you mean ‘[01m[Kclosest_object_distance[m[K’?
+  331 |     if ([01;31m[Kclosest_object_distance_[m[K <= warning_zone_ && out.target_speed_mmps > 0) {
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |         [32m[Kclosest_object_distance[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:355:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kclosest_object_distance_[m[K’ was not declared in this scope; did you mean ‘[01m[Kclosest_object_distance[m[K’?
+  355 |     if ([01;31m[Kclosest_object_distance_[m[K <= warning_zone_ && out.target_speed_mmps > 0) {
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |         [32m[Kclosest_object_distance[m[K
+gmake[2]: *** [CMakeFiles/drive_arbiter_node_component.dir/build.make:76: CMakeFiles/drive_arbiter_node_component.dir/src/drive_arbiter.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:666: CMakeFiles/drive_arbiter_node_component.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

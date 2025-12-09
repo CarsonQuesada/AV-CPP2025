@@ -711,6 +711,16 @@ CMakeFiles/drive_arbiter_node_component.dir/src/drive_arbiter.cpp.o
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/empty__traits.hpp
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/empty__type_support.hpp
  /opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/bool.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__struct.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__builder.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__traits.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__type_support.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/float32.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__struct.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__builder.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__traits.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__type_support.hpp
  /opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp
  /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp
  /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__builder.hpp

@@ -137,7 +137,7 @@ rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_ms
 rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/UInt8.idl
 rosidl_generator_c/vehicle_core/msg/drive_target.h: /opt/ros/humble/share/std_msgs/msg/UInt8MultiArray.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C code for ROS interfaces"
-	/usr/bin/python3 /opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c --generator-arguments-file /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c__arguments.json
+	/home/avcpp/.venv/bin/python3 /opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c --generator-arguments-file /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_c__arguments.json
 
 rosidl_generator_c/vehicle_core/msg/detail/drive_target__functions.h: rosidl_generator_c/vehicle_core/msg/drive_target.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vehicle_core/msg/detail/drive_target__functions.h

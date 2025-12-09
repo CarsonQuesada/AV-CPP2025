@@ -255,9 +255,6 @@ FastRTPS_LIBRARY_DEBUG:FILEPATH=FastRTPS_LIBRARY_DEBUG-NOTFOUND
 //Path to a library.
 FastRTPS_LIBRARY_RELEASE:FILEPATH=/opt/ros/humble/lib/libfastrtps.so
 
-//The directory containing a CMake configuration file for GeographicLib.
-GeographicLib_DIR:PATH=GeographicLib_DIR-NOTFOUND
-
 //Path to a library.
 OPENSSL_CRYPTO_LIBRARY:FILEPATH=/usr/lib/aarch64-linux-gnu/libcrypto.so
 
@@ -289,7 +286,7 @@ PYTHON_LIBRARY:FILEPATH=/usr/lib/aarch64-linux-gnu/libpython3.10.so
 PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
 
 //Path to a program.
-Python3_EXECUTABLE:FILEPATH=/usr/bin/python3
+Python3_EXECUTABLE:FILEPATH=/home/avcpp/.venv/bin/python3
 
 //Path to Shared headers (contains Message.h)
 SHARED_ROOT:PATH=
@@ -795,7 +792,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_OpenSSL:INTERNAL=[/usr/lib/aarch64-linux-gnu/libcry
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.2()]
 //Details about finding Python3
-FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/usr/bin/python3][cfound components: Interpreter ][v3.10.12()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/home/avcpp/.venv/bin/python3][cfound components: Interpreter ][v3.10.12()]
 //Details about finding PythonExtra
 FIND_PACKAGE_MESSAGE_DETAILS_PythonExtra:INTERNAL=[.so][/usr/include/python3.10][/usr/lib/aarch64-linux-gnu/libpython3.10.so][cpython-310-aarch64-linux-gnu][.cpython-310-aarch64-linux-gnu][v()]
 //Details about finding PythonInterp
@@ -871,7 +868,7 @@ PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 PYTHON_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //The directory for Python library installation. This needs to
 // be in PYTHONPATH when 'setup.py install' is called.
-PYTHON_INSTALL_DIR:INTERNAL=local/lib/python3.10/dist-packages
+PYTHON_INSTALL_DIR:INTERNAL=lib/python3.10/site-packages
 //ADVANCED property for variable: PYTHON_LIBRARY
 PYTHON_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_LIBRARY_DEBUG
@@ -916,10 +913,10 @@ _OPENSSL_openssl_INCLUDEDIR:INTERNAL=
 _OPENSSL_openssl_LIBDIR:INTERNAL=
 _OPENSSL_openssl_PREFIX:INTERNAL=
 _OPENSSL_openssl_VERSION:INTERNAL=
-_Python3_EXECUTABLE:INTERNAL=/usr/bin/python3
+_Python3_EXECUTABLE:INTERNAL=/home/avcpp/.venv/bin/python3
 //Python3 Properties
-_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;10;12;64;;cpython-310-aarch64-linux-gnu;/usr/lib/python3.10;/usr/lib/python3.10;/usr/lib/python3/dist-packages;/usr/lib/python3/dist-packages
-_Python3_INTERPRETER_SIGNATURE:INTERNAL=0f3e53742e142b1d9e50e4ca5b901dd8
+_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;10;12;64;;cpython-310-aarch64-linux-gnu;/usr/lib/python3.10;/usr/lib/python3.10;/home/avcpp/.venv/lib/python3.10/site-packages;/home/avcpp/.venv/lib/python3.10/site-packages
+_Python3_INTERPRETER_SIGNATURE:INTERNAL=7384fea88b4a9b3fa075a06593f3a519
 //Index for unique symlink install targets
 __AMENT_CMAKE_SYMLINK_INSTALL_TARGETS_INDEX:INTERNAL=12
 __pkg_config_arguments_GSTREAMER:INTERNAL=REQUIRED;gstreamer-1.0;gstreamer-app-1.0;gobject-2.0;glib-2.0

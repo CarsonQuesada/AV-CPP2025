@@ -16,6 +16,17 @@ DriveArbiterNode::DriveArbiterNode(const rclcpp::NodeOptions& opts)
   override_deadband_     = declare_parameter<int>("override.deadband_percent", 2);
   publish_when_inactive_ = declare_parameter<bool>("publish_when_inactive", false);
 
+
+ // Obstacle detection parameters
+  emergency_zone_ = 1.0f;
+  slow_down_zone_ = 2.0f;
+  warning_zone_ = 6.0f;
+  speed_reduction_factor_ = 0.5f;
+  warning_speed_factor_ = 0.8f;
+
+  RCLCPP_INFO(get_logger(), "Obstacle zones: Emergency=%.1fm Slow=%.1fm Warning=%.1fm",
+            emergency_zone_, slow_down_zone_, warning_zone_);
+
   // ---- Subs ----
   sub_mode_ = create_subscription<msg::StateMode>(
       "/vehicle/state_mode", 10,
@@ -32,15 +43,28 @@ DriveArbiterNode::DriveArbiterNode(const rclcpp::NodeOptions& opts)
   sub_max_ = create_subscription<msg::MaxSpeed>(
       "/vehicle/max_speed_cmd", 10,
       std::bind(&DriveArbiterNode::onMaxSpeed, this, std::placeholders::_1));
+  ////////////////////////////////////////////////////////////////////////////////////////
+   sub_obstacle_ = create_subscription<std_msgs::msg::Bool>(
+      "/sensors/obstacle_detected", 10,
+      [this](const std_msgs::msg::Bool::SharedPtr msg) {
+        this->onObstacleDetected(msg);
+      });
 
-  //sub_obstacle_ = create_subscription<std_msgs::msg::Bool>(
-  //    "/sensors/obstacle_detected", 10,
-  //    std::bind(&DriveArbiterNode::onObstacleDetected, this, std::placeholders::_1));
-      
+    sub_obstacle_distance_ = create_subscription<std_msgs::msg::Float32>(
+      "/sensors/closest_object_distance", 10,
+      [this](const std_msgs::msg::Float32::SharedPtr msg) {
+        this->onObstacleDistance(msg);
+      });
+  ////////////////////////////////////////////////////////////////////////////////////////
+
   // ---- Pubs ----
   pub_target_ = create_publisher<msg::DriveTarget>("/vehicle/drive_target", 10);
   pub_override_evt_ = create_publisher<std_msgs::msg::Empty>("/vehicle/events/manual_override", 1);
-  //pub_emergency_stop_evt_ = create_publisher<std_msgs::msg::Empty>("/vehicle/events/emergency_stop", 1);  
+  ////////////////////////////////////////////////////////////////////////////////
+
+  pub_emergency_stop_evt_ = create_publisher<std_msgs::msg::Empty>("/vehicle/events/emergency_stop", 1);  
+  
+  ////////////////////////////////////////////////////////////////////////////////
 
   // ---- Services ----
   using vehicle_core::srv::RequestInternalControl;
@@ -137,7 +161,9 @@ void DriveArbiterNode::onMaxSpeed(const msg::MaxSpeed::SharedPtr m) {
   max_speed_percent_ = std::clamp<uint8_t>(m->percent, 0, 100);
   maybePublish();
 }
-/*
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
 //Obstacle detection callback
 void DriveArbiterNode::onObstacleDetected(const std_msgs::msg::Bool::SharedPtr msg) {
   if (msg->data && !obstacle_detected_) {
@@ -147,14 +173,99 @@ void DriveArbiterNode::onObstacleDetected(const std_msgs::msg::Bool::SharedPtr m
   } else if (!msg->data && obstacle_detected_) {
     // Obstacle cleared
     obstacle_detected_ = false;
-    RCLCPP_INFO(get_logger(), "Obstacle cleared, emergency stop deactivated.");
+    RCLCPP_INFO(get_logger(), "Emergency zone cleared.");
   }
 }
 
-*/
 
+void DriveArbiterNode::onObstacleDistance(const std_msgs::msg::Float32::SharedPtr msg) {
+  closest_object_distance_ = msg->data;
+  
+  // Log zone changes for debugging
+  static float last_logged_distance = 0.0f;
+  static int last_zone = -1; // -1: none, 0: emergency, 1: slow, 2: warning
+  
+  int current_zone = -1;
+  if (closest_object_distance_ <= emergency_zone_) {
+    current_zone = 0;
+  } else if (closest_object_distance_ <= slow_down_zone_) {
+    current_zone = 1;
+  } else if (closest_object_distance_ <= warning_zone_) {
+    current_zone = 2;
+  }
+  
+  if (current_zone != last_zone) {
+    switch (current_zone) {
+      case 0:
+        RCLCPP_WARN(get_logger(), "Object entered EMERGENCY zone: %.2fm", closest_object_distance_);
+        break;
+      case 1:
+        RCLCPP_WARN(get_logger(), "Object entered SLOW DOWN zone: %.2fm", closest_object_distance_);
+        break;
+      case 2:
+        RCLCPP_INFO(get_logger(), "Object entered WARNING zone: %.2fm", closest_object_distance_);
+        break;
+      default:
+        RCLCPP_INFO(get_logger(), "Object cleared from all zones");
+        break;
+    }
+    last_zone = current_zone;
+  }
+  
+  last_logged_distance = closest_object_distance_;
+}
 
-/*
+// ---------------- Graduated Speed Reduction ----------------
+
+float DriveArbiterNode::calculateSpeedReductionFactor(float distance) const {
+  if (distance <= emergency_zone_) {
+    return 0.0f; // Full stop
+  } else if (distance <= slow_down_zone_) {
+    // Linear interpolation between full reduction and warning reduction
+    float t = (distance - emergency_zone_) / (slow_down_zone_ - emergency_zone_);
+    return speed_reduction_factor_ + (warning_speed_factor_ - speed_reduction_factor_) * t;
+  } else if (distance <= warning_zone_) {
+    // Linear interpolation between warning reduction and normal speed
+    float t = (distance - slow_down_zone_) / (warning_zone_ - slow_down_zone_);
+    return warning_speed_factor_ + (1.0f - warning_speed_factor_) * t;
+  } else {
+    return 1.0f; // Normal speed
+  }
+}
+
+void DriveArbiterNode::applySpeedReduction(msg::DriveTarget& out, float distance) {
+  if (distance <= emergency_zone_) {
+    // Emergency stop - full brake
+    out.brake_percent = 100;
+    out.target_speed_mmps = 0;
+    if (!obstacle_detected_) {
+      obstacle_detected_ = true;
+      triggerEmergencyStop();
+    }
+    RCLCPP_WARN_THROTTLE(get_logger(), *get_clock(), 1000,
+                        "EMERGENCY STOP: Object at %.2fm", distance);
+  } else if (distance <= warning_zone_) {
+    // Graduated speed reduction
+    float reduction_factor = calculateSpeedReductionFactor(distance);
+    
+    if (distance <= slow_down_zone_) {
+      RCLCPP_WARN_THROTTLE(get_logger(), *get_clock(), 1000,
+                          "SLOWING DOWN: Object at %.2fm, speed reduced to %.0f%%",
+                          distance, reduction_factor * 100);
+    } else {
+      RCLCPP_INFO_THROTTLE(get_logger(), *get_clock(), 1000,
+                          "WARNING: Object at %.2fm, speed reduced to %.0f%%",
+                          distance, reduction_factor * 100);
+    }
+    
+    // Apply speed reduction
+    out.target_speed_mmps = static_cast<int16_t>(out.target_speed_mmps * reduction_factor);
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
 //Emergency stop function
 void DriveArbiterNode::triggerEmergencyStop() {
   obstacle_detected_ = true;
@@ -173,7 +284,7 @@ void DriveArbiterNode::triggerEmergencyStop() {
   
   RCLCPP_ERROR(get_logger(), "EMERGENCY STOP: Obstacle detected!");
 }
-*/
+///////////////////////////////////////////////////////////////////////////////
 
 // ---------------- Helpers ----------------
 
@@ -192,7 +303,6 @@ static inline int gearSign(uint8_t gear) {
 }
 
 // ---------------- Drive selection ----------------
-
 void DriveArbiterNode::maybePublish() {
   if (!last_mode_) return;
 
@@ -200,18 +310,6 @@ void DriveArbiterNode::maybePublish() {
   const bool active_like =
       (mode == 1 /*MANUAL*/ || mode == 3 /*AUTO*/ || internal_control_);
   if (!active_like && !publish_when_inactive_) return;
-
-/*
-//// OBSTACLE CHECK
-  if (obstacle_detected_) {
-    msg::DriveTarget stop_cmd{};
-    stop_cmd.brake_percent = 100;
-    stop_cmd.target_speed_mmps = 0;
-    stop_cmd.target_steer_millirad = 0;
-    pub_target_->publish(stop_cmd);
-    return;  // Skip normal command processing
-  }
-*/
 
   msg::DriveTarget out{};
   out.brake_percent = 0;
@@ -230,6 +328,18 @@ void DriveArbiterNode::maybePublish() {
     else
       out.target_speed_mmps = manualPercentToMmpsSigned(m.speed, m.gear);
     out.target_steer_millirad = percentSteerToMradSigned(m.steer);
+    
+    // Apply graduated speed reduction for manual mode too
+    if (closest_object_distance_ <= warning_zone_ && out.target_speed_mmps > 0) {
+      float reduction_factor = calculateSpeedReductionFactor(closest_object_distance_);
+      out.target_speed_mmps = static_cast<int16_t>(out.target_speed_mmps * reduction_factor);
+      
+      if (closest_object_distance_ <= emergency_zone_) {
+        out.brake_percent = 100;
+        out.target_speed_mmps = 0;
+        triggerEmergencyStop();
+      }
+    }
   }
   else if (use_internal) {
     const auto& cmd = *last_internal_;
@@ -242,6 +352,17 @@ void DriveArbiterNode::maybePublish() {
       out.target_speed_mmps = capSpeedMmpsSigned(mmps_signed);
     }
     out.target_steer_millirad = capSteerMradSigned(cmd.steer_rad * 1000.0);
+    
+    // Apply graduated speed reduction based on obstacle distance
+    if (closest_object_distance_ <= warning_zone_ && out.target_speed_mmps > 0) {
+      applySpeedReduction(out, closest_object_distance_);
+    }
+  }
+
+  // Apply emergency stop if obstacle detected (overrides everything)
+  if (obstacle_detected_ && out.target_speed_mmps >= 0) {
+    out.brake_percent = 100;
+    out.target_speed_mmps = 0;
   }
 
   pub_target_->publish(out);

@@ -1,0 +1,1 @@
+/home/avcpp/AV-CPP2025/Vehicle/build/object_detector/ament_cmake_environment_hooks/local_setup.sh

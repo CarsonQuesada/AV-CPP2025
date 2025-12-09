@@ -1,0 +1,40 @@
+In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:1[m[K:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/DriveSubsys.hpp:50:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kclock[m[K’ does not name a type; did you mean ‘[01m[Kflock[m[K’?
+   50 |   [01;31m[Kclock[m[K::time_point  t0_{};
+      |   [01;31m[K^~~~~[m[K
+      |   [32m[Kflock[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:[m[K In member function ‘[01m[Kvoid DriveSubsys::startLogging(const string&)[m[K’:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:52:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kt0_[m[K’ was not declared in this scope
+   52 |   [01;31m[Kt0_[m[K = clock::now();
+      |   [01;31m[K^~~[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:52:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kclock[m[K’ is not a class, namespace, or enumeration
+   52 |   t0_ = [01;31m[Kclock[m[K::now();
+      |         [01;31m[K^~~~~[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:[m[K In member function ‘[01m[Kvoid DriveSubsys::logSample(const DriveStatusWire&)[m[K’:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:70:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kclock[m[K’ is not a class, namespace, or enumeration
+   70 |   auto now  = [01;31m[Kclock[m[K::now();
+      |               [01;31m[K^~~~~[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:71:53:[m[K [01;31m[Kerror: [m[K‘[01m[Kt0_[m[K’ was not declared in this scope
+   71 |   double t  = duration_cast<duration<double>>(now - [01;31m[Kt0_[m[K).count();
+      |                                                     [01;31m[K^~~[m[K
+gmake[2]: *** [CMakeFiles/i2c_bridge_node.dir/build.make:146: CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/i2c_bridge_node.hpp:26[m[K,
+                 from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:1[m[K:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/DriveSubsys.hpp:50:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kclock[m[K’ does not name a type; did you mean ‘[01m[Kflock[m[K’?
+   50 |   [01;31m[Kclock[m[K::time_point  t0_{};
+      |   [01;31m[K^~~~~[m[K
+      |   [32m[Kflock[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:[m[K In constructor ‘[01m[Kvehicle_core::I2cBridgeNode::I2cBridgeNode(const rclcpp::NodeOptions&)[m[K’:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:44:41:[m[K [01;35m[Kwarning: [m[Ksuggest braces around empty body in an ‘[01m[Kif[m[K’ statement [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wempty-body-Wempty-body]8;;[m[K]
+   44 |   if (!drive.open(i2cBus1, addr_drive_))[01;35m[K;[m[K
+      |                                         [01;35m[K^[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:44:3:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kif[m[K’ clause does not guard... [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmisleading-indentation-Wmisleading-indentation]8;;[m[K]
+   44 |   [01;35m[Kif[m[K (!drive.open(i2cBus1, addr_drive_));
+      |   [01;35m[K^~[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:45:5:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kif[m[K’
+   45 |     [01;36m[Kthrow[m[K std::runtime_error("Failed to open drive");
+      |     [01;36m[K^~~~~[m[K
+gmake[2]: *** [CMakeFiles/i2c_bridge_node.dir/build.make:76: CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:750: CMakeFiles/i2c_bridge_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

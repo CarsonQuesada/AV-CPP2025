@@ -343,19 +343,19 @@ ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_co
 # install(FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/vehicle_core/environment")
 ament_cmake_symlink_install_files("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/vehicle_core/environment")
 
-# install(DIRECTORY "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_python/vehicle_core/vehicle_core.egg-info/" "DESTINATION" "local/lib/python3.10/dist-packages/vehicle_core-0.0.0-py3.10.egg-info")
-ament_cmake_symlink_install_directory("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" DIRECTORY "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_python/vehicle_core/vehicle_core.egg-info/" "DESTINATION" "local/lib/python3.10/dist-packages/vehicle_core-0.0.0-py3.10.egg-info")
+# install(DIRECTORY "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_python/vehicle_core/vehicle_core.egg-info/" "DESTINATION" "lib/python3.10/site-packages/vehicle_core-0.0.0-py3.10.egg-info")
+ament_cmake_symlink_install_directory("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" DIRECTORY "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_python/vehicle_core/vehicle_core.egg-info/" "DESTINATION" "lib/python3.10/site-packages/vehicle_core-0.0.0-py3.10.egg-info")
 
-# install(DIRECTORY "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/" "DESTINATION" "local/lib/python3.10/dist-packages/vehicle_core" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
-ament_cmake_symlink_install_directory("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" DIRECTORY "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/" "DESTINATION" "local/lib/python3.10/dist-packages/vehicle_core" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
+# install(DIRECTORY "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/" "DESTINATION" "lib/python3.10/site-packages/vehicle_core" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
+ament_cmake_symlink_install_directory("/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core" DIRECTORY "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/" "DESTINATION" "lib/python3.10/site-packages/vehicle_core" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
 
-# install("TARGETS" "vehicle_core__rosidl_typesupport_fastrtps_c__pyext" "DESTINATION" "local/lib/python3.10/dist-packages/vehicle_core")
+# install("TARGETS" "vehicle_core__rosidl_typesupport_fastrtps_c__pyext" "DESTINATION" "lib/python3.10/site-packages/vehicle_core")
 include("/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install("TARGETS" "vehicle_core__rosidl_typesupport_introspection_c__pyext" "DESTINATION" "local/lib/python3.10/dist-packages/vehicle_core")
+# install("TARGETS" "vehicle_core__rosidl_typesupport_introspection_c__pyext" "DESTINATION" "lib/python3.10/site-packages/vehicle_core")
 include("/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_symlink_install_targets_1_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install("TARGETS" "vehicle_core__rosidl_typesupport_c__pyext" "DESTINATION" "local/lib/python3.10/dist-packages/vehicle_core")
+# install("TARGETS" "vehicle_core__rosidl_typesupport_c__pyext" "DESTINATION" "lib/python3.10/site-packages/vehicle_core")
 include("/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_symlink_install_targets_2_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(FILES "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/msg/DriveTarget.idl" "DESTINATION" "share/vehicle_core/msg")

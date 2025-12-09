@@ -1,0 +1,55 @@
+[  0%] Built target vehicle_core__cpp
+[ 11%] Built target vehicle_core__rosidl_generator_c
+[ 11%] Built target ament_cmake_python_symlink_vehicle_core
+[ 12%] Built target vehicle_core_container
+[ 23%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[ 34%] Built target vehicle_core__rosidl_typesupport_c
+[ 45%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[ 56%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[ 66%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[ 76%] Built target vehicle_core__rosidl_typesupport_cpp
+[ 76%] Built target vehicle_core
+[ 77%] Built target gt_u7_gps_node_component
+[35m[1mConsolidate compiler generated dependencies of target i2c_bridge_node[0m
+[ 77%] Built target vehicle_core__py
+[ 78%] Built target heading_calibrator_node_component
+[ 80%] Built target tcp_server_node_component
+[ 80%] [32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o[0m
+[ 82%] Built target autopilot_node_component
+[ 82%] [32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o[0m
+[ 83%] Built target state_manager_node_component
+[ 84%] Built target drive_arbiter_node_component
+running egg_info
+writing vehicle_core.egg-info/PKG-INFO
+writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+writing top-level names to vehicle_core.egg-info/top_level.txt
+reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[ 85%] Built target gst_camera_component
+[ 95%] Built target vehicle_core__rosidl_generator_py
+[ 95%] Built target ament_cmake_python_build_vehicle_core_egg
+[ 96%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+[ 98%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext
+[ 98%] Built target vehicle_core__rosidl_typesupport_c__pyext
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:[m[K In member function ‘[01m[Kvoid DriveSubsys::startLogging(const string&)[m[K’:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:52:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kclock[m[K’ is not a class, namespace, or enumeration
+   52 |   t0_ = [01;31m[Kclock[m[K::now();
+      |         [01;31m[K^~~~~[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:[m[K In member function ‘[01m[Kvoid DriveSubsys::logSample(const DriveStatusWire&)[m[K’:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:70:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kclock[m[K’ is not a class, namespace, or enumeration
+   70 |   auto now  = [01;31m[Kclock[m[K::now();
+      |               [01;31m[K^~~~~[m[K
+gmake[2]: *** [CMakeFiles/i2c_bridge_node.dir/build.make:146: CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:[m[K In constructor ‘[01m[Kvehicle_core::I2cBridgeNode::I2cBridgeNode(const rclcpp::NodeOptions&)[m[K’:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:44:41:[m[K [01;35m[Kwarning: [m[Ksuggest braces around empty body in an ‘[01m[Kif[m[K’ statement [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wempty-body-Wempty-body]8;;[m[K]
+   44 |   if (!drive.open(i2cBus1, addr_drive_))[01;35m[K;[m[K
+      |                                         [01;35m[K^[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:44:3:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kif[m[K’ clause does not guard... [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmisleading-indentation-Wmisleading-indentation]8;;[m[K]
+   44 |   [01;35m[Kif[m[K (!drive.open(i2cBus1, addr_drive_));
+      |   [01;35m[K^~[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:45:5:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kif[m[K’
+   45 |     [01;36m[Kthrow[m[K std::runtime_error("Failed to open drive");
+      |     [01;36m[K^~~~~[m[K
+gmake[1]: *** [CMakeFiles/Makefile2:750: CMakeFiles/i2c_bridge_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,48 @@
+[0.039s] Invoking command in '/home/avcpp/AV-CPP2025/Vehicle/build/object_detector': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/avcpp/AV-CPP2025/Vehicle/src/object_detector -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/avcpp/AV-CPP2025/Vehicle/install/object_detector
+[0.398s] -- The C compiler identification is GNU 11.4.0
+[0.660s] -- The CXX compiler identification is GNU 11.4.0
+[0.696s] -- Detecting C compiler ABI info
+[0.905s] -- Detecting C compiler ABI info - done
+[0.944s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.950s] -- Detecting C compile features
+[0.952s] -- Detecting C compile features - done
+[0.965s] -- Detecting CXX compiler ABI info
+[1.202s] -- Detecting CXX compiler ABI info - done
+[1.220s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.220s] -- Detecting CXX compile features
+[1.221s] -- Detecting CXX compile features - done
+[1.229s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[2.562s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.715s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[2.803s] -- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)
+[2.807s] -- Found std_msgs: 4.9.0 (/opt/ros/humble/share/std_msgs/cmake)
+[2.899s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.908s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.924s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.946s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.974s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[3.022s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[3.085s] -- Found visualization_msgs: 4.9.0 (/opt/ros/humble/share/visualization_msgs/cmake)
+[3.145s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[3.361s] -- Added test 'flake8' to check Python code syntax and style conventions
+[3.362s] -- Added test 'lint_cmake' to check CMake code style
+[3.362s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[3.367s] -- Added test 'xmllint' to check XML markup files
+[3.372s] -- Configuring done
+[3.386s] -- Generating done
+[3.394s] -- Build files have been written to: /home/avcpp/AV-CPP2025/Vehicle/build/object_detector
+[3.415s] Invoked command in '/home/avcpp/AV-CPP2025/Vehicle/build/object_detector' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/avcpp/AV-CPP2025/Vehicle/src/object_detector -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/avcpp/AV-CPP2025/Vehicle/install/object_detector
+[3.418s] Invoking command in '/home/avcpp/AV-CPP2025/Vehicle/build/object_detector': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/object_detector -- -j8 -l8
+[3.545s] Invoked command in '/home/avcpp/AV-CPP2025/Vehicle/build/object_detector' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/object_detector -- -j8 -l8
+[3.573s] Invoking command in '/home/avcpp/AV-CPP2025/Vehicle/build/object_detector': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/avcpp/AV-CPP2025/Vehicle/build/object_detector
+[3.585s] -- Install configuration: ""
+[3.586s] -- Execute custom install script
+[3.586s] [31mCMake Error at ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:204 (message):
+[3.587s]   ament_cmake_symlink_install_programs() can't find
+[3.587s]   '/home/avcpp/AV-CPP2025/Vehicle/src/object_detector/nodes/lidar_object_detector.py'
+[3.588s] Call Stack (most recent call first):
+[3.589s]   ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:314 (ament_cmake_symlink_install_programs)
+[3.591s]   cmake_install.cmake:46 (include)
+[3.592s] 
+[3.592s] [0m
+[3.592s] Invoked command in '/home/avcpp/AV-CPP2025/Vehicle/build/object_detector' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/avcpp/AV-CPP2025/Vehicle/build/object_detector

@@ -1,0 +1,42 @@
+[0.039s] Invoking command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8
+[0.400s] [  0%] Built target vehicle_core__cpp
+[0.421s] [  0%] Built target ament_cmake_python_symlink_vehicle_core
+[0.495s] [ 11%] Built target vehicle_core__rosidl_generator_c
+[0.496s] [ 12%] Built target vehicle_core_container
+[0.497s] [ 22%] Built target vehicle_core__rosidl_typesupport_cpp
+[0.523s] [ 33%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[0.551s] [ 43%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[0.609s] [ 54%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[0.613s] [ 65%] Built target vehicle_core__rosidl_typesupport_c
+[0.640s] [ 76%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[0.668s] [ 76%] Built target vehicle_core
+[0.726s] [35m[1mConsolidate compiler generated dependencies of target drive_arbiter_node_component[0m
+[0.763s] [ 76%] Built target vehicle_core__py
+[0.808s] [ 78%] [32mBuilding CXX object CMakeFiles/drive_arbiter_node_component.dir/src/drive_arbiter.cpp.o[0m
+[0.808s] [ 78%] Built target tcp_server_node_component
+[0.833s] [ 79%] Built target state_manager_node_component
+[0.843s] [ 80%] Built target heading_calibrator_node_component
+[0.888s] [ 84%] Built target i2c_bridge_node
+[0.891s] [ 85%] Built target gt_u7_gps_node_component
+[0.919s] [ 86%] Built target autopilot_node_component
+[0.969s] [ 87%] Built target gst_camera_component
+[0.977s] [ 97%] Built target vehicle_core__rosidl_generator_py
+[1.023s] [ 98%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext
+[1.033s] [ 99%] Built target vehicle_core__rosidl_typesupport_c__pyext
+[1.055s] [100%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+[1.084s] running egg_info
+[1.085s] writing vehicle_core.egg-info/PKG-INFO
+[1.085s] writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+[1.085s] writing top-level names to vehicle_core.egg-info/top_level.txt
+[1.091s] reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[1.092s] writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[1.171s] [100%] Built target ament_cmake_python_build_vehicle_core_egg
+[1.705s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:1[m[K:
+[1.706s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/drive_arbiter_node.hpp:24:10:[m[K [01;31m[Kfatal error: [m[Kstd_srvs/srv/float32.hpp: No such file or directory
+[1.707s]    24 | #include [01;31m[K<std_srvs/srv/float32.hpp>[m[K
+[1.707s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.708s] compilation terminated.
+[1.712s] gmake[2]: *** [CMakeFiles/drive_arbiter_node_component.dir/build.make:76: CMakeFiles/drive_arbiter_node_component.dir/src/drive_arbiter.cpp.o] Error 1
+[1.712s] gmake[1]: *** [CMakeFiles/Makefile2:666: CMakeFiles/drive_arbiter_node_component.dir/all] Error 2
+[1.713s] gmake: *** [Makefile:146: all] Error 2
+[1.717s] Invoked command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8

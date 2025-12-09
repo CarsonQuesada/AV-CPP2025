@@ -1,0 +1,65 @@
+[0.026s] Invoking command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8
+[0.215s] [ 11%] Built target vehicle_core__rosidl_generator_c
+[0.222s] [ 11%] Built target vehicle_core__cpp
+[0.249s] [ 11%] Built target ament_cmake_python_symlink_vehicle_core
+[0.250s] [ 12%] Built target vehicle_core_container
+[0.269s] [ 23%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[0.292s] [ 34%] Built target vehicle_core__rosidl_typesupport_c
+[0.299s] [ 45%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[0.300s] [ 55%] Built target vehicle_core__rosidl_typesupport_cpp
+[0.305s] [ 66%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[0.322s] [ 76%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[0.384s] [ 76%] Built target vehicle_core
+[0.438s] [ 77%] Built target gt_u7_gps_node_component
+[0.440s] [35m[1mConsolidate compiler generated dependencies of target drive_arbiter_node_component[0m
+[0.477s] [ 77%] Built target vehicle_core__py
+[0.500s] [ 78%] Built target state_manager_node_component
+[0.502s] [ 79%] Built target heading_calibrator_node_component
+[0.504s] [ 80%] Built target drive_arbiter_node_component
+[0.505s] [ 81%] Built target tcp_server_node_component
+[0.506s] [ 82%] [32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o[0m
+[0.508s] [ 83%] Built target autopilot_node_component
+[0.529s] [ 84%] [32mBuilding CXX object CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o[0m
+[0.555s] [ 85%] Built target gst_camera_component
+[0.609s] [ 95%] Built target vehicle_core__rosidl_generator_py
+[0.648s] running egg_info
+[0.649s] writing vehicle_core.egg-info/PKG-INFO
+[0.649s] writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+[0.650s] writing top-level names to vehicle_core.egg-info/top_level.txt
+[0.655s] reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[0.656s] writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[0.684s] [ 96%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+[0.685s] [ 98%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext
+[0.686s] [ 98%] Built target vehicle_core__rosidl_typesupport_c__pyext
+[0.804s] [ 98%] Built target ament_cmake_python_build_vehicle_core_egg
+[1.304s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:1[m[K:
+[1.305s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/DriveSubsys.hpp:50:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kclock[m[K’ does not name a type; did you mean ‘[01m[Kflock[m[K’?
+[1.305s]    50 |   [01;31m[Kclock[m[K::time_point  t0_{};
+[1.306s]       |   [01;31m[K^~~~~[m[K
+[1.306s]       |   [32m[Kflock[m[K
+[1.318s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:[m[K In member function ‘[01m[Kvoid DriveSubsys::startLogging(const string&)[m[K’:
+[1.318s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:52:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kt0_[m[K’ was not declared in this scope
+[1.319s]    52 |   [01;31m[Kt0_[m[K = clock::now();
+[1.319s]       |   [01;31m[K^~~[m[K
+[1.320s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:52:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kclock[m[K’ is not a class, namespace, or enumeration
+[1.321s]    52 |   t0_ = [01;31m[Kclock[m[K::now();
+[1.321s]       |         [01;31m[K^~~~~[m[K
+[1.322s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:[m[K In member function ‘[01m[Kvoid DriveSubsys::logSample(const DriveStatusWire&)[m[K’:
+[1.322s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:70:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kclock[m[K’ is not a class, namespace, or enumeration
+[1.322s]    70 |   auto now  = [01;31m[Kclock[m[K::now();
+[1.323s]       |               [01;31m[K^~~~~[m[K
+[1.326s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/Devices/DriveSubsys.cpp:71:53:[m[K [01;31m[Kerror: [m[K‘[01m[Kt0_[m[K’ was not declared in this scope
+[1.326s]    71 |   double t  = duration_cast<duration<double>>(now - [01;31m[Kt0_[m[K).count();
+[1.327s]       |                                                     [01;31m[K^~~[m[K
+[1.438s] gmake[2]: *** [CMakeFiles/i2c_bridge_node.dir/build.make:146: CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o] Error 1
+[1.439s] gmake[2]: *** Waiting for unfinished jobs....
+[4.802s] In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/i2c_bridge_node.hpp:26[m[K,
+[4.802s]                  from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:1[m[K:
+[4.803s] [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/DriveSubsys.hpp:50:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kclock[m[K’ does not name a type; did you mean ‘[01m[Kflock[m[K’?
+[4.803s]    50 |   [01;31m[Kclock[m[K::time_point  t0_{};
+[4.804s]       |   [01;31m[K^~~~~[m[K
+[4.804s]       |   [32m[Kflock[m[K
+[19.149s] gmake[2]: *** [CMakeFiles/i2c_bridge_node.dir/build.make:76: CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o] Error 1
+[19.150s] gmake[1]: *** [CMakeFiles/Makefile2:750: CMakeFiles/i2c_bridge_node.dir/all] Error 2
+[19.151s] gmake: *** [Makefile:146: all] Error 2
+[19.154s] Invoked command in '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core -- -j8 -l8

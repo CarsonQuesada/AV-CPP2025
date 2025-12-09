@@ -1,0 +1,311 @@
+[0.000000] (-) TimerEvent: {}
+[0.000718] (object_detector) JobQueued: {'identifier': 'object_detector', 'dependencies': OrderedDict()}
+[0.000975] (vehicle_core) JobQueued: {'identifier': 'vehicle_core', 'dependencies': OrderedDict()}
+[0.001128] (object_detector) JobStarted: {'identifier': 'object_detector'}
+[0.010525] (vehicle_core) JobStarted: {'identifier': 'vehicle_core'}
+[0.018525] (object_detector) JobProgress: {'identifier': 'object_detector', 'progress': 'cmake'}
+[0.021092] (object_detector) JobProgress: {'identifier': 'object_detector', 'progress': 'build'}
+[0.021587] (object_detector) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/avcpp/AV-CPP2025/Vehicle/build/object_detector', '--', '-j8', '-l8'], 'cwd': '/home/avcpp/AV-CPP2025/Vehicle/build/object_detector', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('UMS_MOUNTPOINT', '/mnt/ums'), ('GST_V4L2_PREFERRED_FOURCC', 'NV12:YU12:NV16:YUY2'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'avcpp'), ('SSH_CLIENT', '192.168.8.104 50678 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/avcpp/.vscode-server/cli/servers/Stable-bf9252a2fb45be6893dd8870c0bf37e2e1766d61/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('USB_FUNCS', 'adb'), ('LD_LIBRARY_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/avcpp/.vscode-server/cli/servers/Stable-bf9252a2fb45be6893dd8870c0bf37e2e1766d61/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/avcpp'), ('OLDPWD', '/home/avcpp/AV-CPP2025/Vehicle'), ('TERM_PROGRAM_VERSION', '1.106.3'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1001/vscode-ipc-e7e4fcd3-0ba2-4959-8685-70f952453179.sock'), ('GST_INSPECT_NO_COLORS', '1'), ('GST_MPP_NO_RGA', '1'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/avcpp/.vscode-server/cli/servers/Stable-bf9252a2fb45be6893dd8870c0bf37e2e1766d61/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/avcpp/.vscode-server/cli/servers/Stable-bf9252a2fb45be6893dd8870c0bf37e2e1766d61/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1001/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install'), ('GST_V4L2SRC_MAX_RESOLUTION', '3840x2160'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'avcpp'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', '5'), ('GST_VIDEO_CONVERT_PREFERRED_FORMAT', 'NV12:NV16:I420:YUY2'), ('GST_V4L2SRC_RK_DEVICES', '_mainpath:_selfpath:_bypass:_scale'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/avcpp/.vscode-server/cli/servers/Stable-bf9252a2fb45be6893dd8870c0bf37e2e1766d61/server/bin/remote-cli:/home/avcpp/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/bundled/scripts/noConfigScripts'), ('XDG_RUNTIME_DIR', '/run/user/1001'), ('GST_GL_PLATFORM', 'egl'), ('GST_DEBUG_NO_COLOR', '1'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('GST_V4L2SRC_DEFAULT_DEVICE', '/dev/video-camera0'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/.noConfigDebugAdapterEndpoints/endpoint-43b207f2c3247df8.txt'), ('LANG', 'en_US.UTF-8'), ('PYTHONSTARTUP', '/home/avcpp/.vscode-server/data/User/workspaceStorage/ff32e2b339aba30cb60d962c7b2dc12b/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1001/vscode-git-d33227c248.sock'), ('TERM_PROGRAM', 'vscode'), ('GST_V4L2_USE_LIBV4L2', '1'), ('UMS_SIZE', '256M'), ('AMENT_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/home/avcpp/AV-CPP2025/Vehicle/install/object_detector:/opt/ros/humble'), ('LC_MESSAGES', 'en_US.UTF-8'), ('SHELL', '/bin/bash'), ('UMS_RO', '0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('UMS_FSTYPE', 'vfat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/avcpp/AV-CPP2025/Vehicle/build/object_detector'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.8.104 50678 192.168.8.176 22'), ('PYTHONPATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/python3.10/site-packages:/home/avcpp/AV-CPP2025/Vehicle/install/object_detector/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('UMS_MOUNT', '0'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/home/avcpp/AV-CPP2025/Vehicle/install/object_detector:/opt/ros/humble'), ('UMS_FILE', '/userdata/ums_shared.img')]), 'shell': False}
+[0.029795] (vehicle_core) JobProgress: {'identifier': 'vehicle_core', 'progress': 'cmake'}
+[0.031220] (vehicle_core) JobProgress: {'identifier': 'vehicle_core', 'progress': 'build'}
+[0.031820] (vehicle_core) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core', '--', '-j8', '-l8'], 'cwd': '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('UMS_MOUNTPOINT', '/mnt/ums'), ('GST_V4L2_PREFERRED_FOURCC', 'NV12:YU12:NV16:YUY2'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'avcpp'), ('SSH_CLIENT', '192.168.8.104 50678 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/avcpp/.vscode-server/cli/servers/Stable-bf9252a2fb45be6893dd8870c0bf37e2e1766d61/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('USB_FUNCS', 'adb'), ('LD_LIBRARY_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/avcpp/.vscode-server/cli/servers/Stable-bf9252a2fb45be6893dd8870c0bf37e2e1766d61/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/avcpp'), ('OLDPWD', '/home/avcpp/AV-CPP2025/Vehicle'), ('TERM_PROGRAM_VERSION', '1.106.3'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1001/vscode-ipc-e7e4fcd3-0ba2-4959-8685-70f952453179.sock'), ('GST_INSPECT_NO_COLORS', '1'), ('GST_MPP_NO_RGA', '1'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/avcpp/.vscode-server/cli/servers/Stable-bf9252a2fb45be6893dd8870c0bf37e2e1766d61/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/avcpp/.vscode-server/cli/servers/Stable-bf9252a2fb45be6893dd8870c0bf37e2e1766d61/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1001/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install'), ('GST_V4L2SRC_MAX_RESOLUTION', '3840x2160'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'avcpp'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', '5'), ('GST_VIDEO_CONVERT_PREFERRED_FORMAT', 'NV12:NV16:I420:YUY2'), ('GST_V4L2SRC_RK_DEVICES', '_mainpath:_selfpath:_bypass:_scale'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/avcpp/.vscode-server/cli/servers/Stable-bf9252a2fb45be6893dd8870c0bf37e2e1766d61/server/bin/remote-cli:/home/avcpp/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/bundled/scripts/noConfigScripts'), ('XDG_RUNTIME_DIR', '/run/user/1001'), ('GST_GL_PLATFORM', 'egl'), ('GST_DEBUG_NO_COLOR', '1'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('GST_V4L2SRC_DEFAULT_DEVICE', '/dev/video-camera0'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/.noConfigDebugAdapterEndpoints/endpoint-43b207f2c3247df8.txt'), ('LANG', 'en_US.UTF-8'), ('PYTHONSTARTUP', '/home/avcpp/.vscode-server/data/User/workspaceStorage/ff32e2b339aba30cb60d962c7b2dc12b/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1001/vscode-git-d33227c248.sock'), ('TERM_PROGRAM', 'vscode'), ('GST_V4L2_USE_LIBV4L2', '1'), ('UMS_SIZE', '256M'), ('AMENT_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/home/avcpp/AV-CPP2025/Vehicle/install/object_detector:/opt/ros/humble'), ('LC_MESSAGES', 'en_US.UTF-8'), ('SHELL', '/bin/bash'), ('UMS_RO', '0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('UMS_FSTYPE', 'vfat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.8.104 50678 192.168.8.176 22'), ('PYTHONPATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/python3.10/site-packages:/home/avcpp/AV-CPP2025/Vehicle/install/object_detector/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('UMS_MOUNT', '0'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/home/avcpp/AV-CPP2025/Vehicle/install/object_detector:/opt/ros/humble'), ('UMS_FILE', '/userdata/ums_shared.img')]), 'shell': False}
+[0.097469] (-) TimerEvent: {}
+[0.150352] (object_detector) CommandEnded: {'returncode': 0}
+[0.153408] (object_detector) JobProgress: {'identifier': 'object_detector', 'progress': 'install'}
+[0.192796] (object_detector) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/avcpp/AV-CPP2025/Vehicle/build/object_detector'], 'cwd': '/home/avcpp/AV-CPP2025/Vehicle/build/object_detector', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('UMS_MOUNTPOINT', '/mnt/ums'), ('GST_V4L2_PREFERRED_FOURCC', 'NV12:YU12:NV16:YUY2'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'avcpp'), ('SSH_CLIENT', '192.168.8.104 50678 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/avcpp/.vscode-server/cli/servers/Stable-bf9252a2fb45be6893dd8870c0bf37e2e1766d61/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('USB_FUNCS', 'adb'), ('LD_LIBRARY_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/avcpp/.vscode-server/cli/servers/Stable-bf9252a2fb45be6893dd8870c0bf37e2e1766d61/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/avcpp'), ('OLDPWD', '/home/avcpp/AV-CPP2025/Vehicle'), ('TERM_PROGRAM_VERSION', '1.106.3'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1001/vscode-ipc-e7e4fcd3-0ba2-4959-8685-70f952453179.sock'), ('GST_INSPECT_NO_COLORS', '1'), ('GST_MPP_NO_RGA', '1'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/avcpp/.vscode-server/cli/servers/Stable-bf9252a2fb45be6893dd8870c0bf37e2e1766d61/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/avcpp/.vscode-server/cli/servers/Stable-bf9252a2fb45be6893dd8870c0bf37e2e1766d61/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1001/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install'), ('GST_V4L2SRC_MAX_RESOLUTION', '3840x2160'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'avcpp'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', '5'), ('GST_VIDEO_CONVERT_PREFERRED_FORMAT', 'NV12:NV16:I420:YUY2'), ('GST_V4L2SRC_RK_DEVICES', '_mainpath:_selfpath:_bypass:_scale'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/avcpp/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/avcpp/.vscode-server/cli/servers/Stable-bf9252a2fb45be6893dd8870c0bf37e2e1766d61/server/bin/remote-cli:/home/avcpp/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/bundled/scripts/noConfigScripts'), ('XDG_RUNTIME_DIR', '/run/user/1001'), ('GST_GL_PLATFORM', 'egl'), ('GST_DEBUG_NO_COLOR', '1'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('GST_V4L2SRC_DEFAULT_DEVICE', '/dev/video-camera0'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/avcpp/.vscode-server/extensions/ms-python.debugpy-2025.16.0/.noConfigDebugAdapterEndpoints/endpoint-43b207f2c3247df8.txt'), ('LANG', 'en_US.UTF-8'), ('PYTHONSTARTUP', '/home/avcpp/.vscode-server/data/User/workspaceStorage/ff32e2b339aba30cb60d962c7b2dc12b/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1001/vscode-git-d33227c248.sock'), ('TERM_PROGRAM', 'vscode'), ('GST_V4L2_USE_LIBV4L2', '1'), ('UMS_SIZE', '256M'), ('AMENT_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/home/avcpp/AV-CPP2025/Vehicle/install/object_detector:/opt/ros/humble'), ('LC_MESSAGES', 'en_US.UTF-8'), ('SHELL', '/bin/bash'), ('UMS_RO', '0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('UMS_FSTYPE', 'vfat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/avcpp/AV-CPP2025/Vehicle/build/object_detector'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.8.104 50678 192.168.8.176 22'), ('PYTHONPATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/python3.10/site-packages:/home/avcpp/AV-CPP2025/Vehicle/install/object_detector/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('UMS_MOUNT', '0'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core:/home/avcpp/AV-CPP2025/Vehicle/install/object_detector:/opt/ros/humble'), ('UMS_FILE', '/userdata/ums_shared.img')]), 'shell': False}
+[0.197619] (-) TimerEvent: {}
+[0.215440] (vehicle_core) StdoutLine: {'line': b'[  0%] Built target vehicle_core__cpp\n'}
+[0.216953] (object_detector) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.217865] (object_detector) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[0.218630] (object_detector) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/object_detector/lib/object_detector/object_detector.py\n'}
+[0.219172] (object_detector) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/object_detector/share/ament_index/resource_index/package_run_dependencies/object_detector\n'}
+[0.219579] (object_detector) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/object_detector/share/ament_index/resource_index/parent_prefix_path/object_detector\n'}
+[0.219951] (object_detector) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/object_detector/share/object_detector/environment/ament_prefix_path.sh\n'}
+[0.220355] (object_detector) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/object_detector/share/object_detector/environment/ament_prefix_path.dsv\n'}
+[0.221150] (object_detector) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/object_detector/share/object_detector/environment/path.sh\n'}
+[0.221528] (object_detector) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/object_detector/share/object_detector/environment/path.dsv\n'}
+[0.221933] (object_detector) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/object_detector/share/object_detector/local_setup.bash\n'}
+[0.222299] (object_detector) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/object_detector/share/object_detector/local_setup.sh\n'}
+[0.222661] (object_detector) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/object_detector/share/object_detector/local_setup.zsh\n'}
+[0.223032] (object_detector) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/object_detector/share/object_detector/local_setup.dsv\n'}
+[0.223392] (object_detector) StdoutLine: {'line': b'-- Symlinking: /home/avcpp/AV-CPP2025/Vehicle/install/object_detector/share/object_detector/package.dsv\n'}
+[0.234640] (object_detector) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/object_detector/share/ament_index/resource_index/packages/object_detector\n'}
+[0.236034] (object_detector) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/object_detector/share/object_detector/cmake/object_detectorConfig.cmake\n'}
+[0.236786] (object_detector) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/object_detector/share/object_detector/cmake/object_detectorConfig-version.cmake\n'}
+[0.237294] (object_detector) StdoutLine: {'line': b'-- Up-to-date symlink: /home/avcpp/AV-CPP2025/Vehicle/install/object_detector/share/object_detector/package.xml\n'}
+[0.240250] (vehicle_core) StdoutLine: {'line': b'[  0%] Built target ament_cmake_python_symlink_vehicle_core\n'}
+[0.247795] (object_detector) CommandEnded: {'returncode': 0}
+[0.265461] (vehicle_core) StdoutLine: {'line': b'[ 10%] Built target vehicle_core__rosidl_typesupport_cpp\n'}
+[0.267562] (vehicle_core) StdoutLine: {'line': b'[ 11%] Built target vehicle_core_container\n'}
+[0.269037] (vehicle_core) StdoutLine: {'line': b'[ 22%] Built target vehicle_core__rosidl_generator_c\n'}
+[0.286883] (object_detector) JobEnded: {'identifier': 'object_detector', 'rc': 0}
+[0.297715] (-) TimerEvent: {}
+[0.313882] (vehicle_core) StdoutLine: {'line': b'[ 33%] Built target vehicle_core__rosidl_typesupport_introspection_cpp\n'}
+[0.315908] (vehicle_core) StdoutLine: {'line': b'[ 44%] Built target vehicle_core__rosidl_typesupport_c\n'}
+[0.342443] (vehicle_core) StdoutLine: {'line': b'[ 54%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp\n'}
+[0.361844] (vehicle_core) StdoutLine: {'line': b'[ 65%] Built target vehicle_core__rosidl_typesupport_introspection_c\n'}
+[0.365374] (vehicle_core) StdoutLine: {'line': b'[ 76%] Built target vehicle_core__rosidl_typesupport_fastrtps_c\n'}
+[0.398065] (-) TimerEvent: {}
+[0.423456] (vehicle_core) StdoutLine: {'line': b'[ 76%] Built target vehicle_core\n'}
+[0.477770] (vehicle_core) StdoutLine: {'line': b'[ 77%] Built target tcp_server_node_component\n'}
+[0.488153] (vehicle_core) StdoutLine: {'line': b'[ 77%] Built target vehicle_core__py\n'}
+[0.491962] (vehicle_core) StdoutLine: {'line': b'[ 78%] Built target heading_calibrator_node_component\n'}
+[0.497927] (vehicle_core) StdoutLine: {'line': b'[ 79%] Built target state_manager_node_component\n'}
+[0.498410] (-) TimerEvent: {}
+[0.505735] (vehicle_core) StdoutLine: {'line': b'[ 83%] Built target i2c_bridge_node\n'}
+[0.534540] (vehicle_core) StdoutLine: {'line': b'[ 84%] Built target gt_u7_gps_node_component\n'}
+[0.535414] (vehicle_core) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding CXX object CMakeFiles/drive_arbiter_node_component.dir/src/drive_arbiter.cpp.o\x1b[0m\n'}
+[0.544929] (vehicle_core) StdoutLine: {'line': b'[ 86%] Built target gst_camera_component\n'}
+[0.546969] (vehicle_core) StdoutLine: {'line': b'running egg_info\n'}
+[0.547941] (vehicle_core) StdoutLine: {'line': b'writing vehicle_core.egg-info/PKG-INFO\n'}
+[0.548255] (vehicle_core) StdoutLine: {'line': b'writing dependency_links to vehicle_core.egg-info/dependency_links.txt\n'}
+[0.548508] (vehicle_core) StdoutLine: {'line': b'writing top-level names to vehicle_core.egg-info/top_level.txt\n'}
+[0.551595] (vehicle_core) StdoutLine: {'line': b"reading manifest file 'vehicle_core.egg-info/SOURCES.txt'\n"}
+[0.552763] (vehicle_core) StdoutLine: {'line': b"writing manifest file 'vehicle_core.egg-info/SOURCES.txt'\n"}
+[0.566170] (vehicle_core) StdoutLine: {'line': b'[ 87%] Built target autopilot_node_component\n'}
+[0.591092] (vehicle_core) StdoutLine: {'line': b'[ 97%] Built target vehicle_core__rosidl_generator_py\n'}
+[0.598553] (-) TimerEvent: {}
+[0.615036] (vehicle_core) StdoutLine: {'line': b'[ 97%] Built target ament_cmake_python_build_vehicle_core_egg\n'}
+[0.644468] (vehicle_core) StdoutLine: {'line': b'[ 98%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext\n'}
+[0.646674] (vehicle_core) StdoutLine: {'line': b'[100%] Built target vehicle_core__rosidl_typesupport_c__pyext\n'}
+[0.647341] (vehicle_core) StdoutLine: {'line': b'[100%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.698920] (-) TimerEvent: {}
+[0.800317] (-) TimerEvent: {}
+[0.901682] (-) TimerEvent: {}
+[1.003057] (-) TimerEvent: {}
+[1.104435] (-) TimerEvent: {}
+[1.205883] (-) TimerEvent: {}
+[1.307324] (-) TimerEvent: {}
+[1.408652] (-) TimerEvent: {}
+[1.510091] (-) TimerEvent: {}
+[1.611536] (-) TimerEvent: {}
+[1.713017] (-) TimerEvent: {}
+[1.814471] (-) TimerEvent: {}
+[1.915988] (-) TimerEvent: {}
+[2.017441] (-) TimerEvent: {}
+[2.119170] (-) TimerEvent: {}
+[2.220569] (-) TimerEvent: {}
+[2.321991] (-) TimerEvent: {}
+[2.423315] (-) TimerEvent: {}
+[2.524736] (-) TimerEvent: {}
+[2.626198] (-) TimerEvent: {}
+[2.727593] (-) TimerEvent: {}
+[2.829045] (-) TimerEvent: {}
+[2.930383] (-) TimerEvent: {}
+[3.032002] (-) TimerEvent: {}
+[3.133534] (-) TimerEvent: {}
+[3.234998] (-) TimerEvent: {}
+[3.336424] (-) TimerEvent: {}
+[3.437860] (-) TimerEvent: {}
+[3.539360] (-) TimerEvent: {}
+[3.640785] (-) TimerEvent: {}
+[3.742287] (-) TimerEvent: {}
+[3.843698] (-) TimerEvent: {}
+[3.945102] (-) TimerEvent: {}
+[4.046423] (-) TimerEvent: {}
+[4.147842] (-) TimerEvent: {}
+[4.249249] (-) TimerEvent: {}
+[4.350645] (-) TimerEvent: {}
+[4.452062] (-) TimerEvent: {}
+[4.553518] (-) TimerEvent: {}
+[4.654955] (-) TimerEvent: {}
+[4.756370] (-) TimerEvent: {}
+[4.857812] (-) TimerEvent: {}
+[4.959285] (-) TimerEvent: {}
+[5.060747] (-) TimerEvent: {}
+[5.162240] (-) TimerEvent: {}
+[5.263902] (-) TimerEvent: {}
+[5.365360] (-) TimerEvent: {}
+[5.466811] (-) TimerEvent: {}
+[5.531084] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::DriveArbiterNode::DriveArbiterNode(const rclcpp::NodeOptions&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.532260] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:47:16:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kbind(<unresolved overloaded function type>, vehicle_core::DriveArbiterNode*, const std::_Placeholder<1>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.532947] (vehicle_core) StderrLine: {'line': b'   47 |       \x1b[01;31m\x1b[Kstd::bind(&DriveArbiterNode::onObstacleDetected, this, std::placeholders::_1)\x1b[m\x1b[K);\n'}
+[5.533367] (vehicle_core) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.535962] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/pstl/glue_algorithm_defs.h:13\x1b[m\x1b[K,\n'}
+[5.536157] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/11/algorithm:74\x1b[m\x1b[K,\n'}
+[5.536616] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:18\x1b[m\x1b[K,\n'}
+[5.536710] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[5.536796] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[5.536878] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[5.536961] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/drive_arbiter_node.hpp:11\x1b[m\x1b[K,\n'}
+[5.537046] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:1\x1b[m\x1b[K:\n'}
+[5.537126] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/functional:789:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Func, class ... _BoundArgs> typename std::_Bind_helper<std::__is_socketlike<_Func>::value, _Func, _BoundArgs ...>::type std::bind(_Func&&, _BoundArgs&& ...)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.537214] (vehicle_core) StderrLine: {'line': b'  789 |     \x1b[01;36m\x1b[Kbind\x1b[m\x1b[K(_Func&& __f, _BoundArgs&&... __args)\n'}
+[5.537321] (vehicle_core) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[5.537404] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/functional:789:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[5.537484] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:47:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  couldn\xe2\x80\x99t deduce template parameter \xe2\x80\x98\x1b[01m\x1b[K_Func\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.537566] (vehicle_core) StderrLine: {'line': b'   47 |       \x1b[01;36m\x1b[Kstd::bind(&DriveArbiterNode::onObstacleDetected, this, std::placeholders::_1)\x1b[m\x1b[K);\n'}
+[5.537642] (vehicle_core) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.537720] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/pstl/glue_algorithm_defs.h:13\x1b[m\x1b[K,\n'}
+[5.537811] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/11/algorithm:74\x1b[m\x1b[K,\n'}
+[5.537888] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:18\x1b[m\x1b[K,\n'}
+[5.537963] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[5.538044] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[5.538119] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[5.538194] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/drive_arbiter_node.hpp:11\x1b[m\x1b[K,\n'}
+[5.538287] (vehicle_core) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:1\x1b[m\x1b[K:\n'}
+[5.538380] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/functional:813:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Result, class _Func, class ... _BoundArgs> typename std::_Bindres_helper<_Result, _Func, _BoundArgs>::type std::bind(_Func&&, _BoundArgs&& ...)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.538465] (vehicle_core) StderrLine: {'line': b'  813 |     \x1b[01;36m\x1b[Kbind\x1b[m\x1b[K(_Func&& __f, _BoundArgs&&... __args)\n'}
+[5.538541] (vehicle_core) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[5.538616] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/functional:813:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[5.538691] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:47:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  couldn\xe2\x80\x99t deduce template parameter \xe2\x80\x98\x1b[01m\x1b[K_Result\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.538766] (vehicle_core) StderrLine: {'line': b'   47 |       \x1b[01;36m\x1b[Kstd::bind(&DriveArbiterNode::onObstacleDetected, this, std::placeholders::_1)\x1b[m\x1b[K);\n'}
+[5.538840] (vehicle_core) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.538919] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:51:36:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KonObstacleDistance\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kvehicle_core::DriveArbiterNode\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.539012] (vehicle_core) StderrLine: {'line': b'   51 |       std::bind(&DriveArbiterNode::\x1b[01;31m\x1b[KonObstacleDistance\x1b[m\x1b[K, this, std::placeholders::_1));\n'}
+[5.539089] (vehicle_core) StderrLine: {'line': b'      |                                    \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.566907] (-) TimerEvent: {}
+[5.589059] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:\x1b[m\x1b[K At global scope:\n'}
+[5.589613] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:174:6:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno declaration matches \xe2\x80\x98\x1b[01m\x1b[Kvoid vehicle_core::DriveArbiterNode::onObstacleDistance(std_msgs::msg::Float32_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.589719] (vehicle_core) StderrLine: {'line': b'  174 | void \x1b[01;31m\x1b[KDriveArbiterNode\x1b[m\x1b[K::onObstacleDistance(const std_msgs::msg::Float32::SharedPtr msg) {\n'}
+[5.589801] (vehicle_core) StderrLine: {'line': b'      |      \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.589873] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:174:6:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kno functions named \xe2\x80\x98\x1b[01m\x1b[Kvoid vehicle_core::DriveArbiterNode::onObstacleDistance(std_msgs::msg::Float32_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.589951] (vehicle_core) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:1\x1b[m\x1b[K:\n'}
+[5.590021] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/drive_arbiter_node.hpp:28:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclass vehicle_core::DriveArbiterNode\x1b[m\x1b[K\xe2\x80\x99 defined here\n'}
+[5.590120] (vehicle_core) StderrLine: {'line': b'   28 | class \x1b[01;36m\x1b[KDriveArbiterNode\x1b[m\x1b[K final : public rclcpp::Node {\n'}
+[5.590193] (vehicle_core) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.615393] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid vehicle_core::DriveArbiterNode::maybePublish()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.615818] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:326:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclosest_object_distance_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kclosest_object_distance\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.615944] (vehicle_core) StderrLine: {'line': b'  326 |     if (\x1b[01;31m\x1b[Kclosest_object_distance_\x1b[m\x1b[K <= warning_zone_ && out.target_speed_mmps > 0) {\n'}
+[5.616046] (vehicle_core) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.616144] (vehicle_core) StderrLine: {'line': b'      |         \x1b[32m\x1b[Kclosest_object_distance\x1b[m\x1b[K\n'}
+[5.628879] (vehicle_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:350:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclosest_object_distance_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kclosest_object_distance\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.629185] (vehicle_core) StderrLine: {'line': b'  350 |     if (\x1b[01;31m\x1b[Kclosest_object_distance_\x1b[m\x1b[K <= warning_zone_ && out.target_speed_mmps > 0) {\n'}
+[5.629273] (vehicle_core) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.629347] (vehicle_core) StderrLine: {'line': b'      |         \x1b[32m\x1b[Kclosest_object_distance\x1b[m\x1b[K\n'}
+[5.667010] (-) TimerEvent: {}
+[5.767556] (-) TimerEvent: {}
+[5.868164] (-) TimerEvent: {}
+[5.968772] (-) TimerEvent: {}
+[6.069400] (-) TimerEvent: {}
+[6.169991] (-) TimerEvent: {}
+[6.270586] (-) TimerEvent: {}
+[6.371166] (-) TimerEvent: {}
+[6.471820] (-) TimerEvent: {}
+[6.572436] (-) TimerEvent: {}
+[6.673048] (-) TimerEvent: {}
+[6.773668] (-) TimerEvent: {}
+[6.874289] (-) TimerEvent: {}
+[6.974928] (-) TimerEvent: {}
+[7.075559] (-) TimerEvent: {}
+[7.176175] (-) TimerEvent: {}
+[7.276828] (-) TimerEvent: {}
+[7.377500] (-) TimerEvent: {}
+[7.478125] (-) TimerEvent: {}
+[7.578767] (-) TimerEvent: {}
+[7.679396] (-) TimerEvent: {}
+[7.780029] (-) TimerEvent: {}
+[7.880659] (-) TimerEvent: {}
+[7.981288] (-) TimerEvent: {}
+[8.081934] (-) TimerEvent: {}
+[8.182588] (-) TimerEvent: {}
+[8.283226] (-) TimerEvent: {}
+[8.383862] (-) TimerEvent: {}
+[8.484518] (-) TimerEvent: {}
+[8.585196] (-) TimerEvent: {}
+[8.685835] (-) TimerEvent: {}
+[8.786463] (-) TimerEvent: {}
+[8.887107] (-) TimerEvent: {}
+[8.987747] (-) TimerEvent: {}
+[9.088410] (-) TimerEvent: {}
+[9.189069] (-) TimerEvent: {}
+[9.289737] (-) TimerEvent: {}
+[9.390394] (-) TimerEvent: {}
+[9.491059] (-) TimerEvent: {}
+[9.591729] (-) TimerEvent: {}
+[9.692384] (-) TimerEvent: {}
+[9.793048] (-) TimerEvent: {}
+[9.893716] (-) TimerEvent: {}
+[9.994396] (-) TimerEvent: {}
+[10.095098] (-) TimerEvent: {}
+[10.195747] (-) TimerEvent: {}
+[10.296413] (-) TimerEvent: {}
+[10.397074] (-) TimerEvent: {}
+[10.497747] (-) TimerEvent: {}
+[10.598421] (-) TimerEvent: {}
+[10.699082] (-) TimerEvent: {}
+[10.799702] (-) TimerEvent: {}
+[10.900336] (-) TimerEvent: {}
+[11.000998] (-) TimerEvent: {}
+[11.101654] (-) TimerEvent: {}
+[11.202303] (-) TimerEvent: {}
+[11.302964] (-) TimerEvent: {}
+[11.403602] (-) TimerEvent: {}
+[11.504263] (-) TimerEvent: {}
+[11.604920] (-) TimerEvent: {}
+[11.705582] (-) TimerEvent: {}
+[11.806238] (-) TimerEvent: {}
+[11.906900] (-) TimerEvent: {}
+[12.007539] (-) TimerEvent: {}
+[12.108211] (-) TimerEvent: {}
+[12.208887] (-) TimerEvent: {}
+[12.309530] (-) TimerEvent: {}
+[12.410185] (-) TimerEvent: {}
+[12.510858] (-) TimerEvent: {}
+[12.611515] (-) TimerEvent: {}
+[12.712184] (-) TimerEvent: {}
+[12.812868] (-) TimerEvent: {}
+[12.913519] (-) TimerEvent: {}
+[13.014146] (-) TimerEvent: {}
+[13.114803] (-) TimerEvent: {}
+[13.215462] (-) TimerEvent: {}
+[13.316104] (-) TimerEvent: {}
+[13.416747] (-) TimerEvent: {}
+[13.517383] (-) TimerEvent: {}
+[13.618037] (-) TimerEvent: {}
+[13.718702] (-) TimerEvent: {}
+[13.819340] (-) TimerEvent: {}
+[13.920002] (-) TimerEvent: {}
+[14.020637] (-) TimerEvent: {}
+[14.121300] (-) TimerEvent: {}
+[14.221942] (-) TimerEvent: {}
+[14.322583] (-) TimerEvent: {}
+[14.423250] (-) TimerEvent: {}
+[14.523907] (-) TimerEvent: {}
+[14.624558] (-) TimerEvent: {}
+[14.725215] (-) TimerEvent: {}
+[14.825873] (-) TimerEvent: {}
+[14.926527] (-) TimerEvent: {}
+[15.027145] (-) TimerEvent: {}
+[15.127803] (-) TimerEvent: {}
+[15.228454] (-) TimerEvent: {}
+[15.329122] (-) TimerEvent: {}
+[15.429779] (-) TimerEvent: {}
+[15.530450] (-) TimerEvent: {}
+[15.631117] (-) TimerEvent: {}
+[15.731774] (-) TimerEvent: {}
+[15.832429] (-) TimerEvent: {}
+[15.933080] (-) TimerEvent: {}
+[16.033726] (-) TimerEvent: {}
+[16.134381] (-) TimerEvent: {}
+[16.235081] (-) TimerEvent: {}
+[16.335749] (-) TimerEvent: {}
+[16.436418] (-) TimerEvent: {}
+[16.537085] (-) TimerEvent: {}
+[16.637743] (-) TimerEvent: {}
+[16.738404] (-) TimerEvent: {}
+[16.839085] (-) TimerEvent: {}
+[16.939818] (-) TimerEvent: {}
+[17.040492] (-) TimerEvent: {}
+[17.141121] (-) TimerEvent: {}
+[17.241759] (-) TimerEvent: {}
+[17.342388] (-) TimerEvent: {}
+[17.443021] (-) TimerEvent: {}
+[17.543644] (-) TimerEvent: {}
+[17.644289] (-) TimerEvent: {}
+[17.744971] (-) TimerEvent: {}
+[17.845633] (-) TimerEvent: {}
+[17.946253] (-) TimerEvent: {}
+[18.046922] (-) TimerEvent: {}
+[18.147570] (-) TimerEvent: {}
+[18.248176] (-) TimerEvent: {}
+[18.348824] (-) TimerEvent: {}
+[18.449486] (-) TimerEvent: {}
+[18.550151] (-) TimerEvent: {}
+[18.650838] (-) TimerEvent: {}
+[18.653485] (vehicle_core) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/drive_arbiter_node_component.dir/build.make:76: CMakeFiles/drive_arbiter_node_component.dir/src/drive_arbiter.cpp.o] Error 1\n'}
+[18.654597] (vehicle_core) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:666: CMakeFiles/drive_arbiter_node_component.dir/all] Error 2\n'}
+[18.655493] (vehicle_core) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[18.659721] (vehicle_core) CommandEnded: {'returncode': 2}
+[18.688282] (vehicle_core) JobEnded: {'identifier': 'vehicle_core', 'rc': 2}
+[18.699177] (-) EventReactorShutdown: {}

@@ -210,8 +210,8 @@ endif()
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   execute_process(
         COMMAND
-        "/usr/bin/python3" "-m" "compileall"
-        "/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/local/lib/python3.10/dist-packages/vehicle_core"
+        "/home/avcpp/.venv/bin/python3" "-m" "compileall"
+        "/home/avcpp/AV-CPP2025/Vehicle/install/vehicle_core/lib/python3.10/site-packages/vehicle_core"
       )
 endif()
 

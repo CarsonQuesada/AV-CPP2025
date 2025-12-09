@@ -710,6 +710,16 @@ CMakeFiles/drive_arbiter_node_component.dir/src/drive_arbiter.cpp.o: /home/avcpp
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/empty__traits.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/empty__type_support.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/bool.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__struct.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__builder.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__traits.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__type_support.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/float32.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__struct.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__builder.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__traits.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__type_support.hpp \
   /opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp \
   /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp \
   /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__builder.hpp \
@@ -815,6 +825,16 @@ rosidl_generator_cpp/vehicle_core/msg/internal_drive_command.hpp:
 
 /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__traits.hpp:
 
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__traits.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__struct.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/float32.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__type_support.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__traits.hpp:
+
 /opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
 
 /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/empty__type_support.hpp:
@@ -888,6 +908,8 @@ rosidl_generator_cpp/vehicle_core/msg/detail/manual_drive_command__struct.hpp:
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_base_interface_traits.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/create_timer.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__struct.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__type_support.hpp:
 
@@ -1085,6 +1107,8 @@ rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__traits.hp
 
 /usr/include/c++/11/bits/ostream_insert.h:
 
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__type_support.hpp:
+
 /usr/include/aarch64-linux-gnu/bits/locale.h:
 
 /usr/include/locale.h:
@@ -1124,6 +1148,8 @@ rosidl_generator_cpp/vehicle_core/srv/detail/request_internal_control__traits.hp
 /usr/include/aarch64-linux-gnu/c++/11/bits/ctype_base.h:
 
 /usr/include/c++/11/cerrno:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/bool.hpp:
 
 /usr/include/aarch64-linux-gnu/c++/11/bits/error_constants.h:
 
@@ -1206,6 +1232,8 @@ rosidl_generator_cpp/vehicle_core/srv/detail/release_internal_control__builder.h
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__struct.hpp:
 
 /usr/include/c++/11/bits/quoted_string.h:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__builder.hpp:
 
 /usr/include/c++/11/tr1/beta_function.tcc:
 
@@ -1782,6 +1810,8 @@ rosidl_generator_cpp/vehicle_core/msg/detail/internal_drive_command__traits.hpp:
 /usr/include/c++/11/bits/enable_special_members.h:
 
 /usr/include/c++/11/bits/basic_ios.tcc:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__builder.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_value.hpp:
 

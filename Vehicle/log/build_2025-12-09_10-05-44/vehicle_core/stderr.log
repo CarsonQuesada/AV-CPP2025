@@ -1,0 +1,16 @@
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:[m[K In constructor ‘[01m[Kvehicle_core::I2cBridgeNode::I2cBridgeNode(const rclcpp::NodeOptions&)[m[K’:
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:44:41:[m[K [01;35m[Kwarning: [m[Ksuggest braces around empty body in an ‘[01m[Kif[m[K’ statement [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wempty-body-Wempty-body]8;;[m[K]
+   44 |   if (!drive.open(i2cBus1, addr_drive_))[01;35m[K;[m[K
+      |                                         [01;35m[K^[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:44:3:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kif[m[K’ clause does not guard... [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmisleading-indentation-Wmisleading-indentation]8;;[m[K]
+   44 |   [01;35m[Kif[m[K (!drive.open(i2cBus1, addr_drive_));
+      |   [01;35m[K^~[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:45:5:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kif[m[K’
+   45 |     [01;36m[Kthrow[m[K std::runtime_error("Failed to open drive");
+      |     [01;36m[K^~~~~[m[K
+[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/i2c_bridge_node.cpp:46:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass DriveSubsys[m[K’ has no member named ‘[01m[KstartLogging[m[K’
+   46 |   drive.[01;31m[KstartLogging[m[K("drive_log.csv");
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/i2c_bridge_node.dir/build.make:76: CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:750: CMakeFiles/i2c_bridge_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

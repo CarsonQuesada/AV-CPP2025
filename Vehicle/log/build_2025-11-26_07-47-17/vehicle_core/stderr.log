@@ -1,3 +1,0 @@
-gmake[2]: *** [CMakeFiles/state_manager_node_component.dir/build.make:76: CMakeFiles/state_manager_node_component.dir/src/state_manager.cpp.o] Interrupt
-gmake[1]: *** [CMakeFiles/Makefile2:610: CMakeFiles/state_manager_node_component.dir/all] Interrupt
-gmake: *** [Makefile:146: all] Interrupt
