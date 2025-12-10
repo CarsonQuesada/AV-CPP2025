@@ -18,6 +18,7 @@ file(GLOB TCPCLIENT_SRC CONFIGURE_DEPENDS
   "${SRC_DIR}/*.cpp"
   "${SRC_DIR}/UI/*.cpp"
   "${SRC_DIR}/UI/Panels/*.cpp"
+  "${SRC_DIR}/video/*.cpp"
 )
 list(APPEND TCPCLIENT_SRC
   "${GLAD_DIR}/src/glad.c"
@@ -36,6 +37,7 @@ target_include_directories(TCPClient PRIVATE
   "${SRC_DIR}"
   "${SRC_DIR}/UI"
   "${SRC_DIR}/UI/Panels"
+  "${SRC_DIR}/video"
   "${IMGUI_DIR}"
   "${IMGUI_DIR}/backends"
   "${GLAD_DIR}/include"
@@ -93,23 +95,39 @@ if(NOT DEPS_FORCE_FETCH AND EXISTS "${CURL_LOCAL_INCLUDE}" AND EXISTS "${CURL_LO
   )
   add_library(CURL::libcurl ALIAS curl_local)
 else()
-  set(BUILD_CURL_EXE OFF CACHE BOOL "" FORCE)
-  set(CURL_USE_SCHANNEL ON  CACHE BOOL "" FORCE)  # native Windows TLS
-  set(CURL_USE_OPENSSL  OFF CACHE BOOL "" FORCE)
-  set(CURL_ZLIB         OFF CACHE BOOL "" FORCE)
-  set(CURL_BROTLI       OFF CACHE BOOL "" FORCE)
-  set(CURL_ZSTD         OFF CACHE BOOL "" FORCE)
-  set(CURL_DISABLE_LDAP ON  CACHE BOOL "" FORCE)
-  set(ENABLE_UNIX_SOCKETS OFF CACHE BOOL "" FORCE)
-  # set(HTTP_ONLY ON CACHE BOOL "" FORCE) # enable if you only need HTTP(S)
+  # IMPORTANT: cURL uses CMAKE_USE_* flags, not CURL_USE_*
+  set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+  set(BUILD_CURL_EXE   OFF CACHE BOOL "" FORCE)
 
+  # Pick Windows native TLS and turn OFF everything else
+  set(CMAKE_USE_SCHANNEL ON  CACHE BOOL "" FORCE)
+  set(CMAKE_USE_OPENSSL  OFF CACHE BOOL "" FORCE)
+  set(CMAKE_USE_MBEDTLS  OFF CACHE BOOL "" FORCE)
+  set(CMAKE_USE_GNUTLS   OFF CACHE BOOL "" FORCE)
+  set(CMAKE_USE_WOLFSSL  OFF CACHE BOOL "" FORCE)
+  set(CMAKE_USE_BEARSSL  OFF CACHE BOOL "" FORCE)
+  set(CMAKE_USE_NSS      OFF CACHE BOOL "" FORCE)
+  set(CMAKE_USE_MESALINK OFF CACHE BOOL "" FORCE)
+
+  # Trim optional features to avoid crypto code paths
+  set(HTTP_ONLY          ON  CACHE BOOL "" FORCE)
+  set(CURL_ZLIB          OFF CACHE BOOL "" FORCE)
+  set(CURL_BROTLI        OFF CACHE BOOL "" FORCE)
+  set(CURL_ZSTD          OFF CACHE BOOL "" FORCE)
+  set(CURL_DISABLE_LDAP  ON  CACHE BOOL "" FORCE)
+  set(CURL_DISABLE_NTLM  ON  CACHE BOOL "" FORCE)  # avoids md4/ntlm sources
+
+  include(FetchContent)
   FetchContent_Declare(curl_src
     GIT_REPOSITORY https://github.com/curl/curl.git
     GIT_TAG curl-8_10_1
   )
   FetchContent_MakeAvailable(curl_src)
+
   if(NOT TARGET CURL::libcurl AND TARGET libcurl_static)
     add_library(CURL::libcurl ALIAS libcurl_static)
+  elseif(NOT TARGET CURL::libcurl AND TARGET libcurl)
+    add_library(CURL::libcurl ALIAS libcurl)
   elseif(NOT TARGET CURL::libcurl)
     message(FATAL_ERROR "libcurl target not found")
   endif()
@@ -123,6 +141,49 @@ target_link_libraries(TCPClient PRIVATE
 )
 if(MINGW)
   target_link_libraries(TCPClient PRIVATE winmm uxtheme)
+endif()
+
+# --- RTSP toggle ---
+option(ENABLE_RTSP "Enable RTSP via FFmpeg" OFF)
+
+if (ENABLE_RTSP)
+  if (NOT DEFINED FFMPEG_ROOT)
+    message(FATAL_ERROR "ENABLE_RTSP=ON but FFMPEG_ROOT is not set")
+  endif()
+
+  # Headers
+  target_include_directories(TCPClient PRIVATE
+    "${FFMPEG_ROOT}/include"
+  )
+
+  # 1. build-time link
+  target_link_libraries(TCPClient PRIVATE
+    "${FFMPEG_ROOT}/lib/libavformat.dll.a"
+    "${FFMPEG_ROOT}/lib/libavcodec.dll.a"
+    "${FFMPEG_ROOT}/lib/libavutil.dll.a"
+    "${FFMPEG_ROOT}/lib/libswscale.dll.a"
+  )
+
+  # 2. runtime copy
+  if (FFMPEG_COPY_DLLS)
+    file(GLOB FFMPEG_DLLS
+      "${FFMPEG_ROOT}/bin/avformat-*.dll"
+      "${FFMPEG_ROOT}/bin/avcodec-*.dll"
+      "${FFMPEG_ROOT}/bin/avutil-*.dll"
+      "${FFMPEG_ROOT}/bin/swscale-*.dll"
+      "${FFMPEG_ROOT}/bin/swresample-*.dll"
+    )
+
+    add_custom_command(TARGET TCPClient POST_BUILD
+      COMMAND ${CMAKE_COMMAND} -E copy_if_different
+              ${FFMPEG_DLLS} "$<TARGET_FILE_DIR:TCPClient>"
+      COMMENT "Copying minimal FFmpeg DLLs"
+      COMMAND_EXPAND_LISTS
+    )
+  endif()
+
+
+  add_compile_definitions(ENABLE_RTSP=1)
 endif()
 
 # Output + assets

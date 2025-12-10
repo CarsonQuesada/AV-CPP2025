@@ -21,8 +21,7 @@ public:
     void start();
     void stop();
 
-    // Called from network thread to push JPEG bytes
-    void updateFrame(const std::vector<unsigned char>& newFrame);
+    void updateFrame(const uint8_t* data, int w, int h); // RGB24, tightly packed
 
     // Called from UI thread to get current OpenGL texture
     Frame getFrame();

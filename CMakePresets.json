@@ -3,22 +3,26 @@
   "configurePresets": [
     {
       "name": "win-tcpclient-debug",
-      "displayName": "Windows MinGW - TCPClient Debug",
+      "displayName": "Windows MinGW - TCPClient Debug (MJPEG only)",
       "generator": "MinGW Makefiles",
       "binaryDir": "${sourceDir}/build/win-tcpclient-debug",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "DEPS_FORCE_FETCH": "OFF"
+        "DEPS_FORCE_FETCH": "OFF",
+        "ENABLE_RTSP": "OFF"
       }
     },
     {
-      "name": "win-tcpclient-debug-fetch",
-      "displayName": "Windows MinGW - TCPClient Debug (force fetch deps)",
+      "name": "win-tcpclient-rtsp",
+      "displayName": "Windows MinGW - TCPClient Debug (RTSP enabled)",
       "generator": "MinGW Makefiles",
-      "binaryDir": "${sourceDir}/build/win-tcpclient-debug-fetch",
+      "binaryDir": "${sourceDir}/build/win-tcpclient-rtsp",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "DEPS_FORCE_FETCH": "ON"
+        "DEPS_FORCE_FETCH": "OFF",
+        "ENABLE_RTSP": "ON",
+        "FFMPEG_ROOT": "${sourceDir}/TCPClient/Dependencies/ffmpeg",
+        "FFMPEG_COPY_DLLS": "ON"
       }
     },
     {
@@ -32,9 +36,9 @@
     }
   ],
   "buildPresets": [
-    { "name": "win-tcpclient-debug",        "configurePreset": "win-tcpclient-debug" },
-    { "name": "win-tcpclient-debug-fetch",  "configurePreset": "win-tcpclient-debug-fetch" },
-    { "name": "vehicle-debug",              "configurePreset": "vehicle-debug" }
+    { "name": "win-tcpclient-debug", "configurePreset": "win-tcpclient-debug" },
+    { "name": "win-tcpclient-rtsp",  "configurePreset": "win-tcpclient-rtsp"  },
+    { "name": "vehicle-debug",       "configurePreset": "vehicle-debug" }
   ],
   "workflowPresets": [
     {

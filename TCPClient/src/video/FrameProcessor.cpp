@@ -25,12 +25,14 @@ void FrameProcessor::stop() {
         worker.join();
 }
 
-void FrameProcessor::updateFrame(const std::vector<unsigned char>& newFrame) {
-    {
-        std::lock_guard<std::mutex> lock(jpegMutex);
-        jpegFrame = newFrame;
-    }
-    frameReady.notify_one();
+void FrameProcessor::updateFrame(const uint8_t* data, int w, int h) {
+    if (!data || w <= 0 || h <= 0) return;
+    const size_t n = static_cast<size_t>(w) * h * 3;
+    std::lock_guard<std::mutex> lock(frameMut);
+    frame.pixels.assign(data, data + n);
+    frame.width  = w;
+    frame.height = h;
+    frame.ready  = true;
 }
 
 Frame FrameProcessor::getFrame() {

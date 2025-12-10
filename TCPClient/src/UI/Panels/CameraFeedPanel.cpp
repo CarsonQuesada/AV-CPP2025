@@ -11,7 +11,7 @@
 #include "Shared/Keys.h"
 
 CameraFeedPanel::CameraFeedPanel(UIContext& uiContext)
-    : UIPanel(uiContext), videoStream(BuildMjpegUrl(ConnectionType::None), frameProcessor)
+    : UIPanel(uiContext), videoStream(BuildRtspUrl(ConnectionType::None), frameProcessor)
 {
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -54,7 +54,7 @@ void CameraFeedPanel::onUpdate()
 
     const bool connected = uiContext.isConnected();
     const bool visible   = showContents && !ImGui::IsWindowCollapsed();
-    const bool wantStream = connected && userEnabled && visible;
+    const bool wantStream = /*connected*/true && userEnabled && visible;
 
     // --- Decide which host to target ---
     // Default: remote when Remote route; local when Local route (unless user forces remote).
@@ -74,7 +74,7 @@ void CameraFeedPanel::onUpdate()
     // Remember and apply only when changed (so we don’t spam setUrl)
     static ConnectionType lastHost = ConnectionType::None;
     if (preferredHost != lastHost) {
-        videoStream.setUrl(BuildMjpegUrl(preferredHost));
+        videoStream.setUrl(BuildRtspUrl(preferredHost));
         lastHost = preferredHost;
     }
 
@@ -98,15 +98,15 @@ void CameraFeedPanel::onUpdate()
 
     // --- Rendering (only when visible) ---
     if (showContents) {
+        Frame frame = frameProcessor.getFrame();
         ImVec2 contentSize = ImGui::GetContentRegionAvail();
-        const float aspect = 640.0f / 480.0f;
+        const float aspect = (frame.ready && frame.height > 0) ? (float)frame.width / (float)frame.height : (16.0f/9.0f);
         float w = contentSize.x, h = w / aspect;
         if (h > contentSize.y) { h = contentSize.y; w = h * aspect; }
         float offsetX = (contentSize.x - w) * 0.5f;
         ImGui::SetCursorPosX(ImGui::GetCursorPosX() + offsetX);
 
         if (streaming) {
-            Frame frame = frameProcessor.getFrame();
             if (frame.ready) {
                 glBindTexture(GL_TEXTURE_2D, texture);
                 glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
