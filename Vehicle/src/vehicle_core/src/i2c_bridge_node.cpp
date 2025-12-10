@@ -41,9 +41,9 @@ I2cBridgeNode::I2cBridgeNode(const rclcpp::NodeOptions& opts)
   i2cBus1 = I2CBusRegistry::getInstance().getOrOpen(i2c_path_);
   if (!i2cBus1) 
     throw std::runtime_error("Failed to open I2C bus");
-  if (!drive.open(i2cBus1, addr_drive_));
+  if (!drive.open(i2cBus1, addr_drive_))
     throw std::runtime_error("Failed to open drive");
-  //drive.startLogging("drive_log.csv");
+  drive.startLogging("drive_log.csv");
   if (!lighting.open(i2cBus1, addr_lighting_)) 
     throw std::runtime_error("Failed to open lighting");
   if (!imu.open(i2cBus1, addr_imu_)) 

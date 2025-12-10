@@ -7,6 +7,8 @@
 #include <stdexcept>
 #include <string>
 #include <cmath>
+#include <fstream>
+#include <chrono>   // make sure this is here
 
 #include "vehicle_core/Devices/I2C/I2CDevice.hpp"
 
@@ -34,5 +36,15 @@ public:
   bool sendCommand(const DriveCommandWire& cmd);
   bool readStatus(DriveStatusWire& status);
 
+  // --- Logging API ---
+  void startLogging(const std::string& path);
+  void stopLogging();
+
 private:
+  void logSample(const DriveStatusWire& status);
+
+  std::ofstream logFile_;
+  std::chrono::steady_clock::time_point t0_;  // <-- use full type
+  DriveCommandWire   lastCmd_{};
+  bool               haveCmd_ = false;
 };

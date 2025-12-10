@@ -8,6 +8,7 @@
 #include <std_msgs/msg/empty.hpp>
 #include <std_msgs/msg/bool.hpp>
 #include <std_msgs/msg/float32.hpp>
+#include <std_msgs/msg/string.hpp>
 #include <std_srvs/srv/trigger.hpp>
 
 #include "vehicle_core/msg/internal_drive_command.hpp"
@@ -32,7 +33,7 @@ private:
   void onMaxSpeed(const msg::MaxSpeed::SharedPtr m);
   void onObstacleDetected(const std_msgs::msg::Bool::SharedPtr msg);
   void onObstacleDistance(const std_msgs::msg::Float32::SharedPtr msg);
-
+  void onObstacleAngleZone(const std_msgs::msg::String::SharedPtr msg);  
   // ---- Core ----
   void maybePublish();                           // decide source & emit DriveTarget
   bool manualIsMeaningful(const msg::ManualDriveCommand& m) const;
@@ -61,7 +62,7 @@ private:
   
   uint8_t max_speed_percent_{100}; // runtime cap from MaxSpeed topic
   std::string grant_owner_;
-
+  std::string closest_angle_zone_;
   // ---- State ----
   msg::StateMode::SharedPtr last_mode_;
   msg::InternalDriveCommand::SharedPtr last_internal_;
@@ -79,6 +80,7 @@ private:
   rclcpp::Subscription<msg::MaxSpeed>::SharedPtr sub_max_;
   rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr sub_obstacle_;
   rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr sub_obstacle_distance_;
+   rclcpp::Subscription<std_msgs::msg::String>::SharedPtr sub_obstacle_angle_;
 
   rclcpp::Publisher<msg::DriveTarget>::SharedPtr pub_target_;
   rclcpp::Publisher<std_msgs::msg::Empty>::SharedPtr pub_override_evt_;

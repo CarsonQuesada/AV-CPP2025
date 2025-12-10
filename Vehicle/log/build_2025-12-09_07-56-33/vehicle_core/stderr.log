@@ -1,8 +1,0 @@
-In file included from [01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/drive_arbiter.cpp:1[m[K:
-[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/drive_arbiter_node.hpp:24:10:[m[K [01;31m[Kfatal error: [m[Kstd_srvs/srv/float32.hpp: No such file or directory
-   24 | #include [01;31m[K<std_srvs/srv/float32.hpp>[m[K
-      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
-compilation terminated.
-gmake[2]: *** [CMakeFiles/drive_arbiter_node_component.dir/build.make:76: CMakeFiles/drive_arbiter_node_component.dir/src/drive_arbiter.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:666: CMakeFiles/drive_arbiter_node_component.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

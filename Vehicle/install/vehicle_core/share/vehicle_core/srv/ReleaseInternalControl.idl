@@ -1,1 +1,17 @@
-/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/srv/ReleaseInternalControl.idl
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from vehicle_core/srv/ReleaseInternalControl.srv
+// generated code does not contain a copyright notice
+
+
+module vehicle_core {
+  module srv {
+    struct ReleaseInternalControl_Request {
+      string controller;
+    };
+    struct ReleaseInternalControl_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

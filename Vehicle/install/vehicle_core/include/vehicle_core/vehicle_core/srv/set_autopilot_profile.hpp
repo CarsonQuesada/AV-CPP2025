@@ -1,1 +1,12 @@
-/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_cpp/vehicle_core/srv/set_autopilot_profile.hpp
+// generated from rosidl_generator_cpp/resource/idl.hpp.em
+// generated code does not contain a copyright notice
+
+#ifndef VEHICLE_CORE__SRV__SET_AUTOPILOT_PROFILE_HPP_
+#define VEHICLE_CORE__SRV__SET_AUTOPILOT_PROFILE_HPP_
+
+#include "vehicle_core/srv/detail/set_autopilot_profile__struct.hpp"
+#include "vehicle_core/srv/detail/set_autopilot_profile__builder.hpp"
+#include "vehicle_core/srv/detail/set_autopilot_profile__traits.hpp"
+#include "vehicle_core/srv/detail/set_autopilot_profile__type_support.hpp"
+
+#endif  // VEHICLE_CORE__SRV__SET_AUTOPILOT_PROFILE_HPP_

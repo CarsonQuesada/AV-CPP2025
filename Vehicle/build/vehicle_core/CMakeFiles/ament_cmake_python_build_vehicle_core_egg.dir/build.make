@@ -67,7 +67,7 @@ include CMakeFiles/ament_cmake_python_build_vehicle_core_egg.dir/compiler_depend
 include CMakeFiles/ament_cmake_python_build_vehicle_core_egg.dir/progress.make
 
 CMakeFiles/ament_cmake_python_build_vehicle_core_egg:
-	cd /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_python/vehicle_core && /home/avcpp/.venv/bin/python3 setup.py egg_info
+	cd /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/ament_cmake_python/vehicle_core && /usr/bin/python3 setup.py egg_info
 
 ament_cmake_python_build_vehicle_core_egg: CMakeFiles/ament_cmake_python_build_vehicle_core_egg
 ament_cmake_python_build_vehicle_core_egg: CMakeFiles/ament_cmake_python_build_vehicle_core_egg.dir/build.make

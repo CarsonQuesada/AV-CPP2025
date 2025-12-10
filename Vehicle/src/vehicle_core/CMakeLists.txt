@@ -270,7 +270,33 @@ target_link_libraries(autopilot_node_component
   Geographic
 )
 
-# --- GST Camera component (C++) ---
+# --- RTSP Streamer component ---
+add_library(rtsp_streamer_node SHARED
+  src/rtsp_streamer_node.cpp
+)
+target_include_directories(rtsp_streamer_node PUBLIC
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+  ${GSTREAMER_INCLUDE_DIRS}
+)
+target_link_libraries(rtsp_streamer_node
+  ${GSTREAMER_LIBRARIES}
+  gstrtspserver-1.0
+)
+ament_target_dependencies(rtsp_streamer_node
+  rclcpp
+  rclcpp_components
+  sensor_msgs
+)
+rclcpp_components_register_nodes(rtsp_streamer_node
+  "vehicle_core::RtspStreamerNode"
+)
+install(TARGETS rtsp_streamer_node
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
+# --- GST Camera component ---
 add_library(gst_camera_component SHARED src/gst_camera_node.cpp)
 target_include_directories(gst_camera_component PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/include

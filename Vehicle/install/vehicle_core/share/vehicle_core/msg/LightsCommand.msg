@@ -1,1 +1,1 @@
-/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/LightsCommand.msg
+uint8 light_id

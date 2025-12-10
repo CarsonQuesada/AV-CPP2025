@@ -1,0 +1,78 @@
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_generator_c[0m
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core_container[0m
+[35m[1mConsolidate compiler generated dependencies of target rtsp_streamer_node[0m
+[  0%] Built target ament_cmake_python_copy_vehicle_core
+[  1%] Built target vehicle_core__cpp
+[ 12%] Built target vehicle_core__rosidl_generator_c
+[ 13%] Built target rtsp_streamer_node
+[ 14%] Built target vehicle_core_container
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_cpp[0m
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_introspection_cpp[0m
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_introspection_c[0m
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_fastrtps_cpp[0m
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_fastrtps_c[0m
+[35m[1mConsolidate compiler generated dependencies of target vehicle_core__rosidl_typesupport_c[0m
+[ 24%] Built target vehicle_core__rosidl_typesupport_introspection_c
+[ 35%] Built target vehicle_core__rosidl_typesupport_introspection_cpp
+[ 46%] Built target vehicle_core__rosidl_typesupport_cpp
+[ 57%] Built target vehicle_core__rosidl_typesupport_fastrtps_cpp
+[ 67%] Built target vehicle_core__rosidl_typesupport_fastrtps_c
+[ 77%] Built target vehicle_core__rosidl_typesupport_c
+[ 77%] Built target vehicle_core
+[35m[1mConsolidate compiler generated dependencies of target tcp_server_node_component[0m
+[35m[1mConsolidate compiler generated dependencies of target heading_calibrator_node_component[0m
+[35m[1mConsolidate compiler generated dependencies of target gt_u7_gps_node_component[0m
+[35m[1mConsolidate compiler generated dependencies of target drive_arbiter_node_component[0m
+[35m[1mConsolidate compiler generated dependencies of target state_manager_node_component[0m
+[35m[1mConsolidate compiler generated dependencies of target i2c_bridge_node[0m
+[ 78%] [32mBuilding CXX object CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o[0m
+[ 79%] Built target gt_u7_gps_node_component
+[ 79%] Built target vehicle_core__py
+[ 80%] Built target heading_calibrator_node_component
+[ 81%] Built target drive_arbiter_node_component
+[35m[1mConsolidate compiler generated dependencies of target autopilot_node_component[0m
+[ 82%] Built target state_manager_node_component
+[ 85%] Built target i2c_bridge_node
+[35m[1mConsolidate compiler generated dependencies of target gst_camera_component[0m
+[ 85%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_drive_target_s.c.o[0m
+[ 86%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_lights_command_s.c.o[0m
+[ 87%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_internal_drive_command_s.c.o[0m
+[ 87%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_manual_drive_command_s.c.o[0m
+[ 88%] Built target autopilot_node_component
+[ 88%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_max_speed_s.c.o[0m
+[ 89%] Built target gst_camera_component
+[ 89%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_command_s.c.o[0m
+running egg_info
+writing vehicle_core.egg-info/PKG-INFO
+writing dependency_links to vehicle_core.egg-info/dependency_links.txt
+writing top-level names to vehicle_core.egg-info/top_level.txt
+reading manifest file 'vehicle_core.egg-info/SOURCES.txt'
+writing manifest file 'vehicle_core.egg-info/SOURCES.txt'
+[ 90%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_drive_status_s.c.o[0m
+[ 91%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_telemetry_data_s.c.o[0m
+[ 91%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_general_status_s.c.o[0m
+[ 92%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_lights_status_s.c.o[0m
+[ 92%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_status_s.c.o[0m
+[ 92%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_error_s.c.o[0m
+[ 92%] Built target ament_cmake_python_build_vehicle_core_egg
+[ 92%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_server_init_s.c.o[0m
+[ 93%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_autopilot_config_s.c.o[0m
+[ 93%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_perception_profile_s.c.o[0m
+[ 94%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_state_mode_s.c.o[0m
+[ 94%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_state_event_s.c.o[0m
+[ 95%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_drive_feedback_s.c.o[0m
+[ 96%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_request_internal_control_s.c.o[0m
+[ 96%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/msg/_imu_status_s.c.o[0m
+[ 96%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_release_internal_control_s.c.o[0m
+[ 96%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_generator_py.dir/rosidl_generator_py/vehicle_core/srv/_set_autopilot_profile_s.c.o[0m
+[ 97%] [32m[1mLinking C shared library rosidl_generator_py/vehicle_core/libvehicle_core__rosidl_generator_py.so[0m
+[ 97%] Built target vehicle_core__rosidl_generator_py
+[ 98%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/vehicle_core/_vehicle_core_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[100%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/vehicle_core/_vehicle_core_s.ep.rosidl_typesupport_c.c.o[0m
+[100%] [32mBuilding C object CMakeFiles/vehicle_core__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/vehicle_core/_vehicle_core_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[100%] [32m[1mLinking C shared library rosidl_generator_py/vehicle_core/vehicle_core_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so[0m
+[100%] [32m[1mLinking C shared library rosidl_generator_py/vehicle_core/vehicle_core_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so[0m
+[100%] [32m[1mLinking C shared library rosidl_generator_py/vehicle_core/vehicle_core_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so[0m
+[100%] Built target vehicle_core__rosidl_typesupport_c__pyext
+[100%] Built target vehicle_core__rosidl_typesupport_introspection_c__pyext
+[100%] Built target vehicle_core__rosidl_typesupport_fastrtps_c__pyext

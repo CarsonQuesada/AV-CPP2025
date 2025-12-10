@@ -1,1 +1,3 @@
-/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/AutopilotStatus.msg
+bool autopilot_ready
+bool lidar_ready
+bool camera_ready

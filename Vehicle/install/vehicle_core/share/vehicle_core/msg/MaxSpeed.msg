@@ -1,1 +1,1 @@
-/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/MaxSpeed.msg
+uint8 percent

@@ -1,4 +1,4 @@
-// #pragma once
+#pragma once
 #include <rclcpp/rclcpp.hpp>
 
 #include <std_msgs/msg/bool.hpp>

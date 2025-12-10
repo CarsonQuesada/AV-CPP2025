@@ -1,1 +1,2 @@
-/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/DriveFeedback.msg
+int16 speed_mmps
+int16 steer_millirad

@@ -66,6 +66,16 @@ def generate_launch_description():
             ),
             ComposableNode(
                 package='vehicle_core',
+                plugin='vehicle_core::RtspStreamerNode',
+                name='rtsp_streamer_node',
+                parameters=[{
+                    "width": 2112,
+                    "height": 1568,
+                    "fps": 15,
+                }],
+            ),
+            ComposableNode(
+                package='vehicle_core',
                 plugin='vehicle_core::GtU7GpsNode',
                 name='gt_u7_gps_node',
                 parameters=[cfg_gps],
@@ -108,25 +118,25 @@ def generate_launch_description():
         parameters=[ekf_params],
     )
 
-    wvs_params = {
-        "address": "0.0.0.0",
-        "port": 8080,
-        "jpeg_quality": 45,
-        "queue_size": 1,
-        "server_threads": 2
-    }
-    web_video = Node(
-        package="web_video_server",
-        executable="web_video_server",
-        name="web_video_server",
-        parameters=[wvs_params],
-        output="screen"
-    )
+    # wvs_params = {
+    #     "address": "0.0.0.0",
+    #     "port": 8080,
+    #     "jpeg_quality": 45,
+    #     "queue_size": 1,
+    #     "server_threads": 2
+    # }
+    # web_video = Node(
+    #     package="web_video_server",
+    #     executable="web_video_server",
+    #     name="web_video_server",
+    #     parameters=[wvs_params],
+    #     output="screen"
+    # )
 
     return LaunchDescription([
         container,
         navsat,
         ekf,
         # imu_tf,  # uncomment if you need the static transform
-        web_video,
+        #web_video,
     ])

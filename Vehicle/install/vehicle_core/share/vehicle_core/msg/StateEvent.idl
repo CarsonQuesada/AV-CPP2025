@@ -1,1 +1,19 @@
-/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_adapter/vehicle_core/msg/StateEvent.idl
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from vehicle_core/msg/StateEvent.msg
+// generated code does not contain a copyright notice
+
+#include "builtin_interfaces/msg/Time.idl"
+
+module vehicle_core {
+  module msg {
+    struct StateEvent {
+      builtin_interfaces::msg::Time stamp;
+
+      uint8 from_mode;
+
+      uint8 to_mode;
+
+      string reason;
+    };
+  };
+};

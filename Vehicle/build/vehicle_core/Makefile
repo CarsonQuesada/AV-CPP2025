@@ -315,17 +315,17 @@ vehicle_core__rosidl_typesupport_cpp/fast:
 .PHONY : vehicle_core__rosidl_typesupport_cpp/fast
 
 #=============================================================================
-# Target rules for targets named ament_cmake_python_symlink_vehicle_core
+# Target rules for targets named ament_cmake_python_copy_vehicle_core
 
 # Build rule for target.
-ament_cmake_python_symlink_vehicle_core: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_symlink_vehicle_core
-.PHONY : ament_cmake_python_symlink_vehicle_core
+ament_cmake_python_copy_vehicle_core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_copy_vehicle_core
+.PHONY : ament_cmake_python_copy_vehicle_core
 
 # fast build rule for target.
-ament_cmake_python_symlink_vehicle_core/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_vehicle_core.dir/build.make CMakeFiles/ament_cmake_python_symlink_vehicle_core.dir/build
-.PHONY : ament_cmake_python_symlink_vehicle_core/fast
+ament_cmake_python_copy_vehicle_core/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_vehicle_core.dir/build.make CMakeFiles/ament_cmake_python_copy_vehicle_core.dir/build
+.PHONY : ament_cmake_python_copy_vehicle_core/fast
 
 #=============================================================================
 # Target rules for targets named ament_cmake_python_build_vehicle_core_egg
@@ -482,6 +482,19 @@ autopilot_node_component: cmake_check_build_system
 autopilot_node_component/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/autopilot_node_component.dir/build.make CMakeFiles/autopilot_node_component.dir/build
 .PHONY : autopilot_node_component/fast
+
+#=============================================================================
+# Target rules for targets named rtsp_streamer_node
+
+# Build rule for target.
+rtsp_streamer_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rtsp_streamer_node
+.PHONY : rtsp_streamer_node
+
+# fast build rule for target.
+rtsp_streamer_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rtsp_streamer_node.dir/build.make CMakeFiles/rtsp_streamer_node.dir/build
+.PHONY : rtsp_streamer_node/fast
 
 #=============================================================================
 # Target rules for targets named gst_camera_component
@@ -5178,6 +5191,30 @@ src/i2c_bridge_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/i2c_bridge_node.dir/build.make CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.s
 .PHONY : src/i2c_bridge_node.cpp.s
 
+src/rtsp_streamer_node.o: src/rtsp_streamer_node.cpp.o
+.PHONY : src/rtsp_streamer_node.o
+
+# target to build an object file
+src/rtsp_streamer_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rtsp_streamer_node.dir/build.make CMakeFiles/rtsp_streamer_node.dir/src/rtsp_streamer_node.cpp.o
+.PHONY : src/rtsp_streamer_node.cpp.o
+
+src/rtsp_streamer_node.i: src/rtsp_streamer_node.cpp.i
+.PHONY : src/rtsp_streamer_node.i
+
+# target to preprocess a source file
+src/rtsp_streamer_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rtsp_streamer_node.dir/build.make CMakeFiles/rtsp_streamer_node.dir/src/rtsp_streamer_node.cpp.i
+.PHONY : src/rtsp_streamer_node.cpp.i
+
+src/rtsp_streamer_node.s: src/rtsp_streamer_node.cpp.s
+.PHONY : src/rtsp_streamer_node.s
+
+# target to generate assembly for a file
+src/rtsp_streamer_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rtsp_streamer_node.dir/build.make CMakeFiles/rtsp_streamer_node.dir/src/rtsp_streamer_node.cpp.s
+.PHONY : src/rtsp_streamer_node.cpp.s
+
 src/state_manager.o: src/state_manager.cpp.o
 .PHONY : src/state_manager.o
 
@@ -5264,7 +5301,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... ament_cmake_python_build_vehicle_core_egg"
-	@echo "... ament_cmake_python_symlink_vehicle_core"
+	@echo "... ament_cmake_python_copy_vehicle_core"
 	@echo "... uninstall"
 	@echo "... vehicle_core"
 	@echo "... vehicle_core__cpp"
@@ -5276,6 +5313,7 @@ help:
 	@echo "... gt_u7_gps_node_component"
 	@echo "... heading_calibrator_node_component"
 	@echo "... i2c_bridge_node"
+	@echo "... rtsp_streamer_node"
 	@echo "... state_manager_node_component"
 	@echo "... tcp_server_node_component"
 	@echo "... vehicle_core__rosidl_generator_c"
@@ -5872,6 +5910,9 @@ help:
 	@echo "... src/i2c_bridge_node.o"
 	@echo "... src/i2c_bridge_node.i"
 	@echo "... src/i2c_bridge_node.s"
+	@echo "... src/rtsp_streamer_node.o"
+	@echo "... src/rtsp_streamer_node.i"
+	@echo "... src/rtsp_streamer_node.s"
 	@echo "... src/state_manager.o"
 	@echo "... src/state_manager.i"
 	@echo "... src/state_manager.s"

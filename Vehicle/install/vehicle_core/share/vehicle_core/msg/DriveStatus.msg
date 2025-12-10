@@ -1,1 +1,3 @@
-/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/DriveStatus.msg
+uint8 gear
+bool braking
+uint16 fault_bits

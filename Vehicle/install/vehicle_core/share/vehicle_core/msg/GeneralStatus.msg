@@ -1,1 +1,3 @@
-/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/GeneralStatus.msg
+uint32 speed
+uint32 battery_percent
+bool gps_online
