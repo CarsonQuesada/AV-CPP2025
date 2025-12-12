@@ -1,0 +1,12 @@
+computer_vision:
+  ros__parameters:
+    model_path: "yolov8n.onnx"
+    input_width: 640
+    input_height: 640
+    conf_threshold: 0.25
+    nms_threshold: 0.45
+
+    image_topic: "/camera/image_raw"
+    annotated_topic: "/camera/image_annotated"
+    detections_topic: "/camera/detections"
+    frame_id: "camera_link"

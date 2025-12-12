@@ -1,8 +1,0 @@
-[1.097s] Invoking command in '/home/avcpp/AV-CPP2025/Vehicle/build/object_detector': PYTHONPATH=/home/avcpp/AV-CPP2025/Vehicle/build/object_detector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/avcpp/AV-CPP2025/Vehicle/install/object_detector/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/avcpp/AV-CPP2025/Vehicle/build/object_detector/build --no-deps symlink_data
-[1.407s] usage: setup.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
-[1.408s]    or: setup.py --help [cmd1 cmd2 ...]
-[1.408s]    or: setup.py --help-commands
-[1.409s]    or: setup.py cmd --help
-[1.409s] 
-[1.410s] error: option --editable not recognized
-[1.503s] Invoked command in '/home/avcpp/AV-CPP2025/Vehicle/build/object_detector' returned '1': PYTHONPATH=/home/avcpp/AV-CPP2025/Vehicle/build/object_detector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/avcpp/AV-CPP2025/Vehicle/install/object_detector/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/avcpp/AV-CPP2025/Vehicle/build/object_detector/build --no-deps symlink_data

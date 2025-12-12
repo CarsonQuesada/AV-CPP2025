@@ -1,1 +1,1 @@
-/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/PerceptionProfile.msg
+uint8 profile   # 0=OFF, 1=LIDAR_ONLY, 2=CAMERA_ONLY, 3=FULL

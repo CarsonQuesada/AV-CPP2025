@@ -1,1 +1,5 @@
-/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/cfg/heading_calib.yaml
+  min_distance_m: 10.0
+  target_speed_mps: 2.0
+  stationary_max_mps: 0.05
+  capture_time_s: 1.0
+  timeout_s: 45.0

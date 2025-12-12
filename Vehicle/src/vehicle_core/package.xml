@@ -36,10 +36,12 @@
   <build_depend>pkg-config</build_depend>
   <build_depend>libgstreamer1.0-dev</build_depend>
   <build_depend>libgstreamer-plugins-base1.0-dev</build_depend>
+  <build_depend>libgstrtspserver-1.0-dev</build_depend>
 
   <!-- GStreamer: runtime (shared libs) -->
   <exec_depend>libgstreamer1.0-0</exec_depend>
   <exec_depend>libgstreamer-plugins-base1.0-0</exec_depend>
+  <exec_depend>libgstrtspserver-1.0-0</exec_depend>
 
   <!-- Tests -->
   <test_depend>ament_lint_auto</test_depend>

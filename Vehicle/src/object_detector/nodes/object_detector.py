@@ -4,7 +4,7 @@ from rclpy.node import Node
 from sensor_msgs.msg import LaserScan
 from visualization_msgs.msg import Marker, MarkerArray
 from geometry_msgs.msg import Point
-from std_msgs.msg import Bool, Float32
+from std_msgs.msg import Bool, Float32, String  # ADDED String here
 import numpy as np
 import math
 
@@ -28,15 +28,16 @@ class LidarObjectDetector(Node):
         self.obstacle_pub = self.create_publisher(Bool, '/sensors/obstacle_detected', 10)
         self.closest_object_pub = self.create_publisher(Float32, '/sensors/closest_object_distance', 10)
         self.emergency_zone_pub = self.create_publisher(Float32, '/sensors/emergency_zone_distance', 10)
-        
+        self.angle_zone_pub = self.create_publisher(String, '/sensors/closest_object_angle_zone', 10)
+
         # Parameters
         self.cluster_threshold = 0.3  # meters between points to form clusters
         self.min_cluster_points = 5   # minimum points to be considered an object
         self.max_object_distance = 8.0  # meters
         
         # Zones for graduated response - NOW CONFIGURABLE
-        self.emergency_braking_zone = self.declare_parameter('emergency_braking_zone', 1.0).value  # meters - full stop
-        self.slow_down_zone = self.declare_parameter('slow_down_zone', 2.0).value  # meters - reduce speed
+        self.emergency_braking_zone = self.declare_parameter('emergency_braking_zone', 2.0).value  # meters - full stop
+        self.slow_down_zone = self.declare_parameter('slow_down_zone', 2.5).value  # meters - reduce speed
         self.warning_zone = self.declare_parameter('warning_zone', 6.0).value  # meters - warn but maintain speed
         
         # Field of view with priority zones - ALSO CONFIGURABLE
@@ -137,9 +138,14 @@ class LidarObjectDetector(Node):
             distance_msg.data = self.max_object_distance  # No obstacles detected
         self.closest_object_pub.publish(distance_msg)
         
-        # Publish angle zone info for debugging
+        # ADDED: Publish angle zone
+        zone_msg = String()
         if closest_angle_zone:
+            zone_msg.data = closest_angle_zone
             self.get_logger().debug(f"Closest object: {closest_distance:.2f}m in {closest_angle_zone}")
+        else:
+            zone_msg.data = "ignore_angle"
+        self.angle_zone_pub.publish(zone_msg)
         
         if len(points) < self.min_cluster_points:
             # Still publish obstacle status

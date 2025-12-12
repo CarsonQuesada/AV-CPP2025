@@ -1,1 +1,6 @@
-/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/TelemetryData.msg
+bool gps_online
+float32 lat
+float32 lon
+float32 heading
+float32 speed
+float32 distance_delta

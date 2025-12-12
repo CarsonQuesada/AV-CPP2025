@@ -1,1 +1,4 @@
-/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/ManualDriveCommand.msg
+uint8 brake
+uint8 gear
+uint8 speed
+uint8 steer

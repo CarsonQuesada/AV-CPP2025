@@ -95,7 +95,7 @@ private:
   void changeState(ConnState st);
 
   // Parameters
-  int         port_               { PORT };        // from Keys.h
+  int         port_               { LOCAL_TCP_PORT };        // from Keys.h
   std::string bind_addr_          { "0.0.0.0" };
   bool        enforce_handshake_  { true };
   int         recv_timeout_sec_   { 5 };

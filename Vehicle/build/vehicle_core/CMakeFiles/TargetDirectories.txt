@@ -9,7 +9,7 @@
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/vehicle_core__rosidl_typesupport_c.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/vehicle_core__rosidl_typesupport_introspection_cpp.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/vehicle_core__rosidl_typesupport_cpp.dir
-/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/ament_cmake_python_symlink_vehicle_core.dir
+/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/ament_cmake_python_copy_vehicle_core.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/ament_cmake_python_build_vehicle_core_egg.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/vehicle_core__rosidl_generator_py.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/vehicle_core__rosidl_typesupport_fastrtps_c__pyext.dir
@@ -22,6 +22,7 @@
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/tcp_server_node_component.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/i2c_bridge_node.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/autopilot_node_component.dir
+/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/rtsp_streamer_node.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/gst_camera_component.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/vehicle_core_container.dir
 /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles/test.dir

@@ -30,8 +30,8 @@ namespace wire {
 TcpServerNode::TcpServerNode(const rclcpp::NodeOptions& options)
 : rclcpp::Node("tcp_server_node", options)
 {
-  // Declare parameters (defaults come from members, port_ uses PORT macro)
-  port_              = this->declare_parameter<int>("port", PORT);
+  // Declare parameters (defaults come from members, port_ uses LOCAL_TCP_PORT macro)
+  port_              = this->declare_parameter<int>("port", LOCAL_TCP_PORT);
   bind_addr_         = this->declare_parameter<std::string>("bind_address", "0.0.0.0");
   enforce_handshake_ = this->declare_parameter<bool>("enforce_handshake", true);
   recv_timeout_sec_  = this->declare_parameter<int>("recv_timeout_sec", 5);

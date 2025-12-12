@@ -1,1 +1,11 @@
-/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_cmake/srv/SetAutopilotProfile_Request.msg
+# Request: you can set any combination; unset fields keep current
+bool   set_profile_id
+uint8  profile_id
+
+bool   set_features_mask
+uint8  features_mask
+
+# Optional overrides; both arrays must be the same length if provided
+bool     set_params
+string[] keys
+float64[] values

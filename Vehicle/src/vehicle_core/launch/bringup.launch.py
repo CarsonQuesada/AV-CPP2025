@@ -8,13 +8,14 @@ from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
     pkg_share = get_package_share_directory('vehicle_core')
-    cfg_sm   = path_join(pkg_share, 'cfg', 'state_manager.yaml')
-    cfg_da   = path_join(pkg_share, 'cfg', 'drive_arbiter.yaml')
-    cfg_i2c  = path_join(pkg_share, 'cfg', 'i2c_bridge.yaml')
-    cfg_cam  = path_join(pkg_share, 'cfg', 'camera_gscam.yaml')
-    cfg_gps  = path_join(pkg_share, 'cfg', 'gt_u7_gps.yaml')
-    cfg_hdc  = path_join(pkg_share, 'cfg', 'heading_calib.yaml')
-    cfg_atp  = path_join(pkg_share, 'cfg', 'autopilot.yaml')
+    cfg_sm    = path_join(pkg_share, 'cfg', 'state_manager.yaml')
+    cfg_da    = path_join(pkg_share, 'cfg', 'drive_arbiter.yaml')
+    cfg_i2c   = path_join(pkg_share, 'cfg', 'i2c_bridge.yaml')
+    cfg_cam   = path_join(pkg_share, 'cfg', 'camera_gscam.yaml')
+    cfg_gps   = path_join(pkg_share, 'cfg', 'gt_u7_gps.yaml')
+    cfg_hdc   = path_join(pkg_share, 'cfg', 'heading_calib.yaml')
+    cfg_atp   = path_join(pkg_share, 'cfg', 'autopilot.yaml')
+    cfg_rtsp  = path_join(pkg_share, 'cfg', 'rtsp_raw_stream.yaml')
 
     ekf_params    = PathJoinSubstitution([pkg_share,  'cfg', 'ekf.yaml'])
     navsat_params = PathJoinSubstitution([pkg_share,  'cfg', 'navsat.yaml'])
@@ -66,6 +67,12 @@ def generate_launch_description():
             ),
             ComposableNode(
                 package='vehicle_core',
+                plugin='vehicle_core::RtspStreamerNode',
+                name='rtsp_streamer_node',
+                parameters=[cfg_rtsp],
+            ),
+            ComposableNode(
+                package='vehicle_core',
                 plugin='vehicle_core::GtU7GpsNode',
                 name='gt_u7_gps_node',
                 parameters=[cfg_gps],
@@ -108,25 +115,25 @@ def generate_launch_description():
         parameters=[ekf_params],
     )
 
-    wvs_params = {
-        "address": "0.0.0.0",
-        "port": 8080,
-        "jpeg_quality": 45,
-        "queue_size": 1,
-        "server_threads": 2
-    }
-    web_video = Node(
-        package="web_video_server",
-        executable="web_video_server",
-        name="web_video_server",
-        parameters=[wvs_params],
-        output="screen"
-    )
+    # wvs_params = {
+    #     "address": "0.0.0.0",
+    #     "port": 8080,
+    #     "jpeg_quality": 45,
+    #     "queue_size": 1,
+    #     "server_threads": 2
+    # }
+    # web_video = Node(
+    #     package="web_video_server",
+    #     executable="web_video_server",
+    #     name="web_video_server",
+    #     parameters=[wvs_params],
+    #     output="screen"
+    # )
 
     return LaunchDescription([
         container,
         navsat,
         ekf,
         # imu_tf,  # uncomment if you need the static transform
-        web_video,
+        #web_video,
     ])

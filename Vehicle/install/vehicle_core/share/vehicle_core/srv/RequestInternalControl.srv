@@ -1,1 +1,4 @@
-/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/srv/RequestInternalControl.srv
+string controller
+---
+bool success
+string message

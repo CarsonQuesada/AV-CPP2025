@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_generator_py/vehicle_core/vehicle_core_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" "TARGETS" "vehicle_core__rosidl_typesupport_introspection_c__pyext" "DESTINATION" "lib/python3.10/site-packages/vehicle_core")

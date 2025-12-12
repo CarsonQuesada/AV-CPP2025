@@ -1,0 +1,9 @@
+rtsp_annotated:
+  ros__parameters:
+    width: 2112
+    height: 1568
+    fps: 15
+
+    image_topic: "/camera/image_annotated"
+    service: 8555
+    mount_point: "/annotated"

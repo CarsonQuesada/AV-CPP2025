@@ -132,7 +132,7 @@ rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/drive_target__rosidl_types
 rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/drive_target__rosidl_typesupport_fastrtps_c.h: /opt/ros/humble/share/std_msgs/msg/UInt8.idl
 rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/drive_target__rosidl_typesupport_fastrtps_c.h: /opt/ros/humble/share/std_msgs/msg/UInt8MultiArray.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C type support for eProsima Fast-RTPS"
-	/home/avcpp/.venv/bin/python3 /opt/ros/humble/lib/rosidl_typesupport_fastrtps_c/rosidl_typesupport_fastrtps_c --generator-arguments-file /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_typesupport_fastrtps_c__arguments.json
+	/usr/bin/python3 /opt/ros/humble/lib/rosidl_typesupport_fastrtps_c/rosidl_typesupport_fastrtps_c --generator-arguments-file /home/avcpp/AV-CPP2025/Vehicle/build/vehicle_core/rosidl_typesupport_fastrtps_c__arguments.json
 
 rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/drive_target__type_support_c.cpp: rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/drive_target__rosidl_typesupport_fastrtps_c.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_c/vehicle_core/msg/detail/drive_target__type_support_c.cpp

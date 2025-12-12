@@ -1,1 +1,1 @@
-/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/AutopilotCommand.msg
+uint8 action  # 0=STOP, 1=START

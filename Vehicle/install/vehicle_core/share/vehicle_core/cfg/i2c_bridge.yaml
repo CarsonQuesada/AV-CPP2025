@@ -1,1 +1,16 @@
-/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/cfg/i2c_bridge.yaml
+i2c_bridge_node:
+  ros__parameters:
+    i2c:
+      path: "/dev/i2c-1"
+      addr_lighting: 0x15
+      addr_drive: 0x20
+      addr_imu: 0x28
+    rates:
+      drive_cmd_hz: 20
+      drive_status_hz: 20
+      lighting_heartbeat_hz: 1
+      imu_hz: 20
+    lighting:
+      brake_threshold_percent: 10
+    drive:
+      default_enable: true

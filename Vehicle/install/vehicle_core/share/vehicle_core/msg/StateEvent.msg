@@ -1,1 +1,4 @@
-/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/msg/StateEvent.msg
+builtin_interfaces/Time stamp
+uint8 from_mode
+uint8 to_mode
+string reason

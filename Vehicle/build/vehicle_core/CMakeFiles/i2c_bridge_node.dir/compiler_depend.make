@@ -481,15 +481,40 @@ CMakeFiles/i2c_bridge_node.dir/src/Devices/DriveSubsys.cpp.o: /home/avcpp/AV-CPP
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/I2C/I2CDevice.hpp \
-  /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/I2C/I2CBus.hpp \
-  /usr/include/c++/11/mutex \
+  /usr/include/c++/11/fstream \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/bits/ios_base.h \
+  /usr/include/c++/11/bits/locale_classes.h \
+  /usr/include/c++/11/bits/locale_classes.tcc \
+  /usr/include/c++/11/system_error \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/error_constants.h \
+  /usr/include/c++/11/streambuf \
+  /usr/include/c++/11/bits/streambuf.tcc \
+  /usr/include/c++/11/bits/basic_ios.h \
+  /usr/include/c++/11/bits/locale_facets.h \
+  /usr/include/c++/11/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/aarch64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/ctype_base.h \
+  /usr/include/c++/11/bits/streambuf_iterator.h \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/ctype_inline.h \
+  /usr/include/c++/11/bits/locale_facets.tcc \
+  /usr/include/c++/11/bits/basic_ios.tcc \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/bits/ostream.tcc \
+  /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/bits/codecvt.h \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/basic_file.h \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/c++io.h \
+  /usr/include/c++/11/bits/fstream.tcc \
   /usr/include/c++/11/chrono \
   /usr/include/c++/11/ratio \
   /usr/include/c++/11/ctime \
   /usr/include/c++/11/bits/parse_numbers.h \
-  /usr/include/c++/11/system_error \
-  /usr/include/aarch64-linux-gnu/c++/11/bits/error_constants.h \
+  /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/I2C/I2CDevice.hpp \
+  /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/I2C/I2CBus.hpp \
+  /usr/include/c++/11/mutex \
   /usr/include/c++/11/bits/std_mutex.h \
   /usr/include/c++/11/bits/unique_lock.h \
   /usr/include/c++/11/optional \
@@ -2258,12 +2283,12 @@ CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o: /home/avcpp/AV-CPP2025
   /usr/include/aarch64-linux-gnu/bits/stat.h \
   /usr/include/aarch64-linux-gnu/bits/struct_stat.h \
   /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/DriveSubsys.hpp \
-  /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/LightingSubsys.hpp \
-  /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/BNO055.hpp \
   /usr/include/c++/11/fstream \
   /usr/include/aarch64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/aarch64-linux-gnu/c++/11/bits/c++io.h \
   /usr/include/c++/11/bits/fstream.tcc \
+  /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/LightingSubsys.hpp \
+  /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/BNO055.hpp \
   /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/I2C/I2CBusRegistry.hpp \
   /opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp \
   /opt/ros/humble/include/class_loader/class_loader/class_loader.hpp \
@@ -2286,12 +2311,6 @@ CMakeFiles/i2c_bridge_node.dir/src/i2c_bridge_node.cpp.o: /home/avcpp/AV-CPP2025
 /opt/ros/humble/include/class_loader/class_loader/exceptions.hpp:
 
 /opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp:
-
-/usr/include/c++/11/bits/fstream.tcc:
-
-/usr/include/aarch64-linux-gnu/c++/11/bits/basic_file.h:
-
-/usr/include/c++/11/fstream:
 
 rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__traits.hpp:
 
@@ -2499,14 +2518,6 @@ rosidl_generator_cpp/vehicle_core/msg/detail/drive_target__struct.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__traits.hpp:
 
-/usr/include/aarch64-linux-gnu/c++/11/bits/c++io.h:
-
-rosidl_generator_cpp/vehicle_core/msg/detail/lights_command__builder.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__builder.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__traits.hpp:
-
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__struct.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_descriptor.hpp:
@@ -2627,6 +2638,16 @@ rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__builder.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process.hpp:
 
+/opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process_base.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/create_generic_subscription.hpp:
+
+/usr/include/c++/11/shared_mutex:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/experimental/intra_process_manager.hpp:
+
 /usr/include/aarch64-linux-gnu/bits/types/struct_iovec.h:
 
 /usr/include/linux/stddef.h:
@@ -2713,11 +2734,11 @@ rosidl_generator_cpp/vehicle_core/msg/detail/drive_status__type_support.hpp:
 
 /usr/include/linux/errno.h:
 
+/usr/include/aarch64-linux-gnu/c++/11/bits/ctype_base.h:
+
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__traits.hpp:
 
 /usr/include/c++/11/functional:
-
-/usr/include/aarch64-linux-gnu/c++/11/bits/ctype_base.h:
 
 /usr/include/aarch64-linux-gnu/bits/stdio_lim.h:
 
@@ -2764,10 +2785,6 @@ rosidl_generator_cpp/vehicle_core/msg/detail/drive_status__type_support.hpp:
 /usr/include/aarch64-linux-gnu/bits/types/FILE.h:
 
 /usr/include/aarch64-linux-gnu/bits/waitstatus.h:
-
-/opt/ros/humble/include/rclcpp/rclcpp/create_generic_subscription.hpp:
-
-/usr/include/c++/11/shared_mutex:
 
 /usr/include/stdlib.h:
 
@@ -3065,9 +3082,9 @@ rosidl_generator_cpp/vehicle_core/msg/state_mode.hpp:
 
 /usr/include/c++/11/bits/sstream.tcc:
 
-/usr/include/c++/11/bits/this_thread_sleep.h:
-
 /usr/include/c++/11/bits/locale_facets.tcc:
+
+/usr/include/c++/11/bits/this_thread_sleep.h:
 
 /usr/include/aarch64-linux-gnu/bits/stdint-intn.h:
 
@@ -3162,6 +3179,8 @@ rosidl_generator_cpp/vehicle_core/msg/drive_feedback.hpp:
 /opt/ros/humble/include/rcl/rcl/types.h:
 
 /usr/include/asm-generic/posix_types.h:
+
+/usr/include/c++/11/bits/fstream.tcc:
 
 /usr/include/asm-generic/errno-base.h:
 
@@ -3317,6 +3336,8 @@ rosidl_generator_cpp/vehicle_core/msg/rosidl_generator_cpp__visibility_control.h
 
 /usr/include/aarch64-linux-gnu/bits/wchar.h:
 
+/usr/include/c++/11/fstream:
+
 /usr/include/aarch64-linux-gnu/bits/floatn-common.h:
 
 /opt/ros/humble/include/rcl/rcl/log_level.h:
@@ -3398,6 +3419,52 @@ rosidl_generator_cpp/vehicle_core/msg/rosidl_generator_cpp__visibility_control.h
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_base_interface_traits.hpp:
 
 /home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/include/vehicle_core/Devices/DriveSubsys.hpp:
+
+/usr/include/c++/11/istream:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__builder.hpp:
+
+/usr/include/c++/11/bits/ios_base.h:
+
+rosidl_generator_cpp/vehicle_core/msg/lights_command.hpp:
+
+/opt/ros/humble/include/rmw/rmw/message_sequence.h:
+
+/usr/include/c++/11/ext/aligned_buffer.h:
+
+/usr/include/c++/11/bits/locale_classes.tcc:
+
+/usr/include/c++/11/streambuf:
+
+/opt/ros/humble/include/tracetools/tracetools/utils.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/procfs-id.h:
+
+rosidl_generator_cpp/vehicle_core/msg/detail/lights_command__struct.hpp:
+
+/usr/include/c++/11/bits/basic_ios.h:
+
+/usr/include/c++/11/bits/uniform_int_dist.h:
+
+/usr/include/c++/11/bits/streambuf_iterator.h:
+
+/usr/include/c++/11/ostream:
+
+/opt/ros/humble/include/rclcpp/rclcpp/experimental/buffers/ring_buffer_implementation.hpp:
+
+/usr/include/c++/11/bits/ostream.tcc:
+
+/usr/include/aarch64-linux-gnu/c++/11/bits/basic_file.h:
+
+/opt/ros/humble/include/rcutils/rcutils/error_handling.h:
+
+rosidl_generator_cpp/vehicle_core/msg/detail/lights_command__builder.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__builder.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__traits.hpp:
+
+/usr/include/aarch64-linux-gnu/c++/11/bits/c++io.h:
 
 /usr/include/c++/11/vector:
 
@@ -3487,6 +3554,10 @@ rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__type_support.hpp:
 
 /usr/include/aarch64-linux-gnu/bits/types/stack_t.h:
 
+/usr/include/c++/11/bits/locale_classes.h:
+
+/usr/include/aarch64-linux-gnu/sys/procfs.h:
+
 /usr/include/aarch64-linux-gnu/sys/ucontext.h:
 
 /usr/include/aarch64-linux-gnu/sys/user.h:
@@ -3494,12 +3565,6 @@ rosidl_generator_cpp/vehicle_core/msg/detail/state_mode__type_support.hpp:
 /opt/ros/humble/include/rcl/rcl/subscription.h:
 
 /usr/include/aarch64-linux-gnu/bits/procfs.h:
-
-/opt/ros/humble/include/tracetools/tracetools/utils.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/procfs-id.h:
-
-/usr/include/c++/11/streambuf:
 
 /usr/include/c++/11/system_error:
 
@@ -3536,38 +3601,6 @@ rosidl_generator_cpp/vehicle_core/msg/detail/lights_command__type_support.hpp:
 /usr/include/c++/11/set:
 
 /usr/include/c++/11/algorithm:
-
-/usr/include/c++/11/bits/uniform_int_dist.h:
-
-rosidl_generator_cpp/vehicle_core/msg/detail/lights_command__struct.hpp:
-
-/usr/include/c++/11/bits/basic_ios.h:
-
-/usr/include/c++/11/ostream:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__builder.hpp:
-
-/usr/include/c++/11/bits/ios_base.h:
-
-rosidl_generator_cpp/vehicle_core/msg/lights_command.hpp:
-
-/opt/ros/humble/include/rmw/rmw/message_sequence.h:
-
-/usr/include/aarch64-linux-gnu/sys/procfs.h:
-
-/usr/include/c++/11/bits/locale_classes.h:
-
-/usr/include/c++/11/ext/aligned_buffer.h:
-
-/usr/include/c++/11/bits/locale_classes.tcc:
-
-/usr/include/c++/11/bits/streambuf_iterator.h:
-
-/opt/ros/humble/include/rclcpp/rclcpp/experimental/buffers/ring_buffer_implementation.hpp:
-
-/usr/include/c++/11/bits/ostream.tcc:
-
-/usr/include/c++/11/istream:
 
 /usr/include/aarch64-linux-gnu/bits/cpu-set.h:
 
@@ -3636,8 +3669,6 @@ rosidl_generator_cpp/vehicle_core/msg/detail/lights_status__type_support.hpp:
 /opt/ros/humble/include/rmw/rmw/security_options.h:
 
 /opt/ros/humble/include/rcl/rcl/macros.h:
-
-/opt/ros/humble/include/rcutils/rcutils/error_handling.h:
 
 /usr/include/c++/11/stdlib.h:
 
@@ -3718,8 +3749,6 @@ rosidl_generator_cpp/vehicle_core/msg/detail/drive_feedback__struct.hpp:
 /opt/ros/humble/include/rcl/rcl/node.h:
 
 /opt/ros/humble/include/rcl/rcl/node_options.h:
-
-/opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process_base.hpp:
 
 /usr/include/aarch64-linux-gnu/c++/11/bits/time_members.h:
 
@@ -3849,9 +3878,9 @@ rosidl_generator_cpp/vehicle_core/msg/detail/drive_status__struct.hpp:
 
 /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp:
 
-/opt/ros/humble/include/rcutils/rcutils/logging.h:
-
 /opt/ros/humble/include/rclcpp/rclcpp/experimental/ros_message_intra_process_buffer.hpp:
+
+/opt/ros/humble/include/rcutils/rcutils/logging.h:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h:
 
@@ -3926,7 +3955,3 @@ rosidl_generator_cpp/vehicle_core/msg/detail/imu_status__type_support.hpp:
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__builder.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/type_adapter.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/experimental/intra_process_manager.hpp:
