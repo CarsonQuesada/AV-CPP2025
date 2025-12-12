@@ -11,6 +11,7 @@ find_package(cv_bridge REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(rclcpp_components REQUIRED)
 
+# Only build the component library (no executable)
 add_library(computer_vision_node SHARED
   src/computer_vision_node.cpp
 )

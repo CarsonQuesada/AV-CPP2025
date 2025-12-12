@@ -36,8 +36,8 @@ class LidarObjectDetector(Node):
         self.max_object_distance = 8.0  # meters
         
         # Zones for graduated response - NOW CONFIGURABLE
-        self.emergency_braking_zone = self.declare_parameter('emergency_braking_zone', 1.0).value  # meters - full stop
-        self.slow_down_zone = self.declare_parameter('slow_down_zone', 2.0).value  # meters - reduce speed
+        self.emergency_braking_zone = self.declare_parameter('emergency_braking_zone', 2.0).value  # meters - full stop
+        self.slow_down_zone = self.declare_parameter('slow_down_zone', 2.5).value  # meters - reduce speed
         self.warning_zone = self.declare_parameter('warning_zone', 6.0).value  # meters - warn but maintain speed
         
         # Field of view with priority zones - ALSO CONFIGURABLE

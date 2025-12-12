@@ -45,6 +45,9 @@ private:
   int width_;
   int height_;
   int fps_;
+  std::string image_topic_;
+  std::string service_;         // RTSP port as string, e.g., "8554"
+  std::string mount_point_;  // RTSP path, e.g., "/stream"
 };
 
 } // namespace vehicle_core

@@ -8,13 +8,14 @@ from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
     pkg_share = get_package_share_directory('vehicle_core')
-    cfg_sm   = path_join(pkg_share, 'cfg', 'state_manager.yaml')
-    cfg_da   = path_join(pkg_share, 'cfg', 'drive_arbiter.yaml')
-    cfg_i2c  = path_join(pkg_share, 'cfg', 'i2c_bridge.yaml')
-    cfg_cam  = path_join(pkg_share, 'cfg', 'camera_gscam.yaml')
-    cfg_gps  = path_join(pkg_share, 'cfg', 'gt_u7_gps.yaml')
-    cfg_hdc  = path_join(pkg_share, 'cfg', 'heading_calib.yaml')
-    cfg_atp  = path_join(pkg_share, 'cfg', 'autopilot.yaml')
+    cfg_sm    = path_join(pkg_share, 'cfg', 'state_manager.yaml')
+    cfg_da    = path_join(pkg_share, 'cfg', 'drive_arbiter.yaml')
+    cfg_i2c   = path_join(pkg_share, 'cfg', 'i2c_bridge.yaml')
+    cfg_cam   = path_join(pkg_share, 'cfg', 'camera_gscam.yaml')
+    cfg_gps   = path_join(pkg_share, 'cfg', 'gt_u7_gps.yaml')
+    cfg_hdc   = path_join(pkg_share, 'cfg', 'heading_calib.yaml')
+    cfg_atp   = path_join(pkg_share, 'cfg', 'autopilot.yaml')
+    cfg_rtsp  = path_join(pkg_share, 'cfg', 'rtsp_raw_stream.yaml')
 
     ekf_params    = PathJoinSubstitution([pkg_share,  'cfg', 'ekf.yaml'])
     navsat_params = PathJoinSubstitution([pkg_share,  'cfg', 'navsat.yaml'])
@@ -68,11 +69,7 @@ def generate_launch_description():
                 package='vehicle_core',
                 plugin='vehicle_core::RtspStreamerNode',
                 name='rtsp_streamer_node',
-                parameters=[{
-                    "width": 2112,
-                    "height": 1568,
-                    "fps": 15,
-                }],
+                parameters=[cfg_rtsp],
             ),
             ComposableNode(
                 package='vehicle_core',

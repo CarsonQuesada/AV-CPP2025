@@ -277,6 +277,7 @@ add_library(rtsp_streamer_node SHARED
 target_include_directories(rtsp_streamer_node PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${GSTREAMER_INCLUDE_DIRS}
+  ${SHARED_ROOT}
 )
 target_link_libraries(rtsp_streamer_node
   ${GSTREAMER_LIBRARIES}

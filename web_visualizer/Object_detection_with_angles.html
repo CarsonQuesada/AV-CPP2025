@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LiDAR Object Detection with Angle Zones</title>
+    <script src="https://cdn.jsdelivr.net/npm/roslib@latest/build/roslib.min.js"></script>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            background: #121212; 
+            color: #e0e0e0; 
+            padding: 15px; 
+            margin: 0; 
+        }
+        
+        h1 { 
+            color: #4fc3f7; 
+            text-align: center; 
+            margin-bottom: 20px; 
+            font-size: 24px;
+        }
+        
+        .container { 
+            display: flex; 
+            gap: 20px; 
+            flex-wrap: wrap;
+        }
+        
+        .panel { 
+            background: #1e1e1e; 
+            padding: 15px; 
+            border-radius: 12px; 
+            border: 1px solid #333;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        
+        .status { 
+            padding: 12px; 
+            margin: 10px 0; 
+            border-radius: 8px; 
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .connected { background: linear-gradient(135deg, #2e7d32, #1b5e20); }
+        .error { background: linear-gradient(135deg, #d32f2f, #b71c1c); }
+        .waiting { background: linear-gradient(135deg, #f57c00, #e65100); }
+        
+        .data-section { 
+            background: #252525; 
+            padding: 10px; 
+            border-radius: 8px; 
+            margin: 10px 0;
+            border-left: 4px solid #4fc3f7;
+        }
+        
+        .data-item { 
+            margin: 5px 0; 
+            padding: 8px;
+            background: #2d2d2d;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .data-label { font-weight: bold; color: #bb86fc; }
+        .data-value { font-family: 'Courier New', monospace; }
+        
+        .zone-display {
+            padding: 10px;
+            border-radius: 6px;
+            margin: 5px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .emergency-zone { 
+            background: linear-gradient(135deg, #d32f2f, #b71c1c);
+            color: white;
+        }
+        
+        .caution-zone { 
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+            color: white;
+        }
+        
+        .ignore-zone { 
+            background: linear-gradient(135deg, #757575, #616161);
+            color: white;
+        }
+        
+        .distance-display {
+            padding: 10px;
+            border-radius: 6px;
+            margin: 5px 0;
+            text-align: center;
+        }
+        
+        .emergency-distance { background: #ff5252; }
+        .slow-distance { background: #ffb74d; }
+        .warning-distance { background: #ffd54f; color: #333; }
+        .safe-distance { background: #81c784; color: #333; }
+        
+        .object-list { 
+            max-height: 300px; 
+            overflow-y: auto; 
+            margin-top: 10px;
+        }
+        
+        .object-item { 
+            padding: 10px; 
+            margin: 8px 0; 
+            border-radius: 6px; 
+            background: #2d2d2d;
+            border-left: 4px solid;
+        }
+        
+        .emergency-angle { border-left-color: #ff5252; }
+        .caution-angle { border-left-color: #ffb74d; }
+        .ignore-angle { border-left-color: #757575; }
+        
+        canvas { 
+            border: 2px solid #333; 
+            background: #000; 
+            display: block; 
+            border-radius: 8px;
+        }
+        
+        .canvas-container {
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .canvas-overlay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            background: rgba(0,0,0,0.7);
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            pointer-events: none;
+        }
+        
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+        }
+        
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+        }
+        
+        .control-panel {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 6px;
+            background: #4fc3f7;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #29b6f6;
+        }
+        
+        button:disabled {
+            background: #757575;
+            cursor: not-allowed;
+        }
+        
+        @media (max-width: 1200px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            canvas {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1> LiDAR Object Detection with Angle Zones</h1>
+    
+    <div id="status" class="status waiting"> Connecting to ROS Bridge...</div>
+    
+    <div class="control-panel">
+        <button onclick="togglePause()" id="pauseBtn"> Pause Updates</button>
+        <button onclick="clearCanvas()">Clear Canvas</button>
+        <button onclick="toggleGrid()" id="gridBtn"> Grid: On</button>
+        <button onclick="saveScreenshot()">Save Screenshot</button>
+    </div>
+    
+    <div class="container">
+        <!-- Left Panel: Detection Info -->
+        <div class="panel" style="flex: 1; min-width: 300px;">
+            <h3>Detection Information</h3>
+            
+            <div class="data-section">
+                <div class="data-item">
+                    <span class="data-label"> Messages Received:</span>
+                    <span id="messageCount" class="data-value">0</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label"> Objects Detected:</span>
+                    <span id="objectCount" class="data-value">0</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label"> Update Rate:</span>
+                    <span id="updateRate" class="data-value">0 Hz</span>
+                </div>
+            </div>
+            
+            <h3> Angle Zone Status</h3>
+            <div id="angleZoneDisplay" class="zone-display ignore-zone">
+                Current Zone: No Data
+            </div>
+            
+            <div id="distanceZoneDisplay" class="distance-display safe-distance">
+                Closest Distance: No Data
+            </div>
+            
+            <div class="data-section">
+                <div class="data-item">
+                    <span class="data-label"> Emergency Angle:</span>
+                    <span class="data-value">+/- 20 degrees</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label"> Caution Angle:</span>
+                    <span class="data-value">+/- 20-40 degrees</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label"> Emergency Distance:</span>
+                    <span id="emergencyDistValue" class="data-value">2.0 m</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label"> Slow Distance:</span>
+                    <span class="data-value">2.5 m</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label"> Warning Distance:</span>
+                    <span class="data-value">6.0 m</span>
+                </div>
+            </div>
+            
+            <h3> Emergency Status</h3>
+            <div id="emergencyStatus" class="zone-display ignore-zone" style="background: #757575;">
+                No Emergency
+            </div>
+        </div>
+        
+        <!-- Center Panel: Main Visualization -->
+        <div class="panel" style="flex: 2; min-width: 600px;">
+            <h3> Live Visualization</h3>
+            <div class="canvas-container">
+                <canvas id="lidarCanvas" width="600" height="600"></canvas>
+                <div class="canvas-overlay">
+                    <div> Scale: 50px = 1m</div>
+                    <div> Robot at center</div>
+                    <div id="mousePosition">Mouse: (0, 0)</div>
+                </div>
+            </div>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ff5252;"></div>
+                    <span>Emergency Angle Zone (+/-20 Degrees)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ffb74d;"></div>
+                    <span>Caution Angle Zone (+/-20-40 Degrees)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #81c784;"></div>
+                    <span>Safe Distance (>6m)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ffd54f;"></div>
+                    <span>Warning Distance (2-6m)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ff9800;"></div>
+                    <span>Slow Distance (1-2.5m)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #d32f2f;"></div>
+                    <span>Emergency Distance (0-2.0m)</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Panel: Detected Objects -->
+        <div class="panel" style="flex: 1; min-width: 300px;">
+            <h3> Detected Objects</h3>
+            <div id="objectList" class="object-list">
+                <div class="object-item" style="text-align: center; opacity: 0.7;">
+                    Waiting for objects...
+                </div>
+            </div>
+            
+            <h3> Topics Status</h3>
+            <div class="data-section">
+                <div class="data-item">
+                    <span class="data-label"> /scan:</span>
+                    <span id="scanStatus" class="data-value"> Offline</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label"> /detected_objects:</span>
+                    <span id="objectsStatus" class="data-value"> Offline</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label"> /closest_object_angle_zone:</span>
+                    <span id="angleStatus" class="data-value"> Offline</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label"> /closest_object_distance:</span>
+                    <span id="distanceStatus" class="data-value"> Offline</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label"> /obstacle_detected:</span>
+                    <span id="obstacleStatus" class="data-value"> Offline</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        console.log(" Starting Enhanced Object Detection Viewer...");
+        
+        // DOM Elements
+        const status = document.getElementById('status');
+        const messageCount = document.getElementById('messageCount');
+        const objectCount = document.getElementById('objectCount');
+        const updateRate = document.getElementById('updateRate');
+        const angleZoneDisplay = document.getElementById('angleZoneDisplay');
+        const distanceZoneDisplay = document.getElementById('distanceZoneDisplay');
+        const emergencyDistValue = document.getElementById('emergencyDistValue');
+        const emergencyStatus = document.getElementById('emergencyStatus');
+        const objectList = document.getElementById('objectList');
+        const canvas = document.getElementById('lidarCanvas');
+        const ctx = canvas.getContext('2d');
+        const mousePosition = document.getElementById('mousePosition');
+        
+        // Topic status elements
+        const scanStatus = document.getElementById('scanStatus');
+        const objectsStatus = document.getElementById('objectsStatus');
+        const angleStatus = document.getElementById('angleStatus');
+        const distanceStatus = document.getElementById('distanceStatus');
+        const obstacleStatus = document.getElementById('obstacleStatus');
+        
+        // Global variables
+        let objects = [];
+        let lidarData = null;
+        let messageCounter = 0;
+        let lastUpdateTime = Date.now();
+        let updateRateValue = 0;
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const scale = 50; // pixels per meter
+        
+        // State variables
+        let isPaused = false;
+        let showGrid = true;
+        let currentAngleZone = "ignore_angle";
+        let currentDistance = 0;
+        let emergencyZoneDistance = 1.5;
+        let slowZoneDistance = 2.5;
+        let warningZoneDistance = 6.0;
+        let isEmergency = false;
+        
+        // Topic activity trackers
+        let scanLastMsg = 0;
+        let objectsLastMsg = 0;
+        let angleLastMsg = 0;
+        let distanceLastMsg = 0;
+        let obstacleLastMsg = 0;
+        
+        // ROS connection
+        const ros = new ROSLIB.Ros({ 
+            url: 'ws://localhost:9090' 
+        });
+        
+        ros.on('connection', () => {
+            console.log(' Connected to ROS Bridge');
+            status.textContent = ' Connected to ROS Bridge';
+            status.className = 'status connected';
+            setupSubscriptions();
+        });
+        
+        ros.on('error', (error) => {
+            console.error(' ROS Error:', error);
+            status.textContent = ' Error: ' + error;
+            status.className = 'status error';
+        });
+        
+        ros.on('close', () => {
+            console.log(' ROS connection closed');
+            status.textContent = ' Disconnected from ROS';
+            status.className = 'status error';
+        });
+        
+        function setupSubscriptions() {
+            console.log(' Setting up subscriptions...');
+            
+            // Subscribe to LiDAR data
+            const lidarTopic = new ROSLIB.Topic({
+                ros: ros,
+                name: '/scan',
+                messageType: 'sensor_msgs/LaserScan'
+            });
+            
+            lidarTopic.subscribe((message) => {
+                if (isPaused) return;
+                messageCounter++;
+                scanLastMsg = Date.now();
+                scanStatus.textContent = ' Online';
+                scanStatus.style.color = '#4caf50';
+                
+                lidarData = message;
+                updateRateValue = calculateUpdateRate();
+                messageCount.textContent = messageCounter;
+                updateRate.textContent = updateRateValue.toFixed(1) + ' Hz';
+                
+                drawVisualization();
+            });
+            
+            // Subscribe to object markers
+            const objectTopic = new ROSLIB.Topic({
+                ros: ros,
+                name: '/detected_objects',
+                messageType: 'visualization_msgs/MarkerArray'
+            });
+            
+            objectTopic.subscribe((message) => {
+                if (isPaused) return;
+                objectsLastMsg = Date.now();
+                objectsStatus.textContent = ' Online';
+                objectsStatus.style.color = '#4caf50';
+                updateObjects(message.markers);
+            });
+            
+            // Subscribe to angle zone
+            const angleZoneTopic = new ROSLIB.Topic({
+                ros: ros,
+                name: '/sensors/closest_object_angle_zone',
+                messageType: 'std_msgs/String'
+            });
+            
+            angleZoneTopic.subscribe((message) => {
+                if (isPaused) return;
+                angleLastMsg = Date.now();
+                angleStatus.textContent = ' Online';
+                angleStatus.style.color = '#4caf50';
+                currentAngleZone = message.data;
+                updateAngleZoneDisplay();
+            });
+            
+            // Subscribe to closest distance
+            const distanceTopic = new ROSLIB.Topic({
+                ros: ros,
+                name: '/sensors/closest_object_distance',
+                messageType: 'std_msgs/Float32'
+            });
+            
+            distanceTopic.subscribe((message) => {
+                if (isPaused) return;
+                distanceLastMsg = Date.now();
+                distanceStatus.textContent = ' Online';
+                distanceStatus.style.color = '#4caf50';
+                currentDistance = message.data;
+                updateDistanceDisplay();
+            });
+            
+            // Subscribe to obstacle detection
+            const obstacleTopic = new ROSLIB.Topic({
+                ros: ros,
+                name: '/sensors/obstacle_detected',
+                messageType: 'std_msgs/Bool'
+            });
+            
+            obstacleTopic.subscribe((message) => {
+                if (isPaused) return;
+                obstacleLastMsg = Date.now();
+                obstacleStatus.textContent = ' Online';
+                obstacleStatus.style.color = '#4caf50';
+                isEmergency = message.data;
+                updateEmergencyStatus();
+            });
+            
+            // Start topic monitor
+            setInterval(checkTopicActivity, 1000);
+            
+            console.log(' Subscriptions setup complete');
+        }
+        
+        function checkTopicActivity() {
+            const now = Date.now();
+            const timeout = 2000; // 2 seconds
+            
+            if (now - scanLastMsg > timeout) {
+                scanStatus.textContent = ' Offline';
+                scanStatus.style.color = '#f44336';
+            }
+            if (now - objectsLastMsg > timeout) {
+                objectsStatus.textContent = ' Offline';
+                objectsStatus.style.color = '#f44336';
+            }
+            if (now - angleLastMsg > timeout) {
+                angleStatus.textContent = ' Offline';
+                angleStatus.style.color = '#f44336';
+            }
+            if (now - distanceLastMsg > timeout) {
+                distanceStatus.textContent = ' Offline';
+                distanceStatus.style.color = '#f44336';
+            }
+            if (now - obstacleLastMsg > timeout) {
+                obstacleStatus.textContent = ' Offline';
+                obstacleStatus.style.color = '#f44336';
+            }
+        }
+        
+        function calculateUpdateRate() {
+            const now = Date.now();
+            const delta = now - lastUpdateTime;
+            lastUpdateTime = now;
+            return delta > 0 ? 1000 / delta : 0;
+        }
+        
+        function updateObjects(markers) {
+            // Filter for object centroids
+            objects = markers.filter(m => 
+                m.ns === "object_centroids" && 
+                m.action === 0 && // ADD action
+                m.type === 2      // SPHERE type
+            );
+            
+            objectCount.textContent = objects.length;
+            
+            if (objects.length === 0) {
+                objectList.innerHTML = '<div class="object-item" style="text-align: center; opacity: 0.7;">No objects detected</div>';
+                return;
+            }
+            
+            // Sort objects by distance (closest first)
+            objects.sort((a, b) => {
+                const distA = Math.sqrt(a.pose.position.x**2 + a.pose.position.y**2);
+                const distB = Math.sqrt(b.pose.position.x**2 + b.pose.position.y**2);
+                return distA - distB;
+            });
+            
+            objectList.innerHTML = objects.map(obj => {
+                const distance = Math.sqrt(obj.pose.position.x**2 + obj.pose.position.y**2);
+                const angle = Math.atan2(obj.pose.position.y, obj.pose.position.x) * 180 / Math.PI;
+                const angleZone = getAngleZoneFromAngle(angle);
+                const type = getTypeFromColor(obj.color);
+                const zoneClass = angleZone.toLowerCase().replace('_', '-');
+                
+                return `
+                    <div class="object-item ${zoneClass}">
+                        <strong>${type.toUpperCase()}</strong><br>
+                         Distance: ${distance.toFixed(2)} m<br>
+                         Angle: ${angle.toFixed(1)} Degrees<br>
+                         Zone: ${angleZone}<br>
+                         ID: ${obj.id}
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function getAngleZoneFromAngle(angleDeg) {
+            const absAngle = Math.abs(angleDeg);
+            if (absAngle <= 20) return "EMERGENCY_ANGLE";
+            if (absAngle <= 40) return "CAUTION_ANGLE";
+            return "IGNORE_ANGLE";
+        }
+        
+        function getTypeFromColor(color) {
+            const {r, g, b} = color;
+            if (r === 1 && g === 0 && b === 0) return 'Emergency Object';
+            if (r === 1 && g === 0.5 && b === 0) return 'Small Obstacle';
+            if (r === 1 && g === 1 && b === 0) return 'Medium Obstacle';
+            if (r === 0 && g === 0 && b === 1) return 'Wall';
+            return 'Unknown Object';
+        }
+        
+        function updateAngleZoneDisplay() {
+            angleZoneDisplay.textContent = `Current Zone: ${currentAngleZone.toUpperCase()}`;
+            
+            // Update CSS class based on zone
+            angleZoneDisplay.className = 'zone-display';
+            if (currentAngleZone === 'emergency_angle') {
+                angleZoneDisplay.classList.add('emergency-zone');
+            } else if (currentAngleZone === 'caution_angle') {
+                angleZoneDisplay.classList.add('caution-zone');
+            } else {
+                angleZoneDisplay.classList.add('ignore-zone');
+            }
+        }
+        
+        function updateDistanceDisplay() {
+            distanceZoneDisplay.textContent = `Closest Distance: ${currentDistance.toFixed(2)} m`;
+            
+            // Update CSS class based on distance zone
+            distanceZoneDisplay.className = 'distance-display';
+            if (currentDistance <= emergencyZoneDistance) {
+                distanceZoneDisplay.classList.add('emergency-distance');
+            } else if (currentDistance <= slowZoneDistance) {
+                distanceZoneDisplay.classList.add('slow-distance');
+            } else if (currentDistance <= warningZoneDistance) {
+                distanceZoneDisplay.classList.add('warning-distance');
+            } else {
+                distanceZoneDisplay.classList.add('safe-distance');
+            }
+        }
+        
+        function updateEmergencyStatus() {
+            if (isEmergency) {
+                emergencyStatus.textContent = ' EMERGENCY STOP ACTIVE!';
+                emergencyStatus.style.background = 'linear-gradient(135deg, #d32f2f, #b71c1c)';
+                emergencyStatus.style.color = 'white';
+            } else {
+                emergencyStatus.textContent = ' No Emergency';
+                emergencyStatus.style.background = '#757575';
+                emergencyStatus.style.color = 'white';
+            }
+        }
+        
+        function drawVisualization() {
+            // Clear canvas with gradient
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#0a0a0a');
+            gradient.addColorStop(1, '#1a1a1a');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            if (!lidarData) {
+                ctx.fillStyle = '#4fc3f7';
+                ctx.font = '20px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('Waiting for LiDAR data...', centerX, centerY);
+                return;
+            }
+            
+            if (showGrid) drawGrid();
+            drawAngleZones();
+            drawDistanceZones();
+            drawLidarPoints();
+            drawObjects();
+            drawRobot();
+        }
+        
+        function drawGrid() {
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 1;
+            ctx.setLineDash([5, 3]);
+            
+            for (let r = 1; r <= 8; r++) {
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, r * scale, 0, 2 * Math.PI);
+                ctx.stroke();
+                
+                // Distance labels
+                ctx.fillStyle = '#666';
+                ctx.font = '10px Arial';
+                ctx.textAlign = 'left';
+                ctx.fillText(r + 'm', centerX + r * scale + 5, centerY + 3);
+            }
+            
+            ctx.setLineDash([]);
+            
+            // Draw axes
+            ctx.strokeStyle = '#444';
+            ctx.lineWidth = 1;
+            drawLine(centerX - 300, centerY, centerX + 300, centerY);
+            drawLine(centerX, centerY - 300, centerX, centerY + 300);
+        }
+        
+        function drawAngleZones() {
+            // Emergency angle zone (±20°)
+            ctx.fillStyle = 'rgba(255, 82, 82, 0.2)';
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.arc(centerX, centerY, 8 * scale, -20 * Math.PI/180, 20 * Math.PI/180);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Caution angle zone (±20-40°)
+            ctx.fillStyle = 'rgba(255, 183, 77, 0.15)';
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.arc(centerX, centerY, 8 * scale, -40 * Math.PI/180, -20 * Math.PI/180);
+            ctx.arc(centerX, centerY, 8 * scale, 20 * Math.PI/180, 40 * Math.PI/180);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Zone borders
+            ctx.strokeStyle = 'rgba(255, 82, 82, 0.5)';
+            ctx.lineWidth = 2;
+            drawRadialLine(centerX, centerY, 8 * scale, -20 * Math.PI/180);
+            drawRadialLine(centerX, centerY, 8 * scale, 20 * Math.PI/180);
+            
+            ctx.strokeStyle = 'rgba(255, 183, 77, 0.5)';
+            drawRadialLine(centerX, centerY, 8 * scale, -40 * Math.PI/180);
+            drawRadialLine(centerX, centerY, 8 * scale, 40 * Math.PI/180);
+        }
+        
+        function drawDistanceZones() {
+            // Emergency zone
+            ctx.strokeStyle = 'rgba(211, 47, 47, 0.5)';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, emergencyZoneDistance * scale, 0, 2 * Math.PI);
+            ctx.stroke();
+            
+            // Slow zone
+            ctx.strokeStyle = 'rgba(255, 152, 0, 0.5)';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, slowZoneDistance * scale, 0, 2 * Math.PI);
+            ctx.stroke();
+            
+            // Warning zone
+            ctx.strokeStyle = 'rgba(255, 213, 79, 0.5)';
+            ctx.lineWidth = 1;
+            ctx.setLineDash([5, 5]);
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, warningZoneDistance * scale, 0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.setLineDash([]);
+        }
+        
+        function drawLidarPoints() {
+            if (!lidarData.ranges) return;
+            
+            ctx.fillStyle = '#00ff00';
+            for (let i = 0; i < lidarData.ranges.length; i++) {
+                const range = lidarData.ranges[i];
+                if (range > 0.1 && range < 16.0 && !isNaN(range)) {
+                    const angle = lidarData.angle_min + i * lidarData.angle_increment;
+                    const x = centerX + Math.cos(angle) * range * scale;
+                    const y = centerY + Math.sin(angle) * range * scale;
+                    
+                    // Color based on angle zone
+                    const angleDeg = angle * 180 / Math.PI;
+                    if (Math.abs(angleDeg) <= 20) {
+                        ctx.fillStyle = '#ff5252'; // Emergency zone
+                    } else if (Math.abs(angleDeg) <= 40) {
+                        ctx.fillStyle = '#ffb74d'; // Caution zone
+                    } else {
+                        ctx.fillStyle = '#00ff00'; // Ignore zone
+                    }
+                    
+                    ctx.beginPath();
+                    ctx.arc(x, y, 2, 0, 2 * Math.PI);
+                    ctx.fill();
+                }
+            }
+        }
+        
+        function drawObjects() {
+            objects.forEach(obj => {
+                const x = centerX + obj.pose.position.x * scale;
+                const y = centerY + obj.pose.position.y * scale;
+                const distance = Math.sqrt(obj.pose.position.x**2 + obj.pose.position.y**2);
+                const angle = Math.atan2(obj.pose.position.y, obj.pose.position.x) * 180 / Math.PI;
+                const angleZone = getAngleZoneFromAngle(angle);
+                const color = `rgb(${Math.floor(obj.color.r * 255)}, ${Math.floor(obj.color.g * 255)}, ${Math.floor(obj.color.b * 255)})`;
+                
+                // Determine object size based on distance
+                const size = Math.max(8, 20 - distance * 2);
+                
+                // Draw object center
+                ctx.fillStyle = color;
+                ctx.beginPath();
+                ctx.arc(x, y, size, 0, 2 * Math.PI);
+                ctx.fill();
+                
+                // Draw outline based on angle zone
+                if (angleZone === "EMERGENCY_ANGLE") {
+                    ctx.strokeStyle = '#ff0000';
+                    ctx.lineWidth = 3;
+                } else if (angleZone === "CAUTION_ANGLE") {
+                    ctx.strokeStyle = '#ff9900';
+                    ctx.lineWidth = 2;
+                } else {
+                    ctx.strokeStyle = '#666666';
+                    ctx.lineWidth = 1;
+                }
+                ctx.stroke();
+                
+                // Draw distance ring if in danger zone
+                if (distance <= warningZoneDistance) {
+                    ctx.strokeStyle = color + '80';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.arc(x, y, size + 5, 0, 2 * Math.PI);
+                    ctx.stroke();
+                }
+                
+                // Draw label
+                ctx.fillStyle = 'white';
+                ctx.font = 'bold 11px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(`${getTypeFromColor(obj.color).split(' ')[0]}`, x, y - size - 5);
+                ctx.font = '10px Arial';
+                ctx.fillText(`${distance.toFixed(1)}m`, x, y + size + 12);
+            });
+        }
+        
+        function drawRobot() {
+            // Draw robot body
+            ctx.fillStyle = '#2196f3';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 15, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Draw robot outline
+            ctx.strokeStyle = '#1565c0';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            
+            // Draw front indicator
+            ctx.fillStyle = '#ffeb3b';
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY - 15);
+            ctx.lineTo(centerX - 8, centerY - 25);
+            ctx.lineTo(centerX + 8, centerY - 25);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Draw robot label
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 12px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(' ROBOT', centerX, centerY + 35);
+        }
+        
+        function drawLine(x1, y1, x2, y2) {
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+        }
+        
+        function drawRadialLine(cx, cy, radius, angle) {
+            const x = cx + Math.cos(angle) * radius;
+            const y = cy + Math.sin(angle) * radius;
+            drawLine(cx, cy, x, y);
+        }
+        
+        // Control functions
+        function togglePause() {
+            isPaused = !isPaused;
+            const btn = document.getElementById('pauseBtn');
+            if (isPaused) {
+                btn.textContent = ' Resume Updates';
+                status.textContent = ' Updates Paused';
+                status.className = 'status waiting';
+            } else {
+                btn.textContent = ' Pause Updates';
+                status.textContent = ' Connected to ROS Bridge';
+                status.className = 'status connected';
+            }
+        }
+        
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawVisualization();
+        }
+        
+        function toggleGrid() {
+            showGrid = !showGrid;
+            const btn = document.getElementById('gridBtn');
+            btn.textContent = showGrid ? ' Grid: On' : ' Grid: Off';
+            drawVisualization();
+        }
+        
+        function saveScreenshot() {
+            const link = document.createElement('a');
+            link.download = 'lidar-view-' + Date.now() + '.png';
+            link.href = canvas.toDataURL();
+            link.click();
+            alert('Screenshot saved!');
+        }
+        
+        // Mouse tracking for canvas
+        canvas.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Convert to robot coordinates
+            const robotX = (x - centerX) / scale;
+            const robotY = (centerY - y) / scale; // Invert Y for proper coordinates
+            
+            const distance = Math.sqrt(robotX**2 + robotY**2);
+            const angle = Math.atan2(robotY, robotX) * 180 / Math.PI;
+            
+            mousePosition.textContent = `Mouse: (${robotX.toFixed(2)}, ${robotY.toFixed(2)}) m | ${distance.toFixed(2)} m | ${angle.toFixed(1)} Degrees`;
+        });
+        
+        // Initial draw
+        drawVisualization();
+        console.log(" Enhanced Object Detection Viewer setup complete");
+    </script>
+</body>
+</html>

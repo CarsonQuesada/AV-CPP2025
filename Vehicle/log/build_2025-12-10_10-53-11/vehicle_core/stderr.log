@@ -1,7 +1,0 @@
-[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:[m[K In constructor ‘[01m[Kvehicle_core::TcpServerNode::TcpServerNode(const rclcpp::NodeOptions&)[m[K’:
-[01m[K/home/avcpp/AV-CPP2025/Vehicle/src/vehicle_core/src/tcp_server_node.cpp:34:61:[m[K [01;31m[Kerror: [m[K‘[01m[KPORT[m[K’ was not declared in this scope
-   34 |   port_              = this->declare_parameter<int>("port", [01;31m[KPORT[m[K);
-      |                                                             [01;31m[K^~~~[m[K
-gmake[2]: *** [CMakeFiles/tcp_server_node_component.dir/build.make:76: CMakeFiles/tcp_server_node_component.dir/src/tcp_server_node.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:724: CMakeFiles/tcp_server_node_component.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

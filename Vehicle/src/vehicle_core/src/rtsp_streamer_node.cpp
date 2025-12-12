@@ -3,6 +3,8 @@
 #include <gst/video/video.h>  // for caps/types if needed
 #include <gst/gst.h>
 
+#include "Keys.h"
+
 namespace vehicle_core {
 
 RtspStreamerNode::RtspStreamerNode(const rclcpp::NodeOptions& options)
@@ -16,9 +18,16 @@ RtspStreamerNode::RtspStreamerNode(const rclcpp::NodeOptions& options)
   height_ = declare_parameter<int>("height", 1568);
   fps_    = declare_parameter<int>("fps", 15);
 
+  // NEW: configurable image topic, RTSP port ("service"), and mount point
+  image_topic_ = declare_parameter<std::string>("image_topic", "/camera/image_raw");
+  service_     = std::to_string(declare_parameter<int>("service", LOCAL_VIDEO_PORT));     // RTSP port
+  mount_point_ = declare_parameter<std::string>("mount_point", "/stream");
+
   // --- Create RTSP server ---
   server_ = gst_rtsp_server_new();
-  // default port 8554, change with g_object_set(server_, "service", "8554", NULL) if needed
+
+  // Set service (port) — default is 8554, but now configurable
+  g_object_set(server_, "service", service_.c_str(), NULL);
 
   GstRTSPMountPoints* mounts = gst_rtsp_server_get_mount_points(server_);
 
@@ -43,8 +52,8 @@ RtspStreamerNode::RtspStreamerNode(const rclcpp::NodeOptions& options)
   g_signal_connect(factory_, "media-configure",
                    G_CALLBACK(&RtspStreamerNode::on_media_configure_static), this);
 
-  // Mount at /stream
-  gst_rtsp_mount_points_add_factory(mounts, "/stream", factory_);
+  // Mount at configurable mount point (e.g. "/stream", "/raw", "/annotated")
+  gst_rtsp_mount_points_add_factory(mounts, mount_point_.c_str(), factory_);
   g_object_unref(mounts);
 
   // Attach server to default main context
@@ -53,9 +62,12 @@ RtspStreamerNode::RtspStreamerNode(const rclcpp::NodeOptions& options)
     throw std::runtime_error("RTSP server attach failed");
   }
 
-  RCLCPP_INFO(get_logger(),
-              "RTSP stream ready at rtsp://<pi-ip>:8554/stream (width=%d height=%d fps=%d)",
-              width_, height_, fps_);
+  RCLCPP_INFO(
+    get_logger(),
+    "RTSP stream ready at rtsp://<pi-ip>:%s%s (width=%d height=%d fps=%d), subscribing to %s",
+    service_.c_str(), mount_point_.c_str(),
+    width_, height_, fps_,
+    image_topic_.c_str());
 
   // Start GLib main loop in a separate thread
   loop_ = g_main_loop_new(nullptr, FALSE);
@@ -63,16 +75,17 @@ RtspStreamerNode::RtspStreamerNode(const rclcpp::NodeOptions& options)
     g_main_loop_run(loop_);
   });
 
-  // --- ROS subscriber ---
+  // --- ROS subscriber --- (now using image_topic_ parameter)
   auto qos = rclcpp::QoS(1);
   qos.best_effort();
   qos.durability_volatile();
   sub_ = create_subscription<sensor_msgs::msg::Image>(
-    "/camera/image_raw",
+    image_topic_,
     qos,
     std::bind(&RtspStreamerNode::imageCallback, this, std::placeholders::_1));
 
-  RCLCPP_INFO(get_logger(), "rtsp_streamer node up, subscribing to /camera/image_raw");
+  RCLCPP_INFO(get_logger(), "rtsp_streamer node up, subscribing to %s",
+              image_topic_.c_str());
 }
 
 RtspStreamerNode::~RtspStreamerNode()

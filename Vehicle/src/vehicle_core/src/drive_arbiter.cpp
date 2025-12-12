@@ -19,8 +19,8 @@ DriveArbiterNode::DriveArbiterNode(const rclcpp::NodeOptions& opts)
 
 
  // Obstacle detection parameters
-  emergency_zone_ = 1.0f;
-  slow_down_zone_ = 2.0f;
+  emergency_zone_ = 2.0f;
+  slow_down_zone_ = 2.5f;
   warning_zone_ = 6.0f;
   speed_reduction_factor_ = 0.5f;
   warning_speed_factor_ = 0.8f;
@@ -278,8 +278,7 @@ void DriveArbiterNode::applySpeedReduction(msg::DriveTarget& out, float distance
       // Apply speed reduction
       out.target_speed_mmps = static_cast<int16_t>(out.target_speed_mmps * reduction_factor);
     }
-  } 
-  else if (closest_angle_zone_ == "caution_angle") {
+  } else if (closest_angle_zone_ == "caution_angle") {
     // Objects at sides get more aggressive reduction
     if (distance <= emergency_zone_) {
       // Side objects in emergency zone get strong braking but not full emergency stop
@@ -374,16 +373,16 @@ void DriveArbiterNode::maybePublish() {
     out.target_steer_millirad = percentSteerToMradSigned(m.steer);
     
     // Apply graduated speed reduction for manual mode too
-    if (closest_object_distance_ <= warning_zone_ && out.target_speed_mmps > 0) {
-      float reduction_factor = calculateSpeedReductionFactor(closest_object_distance_);
-      out.target_speed_mmps = static_cast<int16_t>(out.target_speed_mmps * reduction_factor);
+    // if (closest_object_distance_ <= warning_zone_ && out.target_speed_mmps > 0) {
+    //   float reduction_factor = calculateSpeedReductionFactor(closest_object_distance_);
+    //   out.target_speed_mmps = static_cast<int16_t>(out.target_speed_mmps * reduction_factor);
       
-      if (closest_object_distance_ <= emergency_zone_) {
-        out.brake_percent = 100;
-        out.target_speed_mmps = 0;
-        triggerEmergencyStop();
-      }
-    }
+    //   if (closest_object_distance_ <= emergency_zone_) {
+    //     out.brake_percent = 100;
+    //     out.target_speed_mmps = 0;
+    //     triggerEmergencyStop();
+    //   }
+    // }
   }
   else if (use_internal) {
     const auto& cmd = *last_internal_;
