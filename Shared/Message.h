@@ -1,4 +1,46 @@
 #pragma once
+/*
+------------------------------------------------------------------------------
+ Message Protocol (Summary)
+
+ This file defines all TCP message IDs and packed payload structs shared
+ by the client and vehicle. Each on-wire message is:
+
+     [MessageHeader][payload bytes...]
+
+ where payloadLength = sizeof(struct) and messageID selects the type.
+ All payload structs are tightly packed POD types (no vectors, strings,
+ pointers, or dynamic data).
+
+------------------------------------------------------------------------------
+ Adding a Message
+
+ 1. Add a value in MessageID (0–99 to vehicle, 100–199 to client).
+ 2. Add a packed struct under #pragma pack(push,1):
+        struct MyMsg { uint8_t a; float b; };
+ 3. Register it:
+        REGISTER_MESSAGE_ID(MyMsg, MessageID::MyMsg);
+ 4. Update DebugHelpers.h:
+        - msgName(): return "MyMsg";
+        - expectedPayloadSize(): return sizeof(MyMsg);
+
+------------------------------------------------------------------------------
+ Using Messages
+
+ Sending:
+     MyMsg m{...};
+     Message msg = makeMessageFrom(m);
+     // Send header + payload over TCP
+
+ Receiving:
+     // Read header, then payloadLength bytes
+     MyMsg m = extractPayload<MyMsg>(message);
+
+ Client and vehicle must stay synchronized whenever a message changes.
+
+------------------------------------------------------------------------------
+*/
+
 #include <cstring>
 #include <cstdint>
 #include <vector>
