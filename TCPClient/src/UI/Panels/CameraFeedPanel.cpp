@@ -56,22 +56,9 @@ void CameraFeedPanel::onUpdate()
         }
         if (ImGui::IsItemHovered())
             ImGui::SetTooltip("Prefer remote stream even when connected locally.");
-
-        ImGui::SameLine();
-        if (ImGui::Checkbox("Yolo annotated images", &annotatedStreamEnabled)) {
-            urlDirty = true;
-        }
     }
 
     ImGui::Separator();
-
-    // --- Rebuild URL when dirty ---
-    if (urlDirty) {
-        std::string url = buildRtspUrl();
-        std::cout << "Setting stream URL to: " << url << std::endl;
-        videoStream.restart(url);
-        urlDirty = false;
-    }
 
     const bool connected = uiContext.isConnected();
     const bool visible   = showContents && !ImGui::IsWindowCollapsed();
@@ -79,7 +66,12 @@ void CameraFeedPanel::onUpdate()
 
     // --- Start/Stop gating ---
     if (wantStream && !streaming) {
-        startStream();
+        if (urlDirty) {
+            std::string url = buildRtspUrl();
+            std::cout << "Setting stream URL to: " << url << std::endl;
+            videoStream.restart(url);
+            urlDirty = false;
+        }
     } else if (!wantStream && streaming) {
         stopStream();
     }
@@ -180,13 +172,7 @@ std::string CameraFeedPanel::buildRtspUrl() const {
     switch (currHost) {
         case ConnectionType::Local:
             host = LOCAL_PI_IP;
-            if (annotatedStreamEnabled) {
-                port = ANNOTATED_PORT;
-                path = "/annotated";
-            } else {
-                port = LOCAL_VIDEO_PORT;
-                path = "/stream";
-            }
+            port = LOCAL_VIDEO_PORT;
             break;
 
         case ConnectionType::Remote:

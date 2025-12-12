@@ -25,7 +25,6 @@ private:
     bool userEnabled = false;
     bool streaming = false;
     bool forceRemoteOnLocal = false;
-    bool annotatedStreamEnabled = false;
     std::chrono::steady_clock::time_point lastToggle = std::chrono::steady_clock::now();
 
     bool urlDirty = true;
