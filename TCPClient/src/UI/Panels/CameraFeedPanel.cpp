@@ -11,7 +11,7 @@
 #include "Shared/Keys.h"
 
 CameraFeedPanel::CameraFeedPanel(UIContext& uiContext)
-    : UIPanel(uiContext), videoStream(BuildRtspUrl(ConnectionType::None), frameProcessor)
+    : UIPanel(uiContext), videoStream("", frameProcessor) 
 {
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -42,43 +42,42 @@ void CameraFeedPanel::onUpdate()
     // --- Controls ---
     ImGui::Checkbox("Enable stream", &userEnabled);
 
-    // Route-based override (only meaningful on Local route)
-    const ConnectionType route = uiContext.connectionType();
-    if (route == ConnectionType::Local) {
+    // Determine current host route
+    currHost = uiContext.connectionType();   // <-- FIX: route was undefined before
+    if (currHost != lastHost) {              // track switching Local <-> Remote
+        lastHost = currHost;
+        urlDirty = true;
+    }
+
+    if (currHost == ConnectionType::Local) {
         ImGui::SameLine();
-        ImGui::Checkbox("Use remote relay (even on local)", &forceRemoteOnLocal);
+        if (ImGui::Checkbox("Use remote relay (even on local)", &forceRemoteOnLocal)) {
+            urlDirty = true;
+        }
         if (ImGui::IsItemHovered())
             ImGui::SetTooltip("Prefer remote stream even when connected locally.");
+
+        ImGui::SameLine();
+        if (ImGui::Checkbox("Yolo annotated images", &annotatedStreamEnabled)) {
+            urlDirty = true;
+        }
     }
+
     ImGui::Separator();
+
+    // --- Rebuild URL when dirty ---
+    if (urlDirty) {
+        std::string url = buildRtspUrl();
+        std::cout << "Setting stream URL to: " << url << std::endl;
+        videoStream.restart(url);
+        urlDirty = false;
+    }
 
     const bool connected = uiContext.isConnected();
     const bool visible   = showContents && !ImGui::IsWindowCollapsed();
-    const bool wantStream = /*connected*/true && userEnabled && visible;
+    const bool wantStream = connected && userEnabled && visible;
 
-    // --- Decide which host to target ---
-    // Default: remote when Remote route; local when Local route (unless user forces remote).
-    ConnectionType preferredHost = ConnectionType::None;
-    switch (route) {
-        case ConnectionType::Local:
-            preferredHost = forceRemoteOnLocal ? ConnectionType::Remote : ConnectionType::Local;
-            break;
-        case ConnectionType::Remote:
-            preferredHost = ConnectionType::Remote;
-            break;
-        default: // None / Unknown
-            // If we don't know, stick with whatever we last used; if none yet, default to remote.
-            break;
-    }
-
-    // Remember and apply only when changed (so we don’t spam setUrl)
-    static ConnectionType lastHost = ConnectionType::None;
-    if (preferredHost != lastHost) {
-        videoStream.setUrl(BuildRtspUrl(preferredHost));
-        lastHost = preferredHost;
-    }
-
-    // --- Start/Stop gating (no changes to your helpers) ---
+    // --- Start/Stop gating ---
     if (wantStream && !streaming) {
         startStream();
     } else if (!wantStream && streaming) {
@@ -87,21 +86,38 @@ void CameraFeedPanel::onUpdate()
 
     // --- Status line ---
     const char* routeText =
-        (route == ConnectionType::Local)  ? "Local" :
-        (route == ConnectionType::Remote) ? "Remote" : "Unknown";
-    ImGui::Text("Connection: %s (%s)", connected ? "Connected" : "Not connected", routeText);
+        (currHost == ConnectionType::Local)  ? "Local" :
+        (currHost == ConnectionType::Remote) ? "Remote" : "Unknown";
+
+    ImGui::Text("Connection: %s (%s)",
+                connected ? "Connected" : "Not connected",
+                routeText);
+
     ImGui::SameLine();
     ImGui::Text("| Stream: %s", streaming ? "Running" : "Stopped");
-    std::string hosttext = (lastHost == ConnectionType::Local) ? LOCAL_PI_IP :
-                           (lastHost == ConnectionType::Remote) ? VM_PUBLIC_IP : "None";
-    if (lastHost != ConnectionType::None) { ImGui::SameLine(); ImGui::Text("| Target: %s", hosttext.c_str()); }
 
-    // --- Rendering (only when visible) ---
+    std::string hosttext =
+        (lastHost == ConnectionType::Local)  ? LOCAL_PI_IP :
+        (lastHost == ConnectionType::Remote) ? VM_PUBLIC_IP :
+                                               "None";
+
+    if (lastHost != ConnectionType::None) {
+        ImGui::SameLine();
+        ImGui::Text("| Target: %s", hosttext.c_str());
+    }
+
+    // --- Rendering ---
     if (showContents) {
         Frame frame = frameProcessor.getFrame();
         ImVec2 contentSize = ImGui::GetContentRegionAvail();
-        const float aspect = (frame.ready && frame.height > 0) ? (float)frame.width / (float)frame.height : (16.0f/9.0f);
-        float w = contentSize.x, h = w / aspect;
+
+        const float aspect =
+            (frame.ready && frame.height > 0)
+            ? float(frame.width) / float(frame.height)
+            : (16.0f/9.0f);
+
+        float w = contentSize.x;
+        float h = w / aspect;
         if (h > contentSize.y) { h = contentSize.y; w = h * aspect; }
         float offsetX = (contentSize.x - w) * 0.5f;
         ImGui::SetCursorPosX(ImGui::GetCursorPosX() + offsetX);
@@ -110,14 +126,17 @@ void CameraFeedPanel::onUpdate()
             if (frame.ready) {
                 glBindTexture(GL_TEXTURE_2D, texture);
                 glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+
                 if (frame.width != prevWidth || frame.height != prevHeight) {
                     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, frame.width, frame.height,
                                  0, GL_RGB, GL_UNSIGNED_BYTE, frame.pixels.data());
-                    prevWidth = frame.width; prevHeight = frame.height;
+                    prevWidth = frame.width;
+                    prevHeight = frame.height;
                 } else {
                     glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, frame.width, frame.height,
                                     GL_RGB, GL_UNSIGNED_BYTE, frame.pixels.data());
                 }
+
                 glBindTexture(GL_TEXTURE_2D, 0);
                 ImGui::Image((ImTextureID)(intptr_t)texture, ImVec2(w, h));
             } else {
@@ -125,7 +144,7 @@ void CameraFeedPanel::onUpdate()
             }
         } else {
             if (!connected && userEnabled)
-                ImGui::TextWrapped("Not connected. The stream will start automatically when the vehicle connects.");
+                ImGui::TextWrapped("Not connected. The stream will start when vehicle connects.");
             else
                 ImGui::TextWrapped("Stream is stopped. Enable it above to start.");
         }
@@ -151,4 +170,33 @@ void CameraFeedPanel::stopStream() {
     videoStream.stop();
     streaming = false;
     lastToggle = std::chrono::steady_clock::now();
+}
+
+std::string CameraFeedPanel::buildRtspUrl() const {
+    std::string host;
+    int port = 0;
+    std::string path = "/stream";
+
+    switch (currHost) {
+        case ConnectionType::Local:
+            host = LOCAL_PI_IP;
+            if (annotatedStreamEnabled) {
+                port = ANNOTATED_PORT;
+                path = "/annotated";
+            } else {
+                port = LOCAL_VIDEO_PORT;
+                path = "/stream";
+            }
+            break;
+
+        case ConnectionType::Remote:
+            host = VM_PUBLIC_IP;
+            port = REMOTE_VIDEO_PORT;
+            break;
+
+        default:
+            return {};
+    }
+
+    return "rtsp://" + host + ":" + std::to_string(port) + path;
 }

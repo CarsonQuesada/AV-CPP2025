@@ -31,13 +31,6 @@
 *.out
 *.app
 
-# IP address and listening port
-Shared/Keys.h
-
-# FFMPEG dependencies
-!TCPClient/dependencies/ffmpeg/
-!TCPClient/dependencies/ffmpeg/**
-
 build/
 **/build/
 **/.build/
@@ -53,3 +46,6 @@ build/
 **/*.exe
 **/*.pdb
 **/*.dll
+
+# IP address and listening port
+Shared/Keys.h

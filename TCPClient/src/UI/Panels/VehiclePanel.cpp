@@ -76,6 +76,13 @@ void VehiclePanel::onUpdate()
 
     ImGui::PopItemWidth();
 
+    ImGui::Text("Calibrate Heading Routine [1]"); 
+    if (ImGui::Button("Begin##CalibrateHeading", ImVec2(100, 0))) {
+        uiContext.controller->updateUIButton(ButtonID::CalibrateHeading, true);
+    } else {
+        uiContext.controller->updateUIButton(ButtonID::CalibrateHeading, false);
+    }
+
     ImGui::End();
 }
 

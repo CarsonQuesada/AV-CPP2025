@@ -20,6 +20,7 @@ public:
     void start();
     void stop();
     void setUrl(const std::string& u);
+    void restart(const std::string& newUrl);
 
 private:
     void run();

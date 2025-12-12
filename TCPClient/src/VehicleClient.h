@@ -1,4 +1,21 @@
 #pragma once
+
+// VehicleClient.h
+// Manages TCP connection to the vehicle server, sending and receiving messages.
+// 
+// Reqirements:
+// - Shared/Keys.h configured with the server's IP and port.
+// 
+// Current Issues:
+// - Initial handshake does not send anything. Max speed may not be set on first
+//   connect. Current solution is to just set these paramters when you reconnect
+// - Some messages are not handled at all (e.g., ErrorMessage).
+//
+// Notes:
+// - Thread safety is ensured via atomic variables and mutexes where necessary.
+// - Uses a recieve thread and a transmit thread to handle communication. Receive 
+//   thread handles auto reconnect attempt when a disconnect is detected.
+
 #include <atomic>
 #include <thread>
 #include <mutex>

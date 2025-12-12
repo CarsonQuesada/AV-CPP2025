@@ -24,6 +24,7 @@ enum class ButtonID {
     PanCameraRight,
     CenterCamera,
     ToggleAutopilot,
+    CalibrateHeading,
     Count // MUST BE AT END
 };
 

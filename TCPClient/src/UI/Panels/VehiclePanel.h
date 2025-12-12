@@ -21,8 +21,8 @@ private:
     bool rightTurn = true;
 
     // Speed
-    int maxSpeed = 50;
-    int lastSentSpeed = 50;
+    int maxSpeed = 100;
+    int lastSentSpeed = 100;
 
     void addLightRow(const char* label, const char* keyHint, bool state);
 };

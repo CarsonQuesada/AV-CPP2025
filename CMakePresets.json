@@ -3,7 +3,7 @@
   "configurePresets": [
     {
       "name": "win-tcpclient-debug",
-      "displayName": "Windows MinGW - TCPClient Debug (MJPEG only)",
+      "displayName": "Windows MinGW - TCPClient Debug",
       "generator": "MinGW Makefiles",
       "binaryDir": "${sourceDir}/build/win-tcpclient-debug",
       "cacheVariables": {

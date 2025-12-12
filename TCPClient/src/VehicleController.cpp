@@ -104,25 +104,32 @@ std::vector<Message> VehicleController::generateCommands(bool connected, bool au
     }
 
     // SET MAX SPEED COMMAND
-    if (true/*connected*/) {
+    if (connected) {
         SetMaxSpeedCommand setMaxSpeed;
         int intermediateValue;
         if (slider(SliderID::MaxSpeed).consume(intermediateValue)) {
             setMaxSpeed.maxSpeed = intermediateValue;
-            //msgs.push_back(makeMessageFrom(setMaxSpeed));
-            std::cout << "Slider used. Value: " << static_cast<int>(setMaxSpeed.maxSpeed) << std::endl;
+            msgs.push_back(makeMessageFrom(setMaxSpeed));
         }
     }
 
     // TOGGLE AUTOPILOT COMMAND
     if (button(ButtonID::ToggleAutopilot).isPressedEdge()) {
         if (VehicleState::getInstance().stateMode.mode == 3) {
+            std::cout << "Stopping Autopilot" << std::endl;
             StopAutopilotCommand stopAutopilot;
             msgs.push_back(makeMessageFrom(stopAutopilot));
         } else {
+            std::cout << "Starting Autopilot" << std::endl;
             StartAutopilotCommand startAutopilot;
             msgs.push_back(makeMessageFrom(startAutopilot));
         }
+    }
+
+    // CALIBRATE HEADING COMMAND
+    if (button(ButtonID::CalibrateHeading).isPressedEdge()) {
+        StartHeadingCalib startCalib;
+        msgs.push_back(makeMessageFrom(startCalib));
     }
 
     return msgs;

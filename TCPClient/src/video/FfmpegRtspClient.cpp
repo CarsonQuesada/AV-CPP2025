@@ -2,6 +2,8 @@
 #include <iostream>
 #include <chrono>
 
+#if ENABLE_RTSP
+
 extern "C" {
   #include <libavformat/avformat.h>
   #include <libavcodec/avcodec.h>     // <-- needed for avcodec_* and AVCodecContext
@@ -34,6 +36,12 @@ static void sleep_ms(int ms) {
     std::this_thread::sleep_for(std::chrono::milliseconds(ms));
 }
 
+void FfmpegRtspClient::restart(const std::string& newUrl) {
+    stop();           // safely stops FFmpeg thread
+    setUrl(newUrl);   // update URL
+    start();          // start fresh connection
+}
+
 void FfmpegRtspClient::run() {
     // Alloc once
     AVFrame* f = av_frame_alloc();
@@ -57,8 +65,8 @@ void FfmpegRtspClient::run() {
 
         // --- Open with low-latency demux options ---
         AVDictionary* opts = nullptr;
-        av_dict_set(&opts, "rtsp_transport", "udp", 0);     // use "udp" on LAN if you want even lower latency
-        av_dict_set(&opts, "max_delay", "0", 0);       // 100 ms
+        av_dict_set(&opts, "rtsp_transport", "tcp", 0);     // use "udp" on LAN if you want even lower latency
+        av_dict_set(&opts, "max_delay", "0", 0);            // 100 ms
         av_dict_set(&opts, "probesize", "32768", 0);
         av_dict_set(&opts, "analyzeduration", "0", 0);
 
@@ -66,6 +74,12 @@ void FfmpegRtspClient::run() {
             out_.setStreamAvailable(false);
             av_dict_free(&opts);
             std::cerr << "[RTSP] open failed, retry in 1s\n";
+
+            // If someone called stop(), don't hang around retrying
+            if (!running_) {
+                break;  // exit the while(running_) loop and end the thread
+            }
+
             sleep_ms(1000);
             continue;
         }
@@ -88,10 +102,10 @@ void FfmpegRtspClient::run() {
 
         const AVCodecParameters* par = fmt->streams[vindex]->codecpar;
         const AVCodec* codec = avcodec_find_decoder(par->codec_id);
-        if (!codec) { 
+        if (!codec) {
             out_.setStreamAvailable(false);
-            std::cerr << "[RTSP] decoder not found\n"; 
-            cleanup(); sleep_ms(500); continue; 
+            std::cerr << "[RTSP] decoder not found\n";
+            cleanup(); sleep_ms(500); continue;
         }
 
         dec = avcodec_alloc_context3(codec);
@@ -143,3 +157,39 @@ void FfmpegRtspClient::run() {
     if (f) av_frame_free(&f);
     if (rgb) av_frame_free(&rgb);
 }
+
+#else  // !ENABLE_RTSP  -------------------------------------------------------
+
+FfmpegRtspClient::FfmpegRtspClient(const std::string& url, FrameProcessor& sink)
+    : url_(url), out_(sink) {
+    // In a non-RTSP build, make sure downstream knows there is no stream
+    out_.setStreamAvailable(false);
+}
+
+FfmpegRtspClient::~FfmpegRtspClient() {
+    stop();
+}
+
+void FfmpegRtspClient::setUrl(const std::string& u) {
+    std::lock_guard<std::mutex> lk(urlMtx_);
+    url_ = u;
+}
+
+void FfmpegRtspClient::start() {
+    // No RTSP support in this build; don't start any thread.
+    std::cerr << "[RTSP] This build was compiled without RTSP/FFmpeg support; start() is a no-op.\n";
+    out_.setStreamAvailable(false);
+}
+
+void FfmpegRtspClient::stop() {
+    // No thread started in this configuration, so nothing to do.
+}
+
+void FfmpegRtspClient::run() {
+    // Never called in the non-RTSP build; provided only to satisfy the linker.
+}
+
+void FfmpegRtspClient::restart(const std::string& newUrl) {
+}
+
+#endif // ENABLE_RTSP
